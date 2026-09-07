@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="es">
+<html lang="fr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Herramientas para tu negocio — Turnero, Toc-Toc</title>
-<meta name="description" content="Software simple para pequeños negocios: control de horas, entrenamiento de ventas, y más. Sin contratos largos, sin complicaciones.">
+<title data-i18n="title">Des outils simples pour les petites entreprises — Turnero, Toc-Toc</title>
+<meta name="description" data-i18n="metaDesc" content="Logiciel simple pour petites entreprises : contrôle des heures, entraînement de vente, et plus. Sans contrats longs, sans complications.">
 <style>
   :root{
     --bg:#F0F3F6; --surface:#FFFFFF; --ink:#1C2530; --muted:#5A6472;
@@ -18,13 +18,20 @@
   .wrap{max-width:960px; margin:0 auto; padding:0 20px;}
 
   header{background:var(--navy); color:#fff; padding:18px 0;}
-  header .wrap{display:flex; align-items:center; justify-content:space-between;}
+  header .wrap{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;}
   .brand{font-weight:800; font-size:18px; letter-spacing:-.01em;}
-  nav a{color:#E9EEF4; text-decoration:none; margin-left:22px; font-size:14.5px;}
+  .headright{display:flex; align-items:center; gap:22px; flex-wrap:wrap;}
+  nav a{color:#E9EEF4; text-decoration:none; margin-right:22px; font-size:14.5px;}
   nav a:hover{color:var(--gold);}
 
+  .langs{display:flex; gap:6px;}
+  .langs button{background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.25); color:#E9EEF4;
+    font-size:12px; font-weight:700; padding:5px 10px; border-radius:999px; cursor:pointer;}
+  .langs button:hover{background:rgba(255,255,255,.16);}
+  .langs button.active{background:var(--gold); color:#2A1F0A; border-color:var(--gold);}
+
   .hero{padding:64px 0 48px; text-align:center;}
-  .hero h1{font-size:34px; margin:0 0 14px; letter-spacing:-.01em; max-width:22ch; margin-left:auto; margin-right:auto;}
+  .hero h1{font-size:34px; margin:0 0 14px; letter-spacing:-.01em; max-width:24ch; margin-left:auto; margin-right:auto;}
   .hero p{color:var(--muted); font-size:16px; max-width:52ch; margin:0 auto;}
 
   .apps{padding:20px 0 60px;}
@@ -51,8 +58,6 @@
   .contact p{color:var(--muted); font-size:14.5px; margin:0 0 20px;}
   .btn.whatsapp{background:#25D366; color:#fff;}
 
-  .pending{font-size:12.5px; color:#B23A3A; margin-top:10px;}
-
   footer{padding:26px 0 40px; text-align:center; color:var(--muted); font-size:13px;}
 </style>
 </head>
@@ -60,18 +65,26 @@
 
 <header>
   <div class="wrap">
-    <div class="brand">Turnero · Toc-Toc</div>
-    <nav>
-      <a href="#apps">Apps</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
+    <div class="brand">Turnero &middot; Toc-Toc</div>
+    <div class="headright">
+      <nav>
+        <a href="#apps" data-i18n="navApps">Applications</a>
+        <a href="#contacto" data-i18n="navContact">Contact</a>
+      </nav>
+      <div class="langs" id="langs">
+        <button data-lang="fr">Français</button>
+        <button data-lang="en">English</button>
+        <button data-lang="es">Español</button>
+        <button data-lang="tl">Tagalog</button>
+      </div>
+    </div>
   </div>
 </header>
 
 <section class="hero">
   <div class="wrap">
-    <h1>Herramientas simples para negocios pequeños</h1>
-    <p>Sin contratos largos, sin instalar nada — cada app resuelve un problema concreto de tu operación diaria.</p>
+    <h1 data-i18n="heroH1">Des outils simples pour les petites entreprises</h1>
+    <p data-i18n="heroP">Sans contrats à long terme, sans rien installer — chaque application résout un problème concret de votre opération quotidienne.</p>
   </div>
 </section>
 
@@ -80,17 +93,17 @@
     <div class="grid">
 
       <div class="card">
-        <span class="badge live">Disponible</span>
+        <span class="badge live" data-i18n="turneroBadge">Disponible</span>
         <h2>Turnero</h2>
-        <p>Control de horas para tu equipo — captura en dos toques, cálculo automático de lunch, reporte listo para el contador.</p>
-        <a class="btn primary" href="https://aymorcorp.github.io/turnero/venta/">Conocer Turnero →</a>
+        <p data-i18n="turneroP">Contrôle des heures pour votre équipe — saisie en deux touches, calcul automatique du dîner, rapport prêt pour le comptable.</p>
+        <a class="btn primary" href="https://aymorcorp.github.io/turnero/venta/" data-i18n="turneroBtn">Découvrir Turnero →</a>
       </div>
 
       <div class="card">
-        <span class="badge soon">Próximamente</span>
+        <span class="badge soon" data-i18n="toctocBadge">Bientôt disponible</span>
         <h2>Toc-Toc</h2>
-        <p>Entrenamiento de ventas con inteligencia artificial, para que tu equipo practique antes de hablar con un cliente real.</p>
-        <span class="btn ghost">Muy pronto</span>
+        <p data-i18n="toctocP">Entraînement de vente avec intelligence artificielle, pour que votre équipe s'exerce avant de parler à un vrai client.</p>
+        <span class="btn ghost" data-i18n="toctocBtn">Très bientôt</span>
       </div>
 
     </div>
@@ -99,17 +112,116 @@
 
 <section class="contact" id="contacto">
   <div class="wrap">
-    <h2>¿Tienes preguntas?</h2>
-    <p>Escríbenos directo, con gusto te ayudamos a elegir.</p>
-    <a class="btn whatsapp" href="https://wa.me/14384958777" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+    <h2 data-i18n="contactH2">Des questions?</h2>
+    <p data-i18n="contactP">Écrivez-nous directement, c'est avec plaisir qu'on vous aide à choisir.</p>
+    <a class="btn whatsapp" href="https://wa.me/14384958777" target="_blank" rel="noopener" data-i18n="contactBtn">Écrivez-nous sur WhatsApp</a>
   </div>
 </section>
 
 <footer>
-  <div class="wrap">
-    &copy; 2026 — Todos los derechos reservados.
+  <div class="wrap" data-i18n="footer">
+    &copy; 2026 &mdash; Tous droits réservés.
   </div>
 </footer>
+
+<script>
+  const I18N = {
+    fr: {
+      title: "Des outils simples pour les petites entreprises — Turnero, Toc-Toc",
+      metaDesc: "Logiciel simple pour petites entreprises : contrôle des heures, entraînement de vente, et plus. Sans contrats longs, sans complications.",
+      navApps: "Applications", navContact: "Contact",
+      heroH1: "Des outils simples pour les petites entreprises",
+      heroP: "Sans contrats à long terme, sans rien installer — chaque application résout un problème concret de votre opération quotidienne.",
+      turneroBadge: "Disponible",
+      turneroP: "Contrôle des heures pour votre équipe — saisie en deux touches, calcul automatique du dîner, rapport prêt pour le comptable.",
+      turneroBtn: "Découvrir Turnero →",
+      toctocBadge: "Bientôt disponible",
+      toctocP: "Entraînement de vente avec intelligence artificielle, pour que votre équipe s'exerce avant de parler à un vrai client.",
+      toctocBtn: "Très bientôt",
+      contactH2: "Des questions?",
+      contactP: "Écrivez-nous directement, c'est avec plaisir qu'on vous aide à choisir.",
+      contactBtn: "Écrivez-nous sur WhatsApp",
+      footer: "© 2026 — Tous droits réservés."
+    },
+    en: {
+      title: "Simple tools for small businesses — Turnero, Toc-Toc",
+      metaDesc: "Simple software for small businesses: time tracking, sales training, and more. No long contracts, no complications.",
+      navApps: "Apps", navContact: "Contact",
+      heroH1: "Simple tools for small businesses",
+      heroP: "No long contracts, nothing to install — each app solves a real problem in your day-to-day operation.",
+      turneroBadge: "Available",
+      turneroP: "Time tracking for your team — two-tap entry, automatic lunch calculation, report ready for your accountant.",
+      turneroBtn: "See Turnero →",
+      toctocBadge: "Coming soon",
+      toctocP: "AI-powered sales training, so your team can practice before talking to a real customer.",
+      toctocBtn: "Coming soon",
+      contactH2: "Have questions?",
+      contactP: "Write to us directly, happy to help you choose.",
+      contactBtn: "Message us on WhatsApp",
+      footer: "© 2026 — All rights reserved."
+    },
+    es: {
+      title: "Herramientas simples para tu negocio — Turnero, Toc-Toc",
+      metaDesc: "Software simple para pequeños negocios: control de horas, entrenamiento de ventas, y más. Sin contratos largos, sin complicaciones.",
+      navApps: "Apps", navContact: "Contacto",
+      heroH1: "Herramientas simples para negocios pequeños",
+      heroP: "Sin contratos largos, sin instalar nada — cada app resuelve un problema concreto de tu operación diaria.",
+      turneroBadge: "Disponible",
+      turneroP: "Control de horas para tu equipo — captura en dos toques, cálculo automático de lunch, reporte listo para el contador.",
+      turneroBtn: "Conocer Turnero →",
+      toctocBadge: "Próximamente",
+      toctocP: "Entrenamiento de ventas con inteligencia artificial, para que tu equipo practique antes de hablar con un cliente real.",
+      toctocBtn: "Muy pronto",
+      contactH2: "¿Tienes preguntas?",
+      contactP: "Escríbenos directo, con gusto te ayudamos a elegir.",
+      contactBtn: "Escríbenos por WhatsApp",
+      footer: "© 2026 — Todos los derechos reservados."
+    },
+    tl: {
+      title: "Simpleng mga tool para sa maliliit na negosyo — Turnero, Toc-Toc",
+      metaDesc: "Simpleng software para sa maliliit na negosyo: pagsubaybay ng oras, pagsasanay sa pagbebenta, at higit pa. Walang mahabang kontrata.",
+      navApps: "Mga App", navContact: "Makipag-ugnayan",
+      heroH1: "Simpleng mga tool para sa maliliit na negosyo",
+      heroP: "Walang mahabang kontrata, walang kailangang i-install — nilulutas ng bawat app ang isang tunay na problema sa iyong pang-araw-araw na operasyon.",
+      turneroBadge: "Available",
+      turneroP: "Pagsubaybay ng oras para sa iyong koponan — dalawang-tap na pagpasok, awtomatikong kalkulasyon ng pananghalian, ulat na handa na para sa accountant.",
+      turneroBtn: "Tingnan ang Turnero →",
+      toctocBadge: "Malapit na",
+      toctocP: "Pagsasanay sa pagbebenta gamit ang artificial intelligence, para makapagpraktis ang iyong koponan bago makipag-usap sa isang tunay na kliyente.",
+      toctocBtn: "Malapit na",
+      contactH2: "May mga tanong?",
+      contactP: "Sumulat sa amin nang direkta, masaya kaming tumulong sa iyong pagpili.",
+      contactBtn: "Mensahehin kami sa WhatsApp",
+      footer: "© 2026 — Nakalaan ang lahat ng karapatan."
+    }
+  };
+
+  function setLang(lang){
+    const dict = I18N[lang] || I18N.fr;
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      const key = el.getAttribute('data-i18n');
+      if (!(key in dict)) return;
+      if (el.tagName === 'TITLE') { document.title = dict[key]; return; }
+      if (el.tagName === 'META') { el.setAttribute('content', dict[key]); return; }
+      el.textContent = dict[key];
+    });
+    document.querySelectorAll('.langs button').forEach(function(b){
+      b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+    });
+    try { localStorage.setItem('lang', lang); } catch(e) {}
+  }
+
+  document.getElementById('langs').addEventListener('click', function(e){
+    const btn = e.target.closest('button[data-lang]');
+    if (!btn) return;
+    setLang(btn.getAttribute('data-lang'));
+  });
+
+  var saved = null;
+  try { saved = localStorage.getItem('lang'); } catch(e) {}
+  setLang(saved && I18N[saved] ? saved : 'fr');
+</script>
 
 </body>
 </html>
