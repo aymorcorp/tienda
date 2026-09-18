@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Política de Privacidad — Quorum</title>
+<style>
+  :root{ --bg:#F0F3F6; --surface:#FFFFFF; --ink:#1C2530; --muted:#5A6472; --navy:#1C3A5E; --gold:#D9A84E; --line-soft:#E9E4D6; }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; line-height:1.6;}
+  header{background:var(--navy); color:#fff; padding:18px 0;}
+  header .wrap{max-width:720px; margin:0 auto; padding:0 20px; display:flex; align-items:center; gap:14px; flex-wrap:wrap;}
+  header a{color:#E9EEF4; text-decoration:none; font-weight:800;}
+  .idiomas{margin-left:auto; display:flex; gap:6px;}
+  .idiomas button{
+    min-width:46px; min-height:38px; padding:0 10px; border-radius:9px; cursor:pointer;
+    font:inherit; font-size:13.5px; font-weight:800; letter-spacing:.04em;
+    background:transparent; color:#E9EEF4; border:1px solid rgba(233,238,244,.45);
+  }
+  .idiomas button[aria-pressed="true"]{ background:#fff; color:var(--navy); border-color:#fff; }
+  .wrap{max-width:720px; margin:0 auto; padding:40px 20px 60px;}
+  h1{font-size:24px; margin:0 0 4px; color:var(--navy);}
+  .updated{color:var(--muted); font-size:13.5px; margin:0 0 22px;}
+  h2{font-size:15.5px; margin:26px 0 8px; color:var(--navy);}
+  p{font-size:15px; color:var(--ink);}
+  ul{font-size:15px; padding-left:22px;}
+  li{margin-bottom:6px;}
+  .card{background:var(--surface); border:1px solid var(--line-soft); border-radius:14px; padding:24px 28px; box-shadow:0 4px 14px rgba(28,37,48,.08);}
+  .card h2:first-child{margin-top:0;}
+  .destacado{background:#F7F3E8; border-left:5px solid var(--gold); border-radius:0 10px 10px 0; padding:14px 18px; margin:18px 0;}
+  .destacado p{margin:0;}
+  footer{text-align:center; color:var(--muted); font-size:13px; padding:20px;}
+  [hidden]{display:none !important;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a href="../../">← Aymor Apps</a>
+    <div class="idiomas">
+      <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      <button type="button" data-lang="es" aria-pressed="true">ES</button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<!-- ═══════════════════ ESPAÑOL ═══════════════════ -->
+<section data-lang="es">
+  <h1>Política de Privacidad — Quorum</h1>
+  <p class="updated">Última actualización: 18 de septiembre de 2026</p>
+  <div class="card">
+    <p>Esta política cubre lo que pide la Ley 25 de Quebec y lo que pide Apple/Google para publicar una app.</p>
+
+    <h2>1. Quiénes somos</h2>
+    <p>Quorum es una aplicación para llevar el control de turnos y horas de trabajo, operada por Maria Leonor Ayluardo Troncoso.</p>
+
+    <h2>2. Responsable de la protección de tus datos</h2>
+    <p>La persona responsable de proteger la información personal que maneja Quorum es Maria Leonor Ayluardo Troncoso. Para preguntas o para ejercer tus derechos sobre tus datos, escribe a: aymorcorp@gmail.com.</p>
+
+    <h2>3. Qué información recogemos</h2>
+    <p>Quorum guarda: nombre del empleado, tarifa por hora y pago bruto (cuando aplica), horas trabajadas por periodo con el detalle día por día (entrada/salida), y el estado del día cuando no fue un turno normal (por ejemplo: vacaciones, incapacidad, permiso). NO guarda número de seguro social, fotos ni otros datos de identidad.</p>
+    <p>Ubicación (opcional): si el negocio activa esta opción, Quorum compara la ubicación del dispositivo contra un punto fijo que el negocio configura una sola vez, solo para confirmar cercanía al marcar entrada o salida. No se guarda la posición exacta del empleado, pero sí se guarda el resultado de esa comparación (la distancia aproximada y si quedó dentro del rango permitido) junto con la hora marcada de ese día, con la misma duración que el resto del historial de horas (ver sección 7).</p>
+    <p>Nota: el estado "incapacidad" es un dato de salud. Bajo la Ley 25 de Quebec se trata como información sensible, con un cuidado extra sobre cómo se protege y con quién se comparte.</p>
+
+    <h2>4. Cómo la recogemos</h2>
+    <p>Se captura de dos formas: escrita a mano dentro de la app por quien administra Quorum, o subida en lote con una plantilla de Excel.</p>
+
+    <h2>5. Para qué la usamos</h2>
+    <p>Quorum es una HERRAMIENTA DE CAPTURA — sirve para calcular y entregar las horas al contador o al software de nómina que sí procesa el pago. Quorum mismo NO hace la nómina ni es responsable de la retención fiscal a largo plazo que la ley exige a los contadores o software de payroll — esa obligación es de quien recibe el reporte, no de Quorum.</p>
+
+    <h2>6. Con quién se comparte</h2>
+    <p>La información de horas y empleados se guarda en el propio aparato de quien administra Quorum — no en un servidor nuestro ni en GitHub. GitHub solo hospeda el código de la aplicación, nunca la información de tu negocio.</p>
+    <p>El reporte de horas se manda solo cuando quien administra Quorum lo decide manualmente, a los correos autorizados por el negocio (máximo dos, protegidos con clave maestra). Nunca se manda directo a los empleados.</p>
+    <p>Ese envío se hace a través de EmailJS (empresa de Estados Unidos, con servidores en Amazon Web Services). El contenido completo del reporte pasa por los servidores de EmailJS antes de llegar al destinatario — esto es una transferencia de datos personales fuera de Quebec, sujeta a la Ley 25.</p>
+
+    <h2>7. Cuánto tiempo la guardamos</h2>
+    <p>Mientras el negocio sigue siendo cliente activo: se guarda un historial de hasta 3 meses.</p>
+    <p>Si el negocio deja de ser cliente: los datos se borran en la siguiente limpieza mensual — nunca más de mes y medio.</p>
+
+    <h2>8. Tus derechos</h2>
+    <p>En cualquier momento puedes pedir: ver qué información tenemos sobre ti, corregirla si está mal, o pedir que la borremos. Escribe a aymorcorp@gmail.com.</p>
+
+    <h2>9. Seguridad</h2>
+    <p>Como la información vive en el propio aparato de quien administra Quorum, recomendamos protegerlo con clave, huella o cara. Si hubiera una fuga de información, se avisará a las personas afectadas y a la Commission d'accès à l'information (CAI) de Quebec, como lo exige la ley.</p>
+
+    <h2>10. Menores de edad</h2>
+    <p>Esta aplicación es una herramienta de trabajo y no está dirigida a menores de edad.</p>
+
+    <h2>11. Cambios a esta política</h2>
+    <p>Si esta política cambia, se actualiza la fecha de arriba.</p>
+
+    <h2>12. Quejas</h2>
+    <p>Escribe primero a aymorcorp@gmail.com, o presenta una queja ante la Commission d'accès à l'information de Quebec (cai.gouv.qc.ca).</p>
+  </div>
+</section>
+
+<!-- ═══════════════════ FRANÇAIS ═══════════════════ -->
+<section data-lang="fr" hidden>
+  <h1>Politique de confidentialité — Quorum</h1>
+  <p class="updated">Dernière mise à jour : le 18 septembre 2026</p>
+  <div class="card">
+    <p>Cette politique couvre ce qu'exige la Loi 25 du Québec et ce qu'exigent Apple et Google pour publier une application.</p>
+
+    <h2>1. Qui nous sommes</h2>
+    <p>Quorum est une application pour gérer les quarts de travail et les heures, exploitée par Maria Leonor Ayluardo Troncoso.</p>
+
+    <h2>2. Responsable de la protection de vos renseignements</h2>
+    <p>La personne responsable de la protection des renseignements personnels traités par Quorum est Maria Leonor Ayluardo Troncoso. Pour toute question ou pour exercer vos droits : aymorcorp@gmail.com.</p>
+
+    <h2>3. Quels renseignements nous recueillons</h2>
+    <p>Quorum conserve : le nom de l'employé, le taux horaire et la paie brute (si applicable), les heures travaillées par période avec le détail jour par jour (entrée/sortie), et le statut du jour lorsqu'il ne s'agissait pas d'un quart normal (par exemple : vacances, maladie, congé). Elle ne conserve PAS de numéro d'assurance sociale, de photos, ni d'autres données d'identité.</p>
+    <p>Position (facultatif) : si l'entreprise active cette option, Quorum compare la position de l'appareil à un point fixe que l'entreprise configure une seule fois, uniquement pour confirmer la proximité au moment de pointer l'entrée ou la sortie. La position exacte de l'employé n'est pas conservée, mais le résultat de cette comparaison (la distance approximative et si elle était dans la portée permise) est conservé avec l'heure pointée ce jour-là, pour la même durée que le reste de l'historique des heures (voir section 7).</p>
+    <p>Remarque : le statut « maladie » est un renseignement de santé. Selon la Loi 25 du Québec, il est traité comme un renseignement sensible, avec une protection accrue et un contrôle particulier sur son partage.</p>
+
+    <h2>4. Comment nous le recueillons</h2>
+    <p>Il est saisi de deux façons : entré directement dans l'application par la personne qui administre Quorum, ou téléversé en lot avec un modèle Excel.</p>
+
+    <h2>5. À quoi ça sert</h2>
+    <p>Quorum est un OUTIL DE SAISIE — il calcule les heures et les transmet au comptable ou au logiciel de paie qui traite réellement le paiement. Quorum lui-même NE fait PAS la paie et n'est pas responsable de la conservation fiscale à long terme exigée par la loi des comptables ou des logiciels de paie — cette obligation revient à qui reçoit le rapport, pas à Quorum.</p>
+
+    <h2>6. Avec qui c'est partagé</h2>
+    <p>Les renseignements sur les heures et le personnel sont conservés sur l'appareil de la personne qui administre Quorum — pas sur un serveur qui nous appartient, ni sur GitHub. GitHub héberge uniquement le code de l'application, jamais les renseignements de votre entreprise.</p>
+    <p>Le rapport d'heures n'est envoyé que lorsque la personne qui administre Quorum le décide manuellement, aux adresses courriel autorisées par l'entreprise (deux maximum, protégées par un mot de passe principal). Il n'est jamais envoyé directement aux employés.</p>
+    <p>Cet envoi se fait par EmailJS (une entreprise américaine, avec des serveurs sur Amazon Web Services). Le contenu complet du rapport passe par les serveurs d'EmailJS avant d'atteindre le destinataire — il s'agit d'un transfert de renseignements personnels hors Québec, assujetti à la Loi 25.</p>
+
+    <h2>7. Combien de temps nous le conservons</h2>
+    <p>Tant que l'entreprise reste une cliente active : un historique de jusqu'à 3 mois est conservé.</p>
+    <p>Si l'entreprise cesse d'être cliente : les données sont supprimées au prochain nettoyage mensuel — jamais plus d'un mois et demi plus tard.</p>
+
+    <h2>8. Vos droits</h2>
+    <p>Vous pouvez à tout moment demander : de voir les renseignements que nous détenons sur vous, de les corriger s'ils sont erronés, ou de les supprimer. Écrivez à aymorcorp@gmail.com.</p>
+
+    <h2>9. Sécurité</h2>
+    <p>Puisque les renseignements se trouvent sur l'appareil de la personne qui administre Quorum, nous recommandons de le protéger par mot de passe, empreinte digitale ou reconnaissance faciale. En cas d'incident de sécurité, les personnes concernées et la Commission d'accès à l'information (CAI) du Québec en seraient avisées, comme l'exige la loi.</p>
+
+    <h2>10. Personnes mineures</h2>
+    <p>Cette application est un outil de travail et ne s'adresse pas aux personnes mineures.</p>
+
+    <h2>11. Modifications</h2>
+    <p>Si cette politique change, la date ci-dessus est mise à jour.</p>
+
+    <h2>12. Plaintes</h2>
+    <p>Écrivez d'abord à aymorcorp@gmail.com, ou déposez une plainte auprès de la Commission d'accès à l'information du Québec (cai.gouv.qc.ca).</p>
+  </div>
+</section>
+
+<!-- ═══════════════════ ENGLISH ═══════════════════ -->
+<section data-lang="en" hidden>
+  <h1>Privacy Policy — Quorum</h1>
+  <p class="updated">Last updated: September 18, 2026</p>
+  <div class="card">
+    <p>This policy covers what Quebec's Law 25 requires, and what Apple and Google require in order to publish an app.</p>
+
+    <h2>1. Who we are</h2>
+    <p>Quorum is an app for tracking shifts and work hours, operated by Maria Leonor Ayluardo Troncoso.</p>
+
+    <h2>2. Who is responsible for protecting your data</h2>
+    <p>The person responsible for protecting personal information handled by Quorum is Maria Leonor Ayluardo Troncoso. For questions, or to exercise your rights: aymorcorp@gmail.com.</p>
+
+    <h2>3. What information we collect</h2>
+    <p>Quorum stores: employee name, hourly rate and gross pay (when applicable), hours worked per period with day-by-day detail (clock-in/clock-out), and the day's status when it wasn't a normal shift (for example: vacation, sick leave, leave of absence). It does NOT store social insurance numbers, photos, or other identity data.</p>
+    <p>Location (optional): if the business turns this on, Quorum compares the device's location against a fixed point the business sets once, only to confirm proximity when clocking in or out. The employee's exact position is not stored, but the result of that comparison (the approximate distance, and whether it was within the allowed range) is stored alongside that day's clocked time, kept for the same length of time as the rest of the hours history (see section 7).</p>
+    <p>Note: "sick leave" status is health-related information. Under Quebec's Law 25, it is treated as sensitive information, with extra care about how it is protected and who it is shared with.</p>
+
+    <h2>4. How we collect it</h2>
+    <p>It is captured in two ways: typed directly into the app by whoever administers Quorum, or uploaded in bulk with an Excel template.</p>
+
+    <h2>5. What we use it for</h2>
+    <p>Quorum is a CAPTURE TOOL — it calculates hours and hands them off to the accountant or payroll software that actually processes payment. Quorum itself does NOT run payroll and is not responsible for the long-term tax retention the law requires of accountants or payroll software — that duty belongs to whoever receives the report, not to Quorum.</p>
+
+    <h2>6. Who it's shared with</h2>
+    <p>Hours and employee information is stored on the device of whoever administers Quorum — not on a server of ours, and not on GitHub. GitHub only hosts the app's code, never your business's information.</p>
+    <p>The hours report is only sent when whoever administers Quorum decides to, manually, to the email addresses the business has authorized (up to two, protected by a master password). It is never sent directly to employees.</p>
+    <p>That sending happens through EmailJS (a U.S. company, with servers on Amazon Web Services). The full content of the report passes through EmailJS's servers before reaching the recipient — this is a transfer of personal data outside Quebec, subject to Law 25.</p>
+
+    <h2>7. How long we keep it</h2>
+    <p>While the business remains an active customer: up to 3 months of history is kept.</p>
+    <p>If the business stops being a customer: the data is deleted at the next monthly cleanup — never more than a month and a half later.</p>
+
+    <h2>8. Your rights</h2>
+    <p>At any time you can ask to: see what information we have about you, correct it if it's wrong, or ask us to delete it. Write to aymorcorp@gmail.com.</p>
+
+    <h2>9. Security</h2>
+    <p>Since the information lives on the device of whoever administers Quorum, we recommend protecting it with a passcode, fingerprint, or face lock. If a data breach occurred, affected people and Quebec's Commission d'accès à l'information (CAI) would be notified, as the law requires.</p>
+
+    <h2>10. Minors</h2>
+    <p>This app is a work tool and is not directed at minors.</p>
+
+    <h2>11. Changes to this policy</h2>
+    <p>If this policy changes, the date above is updated.</p>
+
+    <h2>12. Complaints</h2>
+    <p>Write first to aymorcorp@gmail.com, or file a complaint with Quebec's Commission d'accès à l'information (cai.gouv.qc.ca).</p>
+  </div>
+</section>
+
+</div>
+
+<footer>© 2026 Maria Leonor Ayluardo Troncoso. Todos los derechos reservados.</footer>
+
+<script>
+  (function () {
+    var botones = document.querySelectorAll(".idiomas button");
+    var secciones = document.querySelectorAll("section[data-lang]");
+
+    function poner(lang) {
+      secciones.forEach(function (s) { s.hidden = s.dataset.lang !== lang; });
+      botones.forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.lang === lang)); });
+      document.documentElement.lang = lang;
+      try { localStorage.setItem("quorum-privacidad:idioma", lang); } catch (e) {}
+    }
+
+    botones.forEach(function (b) {
+      b.addEventListener("click", function () { poner(b.dataset.lang); });
+    });
+
+    var guardado = null;
+    try { guardado = localStorage.getItem("quorum-privacidad:idioma"); } catch (e) {}
+    var nav = (navigator.language || "es").slice(0, 2).toLowerCase();
+    poner(guardado || (["fr", "en", "es"].indexOf(nav) >= 0 ? nav : "es"));
+  })();
+</script>
+
+</body>
+</html>
