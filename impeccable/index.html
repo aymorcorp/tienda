@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impeccable — Le prix juste, en deux minutes</title>
+<meta name="description" data-i18n="metaDesc" content="Impeccable est l'application des entreprises de ménage : soumission calculée, listes avec photos avant/après, route de la journée et facturation. 39,63 $ US par mois.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aymorcorp.github.io/tienda/impeccable/">
+<meta property="og:title" content="Impeccable — Le prix juste, en deux minutes">
+<meta property="og:description" content="L'application des entreprises de ménage : soumission calculée avec vos propres chiffres, listes avec photos, route de la journée et facturation.">
+<style>
+  :root{
+    --navy:#1C3A5E; --navy-deep:#13283F; --cream:#F0F3F6; --card:#FFFFFF;
+    --gold:#D9A84E; --ink:#1C2530; --muted:#5A6472; --line:#E4DFD1;
+    --blue-mid:#2F5A85; --blue-soft:#3E6690; --green:#3E7A4E;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0; padding:0; background:var(--cream); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    scroll-behavior:smooth; line-height:1.6;}
+  img{max-width:100%; display:block;}
+  a{color:inherit;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 20px;}
+  .btn{display:inline-block; border-radius:12px; padding:14px 26px; font-weight:800; font-size:16px;
+    text-decoration:none; border:none; cursor:pointer;}
+  .btn.primary{background:var(--gold); color:#3A2E14;}
+  .btn.ghost{background:transparent; color:#F3EFE4; border:1.5px solid rgba(255,255,255,.5);}
+  .btn.dark{background:var(--navy); color:#F3EFE4;}
+
+  header.nav{position:sticky; top:0; z-index:50; background:var(--navy); color:#F3EFE4;
+    box-shadow:0 2px 10px rgba(19,40,63,.2);}
+  .nav-row{display:flex; align-items:center; gap:14px; flex-wrap:wrap; padding:13px 20px;}
+  .nav-brand{font-size:20px; font-weight:800; letter-spacing:.02em;}
+  .nav-links{display:none; gap:20px; font-size:14.5px; font-weight:650;}
+  .nav-links a{opacity:.9; text-decoration:none;}
+  @media(min-width:860px){ .nav-links{display:flex;} }
+  .idiomas{margin-left:auto; display:flex; gap:6px;}
+  .idiomas button{min-width:44px; min-height:36px; padding:0 10px; border-radius:9px; cursor:pointer;
+    font:inherit; font-size:13.5px; font-weight:800; letter-spacing:.04em;
+    background:transparent; color:#F3EFE4; border:1px solid rgba(243,239,228,.45);}
+  .idiomas button[aria-pressed="true"]{background:#fff; color:var(--navy); border-color:#fff;}
+
+  .hero{background:linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%); color:#F3EFE4;
+    padding:58px 0 70px;}
+  .hero .wrap{display:grid; gap:34px; align-items:center;}
+  @media(min-width:860px){ .hero .wrap{grid-template-columns:1.05fr .95fr;} }
+  .eyebrow{display:inline-block; background:rgba(217,168,78,.16); color:var(--gold); font-weight:800;
+    font-size:12.5px; letter-spacing:.08em; text-transform:uppercase; padding:6px 12px; border-radius:999px;
+    margin-bottom:16px;}
+  .hero h1{font-size:36px; line-height:1.14; margin:0 0 16px; font-weight:800;}
+  @media(min-width:720px){ .hero h1{font-size:40px;} }
+  .hero p.lead{font-size:17.5px; color:#D9E0E8; margin:0 0 26px; max-width:520px;}
+  .hero .ctas{display:flex; flex-wrap:wrap; gap:12px; margin-bottom:16px;}
+  .hero .fineprint{font-size:13px; color:#B9C4D1;}
+
+  .mock{background:var(--card); border-radius:20px; padding:8px; box-shadow:0 20px 50px rgba(0,0,0,.28);}
+  .mock-in{background:#F7F9FB; border-radius:14px; overflow:hidden;}
+  .mock-bar{background:var(--navy); color:#F3EFE4; padding:13px 16px; font-weight:800; font-size:16px; text-align:center;}
+  .mock-body{padding:14px;}
+  .mock-row{background:#fff; border:1px solid #E3E8EE; border-radius:12px; padding:10px 12px; margin-bottom:9px;
+    display:flex; justify-content:space-between; align-items:center; gap:10px; font-size:14px; color:var(--muted);}
+  .mock-row b{color:var(--ink); font-weight:700;}
+  .mock-total{background:var(--navy); color:#fff; border-radius:12px; padding:13px 14px; display:flex;
+    justify-content:space-between; align-items:center; font-weight:800;}
+  .mock-total span:last-child{font-size:21px; color:var(--gold);}
+
+  .trust{background:var(--card); border-bottom:1px solid var(--line);}
+  .trust .wrap{display:flex; flex-wrap:wrap; gap:26px; justify-content:center; padding:20px;
+    font-size:13.5px; font-weight:700; color:var(--muted); text-align:center;}
+
+  section{padding:64px 0;}
+  .section-head{text-align:center; max-width:660px; margin:0 auto 40px;}
+  .section-head .eyebrow{background:#E7EDF3; color:var(--blue-mid);}
+  .section-head h2{font-size:28px; margin:0 0 12px; font-weight:800; color:var(--navy); line-height:1.25;}
+  .section-head p{color:var(--muted); font-size:16px; margin:0;}
+
+  .grid3{display:grid; gap:20px;}
+  @media(min-width:640px){ .grid3{grid-template-columns:repeat(2,1fr);} }
+  @media(min-width:940px){ .grid3{grid-template-columns:repeat(3,1fr);} }
+  .feat{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:22px;}
+  .feat .ic{width:44px; height:44px; border-radius:12px; background:#E7EDF3;
+    display:flex; align-items:center; justify-content:center; font-size:21px; margin-bottom:13px;}
+  .feat h3{margin:0 0 8px; font-size:16.5px; color:var(--navy);}
+  .feat p{margin:0; color:var(--muted); font-size:14.5px;}
+
+  .how{background:#fff;}
+  .steps{display:grid; gap:24px;}
+  @media(min-width:760px){ .steps{grid-template-columns:repeat(3,1fr);} }
+  .step .num{width:38px; height:38px; border-radius:50%; background:var(--navy); color:#F3EFE4;
+    display:flex; align-items:center; justify-content:center; font-weight:800; margin-bottom:13px;}
+  .step h3{margin:0 0 8px; font-size:17px; color:var(--navy);}
+  .step p{margin:0; color:var(--muted); font-size:14.5px;}
+
+  .who-cards{display:grid; gap:18px;}
+  @media(min-width:760px){ .who-cards{grid-template-columns:repeat(4,1fr);} }
+  @media(min-width:520px) and (max-width:759px){ .who-cards{grid-template-columns:repeat(2,1fr);} }
+  .who-card{background:var(--card); border-radius:16px; padding:20px; border-top:4px solid var(--blue-soft);}
+  .who-card.b{border-top-color:var(--green);} .who-card.c{border-top-color:#C77B2E;} .who-card.d{border-top-color:#7A5A9E;}
+  .who-card h3{margin:0 0 7px; font-size:16px; color:var(--navy);}
+  .who-card p{margin:0; color:var(--muted); font-size:14.5px;}
+
+  .privacy{background:var(--navy); color:#F3EFE4;}
+  .privacy .wrap{display:grid; gap:34px; align-items:center;}
+  @media(min-width:860px){ .privacy .wrap{grid-template-columns:1fr 1fr;} }
+  .privacy h2{font-size:28px; margin:0 0 14px; font-weight:800;}
+  .privacy p{color:#D9E0E8; margin:0 0 14px;}
+  .privacy ul{margin:0; padding-left:20px; color:#D9E0E8;}
+  .privacy li{margin-bottom:8px;}
+  .pbox{background:rgba(255,255,255,.07); border:1px solid rgba(243,239,228,.2); border-radius:16px; padding:8px 16px;}
+  .pbox .row{display:flex; gap:13px; padding:14px 0; border-bottom:1px solid rgba(243,239,228,.14);}
+  .pbox .row:last-child{border-bottom:none;}
+  .pbox .ic{font-size:20px;}
+  .pbox b{display:block; font-size:15px; margin-bottom:3px;}
+  .pbox span{font-size:14px; color:#C6D0DA;}
+
+  .pricing{background:var(--cream);}
+  .price-grid{display:grid; gap:20px; max-width:880px; margin:0 auto;}
+  @media(min-width:760px){ .price-grid{grid-template-columns:1fr 1fr;} }
+  .price-card{background:var(--card); border:1px solid var(--line); border-radius:18px; padding:26px; text-align:center;}
+  .price-card.best{border:2px solid var(--gold);}
+  .price-card .tag{display:inline-block; font-size:12px; font-weight:800; letter-spacing:.06em; text-transform:uppercase;
+    background:#E7EDF3; color:var(--blue-mid); border-radius:999px; padding:5px 12px; margin-bottom:12px;}
+  .price-card.best .tag{background:rgba(217,168,78,.2); color:#7A5A1E;}
+  .price-card .big{font-size:38px; font-weight:800; color:var(--navy); line-height:1.1; margin:0 0 4px;}
+  .price-card .unit{font-size:14.5px; color:var(--muted); font-weight:600; margin:0;}
+  .price-card .after{margin:14px 0 0; color:var(--muted); font-size:14.5px;}
+  .price-note{max-width:880px; margin:22px auto 0; background:#FBF3EC; border-left:4px solid var(--gold);
+    border-radius:10px; padding:14px 18px; font-size:15px; color:#5A4520; font-weight:700;}
+  .price-foot{text-align:center; margin-top:26px;}
+  .price-foot p{color:var(--muted); font-size:14.5px; margin:0 auto 16px; max-width:640px;}
+
+  .faq{background:#fff;}
+  details{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 18px;
+    margin:0 auto 12px; max-width:820px;}
+  summary{font-weight:800; font-size:16px; color:var(--navy); cursor:pointer;}
+  details p{margin:12px 0 0; color:var(--muted); font-size:15px;}
+
+  .cta-band{background:linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%); color:#F3EFE4; text-align:center;}
+  .cta-band h2{font-size:28px; margin:0 0 12px; font-weight:800;}
+  .cta-band p{color:#D9E0E8; max-width:620px; margin:0 auto 24px;}
+
+  footer{background:var(--navy-deep); color:#C6D0DA; font-size:14px; padding:26px 0;}
+  footer .wrap{display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between;}
+  footer a{color:#E9EEF4;}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-row">
+    <div class="nav-brand">Impeccable</div>
+    <nav class="nav-links">
+      <a href="#features" data-i18n="navFeatures">Fonctions</a>
+      <a href="#how" data-i18n="navHow">Comment ça marche</a>
+      <a href="#privacy" data-i18n="navPrivacy">Confidentialité</a>
+      <a href="#pricing" data-i18n="navPricing">Prix</a>
+      <a href="#faq" data-i18n="navFaq">Questions</a>
+    </nav>
+    <div class="idiomas">
+      <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      <button type="button" data-lang="es" aria-pressed="false">ES</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow" data-i18n="heroEyebrow">Pour les entreprises de ménage</span>
+      <h1 data-i18n="heroH1">Arrêtez de deviner vos prix.</h1>
+      <p class="lead" data-i18n="heroP">Impeccable calcule la soumission avec vos chiffres à vous — la superficie, chaque toilette, la fréquence, ce qu'une heure vous coûte vraiment. En deux minutes, et jamais à perte.</p>
+      <div class="ctas">
+        <a class="btn primary" href="#pricing" data-i18n="heroCta1">Voir les prix</a>
+        <a class="btn ghost" href="#how" data-i18n="heroCta2">Comment ça marche</a>
+      </div>
+      <p class="fineprint" data-i18n="heroFine">Fonctionne sans Internet · Français, anglais, espagnol · Vos données restent dans votre téléphone</p>
+    </div>
+    <div class="mock">
+      <div class="mock-in">
+        <div class="mock-bar" data-i18n="mockBar">Nouvelle soumission</div>
+        <div class="mock-body">
+          <div class="mock-row"><span data-i18n="mockR1">Bureau</span><b data-i18n="mockR1v">3 500 pi²</b></div>
+          <div class="mock-row"><span data-i18n="mockR2">Salles de bain</span><b data-i18n="mockR2v">1 toilette, 1 lavabo</b></div>
+          <div class="mock-row"><span data-i18n="mockR3">Fréquence</span><b data-i18n="mockR3v">Chaque semaine</b></div>
+          <div class="mock-row"><span data-i18n="mockR4">Niveau</span><b data-i18n="mockR4v">Entretien</b></div>
+          <div class="mock-total"><span data-i18n="mockTot">Par visite</span><span data-i18n="mockTotV">137,50 $</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="wrap">
+    <span data-i18n="t1">✓ Aucun serveur, aucun mot de passe</span>
+    <span data-i18n="t2">✓ Vos prix, modifiables à tout moment</span>
+    <span data-i18n="t3">✓ Taxes du Québec incluses</span>
+    <span data-i18n="t4">✓ Sans contrat à long terme</span>
+  </div>
+</div>
+
+<section id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="fEyebrow">Ce qu'elle fait</span>
+      <h2 data-i18n="fH2">Tout ce qu'une entreprise de ménage fait dans une journée.</h2>
+      <p data-i18n="fP">Soumissionner, nettoyer, prouver le travail, facturer. Une seule application, du premier appel jusqu'au paiement.</p>
+    </div>
+    <div class="grid3">
+      <div class="feat"><div class="ic">🧮</div><h3 data-i18n="f1h">La soumission en sept questions</h3><p data-i18n="f1p">Quel type de local, quel service, quelle superficie, à quelle fréquence. Le prix bouge pendant que vous répondez.</p></div>
+      <div class="feat"><div class="ic">🚽</div><h3 data-i18n="f2h">Les salles de bain, pièce par pièce</h3><p data-i18n="f2p">Toilette, lavabo, urinoir, douche : chacun a ses minutes. C'est là que la plupart perdent de l'argent sans s'en rendre compte.</p></div>
+      <div class="feat"><div class="ic">📐</div><h3 data-i18n="f3h">Pieds carrés ou mètres carrés</h3><p data-i18n="f3p">Écrivez la mesure que le client vous a donnée. L'application convertit toute seule.</p></div>
+      <div class="feat"><div class="ic">📊</div><h3 data-i18n="f4h">Le tableau des fréquences</h3><p data-i18n="f4p">Les six fréquences côte à côte, par visite et par mois. Le client choisit en regardant, et une visite unique coûte plus cher qu'un contrat.</p></div>
+      <div class="feat"><div class="ic">📷</div><h3 data-i18n="f5h">Listes avec photos avant et après</h3><p data-i18n="f5p">Trois listes prêtes ou les vôtres. À la fin, un rapport avec photos que vous envoyez au client.</p></div>
+      <div class="feat"><div class="ic">🗺️</div><h3 data-i18n="f6h">La journée en ordre</h3><p data-i18n="f6p">Les rendez-vous du jour, la route sur la carte, le rappel par WhatsApp et le rendez-vous dans le calendrier du téléphone.</p></div>
+      <div class="feat"><div class="ic">🧾</div><h3 data-i18n="f7h">Factures et comptes à recevoir</h3><p data-i18n="f7p">TPS et TVQ si vous les chargez, votre propre numérotation, et la liste de qui vous doit et depuis quand.</p></div>
+      <div class="feat"><div class="ic">🐈</div><h3 data-i18n="f8h">Les fiches qui évitent les surprises</h3><p data-i18n="f8p">Le chat qui ne doit pas sortir, l'allergie au citron, le comptoir en pierre naturelle, où est la clé. Écrit une fois, jamais oublié.</p></div>
+      <div class="feat"><div class="ic">🙈</div><h3 data-i18n="f9h">Envoyer le travail sans montrer les prix</h3><p data-i18n="f9p">Un bouton copie ce dont votre employée a besoin — adresse, accès, liste — sans téléphone, sans nom de famille et sans prix.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="how" id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="hEyebrow">Comment ça marche</span>
+      <h2 data-i18n="hH2">Vos chiffres une fois. Le reste, tous les jours.</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><h3 data-i18n="s1h">Entrez vos chiffres</h3><p data-i18n="s1p">Ce qu'une heure vous coûte, ce que vous voulez gagner, et le minimum en dessous duquel vous ne sortez pas de chez vous. L'application fait le reste.</p></div>
+      <div class="step"><div class="num">2</div><h3 data-i18n="s2h">Soumissionnez sur place</h3><p data-i18n="s2p">Devant le client, sur le téléphone. Envoyez la soumission par WhatsApp ou par courriel avant de repartir.</p></div>
+      <div class="step"><div class="num">3</div><h3 data-i18n="s3h">Travaillez et facturez</h3><p data-i18n="s3p">La liste avec photos pendant la visite, le rapport au client à la fin, la facture ensuite. Sans rien réécrire.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="wEyebrow">Pour qui</span>
+      <h2 data-i18n="wH2">Faite pour ceux qui nettoient, pas pour un service des achats.</h2>
+    </div>
+    <div class="who-cards">
+      <div class="who-card"><h3 data-i18n="w1h">Maisons</h3><p data-i18n="w1p">Tarif par chambres, avec la première visite plus chère parce qu'elle prend plus de temps.</p></div>
+      <div class="who-card b"><h3 data-i18n="w2h">Bureaux et commerces</h3><p data-i18n="w2p">À la superficie, avec le supplément du soir et de la nuit déjà calculé.</p></div>
+      <div class="who-card c"><h3 data-i18n="w3h">Garderies et cliniques</h3><p data-i18n="w3p">Zones de détail, personnel certifié, et les listes que ces contrats exigent.</p></div>
+      <div class="who-card d"><h3 data-i18n="w4h">Location court terme</h3><p data-i18n="w4p">Changement d'invités avec photos : la preuve que le logement était impeccable en partant.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="privacy" class="privacy">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow" style="background:rgba(217,168,78,.16); color:var(--gold);" data-i18n="pEyebrow">Confidentialité</span>
+      <h2 data-i18n="pH2">Vos clients restent dans votre téléphone.</h2>
+      <p data-i18n="pP">Impeccable ne tourne pas sur notre serveur. Les noms, les adresses, les prix et les photos vivent dans l'appareil que vous utilisez. Nous ne les voyons pas.</p>
+      <ul>
+        <li data-i18n="pL1">Aucun compte à créer, aucun mot de passe à retenir</li>
+        <li data-i18n="pL2">Aucune publicité, aucun traceur, aucune statistique</li>
+        <li data-i18n="pL3">Votre copie de sauvegarde est à vous : gardez-la où vous voulez</li>
+      </ul>
+    </div>
+    <div class="pbox">
+      <div class="row"><div class="ic">📴</div><div><b data-i18n="pB1h">Elle fonctionne sans Internet</b><span data-i18n="pB1p">Dans un sous-sol sans signal, elle soumissionne, enregistre et facture pareil.</span></div></div>
+      <div class="row"><div class="ic">🗺️</div><div><b data-i18n="pB2h">La carte est la seule chose qui sort</b><span data-i18n="pB2p">Pour afficher la carte et trouver une adresse, on demande les images à OpenStreetMap. Le nom du client ne voyage jamais.</span></div></div>
+      <div class="row"><div class="ic">💾</div><div><b data-i18n="pB3h">Vous contrôlez vos sauvegardes</b><span data-i18n="pB3p">Un fichier, quand vous voulez, pour changer de téléphone ou simplement dormir tranquille.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="prEyebrow">Prix</span>
+      <h2 data-i18n="prH2">Un seul prix, tout inclus.</h2>
+      <p data-i18n="prP">Sans frais par employé, sans frais d'installation, sans contrat à long terme. Annulez quand vous voulez.</p>
+    </div>
+    <div class="price-grid">
+      <div class="price-card">
+        <span class="tag" data-i18n="prTag1">Mois par mois</span>
+        <p class="big" data-i18n="prBig1">39,63 $</p>
+        <p class="unit" data-i18n="prUnit1">US par mois</p>
+        <p class="after" data-i18n="prAfter1"><b>Votre premier mois à moitié prix : 19,81 $.</b> Ensuite, 39,63 $ par mois.</p>
+      </div>
+      <div class="price-card best">
+        <span class="tag" data-i18n="prTag2">Paiement annuel</span>
+        <p class="big" data-i18n="prBig2">435,93 $</p>
+        <p class="unit" data-i18n="prUnit2">US par année</p>
+        <p class="after" data-i18n="prAfter2"><b>Vous payez onze mois et vous en recevez douze.</b> Un mois cadeau, 8,3 % de moins.</p>
+      </div>
+    </div>
+    <p class="price-note" data-i18n="prNote">Les deux offres ne se combinent pas : vous choisissez l'une ou l'autre. Ou le premier mois à moitié prix en payant au mois, ou l'année complète avec le mois cadeau.</p>
+    <div class="price-foot">
+      <p data-i18n="prFoot">Elle fonctionne aujourd'hui sur Android. Écrivez-nous et on vous l'installe; la fiche Google Play s'en vient. Sur iPhone, elle s'utilise depuis le navigateur.</p>
+      <a class="btn dark" href="#contact" data-i18n="prBtn">Commencer</a>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="qEyebrow">Questions</span>
+      <h2 data-i18n="qH2">Ce qu'on nous demande le plus.</h2>
+    </div>
+    <details><summary data-i18n="q1">Est-ce que je peux changer les prix que l'application calcule?</summary><p data-i18n="a1">Oui, tous. Le taux horaire, les minutes de chaque pièce, les pourcentages, le minimum par visite, les taxes. Ce sont vos chiffres, pas les nôtres.</p></details>
+    <details><summary data-i18n="q2">Est-ce que ça marche sans Internet?</summary><p data-i18n="a2">Oui. Tout fonctionne hors ligne. La seule chose qui a besoin de signal, c'est la carte.</p></details>
+    <details><summary data-i18n="q3">Mes employées vont-elles voir mes prix?</summary><p data-i18n="a3">Non, si vous leur envoyez le travail avec le bouton prévu : il copie l'adresse, l'accès et la liste, sans téléphone, sans nom de famille et sans prix.</p></details>
+    <details><summary data-i18n="q4">Et si je change de téléphone?</summary><p data-i18n="a4">Vous exportez une copie de sauvegarde sur l'ancien et vous l'importez sur le nouveau. Clients, rendez-vous, soumissions et factures reviennent. Les photos des visites, elles, restent sur l'ancien appareil.</p></details>
+    <details><summary data-i18n="q5">Est-ce qu'elle existe pour iPhone?</summary><p data-i18n="a5">Elle s'utilise sur iPhone depuis le navigateur, en l'ajoutant à l'écran d'accueil. La version de l'App Store n'est pas encore là.</p></details>
+    <details><summary data-i18n="q6">Y a-t-il un contrat à long terme?</summary><p data-i18n="a6">Non. C'est un abonnement mensuel, annulable quand vous voulez. Si vous choisissez l'année, c'est votre décision, pas une obligation.</p></details>
+  </div>
+</section>
+
+<section class="cta-band" id="contact">
+  <div class="wrap">
+    <h2 data-i18n="cH2">Prête à arrêter de deviner?</h2>
+    <p data-i18n="cP">Écrivez-nous et on vous installe Impeccable avec vos propres chiffres. 39,63 $ US par mois, premier mois à moitié prix.</p>
+    <a class="btn primary" href="https://wa.me/12635662243" target="_blank" rel="noopener" data-i18n="cBtn">Écrivez-nous sur WhatsApp</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div data-i18n="foot1">Impeccable — une application d'Aymor Apps</div>
+    <div>
+      <a href="privacidad/" data-i18n="footPriv">Confidentialité</a> &middot;
+      <a href="https://aymorcorp.github.io/tienda/" data-i18n="footAll">Toutes les applications Aymor</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+var T = {
+  fr: {},
+  en: {
+    metaDesc:"Impeccable is the app for cleaning businesses: calculated quotes, checklists with before/after photos, the day's route, and invoicing. $39.63 USD a month.",
+    navFeatures:"Features", navHow:"How it works", navPrivacy:"Privacy", navPricing:"Pricing", navFaq:"FAQ",
+    heroEyebrow:"For cleaning businesses",
+    heroH1:"Stop guessing your prices.",
+    heroP:"Impeccable builds the quote from your own numbers — the square footage, every toilet, the frequency, what an hour really costs you. Two minutes, and never at a loss.",
+    heroCta1:"See pricing", heroCta2:"How it works",
+    heroFine:"Works with no internet · English, French, Spanish · Your data stays on your phone",
+    mockBar:"New quote", mockR1:"Office", mockR1v:"3,500 sq ft", mockR2:"Bathrooms", mockR2v:"1 toilet, 1 sink",
+    mockR3:"Frequency", mockR3v:"Weekly", mockR4:"Level", mockR4v:"Maintenance", mockTot:"Per visit", mockTotV:"$137.50",
+    t1:"✓ No server, no passwords", t2:"✓ Your prices, yours to change", t3:"✓ Quebec taxes built in", t4:"✓ No long contract",
+    fEyebrow:"What it does", fH2:"Everything a cleaning business does in a day.",
+    fP:"Quote, clean, prove the work, get paid. One app, from the first call to the payment.",
+    f1h:"The quote in seven questions", f1p:"What kind of place, what service, how big, how often. The price moves while you answer.",
+    f2h:"Bathrooms, fixture by fixture", f2p:"Toilet, sink, urinal, shower — each one has its minutes. That's where most people quietly lose money.",
+    f3h:"Square feet or square metres", f3p:"Type in whichever measure the client gave you. The app converts it for you.",
+    f4h:"The frequency table", f4p:"All six frequencies side by side, per visit and per month. The client chooses by looking — and a one-time clean costs more than a contract.",
+    f5h:"Checklists with before and after photos", f5p:"Three ready-made lists or your own. At the end, a photo report you send to the client.",
+    f6h:"Your day, in order", f6p:"Today's appointments, the route on the map, the WhatsApp reminder, and the appointment in your phone's calendar.",
+    f7h:"Invoices and money owed", f7p:"GST and QST if you charge them, your own numbering, and the list of who owes you and since when.",
+    f8h:"The notes that prevent surprises", f8p:"The cat that can't get out, the lemon allergy, the natural stone counter, where the key is. Written once, never forgotten.",
+    f9h:"Send the job without showing prices", f9p:"One button copies what your cleaner needs — address, access, checklist — with no phone number, no last name and no prices.",
+    hEyebrow:"How it works", hH2:"Your numbers once. Everything else, every day.",
+    s1h:"Enter your numbers", s1p:"What an hour costs you, what you want to earn, and the minimum you won't leave home for. The app does the rest.",
+    s2h:"Quote on the spot", s2p:"In front of the client, on your phone. Send the quote by WhatsApp or email before you leave.",
+    s3h:"Work and invoice", s3p:"The checklist with photos during the visit, the report to the client at the end, the invoice after. Nothing retyped.",
+    wEyebrow:"Who it's for", wH2:"Built for people who clean, not for a purchasing department.",
+    w1h:"Homes", w1p:"Priced by bedrooms, with the first clean costing more because it takes longer.",
+    w2h:"Offices and shops", w2p:"Priced by area, with the evening and overnight surcharge already worked in.",
+    w3h:"Daycares and clinics", w3p:"Detail zones, certified staff, and the checklists those contracts ask for.",
+    w4h:"Short-term rentals", w4p:"Guest turnover with photos: proof the place was spotless when you left.",
+    pEyebrow:"Privacy", pH2:"Your clients stay on your phone.",
+    pP:"Impeccable doesn't run on our server. Names, addresses, prices and photos live on the device you use. We don't see them.",
+    pL1:"No account to create, no password to remember", pL2:"No ads, no trackers, no analytics",
+    pL3:"Your backup file is yours — keep it wherever you like",
+    pB1h:"It works with no internet", pB1p:"In a basement with no signal it still quotes, saves and invoices.",
+    pB2h:"The map is the only thing that leaves", pB2p:"To draw the map and find an address we ask OpenStreetMap for the tiles. The client's name never travels.",
+    pB3h:"You control your backups", pB3p:"One file, whenever you want, to switch phones or just sleep better.",
+    prEyebrow:"Pricing", prH2:"One price, everything included.",
+    prP:"No per-employee fee, no setup fee, no long contract. Cancel whenever you want.",
+    prTag1:"Month to month", prBig1:"$39.63", prUnit1:"USD per month",
+    prAfter1:"<b>Your first month is half price: $19.81.</b> After that, $39.63 a month.",
+    prTag2:"Pay yearly", prBig2:"$435.93", prUnit2:"USD per year",
+    prAfter2:"<b>You pay eleven months and get twelve.</b> One month free, 8.3% less.",
+    prNote:"The two offers don't stack: you pick one. Either the half-price first month paying monthly, or the full year with the free month.",
+    prFoot:"It works on Android today. Message us and we'll set it up for you; the Google Play listing is on its way. On iPhone it runs from the browser.",
+    prBtn:"Get started",
+    qEyebrow:"Questions", qH2:"What people ask us most.",
+    q1:"Can I change the prices the app calculates?", a1:"Yes, all of them. The hourly rate, the minutes for each fixture, the percentages, the minimum per visit, the taxes. They're your numbers, not ours.",
+    q2:"Does it work without internet?", a2:"Yes. Everything works offline. The only thing that needs a signal is the map.",
+    q3:"Will my cleaners see my prices?", a3:"Not if you send them the job with the button made for it: it copies the address, the access and the checklist, with no phone number, no last name and no prices.",
+    q4:"What if I change phones?", a4:"You export a backup on the old one and import it on the new one. Clients, appointments, quotes and invoices all come back. The visit photos stay on the old device.",
+    q5:"Is there an iPhone version?", a5:"On iPhone it runs from the browser, added to your home screen. The App Store version isn't there yet.",
+    q6:"Is there a long-term contract?", a6:"No. It's a monthly subscription you can cancel whenever you want. Choosing the year is your decision, not a requirement.",
+    cH2:"Ready to stop guessing?", cP:"Message us and we'll set Impeccable up with your own numbers. $39.63 USD a month, first month half price.",
+    cBtn:"Message us on WhatsApp",
+    foot1:"Impeccable — an Aymor Apps product", footPriv:"Privacy", footAll:"All Aymor Apps"
+  },
+  es: {
+    metaDesc:"Impeccable es la aplicación de los negocios de limpieza: cotización calculada, listas con fotos de antes y después, la ruta del día y las facturas. 39.63 dólares al mes.",
+    navFeatures:"Qué hace", navHow:"Cómo funciona", navPrivacy:"Privacidad", navPricing:"Precio", navFaq:"Preguntas",
+    heroEyebrow:"Para negocios de limpieza",
+    heroH1:"Deja de adivinar tus precios.",
+    heroP:"Impeccable saca la cotización con tus propios números — los metros, cada excusado, la frecuencia, lo que de verdad te cuesta una hora. En dos minutos, y nunca a pérdida.",
+    heroCta1:"Ver el precio", heroCta2:"Cómo funciona",
+    heroFine:"Funciona sin internet · Español, inglés, francés · Tus datos se quedan en tu teléfono",
+    mockBar:"Cotización nueva", mockR1:"Oficina", mockR1v:"3,500 pies²", mockR2:"Baños", mockR2v:"1 excusado, 1 lavabo",
+    mockR3:"Frecuencia", mockR3v:"Cada semana", mockR4:"Nivel", mockR4v:"Mantenimiento", mockTot:"Por visita", mockTotV:"$137.50",
+    t1:"✓ Sin servidor, sin contraseñas", t2:"✓ Tus precios, los cambias cuando quieras", t3:"✓ Impuestos de Quebec incluidos", t4:"✓ Sin contrato largo",
+    fEyebrow:"Qué hace", fH2:"Todo lo que un negocio de limpieza hace en un día.",
+    fP:"Cotizar, limpiar, comprobar el trabajo y cobrar. Una sola aplicación, de la primera llamada hasta el pago.",
+    f1h:"La cotización en siete preguntas", f1p:"Qué tipo de lugar, qué servicio, de qué tamaño, cada cuándo. El precio se mueve mientras contestas.",
+    f2h:"Los baños, pieza por pieza", f2p:"Excusado, lavabo, mingitorio, regadera: cada uno tiene sus minutos. Ahí es donde la mayoría pierde dinero sin darse cuenta.",
+    f3h:"Pies cuadrados o metros cuadrados", f3p:"Escribe la medida que te dio el cliente. La aplicación convierte sola.",
+    f4h:"La tabla de frecuencias", f4p:"Las seis frecuencias una junto a otra, por visita y al mes. El cliente escoge viendo, y una limpieza única sale más cara que un contrato.",
+    f5h:"Listas con fotos de antes y después", f5p:"Tres listas listas o las tuyas. Al final, un reporte con fotos que le mandas al cliente.",
+    f6h:"Tu día, en orden", f6p:"Las citas de hoy, la ruta en el mapa, el recordatorio por WhatsApp y la cita en el calendario del teléfono.",
+    f7h:"Facturas y lo que te deben", f7p:"Los dos impuestos si los cobras, tu propia numeración, y la lista de quién te debe y desde cuándo.",
+    f8h:"Las notas que evitan sorpresas", f8p:"El gato que no debe salir, la alergia al limón, la cubierta de piedra natural, dónde está la llave. Escrito una vez, nunca se olvida.",
+    f9h:"Mandar el trabajo sin enseñar precios", f9p:"Un botón copia lo que tu empleada necesita — dirección, cómo se entra, la lista — sin teléfono, sin apellido y sin precios.",
+    hEyebrow:"Cómo funciona", hH2:"Tus números una vez. Lo demás, todos los días.",
+    s1h:"Pon tus números", s1p:"Lo que te cuesta una hora, lo que quieres ganar, y el mínimo por el que sí sales de tu casa. La aplicación hace el resto.",
+    s2h:"Cotiza ahí mismo", s2p:"Enfrente del cliente, en el teléfono. Manda la cotización por WhatsApp o correo antes de irte.",
+    s3h:"Trabaja y cobra", s3p:"La lista con fotos durante la visita, el reporte al cliente al terminar, la factura después. Sin volver a escribir nada.",
+    wEyebrow:"Para quién", wH2:"Hecha para quien limpia, no para un departamento de compras.",
+    w1h:"Casas", w1p:"Tarifa por recámaras, con la primera limpieza más cara porque toma más tiempo.",
+    w2h:"Oficinas y locales", w2p:"Por superficie, con el recargo de noche y madrugada ya calculado.",
+    w3h:"Guarderías y clínicas", w3p:"Zonas de detalle, personal certificado, y las listas que esos contratos piden.",
+    w4h:"Renta corta", w4p:"Cambio de huéspedes con fotos: la prueba de que el lugar quedó impecable.",
+    pEyebrow:"Privacidad", pH2:"Tus clientes se quedan en tu teléfono.",
+    pP:"Impeccable no corre en nuestro servidor. Los nombres, las direcciones, los precios y las fotos viven en el aparato que usas. Nosotros no los vemos.",
+    pL1:"Sin cuenta que crear, sin contraseña que recordar", pL2:"Sin publicidad, sin rastreadores, sin estadísticas",
+    pL3:"Tu respaldo es tuyo: guárdalo donde quieras",
+    pB1h:"Funciona sin internet", pB1p:"En un sótano sin señal cotiza, guarda y factura igual.",
+    pB2h:"El mapa es lo único que sale", pB2p:"Para dibujar el mapa y encontrar una dirección le pedimos las imágenes a OpenStreetMap. El nombre del cliente nunca viaja.",
+    pB3h:"Tú controlas tus respaldos", pB3p:"Un archivo, cuando quieras, para cambiar de teléfono o simplemente dormir tranquila.",
+    prEyebrow:"Precio", prH2:"Un solo precio, todo incluido.",
+    prP:"Sin cobro por empleado, sin costo de instalación, sin contrato largo. Cancelas cuando quieras.",
+    prTag1:"Mes con mes", prBig1:"$39.63", prUnit1:"dólares al mes",
+    prAfter1:"<b>Tu primer mes a mitad de precio: 19.81 dólares.</b> Después, 39.63 al mes.",
+    prTag2:"Pago anual", prBig2:"$435.93", prUnit2:"dólares al año",
+    prAfter2:"<b>Pagas once meses y recibes doce.</b> Un mes de regalo, 8.3% menos.",
+    prNote:"Las dos ofertas no se juntan: escoges una. O el primer mes a mitad de precio pagando mes con mes, o el año completo con el mes de regalo.",
+    prFoot:"Hoy funciona en Android. Escríbenos y te la instalamos; la ficha de Google Play viene en camino. En iPhone se usa desde el navegador.",
+    prBtn:"Empezar",
+    qEyebrow:"Preguntas", qH2:"Lo que más nos preguntan.",
+    q1:"¿Puedo cambiar los precios que calcula?", a1:"Sí, todos. El precio por hora, los minutos de cada pieza, los porcentajes, el mínimo por visita, los impuestos. Son tus números, no los nuestros.",
+    q2:"¿Funciona sin internet?", a2:"Sí. Todo funciona sin conexión. Lo único que necesita señal es el mapa.",
+    q3:"¿Mis empleadas van a ver mis precios?", a3:"No, si les mandas el trabajo con el botón que es para eso: copia la dirección, cómo se entra y la lista, sin teléfono, sin apellido y sin precios.",
+    q4:"¿Y si cambio de teléfono?", a4:"Exportas un respaldo en el viejo y lo importas en el nuevo. Clientes, citas, cotizaciones y facturas vuelven todos. Las fotos de las visitas se quedan en el aparato viejo.",
+    q5:"¿Existe para iPhone?", a5:"En iPhone se usa desde el navegador, agregándola a la pantalla de inicio. La versión de App Store todavía no está.",
+    q6:"¿Hay contrato largo?", a6:"No. Es una suscripción mensual que cancelas cuando quieras. Escoger el año es decisión tuya, no obligación.",
+    cH2:"¿Lista para dejar de adivinar?", cP:"Escríbenos y te dejamos Impeccable lista con tus propios números. 39.63 dólares al mes, primer mes a mitad de precio.",
+    cBtn:"Escríbenos por WhatsApp",
+    foot1:"Impeccable — una aplicación de Aymor Apps", footPriv:"Privacidad", footAll:"Todas las aplicaciones Aymor"
+  }
+};
+
+// El francés es lo que ya está escrito en la página: se guarda al cargar.
+document.querySelectorAll('[data-i18n]').forEach(function (el) {
+  var k = el.getAttribute('data-i18n');
+  T.fr[k] = el.tagName === 'META' ? el.getAttribute('content') : el.innerHTML;
+});
+
+function poner(lang) {
+  var d = T[lang] || T.fr;
+  document.querySelectorAll('[data-i18n]').forEach(function (el) {
+    var v = d[el.getAttribute('data-i18n')];
+    if (v == null) return;
+    if (el.tagName === 'META') el.setAttribute('content', v); else el.innerHTML = v;
+  });
+  document.documentElement.lang = lang;
+  document.querySelectorAll('.idiomas button').forEach(function (b) {
+    b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang));
+  });
+  try { localStorage.setItem('impeccable-venta-idioma', lang); } catch (e) {}
+}
+
+document.querySelectorAll('.idiomas button').forEach(function (b) {
+  b.addEventListener('click', function () { poner(b.getAttribute('data-lang')); });
+});
+
+// Arranca en el idioma del navegador, o en el que se escogio la vez pasada.
+(function () {
+  var g = null;
+  try { g = localStorage.getItem('impeccable-venta-idioma'); } catch (e) {}
+  if (!g) {
+    var n = (navigator.language || 'fr').slice(0, 2).toLowerCase();
+    g = (n === 'es' || n === 'en') ? n : 'fr';
+  }
+  if (g !== 'fr') poner(g);
+})();
+</script>
+
+</body>
+</html>
