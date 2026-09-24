@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quorum — Simple Time Tracking &amp; Payroll Reports</title>
+<meta name="description" content="Quorum is a simple time-tracking app for small businesses with hourly, contract, and agency staff. No server, no setup, no per-employee accounts to manage — just clock in, clock out, and send the report.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aymorcorp.github.io/tienda/quorum/">
+<meta property="og:title" content="Quorum — Simple Time Tracking & Payroll Reports">
+<meta property="og:description" content="Track hours for your whole team — without the payroll-software headache. $29.63/month for your first phone, and your first month is half price.">
+<meta property="og:image" content="https://aymorcorp.github.io/tienda/quorum/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Quorum — Simple Time Tracking & Payroll Reports">
+<meta name="twitter:description" content="Track hours for your whole team — without the payroll-software headache. $29.63/month for your first phone, and your first month is half price.">
+<meta name="twitter:image" content="https://aymorcorp.github.io/tienda/quorum/og-image.png">
+<style>
+  :root{
+    --forest:#1C3A5E; --forest-deep:#13283F; --cream:#F0F3F6; --card:#FFFFFF;
+    --gold:#D9A84E; --ink:#1C2530; --muted:#5A6472; --line:#E4DFD1;
+    --blue-mid:#2F5A85; --blue-soft:#3E6690;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0; padding:0; background:var(--cream); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    scroll-behavior:smooth;}
+  img{max-width:100%; display:block;}
+  a{color:inherit;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 20px;}
+  .btn{display:inline-block; border-radius:12px; padding:14px 26px; font-weight:800; font-size:16px;
+    text-decoration:none; border:none; cursor:pointer;}
+  .btn.primary{background:var(--gold); color:#3A2E14;}
+  .btn.ghost{background:transparent; color:#F3EFE4; border:1.5px solid rgba(255,255,255,.5);}
+  .btn.dark{background:var(--forest); color:#F3EFE4;}
+
+  /* ---------- Nav ---------- */
+  header.nav{position:sticky; top:0; z-index:50; background:var(--forest); color:#F3EFE4;
+    box-shadow:0 2px 10px rgba(19,40,63,.2);}
+  .nav-row{display:flex; align-items:center; justify-content:space-between; padding:14px 20px;}
+  .nav-brand{font-size:20px; font-weight:800; letter-spacing:.02em;}
+  .nav-links{display:flex; gap:22px; font-size:14.5px; font-weight:650;}
+  .nav-links a{opacity:.9; text-decoration:none;}
+  .nav-cta{display:none;}
+  @media(min-width:720px){ .nav-cta{display:inline-block;} }
+
+  /* ---------- Hero ---------- */
+  .hero{background:linear-gradient(180deg, var(--forest) 0%, var(--forest-deep) 100%); color:#F3EFE4;
+    padding:64px 0 80px;}
+  .hero .wrap{display:grid; gap:36px; align-items:center;}
+  @media(min-width:860px){ .hero .wrap{grid-template-columns:1.1fr .9fr;} }
+  .eyebrow{display:inline-block; background:rgba(217,168,78,.16); color:var(--gold); font-weight:800;
+    font-size:12.5px; letter-spacing:.08em; text-transform:uppercase; padding:6px 12px; border-radius:999px;
+    margin-bottom:16px;}
+  .hero h1{font-size:38px; line-height:1.12; margin:0 0 16px; font-weight:800;}
+  .hero p.lead{font-size:17.5px; line-height:1.6; color:#D9E0E8; margin:0 0 26px; max-width:520px;}
+  .hero .ctas{display:flex; flex-wrap:wrap; gap:12px; margin-bottom:18px;}
+  .hero .fineprint{font-size:13px; color:#B9C4D1;}
+  .hero-card{background:var(--card); border-radius:20px; padding:6px; box-shadow:0 20px 50px rgba(0,0,0,.28);}
+  .hero-card-inner{background:var(--cream); border-radius:15px; overflow:hidden; padding:16px;}
+  .mini-app-bar{background:var(--forest); color:#F3EFE4; border-radius:12px 12px 0 0; padding:14px 16px;
+    font-weight:800; font-size:18px; text-align:center;}
+  .mini-card{background:var(--card); border:1.5px solid var(--blue-soft); border-radius:14px; margin-top:10px;
+    padding:12px 14px;}
+  .mini-row{display:flex; align-items:center; justify-content:space-between; gap:8px;}
+  .mini-name{font-weight:800; font-size:15px;}
+  .mini-badge{background:#EAE2CC; color:#7A5A1E; font-size:11px; font-weight:800; border-radius:8px; padding:3px 7px;}
+  .mini-times{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:10px;}
+  .mini-field{background:#FBF8EF; border:1px dashed #DDD6C3; border-radius:9px; padding:8px 10px; font-size:13px; color:var(--muted);}
+  .mini-field b{display:block; color:var(--ink); font-size:14.5px; font-weight:700;}
+  .mini-geo{display:inline-flex; align-items:center; gap:5px; margin-top:10px; background:#EAF3EC; color:#2F6B3E;
+    font-size:12px; font-weight:700; border-radius:8px; padding:5px 9px;}
+
+  /* ---------- Trust strip ---------- */
+  .trust{background:var(--card); border-bottom:1px solid var(--line);}
+  .trust .wrap{display:flex; flex-wrap:wrap; gap:28px; justify-content:center; padding:22px 20px;
+    font-size:13.5px; font-weight:700; color:var(--muted); text-align:center;}
+  .trust span{white-space:nowrap;}
+
+  /* ---------- Sections ---------- */
+  section{padding:70px 0;}
+  .section-head{text-align:center; max-width:640px; margin:0 auto 44px;}
+  .section-head .eyebrow{background:#E7EDF3; color:var(--blue-mid);}
+  .section-head h2{font-size:29px; margin:0 0 12px; font-weight:800; color:var(--forest);}
+  .section-head p{color:var(--muted); font-size:16px; line-height:1.6; margin:0;}
+
+  .grid3{display:grid; gap:22px;}
+  @media(min-width:720px){ .grid3{grid-template-columns:repeat(3,1fr);} }
+  @media(min-width:860px){ .grid4{grid-template-columns:repeat(4,1fr);} }
+  .grid4{display:grid; gap:20px;}
+  @media(min-width:600px){ .grid4{grid-template-columns:repeat(2,1fr);} }
+
+  .feat{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:24px;}
+  .feat .ic{width:44px; height:44px; border-radius:12px; background:#E7EDF3; color:var(--blue-mid);
+    display:flex; align-items:center; justify-content:center; font-size:21px; margin-bottom:14px;}
+  .feat h3{margin:0 0 8px; font-size:16.5px; color:var(--forest);}
+  .feat p{margin:0; color:var(--muted); font-size:14.5px; line-height:1.55;}
+
+  .how{background:#fff;}
+  .steps{display:grid; gap:24px;}
+  @media(min-width:760px){ .steps{grid-template-columns:repeat(3,1fr);} }
+  .step{position:relative; padding-left:0;}
+  .step .num{width:38px; height:38px; border-radius:50%; background:var(--forest); color:#F3EFE4;
+    display:flex; align-items:center; justify-content:center; font-weight:800; margin-bottom:14px;}
+  .step h3{margin:0 0 8px; font-size:17px; color:var(--forest);}
+  .step p{margin:0; color:var(--muted); font-size:14.5px; line-height:1.55;}
+
+  .who{background:var(--cream);}
+  .who-cards{display:grid; gap:18px;}
+  @media(min-width:760px){ .who-cards{grid-template-columns:repeat(3,1fr);} }
+  .who-card{background:var(--card); border-radius:16px; padding:22px; border-top:4px solid var(--blue-soft);}
+  .who-card.planta{border-top-color:#3E7A4E;}
+  .who-card.contrato{border-top-color:#C77B2E;}
+  .who-card.agencia{border-top-color:#3A6EA5;}
+  .who-card h3{margin:0 0 8px; font-size:16.5px; color:var(--forest);}
+  .who-card p{margin:0; color:var(--muted); font-size:14.5px; line-height:1.55;}
+
+  .privacy{background:var(--forest); color:#F3EFE4;}
+  .privacy .wrap{display:grid; gap:36px; align-items:center;}
+  @media(min-width:860px){ .privacy .wrap{grid-template-columns:1fr 1fr;} }
+  .privacy h2{font-size:27px; margin:0 0 14px;}
+  .privacy p{color:#D9E0E8; line-height:1.65; font-size:15.5px; margin:0 0 14px;}
+  .privacy ul{margin:0; padding-left:20px; color:#D9E0E8; font-size:14.5px; line-height:1.9;}
+  .privacy-box{background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); border-radius:16px; padding:24px;}
+  .privacy-box .row{display:flex; gap:12px; margin-bottom:16px; align-items:flex-start;}
+  .privacy-box .row:last-child{margin-bottom:0;}
+  .privacy-box .row .ic{flex:0 0 auto; width:30px; height:30px; border-radius:9px; background:rgba(217,168,78,.18);
+    color:var(--gold); display:flex; align-items:center; justify-content:center; font-size:14px;}
+  .privacy-box .row div b{display:block; font-size:14.5px; margin-bottom:2px;}
+  .privacy-box .row div span{font-size:13.5px; color:#C7D1DB;}
+
+  .langs{background:#fff; text-align:center;}
+  .lang-pills{display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:22px;}
+  .lang-pills span{background:var(--cream); border:1px solid var(--line); border-radius:999px; padding:8px 16px;
+    font-weight:700; font-size:14px; color:var(--forest);}
+
+  .pricing{background:var(--cream);}
+  .price-card{background:var(--card); border:1.5px solid var(--blue-soft); border-radius:18px; padding:34px;
+    max-width:460px; margin:0 auto; text-align:center;}
+  .price-card .tag{display:inline-block; background:#E7EDF3; color:var(--blue-mid); font-weight:800; font-size:12px;
+    letter-spacing:.06em; text-transform:uppercase; padding:6px 12px; border-radius:999px; margin-bottom:16px;}
+  .price-card h3{margin:0 0 10px; font-size:22px; color:var(--forest);}
+  .price-card p{color:var(--muted); font-size:15px; line-height:1.6; margin:0 0 22px;}
+
+  .faq{background:#fff;}
+  .faq-item{border-bottom:1px solid var(--line); padding:18px 0;}
+  .faq-item summary{cursor:pointer; font-weight:750; font-size:15.5px; color:var(--forest); list-style:none;
+    display:flex; justify-content:space-between; align-items:center; gap:12px;}
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary:after{content:"+"; font-size:22px; color:var(--blue-mid); flex:0 0 auto;}
+  .faq-item[open] summary:after{content:"–";}
+  .faq-item p{margin:12px 0 0; color:var(--muted); font-size:14.5px; line-height:1.6;}
+
+  .cta-band{background:linear-gradient(135deg, var(--forest) 0%, var(--blue-mid) 100%); color:#F3EFE4; text-align:center;}
+  .cta-band h2{font-size:27px; margin:0 0 14px;}
+  .cta-band p{color:#D9E0E8; font-size:15.5px; margin:0 0 26px;}
+
+  footer{background:var(--forest-deep); color:#B9C4D1; padding:36px 0; font-size:13.5px;}
+  footer .wrap{display:flex; flex-wrap:wrap; justify-content:space-between; gap:16px; align-items:center;}
+  footer a{text-decoration:none; color:#D9E0E8;}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-row">
+    <div class="nav-brand">Quorum</div>
+    <nav class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn primary nav-cta" href="#pricing">Get Quorum</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Time tracking &amp; payroll reports</span>
+      <h1>Track hours for your whole team — without the payroll-software headache.</h1>
+      <p class="lead">Quorum is a simple time clock built for small businesses with a mix of staff: full-time, contract, and agency workers. Clock in, clock out, and send a ready-to-use report to your accountant — no accounts to set up, no server to trust with your data.</p>
+      <div class="ctas">
+        <a class="btn primary" href="#pricing">Get Quorum — $29.63/mo</a>
+        <a class="btn ghost" href="#how">See how it works</a>
+      </div>
+      <div class="fineprint">Works on any phone, tablet, or computer — right from the browser.</div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-inner">
+        <div class="mini-app-bar">Quorum</div>
+        <div class="mini-card">
+          <div class="mini-row">
+            <span class="mini-name">Maria Lopez</span>
+            <span class="mini-badge">#014</span>
+          </div>
+          <div class="mini-times">
+            <div class="mini-field">Time in<b>07:58 AM</b></div>
+            <div class="mini-field">Time out<b>04:02 PM</b></div>
+          </div>
+          <div class="mini-geo">📍 Clocked in on-site</div>
+        </div>
+        <div class="mini-card">
+          <div class="mini-row">
+            <span class="mini-name">James Okafor</span>
+            <span class="mini-badge">#021</span>
+          </div>
+          <div class="mini-times">
+            <div class="mini-field">Time in<b>10:00 PM</b></div>
+            <div class="mini-field">Time out<b>06:00 AM</b></div>
+          </div>
+          <div class="mini-geo">📍 Clocked in on-site</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="wrap">
+    <span>⏱ Automatic lunch-break deduction</span>
+    <span>🌙 Overnight shifts calculated correctly</span>
+    <span>📄 Ready-to-send Excel report</span>
+    <span>🔒 Secure, protected access</span>
+    <span>🌐 English · Français · Español · Tagalog</span>
+  </div>
+</div>
+
+<section id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">What's included</span>
+      <h2>Everything a small team needs to track hours — nothing it doesn't.</h2>
+      <p>No modules to configure, no per-feature upsells. Quorum does one job — accurate time tracking and a clean report — and does it well.</p>
+    </div>
+    <div class="grid3">
+      <div class="feat">
+        <div class="ic">⏱</div>
+        <h3>Simple clock in / clock out</h3>
+        <p>Each employee gets a card with a Time In and Time Out field. No app to download, no login to remember.</p>
+      </div>
+      <div class="feat">
+        <div class="ic">🍽</div>
+        <h3>Automatic lunch rule</h3>
+        <p>Half an hour unpaid is deducted automatically for every 5 hours worked — nobody has to calculate it by hand.</p>
+      </div>
+      <div class="feat">
+        <div class="ic">🌙</div>
+        <h3>Overnight shifts handled right</h3>
+        <p>A shift that starts at 10 PM and ends at 6 AM is calculated correctly, automatically — a common source of payroll errors, solved.</p>
+      </div>
+      <div class="feat">
+        <div class="ic">🏖</div>
+        <h3>Vacation &amp; leave tracking</h3>
+        <p>Reserve any date range for vacation, sick leave, or a justified absence — without disturbing the pay period you're currently working in.</p>
+      </div>
+      <div class="feat">
+        <div class="ic">📍</div>
+        <h3>Optional location check</h3>
+        <p>Confirm a clock-in happened near the job site — a quiet color-coded pin, never a blocker. Fully optional, off by default.</p>
+      </div>
+      <div class="feat">
+        <div class="ic">📧</div>
+        <h3>One-click report to your accountant</h3>
+        <p>A polished Excel file with live formulas — totals per employee, per pay type, and a full daily breakdown — sent straight to your authorized emails.</p>
+      </div>
+      <div class="feat">
+        <div class="ic">📥</div>
+        <h3>Bulk import from Excel</h3>
+        <p>Already have hours written down somewhere? Download the template, fill it in, and import it in one step.</p>
+      </div>
+      <div class="feat">
+        <div class="ic">🔐</div>
+        <h3>Two levels of access</h3>
+        <p>A day-to-day PIN for managers, with an extra layer of protection for sensitive actions — so nobody accidentally deletes payroll history.</p>
+      </div>
+      <div class="feat">
+        <div class="ic">💾</div>
+        <h3>Full backup, anytime</h3>
+        <p>Download everything as a single file whenever you want — your own copy, your own control, restore it on any device.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">How it works</span>
+      <h2>Set up once, use every day.</h2>
+      <p>No IT department required.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>Add your team</h3>
+        <p>Enter each employee's name, pay type (staff, contract, or agency), rate, and employee number. Takes seconds per person.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>Clock in and out</h3>
+        <p>Managers or employees enter the time on a shared device, or on their own phone. Lunch, overnight shifts, and totals are calculated automatically.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>Send the report</h3>
+        <p>When it's payday, tap Send — a ready-made Excel report goes straight to your accountant's inbox. Done.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="who">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Built for mixed teams</span>
+      <h2>One tool for every kind of worker on your team.</h2>
+    </div>
+    <div class="who-cards">
+      <div class="who-card planta">
+        <h3>Staff</h3>
+        <p>Your core, full-time team. Hours and pay are calculated and included in every report.</p>
+      </div>
+      <div class="who-card contrato">
+        <h3>Contract</h3>
+        <p>Temporary or contract workers, tracked and paid the same clean way as your full-time staff.</p>
+      </div>
+      <div class="who-card agencia">
+        <h3>Agency</h3>
+        <p>Staff supplied by an outside agency — Quorum keeps an hours record for you without touching payroll, since the agency handles that.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="privacy" class="privacy">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow" style="background:rgba(217,168,78,.16); color:var(--gold);">Privacy by design</span>
+      <h2>Your data stays on your own device.</h2>
+      <p>Quorum doesn't run on a company server, and there's no account with your employees' data sitting in the cloud. Everything — names, pay rates, hours — lives in the browser on the device you use, under your control.</p>
+      <ul>
+        <li>No servers holding your payroll data</li>
+        <li>No accounts to create, no passwords to reset</li>
+        <li>Your backup file is yours — keep it, move it, store it wherever you choose</li>
+      </ul>
+    </div>
+    <div class="privacy-box">
+      <div class="row"><div class="ic">🔒</div><div><b>PIN for day-to-day use</b><span>Managers unlock pay rates and reports with a shared PIN you set.</span></div></div>
+      <div class="row"><div class="ic">🔐</div><div><b>Extra protection for the sensitive stuff</b><span>Deleting an employee with hours on file, wiping data, or restoring a backup all require an extra security step — only the owner can do it.</span></div></div>
+      <div class="row"><div class="ic">💾</div><div><b>You control your backups</b><span>Download a full backup whenever you like — before switching phones, or just for peace of mind.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="langs">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:0;">
+      <span class="eyebrow">Multi-language</span>
+      <h2>Your whole team, in their own language.</h2>
+      <p>Switch the app's language with one tap — every manager sees Quorum in the language they're comfortable in.</p>
+    </div>
+    <div class="lang-pills">
+      <span>English</span><span>Français</span><span>Español</span><span>Tagalog</span>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Pricing</span>
+      <h2>Priced per phone. No per-employee math.</h2>
+      <p>However many employees you have, the price doesn't change — you only pay for how many devices you use to clock in, not how many people are on the clock.</p>
+    </div>
+    <div class="price-card">
+      <span class="tag">Quorum</span>
+      <h3>$29.63 <span style="font-size:15px; color:var(--muted); font-weight:600;">USD / month, first phone</span></h3>
+      <p style="font-weight:700; color:var(--forest); margin:-10px 0 16px">Your first month is half price: $14.81 for the first phone, $4.50 for each additional one.</p>
+      <p>$9.00/month for each additional phone — up to 5 phones per business. Add a phone for a second location, a second shift, or a backup device, without paying full price again.</p>
+      <p style="font-size:13.5px; border-top:1px solid var(--line); padding-top:14px; margin-top:-8px;">Includes 1 free report per week (52 a year). Need more than one report in the same week? Each extra report is $3.</p>
+      <a class="btn dark" href="#contact">Get in touch to start</a>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="faq">
+  <div class="wrap" style="max-width:760px;">
+    <div class="section-head">
+      <span class="eyebrow">Questions</span>
+      <h2>Frequently asked questions</h2>
+    </div>
+
+    <details class="faq-item">
+      <summary>Do I need to install anything?</summary>
+      <p>No. Quorum runs entirely in your browser — on a phone, tablet, or computer. You can save a shortcut to your home screen so it feels like an app, but there's nothing to download from a store.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Does Quorum work without internet?</summary>
+      <p>You need internet to open the app the first time. After that, you can install it to your home screen and it keeps working offline — entering hours, calculating totals, everything except sending the report by email, which needs a connection.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Can I use Quorum on my phone and my computer at the same time?</summary>
+      <p>Not yet — each device keeps its own data separately in this version. Multi-device sync is coming in a future version of Quorum.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>What if I lose my phone or clear my browser?</summary>
+      <p>Since your data lives only on that device, it's important to download a backup regularly (one tap, from the Settings screen) and keep it somewhere safe, like your own cloud drive.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Is location tracking mandatory?</summary>
+      <p>No — it's completely optional and off by default. If you turn it on, it simply flags whether a clock-in happened near your business address. It never blocks anyone from clocking in.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Who is Quorum for?</summary>
+      <p>Small and mid-sized businesses that manage a mix of staff, contract, and agency workers — and want a clean hours report without paying for a full payroll platform they don't need yet.</p>
+    </details>
+  </div>
+</section>
+
+<section class="cta-band" id="contact">
+  <div class="wrap">
+    <h2>Ready to get Quorum for your business?</h2>
+    <p>Message us and we'll get your first phone set up — $29.63/month, no long contract. Your first month is half price.</p>
+    <a class="btn primary" href="https://wa.me/12635662243" target="_blank" rel="noopener">Message us on WhatsApp</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>Quorum — a product by Aymor Apps</div>
+    <div><a href="https://aymorcorp.github.io/tienda/">See all Aymor Apps</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
