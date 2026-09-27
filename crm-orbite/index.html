@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orbite — Le carnet de clients qui n'oublie personne</title>
+<meta name="description" data-i18n="metaDesc" content="Orbite est le carnet de clients des entreprises de service : où en est chacun, qui relancer aujourd'hui, et toute l'histoire de chaque client. 19,63 $ US par mois.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aymorcorp.github.io/tienda/crm-orbite/">
+<meta property="og:title" content="Orbite — Le carnet de clients qui n'oublie personne">
+<meta property="og:description" content="Où en est chacun de vos clients, qui relancer aujourd'hui, et ce qui s'est dit la dernière fois. Sans compte, sans mot de passe et sans Internet.">
+<style>
+  :root{
+    --vert:#1A2921; --vert-deep:#0E1A14; --creme:#F2F4F0; --card:#FFFFFF;
+    --or:#C9A05C; --ink:#1B241F; --muted:#5A6760; --line:#E3E2D4;
+    --vert-mid:#3E6A52; --vert-soft:#54806A;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0; padding:0; background:var(--creme); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    scroll-behavior:smooth; line-height:1.6;}
+  img{max-width:100%; display:block;}
+  a{color:inherit;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 20px;}
+  .btn{display:inline-block; border-radius:12px; padding:14px 26px; font-weight:800; font-size:16px;
+    text-decoration:none; border:none; cursor:pointer;}
+  .btn.primary{background:var(--or); color:#2E220B;}
+  .btn.ghost{background:transparent; color:#EFEFE6; border:1.5px solid rgba(255,255,255,.5);}
+  .btn.dark{background:var(--vert); color:#EFEFE6;}
+
+  header.nav{position:sticky; top:0; z-index:50; background:var(--vert); color:#EFEFE6;
+    box-shadow:0 2px 10px rgba(14,26,20,.25);}
+  .nav-row{display:flex; align-items:center; gap:14px; flex-wrap:wrap; padding:13px 20px;}
+  .nav-brand{font-size:20px; font-weight:800; letter-spacing:.06em;}
+  .nav-links{display:none; gap:20px; font-size:14.5px; font-weight:650;}
+  .nav-links a{opacity:.9; text-decoration:none;}
+  @media(min-width:860px){ .nav-links{display:flex;} }
+  .idiomas{margin-left:auto; display:flex; gap:6px;}
+  .idiomas button{min-width:44px; min-height:36px; padding:0 10px; border-radius:9px; cursor:pointer;
+    font:inherit; font-size:13.5px; font-weight:800; letter-spacing:.04em;
+    background:transparent; color:#EFEFE6; border:1px solid rgba(239,239,230,.45);}
+  .idiomas button[aria-pressed="true"]{background:#fff; color:var(--vert); border-color:#fff;}
+
+  .hero{background:linear-gradient(180deg, var(--vert) 0%, var(--vert-deep) 100%); color:#EFEFE6;
+    padding:58px 0 70px;}
+  .hero .wrap{display:grid; gap:34px; align-items:center;}
+  @media(min-width:860px){ .hero .wrap{grid-template-columns:1.05fr .95fr;} }
+  .eyebrow{display:inline-block; background:rgba(201,160,92,.18); color:var(--or); font-weight:800;
+    font-size:12.5px; letter-spacing:.08em; text-transform:uppercase; padding:6px 12px; border-radius:999px;
+    margin-bottom:16px;}
+  .hero h1{font-size:35px; line-height:1.14; margin:0 0 16px; font-weight:800;}
+  @media(min-width:720px){ .hero h1{font-size:39px;} }
+  .hero p.lead{font-size:17.5px; color:#CBD6CE; margin:0 0 26px; max-width:520px;}
+  .hero .ctas{display:flex; flex-wrap:wrap; gap:12px; margin-bottom:16px;}
+  .hero .fineprint{font-size:13px; color:#A9B8AE;}
+
+  .mock{background:var(--card); border-radius:20px; padding:8px; box-shadow:0 20px 50px rgba(0,0,0,.35);}
+  .mock-in{background:#F6F8F5; border-radius:14px; overflow:hidden;}
+  .mock-bar{background:var(--vert); color:#EFEFE6; padding:13px 16px; font-weight:800; font-size:15px;
+    text-align:center; letter-spacing:.06em;}
+  .mock-body{padding:14px;}
+  .mock-cuenta{display:flex; justify-content:space-around; text-align:center; margin-bottom:12px;}
+  .mock-cuenta b{display:block; font-size:21px; color:var(--or);}
+  .mock-cuenta span{font-size:10.5px; color:var(--muted); font-weight:700; letter-spacing:.06em; text-transform:uppercase;}
+  .mock-row{background:#fff; border:1px solid #E2E8E3; border-radius:12px; padding:11px 12px; margin-bottom:9px;
+    font-size:13.5px; color:var(--muted);}
+  .mock-row b{display:block; color:var(--ink); font-size:14.5px; font-weight:700; margin-bottom:2px;}
+  .mock-tag{display:inline-block; font-size:10.5px; font-weight:800; border-radius:6px; padding:2px 7px;
+    background:#E7F0E9; color:#2F6B47; margin-top:6px;}
+  .mock-tag.rojo{background:#FBEAEA; color:#A33B3B;}
+
+  .trust{background:var(--card); border-bottom:1px solid var(--line);}
+  .trust .wrap{display:flex; flex-wrap:wrap; gap:26px; justify-content:center; padding:20px;
+    font-size:13.5px; font-weight:700; color:var(--muted); text-align:center;}
+
+  section{padding:64px 0;}
+  .section-head{text-align:center; max-width:660px; margin:0 auto 40px;}
+  .section-head .eyebrow{background:#E6EDE7; color:var(--vert-mid);}
+  .section-head h2{font-size:28px; margin:0 0 12px; font-weight:800; color:var(--vert); line-height:1.25;}
+  .section-head p{color:var(--muted); font-size:16px; margin:0;}
+
+  .grid3{display:grid; gap:20px;}
+  @media(min-width:640px){ .grid3{grid-template-columns:repeat(2,1fr);} }
+  @media(min-width:940px){ .grid3{grid-template-columns:repeat(3,1fr);} }
+  .feat{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:22px;}
+  .feat .ic{width:44px; height:44px; border-radius:12px; background:#E6EDE7;
+    display:flex; align-items:center; justify-content:center; font-size:21px; margin-bottom:13px;}
+  .feat h3{margin:0 0 8px; font-size:16.5px; color:var(--vert);}
+  .feat p{margin:0; color:var(--muted); font-size:14.5px;}
+
+  .how{background:#fff;}
+  .steps{display:grid; gap:24px;}
+  @media(min-width:760px){ .steps{grid-template-columns:repeat(3,1fr);} }
+  .step .num{width:38px; height:38px; border-radius:50%; background:var(--vert); color:#EFEFE6;
+    display:flex; align-items:center; justify-content:center; font-weight:800; margin-bottom:13px;}
+  .step h3{margin:0 0 8px; font-size:17px; color:var(--vert);}
+  .step p{margin:0; color:var(--muted); font-size:14.5px;}
+
+  .who-cards{display:grid; gap:18px;}
+  @media(min-width:760px){ .who-cards{grid-template-columns:repeat(4,1fr);} }
+  @media(min-width:520px) and (max-width:759px){ .who-cards{grid-template-columns:repeat(2,1fr);} }
+  .who-card{background:var(--card); border-radius:16px; padding:20px; border-top:4px solid var(--vert-soft);}
+  .who-card.b{border-top-color:var(--or);} .who-card.c{border-top-color:#C77B2E;} .who-card.d{border-top-color:#4A6E9E;}
+  .who-card h3{margin:0 0 7px; font-size:16px; color:var(--vert);}
+  .who-card p{margin:0; color:var(--muted); font-size:14.5px;}
+
+  .privacy{background:var(--vert); color:#EFEFE6;}
+  .privacy .wrap{display:grid; gap:34px; align-items:center;}
+  @media(min-width:860px){ .privacy .wrap{grid-template-columns:1fr 1fr;} }
+  .privacy h2{font-size:28px; margin:0 0 14px; font-weight:800;}
+  .privacy p{color:#CBD6CE; margin:0 0 14px;}
+  .privacy ul{margin:0; padding-left:20px; color:#CBD6CE;}
+  .privacy li{margin-bottom:8px;}
+  .pbox{background:rgba(255,255,255,.07); border:1px solid rgba(239,239,230,.2); border-radius:16px; padding:8px 16px;}
+  .pbox .row{display:flex; gap:13px; padding:14px 0; border-bottom:1px solid rgba(239,239,230,.14);}
+  .pbox .row:last-child{border-bottom:none;}
+  .pbox .ic{font-size:20px;}
+  .pbox b{display:block; font-size:15px; margin-bottom:3px;}
+  .pbox span{font-size:14px; color:#B8C6BC;}
+
+  .pricing{background:var(--creme);}
+  .price-grid{display:grid; gap:20px; max-width:880px; margin:0 auto;}
+  @media(min-width:760px){ .price-grid{grid-template-columns:1fr 1fr;} }
+  .price-card{background:var(--card); border:1px solid var(--line); border-radius:18px; padding:26px; text-align:center;}
+  .price-card.best{border:2px solid var(--or);}
+  .price-card .tag{display:inline-block; font-size:12px; font-weight:800; letter-spacing:.06em; text-transform:uppercase;
+    background:#E6EDE7; color:var(--vert-mid); border-radius:999px; padding:5px 12px; margin-bottom:12px;}
+  .price-card.best .tag{background:rgba(201,160,92,.22); color:#7A5A1E;}
+  .price-card .big{font-size:38px; font-weight:800; color:var(--vert); line-height:1.1; margin:0 0 4px;}
+  .price-card .unit{font-size:14.5px; color:var(--muted); font-weight:600; margin:0;}
+  .price-card .after{margin:14px 0 0; color:var(--muted); font-size:14.5px;}
+  .price-note{max-width:880px; margin:22px auto 0; background:#FBF5EA; border-left:4px solid var(--or);
+    border-radius:10px; padding:14px 18px; font-size:15px; color:#5A4520; font-weight:700;}
+  .price-foot{text-align:center; margin-top:26px;}
+  .price-foot p{color:var(--muted); font-size:14.5px; margin:0 auto 16px; max-width:640px;}
+
+  .faq{background:#fff;}
+  details{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 18px;
+    margin:0 auto 12px; max-width:820px;}
+  summary{font-weight:800; font-size:16px; color:var(--vert); cursor:pointer;}
+  details p{margin:12px 0 0; color:var(--muted); font-size:15px;}
+
+  .cta-band{background:linear-gradient(180deg, var(--vert) 0%, var(--vert-deep) 100%); color:#EFEFE6; text-align:center;}
+  .cta-band h2{font-size:28px; margin:0 0 12px; font-weight:800;}
+  .cta-band p{color:#CBD6CE; max-width:620px; margin:0 auto 24px;}
+
+  footer{background:var(--vert-deep); color:#B8C6BC; font-size:14px; padding:26px 0;}
+  footer .wrap{display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between;}
+  footer a{color:#EFEFE6;}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-row">
+    <div class="nav-brand">ORBITE</div>
+    <nav class="nav-links">
+      <a href="#features" data-i18n="navFeatures">Fonctions</a>
+      <a href="#how" data-i18n="navHow">Comment ça marche</a>
+      <a href="#privacy" data-i18n="navPrivacy">Confidentialité</a>
+      <a href="#pricing" data-i18n="navPricing">Prix</a>
+      <a href="#faq" data-i18n="navFaq">Questions</a>
+    </nav>
+    <div class="idiomas">
+      <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      <button type="button" data-lang="es" aria-pressed="false">ES</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow" data-i18n="heroEyebrow">Pour les entreprises de service</span>
+      <h1 data-i18n="heroH1">Que personne ne se perde faute d'un rappel.</h1>
+      <p class="lead" data-i18n="heroP">Les clients ne se perdent pas parce qu'on est mauvais. Ils se perdent parce que personne ne les a rappelés. Orbite garde où en est chacun, ce qui s'est dit la dernière fois, et qui relancer aujourd'hui.</p>
+      <div class="ctas">
+        <a class="btn primary" href="#pricing" data-i18n="heroCta1">Voir le prix</a>
+        <a class="btn ghost" href="#how" data-i18n="heroCta2">Comment ça marche</a>
+      </div>
+      <p class="fineprint" data-i18n="heroFine">Sans compte · Sans mot de passe · Fonctionne sans Internet · Français, anglais, espagnol</p>
+    </div>
+    <div class="mock">
+      <div class="mock-in">
+        <div class="mock-bar" data-i18n="mockBar">ORBITE · CLIENTS</div>
+        <div class="mock-body">
+          <div class="mock-cuenta">
+            <div><b>2</b><span data-i18n="mockC1">en suivi</span></div>
+            <div><b>2</b><span data-i18n="mockC2">pour aujourd'hui</span></div>
+            <div><b>1</b><span data-i18n="mockC3">clients</span></div>
+          </div>
+          <div class="mock-row"><b>Boulangerie Saint-Denis</b><span data-i18n="mockR1">Marc Lavoie · gérant · Plateau Mont-Royal</span><br><span class="mock-tag" data-i18n="mockT1">CLIENT</span></div>
+          <div class="mock-row"><b>Clinique Dentaire Verdun</b><span data-i18n="mockR2">Dre Amélie Roy · Verdun</span><br><span class="mock-tag rojo" data-i18n="mockT2">À relancer · 26 sept</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="wrap">
+    <span data-i18n="t1">✓ Un seul prix, tout inclus</span>
+    <span data-i18n="t2">✓ Aucun frais par contact</span>
+    <span data-i18n="t3">✓ Vos données restent chez vous</span>
+    <span data-i18n="t4">✓ Sans contrat à long terme</span>
+  </div>
+</div>
+
+<section id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="fEyebrow">Ce qu'elle fait</span>
+      <h2 data-i18n="fH2">Un carnet qui se souvient à votre place.</h2>
+      <p data-i18n="fP">Tout ce que vous gardiez dans votre tête, dans un cahier ou dans trois conversations WhatsApp, au même endroit.</p>
+    </div>
+    <div class="grid3">
+      <div class="feat"><div class="ic">🎯</div><h3 data-i18n="f1h">Où en est chacun</h3><p data-i18n="f1p">À contacter, contacté, en suivi, proposition envoyée, client actif, perdu. Avec les compteurs en haut, vous voyez d'un coup d'œil combien il y en a dans chaque étape.</p></div>
+      <div class="feat"><div class="ic">⏰</div><h3 data-i18n="f2h">Qui relancer aujourd'hui</h3><p data-i18n="f2p">L'écran du jour rassemble tous ceux dont la date de relance est arrivée ou dépassée. Personne ne tombe dans l'oubli.</p></div>
+      <div class="feat"><div class="ic">📖</div><h3 data-i18n="f3h">Toute l'histoire d'un client</h3><p data-i18n="f3p">Les notes, la raison pour laquelle c'est un client, et un journal daté de chaque conversation. Quand vous rappelez, vous savez où vous en étiez.</p></div>
+      <div class="feat"><div class="ic">🗺️</div><h3 data-i18n="f4h">Qui est près de vous</h3><p data-i18n="f4p">Vos contacts sur une carte. Quand vous êtes déjà dans un secteur, vous voyez chez qui il vaut la peine de passer.</p></div>
+      <div class="feat"><div class="ic">📇</div><h3 data-i18n="f5h">Quatre carnets en un</h3><p data-i18n="f5p">Clients, personnel, fournisseurs et votre réseau de contacts. La même fiche, adaptée à chacun.</p></div>
+      <div class="feat"><div class="ic">📞</div><h3 data-i18n="f6h">Appeler, écrire et s'y rendre</h3><p data-i18n="f6p">De la fiche, vous passez directement à l'appel, à WhatsApp, au courriel ou à la carte. Sans copier-coller un numéro.</p></div>
+      <div class="feat"><div class="ic">🎤</div><h3 data-i18n="f7h">Dicter au lieu d'écrire</h3><p data-i18n="f7p">Vous parlez et la note s'écrit. Pratique en sortant d'une visite, quand vous ne voulez pas taper sur un petit clavier.</p></div>
+      <div class="feat"><div class="ic">📴</div><h3 data-i18n="f8h">Sans Internet, sans compte</h3><p data-i18n="f8p">Rien à créer, aucun mot de passe à retenir. Tout vit dans votre téléphone et fonctionne même sans signal.</p></div>
+      <div class="feat"><div class="ic">💾</div><h3 data-i18n="f9h">Une copie qui est à vous</h3><p data-i18n="f9p">Un fichier de sauvegarde que vous gardez où vous voulez, et que vous rechargez sur un autre appareil quand vous changez de téléphone.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="how" id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="hEyebrow">Comment ça marche</span>
+      <h2 data-i18n="hH2">Trois gestes, et vous ne perdez plus personne.</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><h3 data-i18n="s1h">Entrez vos contacts</h3><p data-i18n="s1p">À la main, ou en rechargeant votre propre fichier de sauvegarde. Nom, secteur, ce qu'il vous a dit.</p></div>
+      <div class="step"><div class="num">2</div><h3 data-i18n="s2h">Mettez une date</h3><p data-i18n="s2p">Après chaque échange, vous notez ce qui s'est dit et quand relancer. Dix secondes, ou dictées à voix haute.</p></div>
+      <div class="step"><div class="num">3</div><h3 data-i18n="s3h">Ouvrez l'écran du jour</h3><p data-i18n="s3p">Le matin, l'app vous dit qui appeler. Vous n'avez plus à vous en souvenir tout seul.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="wEyebrow">Pour qui</span>
+      <h2 data-i18n="wH2">Pour l'entreprise de service qui vend en parlant aux gens.</h2>
+    </div>
+    <div class="who-cards">
+      <div class="who-card"><h3 data-i18n="w1h">Entretien et ménage</h3><p data-i18n="w1p">Des contrats qui se gagnent en repassant voir le gérant au bon moment.</p></div>
+      <div class="who-card b"><h3 data-i18n="w2h">Métiers et rénovation</h3><p data-i18n="w2p">Des soumissions envoyées qui meurent sans relance. Ici elles ont une date.</p></div>
+      <div class="who-card c"><h3 data-i18n="w3h">Services professionnels</h3><p data-i18n="w3p">Quand ce qui compte, c'est de se souvenir de ce que le client a dit la dernière fois.</p></div>
+      <div class="who-card d"><h3 data-i18n="w4h">Travailleur autonome</h3><p data-i18n="w4p">Pas de bureau, pas de secrétaire, pas de logiciel compliqué. Un carnet qui n'oublie pas.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="privacy" class="privacy">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow" style="background:rgba(201,160,92,.18); color:var(--or);" data-i18n="pEyebrow">Confidentialité</span>
+      <h2 data-i18n="pH2">Votre liste de clients reste votre liste.</h2>
+      <p data-i18n="pP">Orbite ne tourne pas sur notre serveur. Les noms, les numéros et les notes vivent dans l'appareil que vous utilisez. Nous ne les voyons pas, et nous ne vendons votre liste à personne.</p>
+      <ul>
+        <li data-i18n="pL1">Aucun compte à créer, aucun mot de passe à retenir</li>
+        <li data-i18n="pL2">Aucune publicité, aucun traceur, aucune statistique</li>
+        <li data-i18n="pL3">L'app n'ouvre jamais le carnet d'adresses de votre téléphone</li>
+      </ul>
+    </div>
+    <div class="pbox">
+      <div class="row"><div class="ic">📴</div><div><b data-i18n="pB1h">Elle fonctionne sans Internet</b><span data-i18n="pB1p">Dans un sous-sol ou sur la route sans signal, elle enregistre et retrouve pareil.</span></div></div>
+      <div class="row"><div class="ic">🗺️</div><div><b data-i18n="pB2h">La carte est la seule chose qui sort</b><span data-i18n="pB2p">Pour l'afficher, on demande les images à OpenStreetMap. Le nom de votre client ne voyage jamais.</span></div></div>
+      <div class="row"><div class="ic">💾</div><div><b data-i18n="pB3h">Vous contrôlez vos sauvegardes</b><span data-i18n="pB3p">Un fichier, quand vous voulez, que vous gardez où vous voulez.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="prEyebrow">Prix</span>
+      <h2 data-i18n="prH2">Un seul prix. Pas de paliers.</h2>
+      <p data-i18n="prP">Il n'y a pas de version limitée : tout le monde a l'application complète. Sans frais par contact, sans frais d'installation, annulable quand vous voulez.</p>
+    </div>
+    <div class="price-grid">
+      <div class="price-card">
+        <span class="tag" data-i18n="prTag1">Mois par mois</span>
+        <p class="big" data-i18n="prBig1">19,63 $</p>
+        <p class="unit" data-i18n="prUnit1">US par mois</p>
+        <p class="after" data-i18n="prAfter1"><b>Votre premier mois à moitié prix : 9,81 $.</b> Ensuite, 19,63 $ par mois.</p>
+      </div>
+      <div class="price-card best">
+        <span class="tag" data-i18n="prTag2">Paiement annuel</span>
+        <p class="big" data-i18n="prBig2">215,93 $</p>
+        <p class="unit" data-i18n="prUnit2">US par année</p>
+        <p class="after" data-i18n="prAfter2"><b>Vous payez onze mois et vous en recevez douze.</b> Un mois cadeau, 8,3 % de moins.</p>
+      </div>
+    </div>
+    <p class="price-note" data-i18n="prNote">Les deux offres ne se combinent pas : vous choisissez l'une ou l'autre. Ou le premier mois à moitié prix en payant au mois, ou l'année complète avec le mois cadeau.</p>
+    <div class="price-foot">
+      <p data-i18n="prFoot">Orbite n'est pas encore dans Google Play ni dans l'App Store. Écrivez-nous et on vous l'installe sur votre téléphone Android, ou on vous l'ouvre dans votre navigateur.</p>
+      <a class="btn dark" href="#contact" data-i18n="prBtn">Commencer</a>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="qEyebrow">Questions</span>
+      <h2 data-i18n="qH2">Ce qu'on nous demande le plus.</h2>
+    </div>
+    <details><summary data-i18n="q1">Est-ce que je peux l'essayer avant de payer?</summary><p data-i18n="a1">Il n'y a pas d'essai gratuit, mais votre premier mois est à moitié prix et vous avez l'application complète dès le premier jour. Écrivez-nous et on vous la montre avant.</p></details>
+    <details><summary data-i18n="q2">Est-ce que ça marche sans Internet?</summary><p data-i18n="a2">Oui. Tout fonctionne hors ligne. La seule chose qui a besoin d'une connexion, c'est la carte.</p></details>
+    <details><summary data-i18n="q3">Est-ce qu'elle prend mes contacts du téléphone?</summary><p data-i18n="a3">Non, jamais. L'app n'ouvre pas votre carnet d'adresses. Vous entrez ce que vous voulez, à la main ou en rechargeant votre propre fichier.</p></details>
+    <details><summary data-i18n="q4">Et si je change de téléphone?</summary><p data-i18n="a4">Vous exportez une copie de sauvegarde sur l'ancien et vous l'importez sur le nouveau. Tout revient.</p></details>
+    <details><summary data-i18n="q5">Est-ce qu'il y a une version pour mon équipe?</summary><p data-i18n="a5">Pas encore. Aujourd'hui c'est un carnet personnel, sur un appareil. Si vous avez besoin que plusieurs personnes voient la même liste, dites-le-nous : on veut savoir combien vous êtes avant de le construire.</p></details>
+    <details><summary data-i18n="q6">Y a-t-il un contrat à long terme?</summary><p data-i18n="a6">Non. C'est un abonnement mensuel, annulable quand vous voulez. Choisir l'année est votre décision, pas une obligation.</p></details>
+  </div>
+</section>
+
+<section class="cta-band" id="contact">
+  <div class="wrap">
+    <h2 data-i18n="cH2">Prêt à ne plus perdre personne?</h2>
+    <p data-i18n="cP">Écrivez-nous et on vous installe Orbite. 19,63 $ US par mois, premier mois à moitié prix.</p>
+    <a class="btn primary" href="https://wa.me/12635662243" target="_blank" rel="noopener" data-i18n="cBtn">Écrivez-nous sur WhatsApp</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div data-i18n="foot1">Orbite — une application d'Aymor Apps</div>
+    <div>
+      <a href="privacidad/" data-i18n="footPriv">Confidentialité</a> &middot;
+      <a href="https://aymorcorp.github.io/tienda/" data-i18n="footAll">Toutes les applications Aymor</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+var T = {
+  fr: {},
+  en: {
+    metaDesc:"Orbite is the client book for service businesses: where each one stands, who to follow up with today, and the whole story of every client. $19.63 USD a month.",
+    navFeatures:"Features", navHow:"How it works", navPrivacy:"Privacy", navPricing:"Pricing", navFaq:"FAQ",
+    heroEyebrow:"For service businesses",
+    heroH1:"Nobody gets lost for want of a reminder.",
+    heroP:"Clients aren't lost because you were bad. They're lost because nobody called them back. Orbite keeps where each one stands, what was said last time, and who to follow up with today.",
+    heroCta1:"See pricing", heroCta2:"How it works",
+    heroFine:"No account · No password · Works with no internet · English, French, Spanish",
+    mockBar:"ORBITE · CLIENTS", mockC1:"in follow-up", mockC2:"for today", mockC3:"clients",
+    mockR1:"Marc Lavoie · manager · Plateau Mont-Royal", mockT1:"CLIENT",
+    mockR2:"Dr. Amélie Roy · Verdun", mockT2:"Follow up · Sep 26",
+    t1:"✓ One price, everything included", t2:"✓ No per-contact fee", t3:"✓ Your data stays with you", t4:"✓ No long contract",
+    fEyebrow:"What it does", fH2:"A book that remembers for you.",
+    fP:"Everything you kept in your head, in a notebook, or across three WhatsApp threads — in one place.",
+    f1h:"Where each one stands", f1p:"To contact, contacted, in follow-up, proposal sent, active client, lost. The counters at the top tell you how many are in each stage at a glance.",
+    f2h:"Who to follow up with today", f2p:"The today screen gathers everyone whose follow-up date has arrived or passed. Nobody falls through the cracks.",
+    f3h:"The whole story of one client", f3p:"The notes, the reason they're a client, and a dated log of every conversation. When you call back, you know where you left it.",
+    f4h:"Who is nearby", f4p:"Your contacts on a map. When you're already in an area, you can see who's worth dropping in on.",
+    f5h:"Four books in one", f5p:"Clients, staff, suppliers and your network of contacts. The same record, adapted to each.",
+    f6h:"Call, write and get there", f6p:"From the record you go straight to the call, to WhatsApp, to email or to the map. No copying a number by hand.",
+    f7h:"Dictate instead of typing", f7p:"You speak and the note writes itself. Useful walking out of a visit, when you don't want to type on a small keyboard.",
+    f8h:"No internet, no account", f8p:"Nothing to create, no password to remember. Everything lives on your phone and works even with no signal.",
+    f9h:"A backup that is yours", f9p:"One file you keep wherever you like, and load onto another device when you change phones.",
+    hEyebrow:"How it works", hH2:"Three steps, and you stop losing people.",
+    s1h:"Enter your contacts", s1p:"By hand, or by loading your own backup file. Name, area, what they told you.",
+    s2h:"Put a date on it", s2p:"After each conversation you note what was said and when to follow up. Ten seconds, or dictated out loud.",
+    s3h:"Open the today screen", s3p:"In the morning the app tells you who to call. You don't have to remember it alone anymore.",
+    wEyebrow:"Who it's for", wH2:"For the service business that sells by talking to people.",
+    w1h:"Cleaning and maintenance", w1p:"Contracts you win by stopping back in to see the manager at the right moment.",
+    w2h:"Trades and renovation", w2p:"Quotes that die because nobody followed up. Here they have a date.",
+    w3h:"Professional services", w3p:"When what matters is remembering what the client said last time.",
+    w4h:"Self-employed", w4p:"No office, no assistant, no complicated software. A book that doesn't forget.",
+    pEyebrow:"Privacy", pH2:"Your client list stays your client list.",
+    pP:"Orbite doesn't run on our server. The names, the numbers and the notes live on the device you use. We don't see them, and we don't sell your list to anyone.",
+    pL1:"No account to create, no password to remember", pL2:"No ads, no trackers, no analytics",
+    pL3:"The app never opens your phone's address book",
+    pB1h:"It works with no internet", pB1p:"In a basement or on the road with no signal, it still saves and finds.",
+    pB2h:"The map is the only thing that leaves", pB2p:"To draw it we ask OpenStreetMap for the tiles. Your client's name never travels.",
+    pB3h:"You control your backups", pB3p:"One file, whenever you want, kept wherever you want.",
+    prEyebrow:"Pricing", prH2:"One price. No tiers.",
+    prP:"There is no limited version: everyone gets the complete app. No per-contact fee, no setup fee, cancel whenever you want.",
+    prTag1:"Month to month", prBig1:"$19.63", prUnit1:"USD per month",
+    prAfter1:"<b>Your first month is half price: $9.81.</b> After that, $19.63 a month.",
+    prTag2:"Pay yearly", prBig2:"$215.93", prUnit2:"USD per year",
+    prAfter2:"<b>You pay eleven months and get twelve.</b> One month free, 8.3% less.",
+    prNote:"The two offers don't stack: you pick one. Either the half-price first month paying monthly, or the full year with the free month.",
+    prFoot:"Orbite isn't in Google Play or the App Store yet. Message us and we'll install it on your Android phone, or open it for you in your browser.",
+    prBtn:"Get started",
+    qEyebrow:"Questions", qH2:"What people ask us most.",
+    q1:"Can I try it before paying?", a1:"There's no free trial, but your first month is half price and you get the complete app from day one. Message us and we'll show it to you first.",
+    q2:"Does it work without internet?", a2:"Yes. Everything works offline. The only thing that needs a connection is the map.",
+    q3:"Does it take the contacts from my phone?", a3:"No, never. The app doesn't open your address book. You enter what you want, by hand or by loading your own file.",
+    q4:"What if I change phones?", a4:"You export a backup on the old one and import it on the new one. Everything comes back.",
+    q5:"Is there a version for my team?", a5:"Not yet. Today it's a personal book, on one device. If you need several people to see the same list, tell us — we want to know how many you are before we build it.",
+    q6:"Is there a long-term contract?", a6:"No. It's a monthly subscription you can cancel whenever you want. Choosing the year is your decision, not a requirement.",
+    cH2:"Ready to stop losing people?", cP:"Message us and we'll set Orbite up for you. $19.63 USD a month, first month half price.",
+    cBtn:"Message us on WhatsApp",
+    foot1:"Orbite — an Aymor Apps product", footPriv:"Privacy", footAll:"All Aymor Apps"
+  },
+  es: {
+    metaDesc:"Orbite es la libreta de clientes de los negocios de servicio: en qué etapa va cada uno, a quién buscar hoy, y toda la historia de cada cliente. 19.63 dólares al mes.",
+    navFeatures:"Qué hace", navHow:"Cómo funciona", navPrivacy:"Privacidad", navPricing:"Precio", navFaq:"Preguntas",
+    heroEyebrow:"Para negocios de servicio",
+    heroH1:"Que nadie se pierda por falta de un recordatorio.",
+    heroP:"Los clientes no se pierden por malos. Se pierden porque nadie volvió a llamarles. Orbite guarda en qué etapa va cada uno, qué se habló la última vez, y a quién hay que buscar hoy.",
+    heroCta1:"Ver el precio", heroCta2:"Cómo funciona",
+    heroFine:"Sin cuenta · Sin contraseña · Funciona sin internet · Español, inglés, francés",
+    mockBar:"ORBITE · CLIENTES", mockC1:"en seguimiento", mockC2:"para hoy", mockC3:"clientes",
+    mockR1:"Marc Lavoie · gerente · Plateau Mont-Royal", mockT1:"CLIENTE",
+    mockR2:"Dra. Amélie Roy · Verdun", mockT2:"Buscar · 26 sept",
+    t1:"✓ Un solo precio, todo incluido", t2:"✓ Sin cobro por contacto", t3:"✓ Tus datos se quedan contigo", t4:"✓ Sin contrato largo",
+    fEyebrow:"Qué hace", fH2:"Una libreta que se acuerda por ti.",
+    fP:"Todo lo que traías en la cabeza, en un cuaderno o repartido en tres conversaciones de WhatsApp, en un solo lugar.",
+    f1h:"En qué etapa va cada uno", f1p:"Por contactar, contactado, en seguimiento, propuesta enviada, cliente activo, perdido. Los contadores de arriba te dicen de un vistazo cuántos llevas en cada etapa.",
+    f2h:"A quién buscar hoy", f2p:"La pantalla de hoy junta a todos los que ya les tocaba o se les pasó la fecha. Nadie se cae por olvido.",
+    f3h:"Toda la historia de un cliente", f3p:"Las notas, la razón por la que es cliente, y una bitácora con fecha de cada conversación. Cuando vuelvas a llamar, sabes en qué quedaron.",
+    f4h:"Quién está cerca", f4p:"Tus contactos en el mapa. Cuando ya andas por una zona, ves a quién te conviene pasar a ver.",
+    f5h:"Cuatro libretas en una", f5p:"Clientes, personal, proveedores y tu red de contactos. La misma ficha, adaptada a cada uno.",
+    f6h:"Llamar, escribir y llegar", f6p:"De la ficha sales directo a la llamada, al WhatsApp, al correo o al mapa. Sin copiar un número a mano.",
+    f7h:"Dictar en vez de escribir", f7p:"Hablas y la nota se escribe sola. Sirve al salir de una visita, cuando no quieres teclear en una pantalla chica.",
+    f8h:"Sin internet, sin cuenta", f8p:"Nada que crear, ninguna contraseña que recordar. Todo vive en tu teléfono y funciona aunque no haya señal.",
+    f9h:"Una copia que es tuya", f9p:"Un archivo de respaldo que guardas donde quieras, y que cargas en otro aparato cuando cambies de teléfono.",
+    hEyebrow:"Cómo funciona", hH2:"Tres pasos, y dejas de perder gente.",
+    s1h:"Mete tus contactos", s1p:"A mano, o cargando tu propio archivo de respaldo. Nombre, zona, lo que te dijo.",
+    s2h:"Ponle fecha", s2p:"Después de cada plática anotas qué se habló y cuándo volver. Diez segundos, o dictado hablando.",
+    s3h:"Abre la pantalla de hoy", s3p:"En la mañana la app te dice a quién llamar. Ya no tienes que acordarte tú solo.",
+    wEyebrow:"Para quién", wH2:"Para el negocio de servicio que vende hablando con la gente.",
+    w1h:"Limpieza y mantenimiento", w1p:"Contratos que se ganan pasando a ver al encargado en el momento justo.",
+    w2h:"Oficios y remodelación", w2p:"Cotizaciones enviadas que se mueren sin seguimiento. Aquí tienen fecha.",
+    w3h:"Servicios profesionales", w3p:"Cuando lo que importa es acordarse de lo que el cliente dijo la última vez.",
+    w4h:"Trabajador por cuenta propia", w4p:"Sin oficina, sin secretaria y sin programas complicados. Una libreta que no olvida.",
+    pEyebrow:"Privacidad", pH2:"Tu lista de clientes sigue siendo tuya.",
+    pP:"Orbite no corre en nuestro servidor. Los nombres, los números y las notas viven en el aparato que usas. Nosotros no los vemos, y no le vendemos tu lista a nadie.",
+    pL1:"Sin cuenta que crear, sin contraseña que recordar", pL2:"Sin publicidad, sin rastreadores, sin estadísticas",
+    pL3:"La app nunca abre la agenda de tu teléfono",
+    pB1h:"Funciona sin internet", pB1p:"En un sótano o en la carretera sin señal, guarda y encuentra igual.",
+    pB2h:"El mapa es lo único que sale", pB2p:"Para dibujarlo le pedimos las imágenes a OpenStreetMap. El nombre de tu cliente nunca viaja.",
+    pB3h:"Tú controlas tus respaldos", pB3p:"Un archivo, cuando quieras, guardado donde tú quieras.",
+    prEyebrow:"Precio", prH2:"Un solo precio. Sin niveles.",
+    prP:"No hay versión recortada: todos tienen la aplicación completa. Sin cobro por contacto, sin costo de instalación, cancelas cuando quieras.",
+    prTag1:"Mes con mes", prBig1:"$19.63", prUnit1:"dólares al mes",
+    prAfter1:"<b>Tu primer mes a mitad de precio: 9.81 dólares.</b> Después, 19.63 al mes.",
+    prTag2:"Pago anual", prBig2:"$215.93", prUnit2:"dólares al año",
+    prAfter2:"<b>Pagas once meses y recibes doce.</b> Un mes de regalo, 8.3% menos.",
+    prNote:"Las dos ofertas no se juntan: escoges una. O el primer mes a mitad de precio pagando mes con mes, o el año completo con el mes de regalo.",
+    prFoot:"Orbite todavía no está en Google Play ni en la App Store. Escríbenos y te la instalamos en tu teléfono Android, o te la abrimos en tu navegador.",
+    prBtn:"Empezar",
+    qEyebrow:"Preguntas", qH2:"Lo que más nos preguntan.",
+    q1:"¿Puedo probarla antes de pagar?", a1:"No hay prueba gratuita, pero tu primer mes es a mitad de precio y tienes la aplicación completa desde el primer día. Escríbenos y te la enseñamos antes.",
+    q2:"¿Funciona sin internet?", a2:"Sí. Todo funciona sin conexión. Lo único que necesita señal es el mapa.",
+    q3:"¿Se mete a los contactos de mi teléfono?", a3:"No, nunca. La app no abre tu agenda. Tú metes lo que quieras, a mano o cargando tu propio archivo.",
+    q4:"¿Y si cambio de teléfono?", a4:"Exportas un respaldo en el viejo y lo importas en el nuevo. Vuelve todo.",
+    q5:"¿Hay versión para mi equipo?", a5:"Todavía no. Hoy es una libreta personal, en un aparato. Si necesitas que varias personas vean la misma lista, dínoslo: queremos saber cuántos son antes de construirlo.",
+    q6:"¿Hay contrato largo?", a6:"No. Es una suscripción mensual que cancelas cuando quieras. Escoger el año es decisión tuya, no obligación.",
+    cH2:"¿Listo para dejar de perder gente?", cP:"Escríbenos y te dejamos Orbite lista. 19.63 dólares al mes, primer mes a mitad de precio.",
+    cBtn:"Escríbenos por WhatsApp",
+    foot1:"Orbite — una aplicación de Aymor Apps", footPriv:"Privacidad", footAll:"Todas las aplicaciones Aymor"
+  }
+};
+
+// El francés es lo que ya está escrito en la página: se guarda al cargar.
+document.querySelectorAll('[data-i18n]').forEach(function (el) {
+  var k = el.getAttribute('data-i18n');
+  T.fr[k] = el.tagName === 'META' ? el.getAttribute('content') : el.innerHTML;
+});
+
+function poner(lang) {
+  var d = T[lang] || T.fr;
+  document.querySelectorAll('[data-i18n]').forEach(function (el) {
+    var v = d[el.getAttribute('data-i18n')];
+    if (v == null) return;
+    if (el.tagName === 'META') el.setAttribute('content', v); else el.innerHTML = v;
+  });
+  document.documentElement.lang = lang;
+  document.querySelectorAll('.idiomas button').forEach(function (b) {
+    b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang));
+  });
+  try { localStorage.setItem('orbite-venta-idioma', lang); } catch (e) {}
+}
+
+document.querySelectorAll('.idiomas button').forEach(function (b) {
+  b.addEventListener('click', function () { poner(b.getAttribute('data-lang')); });
+});
+
+// Arranca en el idioma del navegador, o en el que se escogio la vez pasada.
+(function () {
+  var g = null;
+  try { g = localStorage.getItem('orbite-venta-idioma'); } catch (e) {}
+  if (!g) {
+    var n = (navigator.language || 'fr').slice(0, 2).toLowerCase();
+    g = (n === 'es' || n === 'en') ? n : 'fr';
+  }
+  if (g !== 'fr') poner(g);
+})();
+</script>
+
+</body>
+</html>
