@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aymor Cuisine — 344 recetas con foto, el menú de la semana y la lista del súper</title>
+<meta name="description" content="La app de cocina que llega llena: 344 recetas de siete cocinas del mundo, con foto, pasos explicados y calorías exactas. Arma tu semana y hace la lista del súper. Todo dentro de tu teléfono.">
+<style>
+  :root{
+    --bg:#F4F2EC; --surface:#FFFFFF; --ink:#1C2530; --muted:#5A6472;
+    --navy:#16324F; --gold:#C99A45; --line:#E6E1D6; --verde:#3F6B3E;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1040px; margin:0 auto; padding:0 20px;}
+
+  header{background:var(--navy); color:#fff; padding:16px 0;}
+  header .wrap{display:flex; align-items:center; gap:14px; flex-wrap:wrap;}
+  .marca{font-weight:800; font-size:18px; letter-spacing:-.01em;}
+  .marca span{font-weight:400; font-style:italic; opacity:.75; margin-right:6px;}
+  .langs{margin-left:auto; display:flex; gap:6px;}
+  .langs button{min-width:46px; min-height:38px; padding:0 10px; border-radius:9px; cursor:pointer;
+    font:inherit; font-size:13.5px; font-weight:800; letter-spacing:.04em;
+    background:transparent; color:#E9EEF4; border:1px solid rgba(233,238,244,.45);}
+  .langs button[aria-pressed="true"]{background:#fff; color:var(--navy); border-color:#fff;}
+
+  .hero{background:var(--navy); color:#fff; padding:14px 0 64px;}
+  .hero .wrap{display:grid; gap:36px; grid-template-columns:1.1fr .9fr; align-items:center;}
+  .hero h1{font-size:clamp(28px,4.4vw,44px); line-height:1.12; margin:0 0 14px; letter-spacing:-.02em;}
+  .hero p{font-size:17px; color:#D6DEE7; margin:0 0 22px; max-width:46ch;}
+  .hero .tel{justify-self:center; max-width:300px; border-radius:26px; border:1px solid rgba(255,255,255,.18);
+    box-shadow:0 26px 60px rgba(0,0,0,.38);}
+  .eyebrow{font-size:12px; letter-spacing:.16em; text-transform:uppercase; font-weight:800;
+    color:var(--gold); margin:0 0 12px;}
+
+  .btn{display:inline-block; border-radius:12px; padding:13px 22px; font-weight:800; font-size:15px;
+    text-decoration:none; border:1px solid transparent; cursor:pointer;}
+  .btn.oro{background:var(--gold); color:#20160a;}
+  .btn.linea{border-color:rgba(255,255,255,.5); color:#fff;}
+  .ctas{display:flex; gap:12px; flex-wrap:wrap;}
+
+  section{padding:56px 0;}
+  h2{font-size:clamp(22px,3vw,30px); line-height:1.2; margin:0 0 10px; letter-spacing:-.01em; color:var(--navy);}
+  .lead{color:var(--muted); font-size:16.5px; max-width:60ch; margin:0 0 30px;}
+
+  .tres{display:grid; gap:26px; grid-template-columns:repeat(3,1fr);}
+  .tres figure{margin:0;}
+  .tres img{border-radius:18px; border:1px solid var(--line); box-shadow:0 10px 30px rgba(28,37,48,.10);}
+  .tres figcaption{margin-top:12px; font-size:15px;}
+  .tres b{display:block; color:var(--navy); font-size:16.5px;}
+
+  .cosas{display:grid; gap:18px; grid-template-columns:repeat(2,1fr);}
+  .cosa{background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:20px 22px;}
+  .cosa h3{margin:0 0 6px; font-size:16.5px; color:var(--navy);}
+  .cosa p{margin:0; color:var(--muted); font-size:15px;}
+
+  .franja{background:var(--surface); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .quien{display:grid; gap:16px; grid-template-columns:repeat(4,1fr);}
+  .quien div{background:var(--bg); border-radius:14px; padding:18px;}
+  .quien b{display:block; color:var(--navy); margin-bottom:4px;}
+  .quien p{margin:0; font-size:14.5px; color:var(--muted);}
+
+  .privacidad{background:#F7F3E8; border-left:5px solid var(--gold); border-radius:0 14px 14px 0; padding:22px 26px;}
+  .privacidad p{margin:0; font-size:16px;}
+
+  .precio{text-align:center;}
+  .caja-precio{display:inline-block; background:var(--surface); border:1px solid var(--line);
+    border-radius:20px; padding:30px 40px; box-shadow:0 10px 30px rgba(28,37,48,.08); text-align:left;}
+  .caja-precio .pendiente{font-size:26px; font-weight:800; color:var(--navy); margin:0 0 6px;}
+  .caja-precio ul{margin:14px 0 0; padding-left:20px; font-size:15px; color:var(--muted);}
+  .caja-precio li{margin-bottom:6px;}
+
+  .faq-item{border-bottom:1px solid var(--line); padding:16px 0;}
+  .faq-item b{display:block; color:var(--navy); margin-bottom:4px;}
+  .faq-item p{margin:0; color:var(--muted); font-size:15px;}
+
+  footer{background:var(--navy); color:#C7D3DF; padding:30px 0; font-size:14px;}
+  footer a{color:#fff;}
+  footer .wrap{display:flex; gap:18px; flex-wrap:wrap; justify-content:space-between;}
+
+  [hidden]{display:none !important;}
+  @media (max-width:820px){
+    .hero .wrap{grid-template-columns:1fr;}
+    .hero .tel{max-width:260px;}
+    .tres, .cosas, .quien{grid-template-columns:1fr;}
+    .quien{grid-template-columns:repeat(2,1fr);}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="marca"><span>Aymor</span>Cuisine</div>
+    <div class="langs">
+      <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      <button type="button" data-lang="es" aria-pressed="true">ES</button>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════ ESPAÑOL ═══════════════ -->
+<div data-lang="es">
+
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Aymor Apps</p>
+      <h1>Deja de preguntarte qué vas a hacer de comer.</h1>
+      <p>344 recetas de verdad, con su foto y con los pasos explicados uno por uno. La semana se arma sola y la lista del súper se hace sola. Todo dentro de tu teléfono, sin internet.</p>
+      <div class="ctas">
+        <a class="btn oro" href="#precio">Verlo y el precio</a>
+        <a class="btn linea" href="#que-hace">Ver qué hace</a>
+      </div>
+    </div>
+    <img class="tel" src="img/hoy-es.webp" alt="La pantalla de hoy de Aymor Cuisine, con las cinco comidas del día y sus calorías" width="503" height="1078" loading="lazy">
+  </div>
+</div>
+
+<section id="que-hace">
+  <div class="wrap">
+    <h2>Llega llena. Se instala a las seis y a las siete ya estás cocinando.</h2>
+    <p class="lead">La mayoría de las apps de cocina son cajas vacías: tú tienes que meter tus recetas antes de que sirvan de algo. Esta no.</p>
+    <div class="tres">
+      <figure>
+        <img src="img/hoy-es.webp" alt="Pantalla de hoy con las comidas del día" width="503" height="1078" loading="lazy">
+        <figcaption><b>Tu día, resuelto</b>Desayuno, comida y cena ya puestos, con las calorías de cada uno y el total del día.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/receta-es.webp" alt="Una receta abierta con su foto y sus calorías" width="503" height="1078" loading="lazy">
+        <figcaption><b>Pasos, no adivinanzas</b>Qué olla usar, cuántos minutos y cómo saber que ya está. Escrito para quien nunca ha cocinado.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/compras-es.webp" alt="La lista del súper agrupada por pasillo" width="503" height="1078" loading="lazy">
+        <figcaption><b>La lista del súper, hecha</b>Suma la semana, la ordena por pasillo y le resta lo que ya tienes en la despensa.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="franja">
+  <div class="wrap">
+    <h2>Lo que trae adentro</h2>
+    <p class="lead">Nada de esto se descarga después ni se paga aparte.</p>
+    <div class="cosas">
+      <div class="cosa"><h3>Siete cocinas del mundo</h3><p>Mexicana, española, griega, francesa, libanesa, portuguesa y vegetariana. Investigadas en fuentes de gastronomía de cada país, no inventadas.</p></div>
+      <div class="cosa"><h3>Calorías exactas, no aproximadas</h3><p>Calorías, proteína, carbohidratos y grasa de cada plato, contadas ingrediente por ingrediente con la tabla oficial del Departamento de Agricultura de Estados Unidos. Y de cuántos gramos es la porción.</p></div>
+      <div class="cosa"><h3>Comidas completas, como en casa</h3><p>No son platos sueltos: la comida trae sopa, plato fuerte, guarnición y agua fresca. La cena es una cena, no una sopa sola.</p></div>
+      <div class="cosa"><h3>La semana se arma sola</h3><p>Un botón llena los siete días con tus favoritas y con lo que ya tienes, empezando por lo que está por echarse a perder. Sin repetir platillo en tres días.</p></div>
+      <div class="cosa"><h3>¿Qué cocino con lo que tengo?</h3><p>Escribes lo que hay en el refrigerador y te dice qué puedes hacer ahora mismo, sin ir a la tienda.</p></div>
+      <div class="cosa"><h3>Modo cocina</h3><p>Un paso a la vez, en letras grandes, con los ingredientes siempre a la vista y la pantalla que no se apaga con las manos llenas.</p></div>
+      <div class="cosa"><h3>Modo diabetes</h3><p>Los carbohidratos de cada comida y del día, con aviso cuando una comida se pasa del tope que fijó tu médico. La app cuenta; las decisiones son de tu médico.</p></div>
+      <div class="cosa"><h3>Tuya</h3><p>Cambia el número de personas y las cantidades se ajustan solas. Escribe tus propias recetas, ponles tu foto y anota cuánto te costó cada platillo.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Para quién es</h2>
+    <div class="quien">
+      <div><b>La casa de todos los días</b><p>Tres a cinco personas y la misma pregunta cada tarde a las seis.</p></div>
+      <div><b>Quien vive solo</b><p>Y a quien las recetas de internet le dan por hecho que ya sabe cocinar.</p></div>
+      <div><b>Quien cuida sus números</b><p>Calorías o carbohidratos, con la receta y el número en el mismo lugar.</p></div>
+      <div><b>Quien extraña su comida</b><p>Hecha como allá, no como la cuenta un blog de otro país.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="franja">
+  <div class="wrap">
+    <div class="privacidad">
+      <p><b>Tus datos no salen de tu teléfono. Nada sale.</b> No hay cuenta, no hay correo, no hay contraseña y no hay servidor. Todo lo que escribes y fotografías se queda en tu aparato: ni nosotros lo vemos. La aplicación no se conecta a ningún servicio de internet, ni siquiera para las letras con las que está escrita. <a href="privacidad/">Léelo completo en la política de privacidad</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section id="precio" class="precio">
+  <div class="wrap">
+    <h2>Cuánto cuesta</h2>
+    <div class="caja-precio">
+      <!-- PRECIO: 6.99 dolares estadounidenses al mes. Decidido por Leonor el 27 de septiembre
+           de 2026 y confirmado por el 555 por escrito el 27 y el 28. Si cambia, se copia del
+           documento oficial de precios; nunca se escribe de memoria. -->
+      <p class="pendiente">6.99 dólares al mes</p>
+      <p style="margin:0; color:var(--muted); font-size:15px;">Una suscripción, sin contratos largos y sin permanencia. Para entrar escoges una de estas dos:</p>
+      <ul>
+        <li><b>Tu primer mes a mitad de precio.</b></li>
+        <li><b>O el año con un mes de regalo:</b> pagas once y recibes doce.</li>
+      </ul>
+      <p style="margin:14px 0 0; color:var(--muted); font-size:14px;">Se escoge una de las dos, no se juntan. ¿Alguna duda antes de empezar? Escríbenos a <a href="mailto:aymorcorp@gmail.com">aymorcorp@gmail.com</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Preguntas que nos hacen</h2>
+    <div class="faq-item"><b>¿Funciona sin internet?</b><p>Sí, completa, con sus 344 fotografías. Solo hace falta conexión la primera vez que la abres.</p></div>
+    <div class="faq-item"><b>¿En qué idiomas está?</b><p>Español, inglés y francés, completos: no solo los botones, también las 344 recetas y sus pasos.</p></div>
+    <div class="faq-item"><b>¿Puedo meter mis propias recetas?</b><p>Sí, y la app les calcula las calorías sola. También puedes ponerles tu propia fotografía.</p></div>
+    <div class="faq-item"><b>¿Se pasa a otro teléfono?</b><p>No. Todo vive en tu teléfono, y el respaldo que la app te da es una copia de seguridad para ese mismo aparato. No hay cuentas de usuario ni sincronización entre teléfonos.</p></div>
+    <div class="faq-item"><b>¿Da consejos médicos?</b><p>No. Cuenta calorías y carbohidratos, nada más. El límite lo pone tu médico o tu nutricionista.</p></div>
+  </div>
+</section>
+
+</div>
+
+<!-- ═══════════════ ENGLISH ═══════════════ -->
+<div data-lang="en" hidden>
+
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Aymor Apps</p>
+      <h1>Stop asking yourself what's for dinner.</h1>
+      <p>344 real recipes, each with its photo and with the steps explained one by one. The week plans itself and the grocery list builds itself. All inside your phone, no internet needed.</p>
+      <div class="ctas">
+        <a class="btn oro" href="#precio-en">See it and the price</a>
+        <a class="btn linea" href="#what-en">See what it does</a>
+      </div>
+    </div>
+    <img class="tel" src="img/hoy-en.webp" alt="Aymor Cuisine's today screen, with the five meals of the day and their calories" width="503" height="1078" loading="lazy">
+  </div>
+</div>
+
+<section id="what-en">
+  <div class="wrap">
+    <h2>It arrives full. Install it at six and you're cooking at seven.</h2>
+    <p class="lead">Most cooking apps are empty boxes: you have to put your own recipes in before they do anything. Not this one.</p>
+    <div class="tres">
+      <figure>
+        <img src="img/hoy-en.webp" alt="Today screen with the day's meals" width="503" height="1078" loading="lazy">
+        <figcaption><b>Your day, already decided</b>Breakfast, lunch and dinner set, with the calories of each one and the day's total.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/receta-en.webp" alt="A recipe open, with its photo and its calories" width="503" height="1078" loading="lazy">
+        <figcaption><b>Steps, not guesswork</b>Which pot, how many minutes, how to tell it's ready. Written for someone who has never cooked.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/compras-en.webp" alt="The grocery list sorted by aisle" width="503" height="1078" loading="lazy">
+        <figcaption><b>The grocery list, done</b>It adds up the week, sorts it by aisle and subtracts what your pantry already holds.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="franja">
+  <div class="wrap">
+    <h2>What's inside</h2>
+    <p class="lead">None of this is downloaded later or paid for separately.</p>
+    <div class="cosas">
+      <div class="cosa"><h3>Seven world cuisines</h3><p>Mexican, Spanish, Greek, French, Lebanese, Portuguese and vegetarian. Researched in each country's own cooking sources, not invented.</p></div>
+      <div class="cosa"><h3>Exact calories, not guesses</h3><p>Calories, protein, carbohydrates and fat for every dish, counted ingredient by ingredient against the official table of the United States Department of Agriculture. And how many grams that serving is.</p></div>
+      <div class="cosa"><h3>Whole meals, the way home cooking works</h3><p>Not loose dishes: the midday meal comes with soup, main dish, side and agua fresca. Dinner is a dinner, not a bowl of soup.</p></div>
+      <div class="cosa"><h3>The week plans itself</h3><p>One button fills all seven days with your favorites and what you already have, starting with whatever is about to spoil. No dish repeats within three days.</p></div>
+      <div class="cosa"><h3>What can I cook with what I have?</h3><p>Type what's in the fridge and it tells you what you can make right now, without going to the store.</p></div>
+      <div class="cosa"><h3>Cooking mode</h3><p>One step at a time, in big letters, with the ingredients always in view and a screen that won't go dark when your hands are full.</p></div>
+      <div class="cosa"><h3>Diabetes mode</h3><p>Carbohydrates per meal and per day, with a warning when a meal goes over the limit your doctor set. The app counts; the decisions are your doctor's.</p></div>
+      <div class="cosa"><h3>Yours</h3><p>Change the number of people and the amounts adjust themselves. Write your own recipes, add your own photos and note what each dish cost you.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Who it's for</h2>
+    <div class="quien">
+      <div><b>The everyday household</b><p>Three to five people and the same question every afternoon at six.</p></div>
+      <div><b>Anyone living alone</b><p>Who finds that recipes online assume you already know how to cook.</p></div>
+      <div><b>Anyone watching their numbers</b><p>Calories or carbohydrates, with the recipe and the number in the same place.</p></div>
+      <div><b>Anyone missing home food</b><p>Made the way it's made there, not the way a blog from elsewhere tells it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="franja">
+  <div class="wrap">
+    <div class="privacidad">
+      <p><b>Your data never leaves your phone. Nothing leaves.</b> No account, no email, no password and no server. Everything you write and photograph stays in your device: not even we see it. The app does not connect to any internet service, not even for the typefaces it's written in. <a href="privacidad/">Read the full privacy policy</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section id="precio-en" class="precio">
+  <div class="wrap">
+    <h2>What it costs</h2>
+    <div class="caja-precio">
+      <p class="pendiente">6.99 US dollars a month</p>
+      <p style="margin:0; color:var(--muted); font-size:15px;">One subscription, no long contracts and no lock-in. To start, you pick one of these two:</p>
+      <ul>
+        <li><b>Your first month at half price.</b></li>
+        <li><b>Or the year with a month free:</b> pay eleven, get twelve.</li>
+      </ul>
+      <p style="margin:14px 0 0; color:var(--muted); font-size:14px;">You pick one of the two; they don't combine. Any question before you start? Write to <a href="mailto:aymorcorp@gmail.com">aymorcorp@gmail.com</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Questions people ask</h2>
+    <div class="faq-item"><b>Does it work without internet?</b><p>Yes, fully, with its 344 photographs. You only need a connection the first time you open it.</p></div>
+    <div class="faq-item"><b>What languages is it in?</b><p>Spanish, English and French, in full: not just the buttons, the 344 recipes and their steps too.</p></div>
+    <div class="faq-item"><b>Can I add my own recipes?</b><p>Yes, and the app works out their calories for you. You can add your own photographs too.</p></div>
+    <div class="faq-item"><b>Does it move to another phone?</b><p>No. Everything lives in your phone, and the backup the app gives you is a safety copy for that same device. There are no user accounts and no syncing between phones.</p></div>
+    <div class="faq-item"><b>Does it give medical advice?</b><p>No. It counts calories and carbohydrates, nothing more. The limit is set by your doctor or dietitian.</p></div>
+  </div>
+</section>
+
+</div>
+
+<!-- ═══════════════ FRANÇAIS ═══════════════ -->
+<div data-lang="fr" hidden>
+
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Aymor Apps</p>
+      <h1>Arrêtez de vous demander quoi faire à souper.</h1>
+      <p>344 vraies recettes, chacune avec sa photo et ses étapes expliquées une à une. La semaine se monte toute seule et la liste d'épicerie se fait seule. Tout dans votre téléphone, sans Internet.</p>
+      <div class="ctas">
+        <a class="btn oro" href="#precio-fr">Le voir et le prix</a>
+        <a class="btn linea" href="#quoi-fr">Voir ce qu'elle fait</a>
+      </div>
+    </div>
+    <img class="tel" src="img/hoy-fr.webp" alt="L'écran du jour d'Aymor Cuisine, avec les cinq repas et leurs calories" width="503" height="1078" loading="lazy">
+  </div>
+</div>
+
+<section id="quoi-fr">
+  <div class="wrap">
+    <h2>Elle arrive pleine. Installée à six heures, vous cuisinez à sept.</h2>
+    <p class="lead">La plupart des applications de cuisine sont des boîtes vides : il faut y mettre ses propres recettes avant qu'elles servent à quelque chose. Pas celle-ci.</p>
+    <div class="tres">
+      <figure>
+        <img src="img/hoy-fr.webp" alt="Écran du jour avec les repas" width="503" height="1078" loading="lazy">
+        <figcaption><b>Votre journée, déjà décidée</b>Déjeuner, dîner et souper déjà placés, avec les calories de chacun et le total de la journée.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/receta-fr.webp" alt="Une recette ouverte, avec sa photo et ses calories" width="503" height="1078" loading="lazy">
+        <figcaption><b>Des étapes, pas des devinettes</b>Quelle casserole, combien de minutes, comment savoir que c'est prêt. Écrit pour quelqu'un qui n'a jamais cuisiné.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/compras-fr.webp" alt="La liste d'épicerie triée par rayon" width="503" height="1078" loading="lazy">
+        <figcaption><b>La liste d'épicerie, faite</b>Elle additionne la semaine, la trie par rayon et soustrait ce que le garde-manger contient déjà.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="franja">
+  <div class="wrap">
+    <h2>Ce qu'elle contient</h2>
+    <p class="lead">Rien de tout cela ne se télécharge après ni ne se paie à part.</p>
+    <div class="cosas">
+      <div class="cosa"><h3>Sept cuisines du monde</h3><p>Mexicaine, espagnole, grecque, française, libanaise, portugaise et végétarienne. Recherchées dans les sources gastronomiques de chaque pays, pas inventées.</p></div>
+      <div class="cosa"><h3>Des calories exactes, pas des à-peu-près</h3><p>Calories, protéines, glucides et gras de chaque plat, comptés ingrédient par ingrédient avec la table officielle du Département de l'Agriculture des États-Unis. Et le poids en grammes de la portion.</p></div>
+      <div class="cosa"><h3>Des repas complets, comme à la maison</h3><p>Pas des plats isolés : le repas vient avec soupe, plat principal, accompagnement et agua fresca. Le souper est un souper, pas un bol de soupe.</p></div>
+      <div class="cosa"><h3>La semaine se monte toute seule</h3><p>Un bouton remplit les sept jours avec vos favorites et ce que vous avez déjà, en commençant par ce qui va se perdre. Aucun plat ne se répète en trois jours.</p></div>
+      <div class="cosa"><h3>Qu'est-ce que je cuisine avec ce que j'ai ?</h3><p>Vous écrivez ce qu'il y a dans le frigo et elle vous dit ce que vous pouvez faire tout de suite, sans aller au magasin.</p></div>
+      <div class="cosa"><h3>Mode cuisine</h3><p>Une étape à la fois, en grosses lettres, avec les ingrédients toujours visibles et un écran qui ne s'éteint pas quand on a les mains pleines.</p></div>
+      <div class="cosa"><h3>Mode diabète</h3><p>Les glucides de chaque repas et de la journée, avec un avertissement quand un repas dépasse la limite fixée par votre médecin. L'application compte ; les décisions appartiennent à votre médecin.</p></div>
+      <div class="cosa"><h3>À vous</h3><p>Changez le nombre de personnes et les quantités s'ajustent seules. Écrivez vos propres recettes, mettez-y vos photos et notez ce que chaque plat vous a coûté.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Pour qui</h2>
+    <div class="quien">
+      <div><b>La maisonnée de tous les jours</b><p>Trois à cinq personnes et la même question chaque après-midi à six heures.</p></div>
+      <div><b>Qui vit seul</b><p>Et à qui les recettes sur Internet supposent qu'on sait déjà cuisiner.</p></div>
+      <div><b>Qui surveille ses chiffres</b><p>Calories ou glucides, avec la recette et le chiffre au même endroit.</p></div>
+      <div><b>Qui s'ennuie de la cuisine de chez lui</b><p>Faite comme là-bas, pas comme la raconte un blogue d'ailleurs.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="franja">
+  <div class="wrap">
+    <div class="privacidad">
+      <p><b>Vos données ne quittent pas votre téléphone. Rien ne sort.</b> Pas de compte, pas de courriel, pas de mot de passe, pas de serveur. Tout ce que vous écrivez et photographiez reste dans votre appareil : nous non plus ne le voyons pas. L'application ne se connecte à aucun service Internet, pas même pour les polices avec lesquelles elle est écrite. <a href="privacidad/">Lisez la politique de confidentialité au complet</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section id="precio-fr" class="precio">
+  <div class="wrap">
+    <h2>Combien ça coûte</h2>
+    <div class="caja-precio">
+      <p class="pendiente">6,99 dollars américains par mois</p>
+      <p style="margin:0; color:var(--muted); font-size:15px;">Un abonnement, sans contrat long et sans engagement. Pour commencer, vous choisissez l'une des deux :</p>
+      <ul>
+        <li><b>Votre premier mois à moitié prix.</b></li>
+        <li><b>Ou l'année avec un mois offert :</b> payez onze, recevez douze.</li>
+      </ul>
+      <p style="margin:14px 0 0; color:var(--muted); font-size:14px;">On choisit l'une des deux; elles ne se cumulent pas. Une question avant de commencer ? Écrivez à <a href="mailto:aymorcorp@gmail.com">aymorcorp@gmail.com</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Questions qu'on nous pose</h2>
+    <div class="faq-item"><b>Est-ce que ça marche sans Internet ?</b><p>Oui, au complet, avec ses 344 photos. Il ne faut une connexion que la première fois que vous l'ouvrez.</p></div>
+    <div class="faq-item"><b>En quelles langues est-elle ?</b><p>Espagnol, anglais et français, au complet : pas seulement les boutons, les 344 recettes et leurs étapes aussi.</p></div>
+    <div class="faq-item"><b>Puis-je ajouter mes propres recettes ?</b><p>Oui, et l'application en calcule les calories toute seule. Vous pouvez aussi y mettre vos propres photos.</p></div>
+    <div class="faq-item"><b>Est-ce qu'elle passe à un autre téléphone ?</b><p>Non. Tout vit dans votre téléphone, et la sauvegarde que l'application vous donne est une copie de sécurité pour ce même appareil. Il n'y a ni comptes ni synchronisation entre téléphones.</p></div>
+    <div class="faq-item"><b>Donne-t-elle des conseils médicaux ?</b><p>Non. Elle compte les calories et les glucides, rien de plus. La limite est fixée par votre médecin ou votre nutritionniste.</p></div>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <div>Aymor Cuisine · <a href="../">Aymor Apps</a> · Montréal</div>
+    <div><a href="privacidad/">Privacidad</a> · <a href="mailto:aymorcorp@gmail.com">aymorcorp@gmail.com</a></div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var botones = document.querySelectorAll(".langs button");
+    var partes = document.querySelectorAll("div[data-lang]");
+
+    function poner(lang) {
+      partes.forEach(function (s) { s.hidden = s.dataset.lang !== lang; });
+      botones.forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.lang === lang)); });
+      document.documentElement.lang = lang;
+      try { localStorage.setItem("aymor-cuisine-venta:idioma", lang); } catch (e) {}
+    }
+
+    botones.forEach(function (b) {
+      b.addEventListener("click", function () { poner(b.dataset.lang); });
+    });
+
+    var guardado = null;
+    try { guardado = localStorage.getItem("aymor-cuisine-venta:idioma"); } catch (e) {}
+    var nav = (navigator.language || "es").slice(0, 2).toLowerCase();
+    poner(guardado || (["fr", "en", "es"].indexOf(nav) >= 0 ? nav : "es"));
+  })();
+</script>
+
+</body>
+</html>
