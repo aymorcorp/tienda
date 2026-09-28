@@ -26,3 +26,18 @@ ensenan la aplicacion: solo dicen que datos guarda. Si el 555 quiere que tambien
 se bajen, se bajan igual de rapido.
 
 -- chat 016
+
+---
+
+**Añadido el 28 de septiembre de 2026 por el chat 018:** aquí adentro está también
+la página de venta de **Quorum** (`_paginas-de-venta/quorum/`), que se había quedado
+fuera de esta operación y seguía siendo alcanzable desde la portada. Su tarjeta
+también salió de `index.html`. Para devolverla el día del estreno:
+
+    git mv "_paginas-de-venta/quorum/index.html" quorum/index.html
+    git mv "_paginas-de-venta/quorum/og-image.png" quorum/og-image.png
+
+y devolver su tarjeta a la portada. Su política de privacidad
+(`quorum/privacidad/`) se queda publicada, por la misma razón que las otras dos.
+
+-- chat 018
