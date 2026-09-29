@@ -1,29 +1,52 @@
 # Paginas de venta guardadas, no publicadas
 
-Aqui viven las paginas de venta de Impeccable y de Orbite. **El codigo esta en la
-tienda, pero nadie de fuera las puede abrir**, que es exactamente lo que pidio
-la dueña el 27 de septiembre de 2026: la regla del telon. Ninguna aplicacion se le
-ensena a un cliente real hasta que las siete pasen el examen final juntas.
+## OJO: EL GUION BAJO NO ESCONDE DE GITHUB
 
-Como funciona: GitHub Pages usa Jekyll, y Jekyll **no publica** las carpetas que
-empiezan con guion bajo. Por eso esta carpeta se llama `_paginas-de-venta`. Los
-archivos siguen en el repositorio, con todo su historial; simplemente no se
-sirven.
+Esta hoja decia, hasta el 29 de septiembre de 2026, que **nadie de fuera puede
+abrir** estas paginas. **Eso era falso**, y lo habia escrito yo. Lo dejo aqui
+para que nadie vuelva a creerlo.
 
-**Para volver a publicarlas el dia que se abra el telon**, desde la raiz del
-repositorio:
+Lo que el guion bajo hace de verdad: Jekyll no publica las carpetas que empiezan
+con `_`, asi que `aymorcorp.github.io` no sirve estas paginas y dan 404. Eso si
+funciona.
 
-    git mv "_paginas-de-venta/impeccable/index.html" impeccable/index.html
-    git mv "_paginas-de-venta/crm-orbite/index.html" crm-orbite/index.html
+Lo que NO hace: esconderlas del repositorio. **Este repositorio es publico**, y
+GitHub sirve todos sus archivos, se publiquen en el sitio o no. Comprobado el 29
+de septiembre:
 
-y devolver las tarjetas de Impeccable y de Orbite a la portada (`index.html`).
+    api.github.com/repos/aymorcorp/tienda                             -> 200 (publico)
+    raw.githubusercontent.com/.../_paginas-de-venta/<app>/index.html  -> 200
 
-**Lo que NO se bajo, a proposito:** las politicas de privacidad
-(`impeccable/privacidad/` y `crm-orbite/privacidad/`). Google Play y Apple exigen
-una direccion publica y abierta de la politica para poder subir la aplicacion; si
-se caen, no se puede publicar en ninguna de las dos tiendas. No venden nada ni
-ensenan la aplicacion: solo dicen que datos guarda. Si el 555 quiere que tambien
-se bajen, se bajan igual de rapido.
+O sea que estas paginas no son inalcanzables: son **no-enlazadas**. Un cliente no
+llega por casualidad; alguien que quiera mirar, si. Y los buscadores indexan
+GitHub.
+
+## Que se hizo con eso
+
+Por decision del 555 el 29 de septiembre: el trabajo sin publicar sale del
+repositorio publico y vive en la carpeta de cada aplicacion hasta el estreno.
+
+  - **Impeccable** y **Orbite** ya salieron. Estan en
+    `Aymor Apps - Proyectos/<app>/pagina-de-venta/`.
+  - Las demas las mueve cada chat.
+
+Para volver a publicar una el dia que se abra el telon, se copia de la carpeta de
+su aplicacion a la raiz del repositorio (`impeccable/`, `crm-orbite/`...) y se
+devuelve su tarjeta a la portada (`index.html`).
+
+Un aviso para quien mueva las suyas: borrarlas de aqui **no las borra del
+historial de git**, y de ahi se pueden recuperar. Se decidio no reescribir el
+historial: es trabajo real por una exposicion menor, tratandose de paginas a
+medio hacer. Si alguna llega a tener algo de verdad sensible, hay que volver a
+mirarlo.
+
+## Lo que SI se queda publicado, a proposito
+
+Las politicas de privacidad (`impeccable/privacidad/`, `crm-orbite/privacidad/` y
+las demas). Google Play y Apple exigen una direccion publica y abierta de la
+politica para poder subir la aplicacion; si se caen, no se puede publicar en
+ninguna de las dos tiendas. No venden nada ni ensenan la aplicacion: solo dicen
+que datos guarda.
 
 -- chat 016
 
@@ -32,6 +55,6 @@ se bajen, se bajan igual de rapido.
 **29 de septiembre de 2026, chat 018:** la página de venta de **Quorum** salió de
 esta carpeta y volvió a `quorum/`, publicada. Fue decisión de la dueña y del 555:
 Paddle necesita ver una página de venta real para verificar el negocio, y Quorum
-ya pasó sus pruebas. Impeccable y Orbite siguen aquí, con el telón abajo.
+ya pasó sus pruebas.
 
 -- chat 018
