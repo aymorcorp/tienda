@@ -1,0 +1,5 @@
+# La tienda de Aymor Applis quiere que la encuentren.
+User-agent: *
+Allow: /
+
+Sitemap: https://aymorcorp.github.io/tienda/sitemap.xml

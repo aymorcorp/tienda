@@ -24,7 +24,7 @@ Que hace, en orden:
 Nada de esto cuesta dinero: siguen siendo archivos sueltos en GitHub Pages.
 """
 
-import io, json, os, re, sys, shutil
+import datetime, io, json, os, re, sys, shutil
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
@@ -389,11 +389,40 @@ def main():
     with io.open(os.path.join(RAIZ, "index.html"), "w", encoding="utf-8", newline="\n") as f:
         f.write(portada)
 
+    # ---- Robots y sitemap ----
+    # Se arman con las mismas fichas, para que el dia que suba el telon de otra
+    # aplicacion su pagina entre sola. Aqui solo va lo que QUEREMOS que se
+    # encuentre. Lo que no queremos ensenar no se nombra: un "no entres aqui"
+    # escrito en un archivo publico es un mapa de lo que uno esconde.
+    hoy = datetime.date.today().isoformat()
+    base = tienda["comun"]["direccion"]
+    paginas = [base, base + "terminos/", base + "privacidad/"]
+    for f in fichas:
+        if f.get("publicada") and f.get("pagina"):
+            paginas.append(base + f["carpeta"] + "/")
+            if os.path.isdir(os.path.join(RAIZ, f["carpeta"], "privacidad")):
+                paginas.append(base + f["carpeta"] + "/privacidad/")
+
+    with io.open(os.path.join(RAIZ, "robots.txt"), "w", encoding="utf-8", newline="\n") as f:
+        f.write("# La tienda de Aymor Applis quiere que la encuentren.\n")
+        f.write("User-agent: *\n")
+        f.write("Allow: /\n")
+        f.write("\n")
+        f.write("Sitemap: " + base + "sitemap.xml\n")
+
+    with io.open(os.path.join(RAIZ, "sitemap.xml"), "w", encoding="utf-8", newline="\n") as f:
+        f.write('<?xml version="1.0" encoding="UTF-8"?>\n')
+        f.write('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
+        for u in paginas:
+            f.write("  <url><loc>%s</loc><lastmod>%s</lastmod></url>\n" % (u, hoy))
+        f.write("</urlset>\n")
+
     # ---- El parte ----
     print("")
     print("  LA TIENDA QUEDO ARMADA")
     print("  " + "-" * 46)
     print("  portada ................ index.html  (%d tarjetas)" % len(tarjetas))
+    print("  robots y sitemap ....... %d direcciones" % len(paginas))
     for nombre, donde, estado in hechas:
         print("  %-22s %s/  (%s)" % (nombre, donde, estado))
     if avisos:
