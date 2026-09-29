@@ -2,7 +2,7 @@
 
 Aqui viven las paginas de venta de Impeccable y de Orbite. **El codigo esta en la
 tienda, pero nadie de fuera las puede abrir**, que es exactamente lo que pidio
-Leonor el 27 de septiembre de 2026: la regla del telon. Ninguna aplicacion se le
+la dueña el 27 de septiembre de 2026: la regla del telon. Ninguna aplicacion se le
 ensena a un cliente real hasta que las siete pasen el examen final juntas.
 
 Como funciona: GitHub Pages usa Jekyll, y Jekyll **no publica** las carpetas que
@@ -30,7 +30,7 @@ se bajen, se bajan igual de rapido.
 ---
 
 **29 de septiembre de 2026, chat 018:** la página de venta de **Quorum** salió de
-esta carpeta y volvió a `quorum/`, publicada. Fue decisión de Leonor y del 555:
+esta carpeta y volvió a `quorum/`, publicada. Fue decisión de la dueña y del 555:
 Paddle necesita ver una página de venta real para verificar el negocio, y Quorum
 ya pasó sus pruebas. Impeccable y Orbite siguen aquí, con el telón abajo.
 

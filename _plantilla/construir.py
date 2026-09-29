@@ -212,7 +212,7 @@ TELEFONO = re.compile(r"(wa\.me|whatsapp\.com|\+?1?[\s\-\.]?\(?\d{3}\)?[\s\-\.]\
 def revisar(html, donde):
     malo = TELEFONO.search(html)
     exige(not malo,
-          "%s lleva un telefono (%s). Regla de Leonor del 28 de septiembre: ningun "
+          "%s lleva un telefono (%s). Regla de la casa del 28 de septiembre: ningun "
           "telefono va en material de venta; el contacto del cliente es el correo."
           % (donde, malo.group(0) if malo else ""))
     exige("Aymor Apps" not in html,

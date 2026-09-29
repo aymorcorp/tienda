@@ -4,7 +4,7 @@
 
 Hasta hoy, cada página de venta se escribía a mano: mil y pico de renglones de HTML
 por aplicación, con su estilo copiado, su cambia-idiomas copiado y sus precios
-escritos a mano en tres idiomas. Cuando Leonor cambió el nombre de la casa, hubo
+escritos a mano en tres idiomas. Cuando cambió el nombre de la casa, hubo
 que ir a buscarlo a nueve lugares distintos. Eso es lo que se acabó.
 
 **Ahora, agregar una aplicación a la tienda es llenar una ficha y correr un programa.**
@@ -59,7 +59,7 @@ que es copia del documento oficial del 555. La cifra además se escribe como se
 escribe en cada idioma: `29,63 $ US` en francés, `US$29.63` en inglés y en español.
 Si un precio cambia, se cambia en un solo lugar y se vuelve a armar la tienda.
 
-**2. Ningún teléfono en material de venta.** Regla de Leonor del 28 de septiembre.
+**2. Ningún teléfono en material de venta.** Regla de la casa del 28 de septiembre.
 Si una página sale con un número de teléfono o un enlace de WhatsApp, el programa se
 detiene y no publica nada. El contacto del cliente es el correo, y ya.
 
