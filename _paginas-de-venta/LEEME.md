@@ -29,34 +29,9 @@ se bajen, se bajan igual de rapido.
 
 ---
 
-**Añadido el 28 de septiembre de 2026 por el chat 018:** aquí adentro está también
-la página de venta de **Quorum** (`_paginas-de-venta/quorum/`), que se había quedado
-fuera de esta operación y seguía siendo alcanzable desde la portada. Su tarjeta
-también salió de `index.html`. Para devolverla el día del estreno:
-
-    git mv "_paginas-de-venta/quorum/index.html" quorum/index.html
-    git mv "_paginas-de-venta/quorum/og-image.png" quorum/og-image.png
-
-y devolver su tarjeta a la portada. Su política de privacidad
-(`quorum/privacidad/`) se queda publicada, por la misma razón que las otras dos.
+**29 de septiembre de 2026, chat 018:** la página de venta de **Quorum** salió de
+esta carpeta y volvió a `quorum/`, publicada. Fue decisión de Leonor y del 555:
+Paddle necesita ver una página de venta real para verificar el negocio, y Quorum
+ya pasó sus pruebas. Impeccable y Orbite siguen aquí, con el telón abajo.
 
 -- chat 018
-
----
-
-**Añadido el 28 de septiembre de 2026 por el chat 019:** aquí adentro está también
-la página de venta de **Aymor Cuisine** (`_paginas-de-venta/aymor-cuisine/`), con sus doce
-imágenes (nueve en uso, una por pantalla y por idioma, y tres viejas que ya no pide
-la página). Estaba publicada por orden directa de Leonor del 27 de septiembre,
-y ella misma pidió bajarla el 28 en cuanto vio que cualquiera podía abrirla.
-La portada nunca tuvo tarjeta de Cuisine, así que no hubo nada que quitar de ahí.
-Para devolverla el día del estreno:
-
-    git mv "_paginas-de-venta/aymor-cuisine/index.html" aymor-cuisine/index.html
-    git mv "_paginas-de-venta/aymor-cuisine/img" aymor-cuisine/img
-
-Su política de privacidad (`aymor-cuisine/privacidad/`) se queda publicada, por la
-misma razón que las otras tres: Apple y Google exigen esa dirección abierta para
-aceptar la aplicación.
-
--- chat 019
