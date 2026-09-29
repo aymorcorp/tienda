@@ -1,0 +1,489 @@
+{
+  "_que_es_esto": "La ficha de Quorum. Todo lo que dice su pagina de venta esta aqui. La pagina se arma sola con: python _plantilla/construir.py",
+
+  "nombre": "Quorum",
+  "carpeta": "quorum",
+  "precio": "quorum",
+  "pagina": true,
+  "publicada": true,
+  "imagen": "og-image.png",
+  "idiomaPrincipal": "fr",
+  "idiomasDePagina": ["fr", "en", "es"],
+  "tarjeta": { "estado": "disponible", "mostrar": true },
+
+  "textos": {
+    "fr": {
+      "title": "Quorum — Contrôle des heures et rapport de paie, en simple",
+      "metaDesc": "Quorum est une horloge de poinçon simple pour les petites entreprises avec du personnel à l'heure, à contrat et d'agence. Aucun serveur, aucun compte à gérer : l'employé entre, sort, et le rapport part au comptable.",
+      "og": {
+        "titulo": "Quorum — Contrôle des heures et rapport de paie",
+        "desc": "Les heures de toute votre équipe, sans le casse-tête des logiciels de paie. {p.mes} par mois pour le premier téléphone, et le premier mois est à moitié prix."
+      },
+      "nav": {
+        "caracteristicas": "Fonctions",
+        "como": "Comment ça marche",
+        "privacidad": "Confidentialité",
+        "precio": "Prix",
+        "preguntas": "Questions",
+        "boton": "Obtenir Quorum"
+      },
+      "hero": {
+        "eyebrow": "Heures et rapports de paie",
+        "h1": "Les heures de toute votre équipe, sans le casse-tête des logiciels de paie.",
+        "lead": "Quorum est une horloge de poinçon faite pour les petites entreprises avec du monde de toutes sortes : permanents, à contrat, d'agence. On entre, on sort, et le rapport part au comptable — sans compte à créer, sans serveur à qui confier vos données.",
+        "cta1": "Obtenir Quorum — {p.mes}/mois",
+        "cta2": "Voir comment ça marche",
+        "fine": "Fonctionne sur n'importe quel téléphone, tablette ou ordinateur — directement dans le navigateur."
+      },
+      "maqueta": {
+        "barra": "Quorum",
+        "tarjetas": [
+          {
+            "nombre": "Maria Lopez",
+            "etiqueta": "#014",
+            "campos": [
+              { "rotulo": "Entrée", "valor": "07 h 58" },
+              { "rotulo": "Sortie", "valor": "16 h 02" }
+            ],
+            "pie": "📍 Poinçon fait sur place"
+          },
+          {
+            "nombre": "James Okafor",
+            "etiqueta": "#021",
+            "campos": [
+              { "rotulo": "Entrée", "valor": "22 h 00" },
+              { "rotulo": "Sortie", "valor": "06 h 00" }
+            ],
+            "pie": "📍 Poinçon fait sur place"
+          }
+        ]
+      },
+      "confianza": [
+        "⏱ La pause repas se déduit toute seule",
+        "🌙 Les quarts de nuit calculés comme il faut",
+        "📄 Rapport Excel prêt à envoyer",
+        "🔒 Accès protégé",
+        "🌐 Français · English · Español · Tagalog"
+      ],
+      "caracteristicas": {
+        "eyebrow": "Ce qui est inclus",
+        "h2": "Tout ce qu'une petite équipe a besoin pour ses heures — et rien d'autre.",
+        "p": "Aucun module à configurer, aucune fonction vendue à part. Quorum fait une seule chose — des heures justes et un rapport propre — et il la fait bien.",
+        "lista": [
+          { "icono": "⏱", "titulo": "Entrée et sortie, c'est tout", "texto": "Chaque employé a sa fiche, avec l'heure d'entrée et l'heure de sortie. Rien à télécharger, aucun mot de passe à retenir." },
+          { "icono": "🍽", "titulo": "La pause repas, automatique", "texto": "Une demi-heure non payée se déduit toute seule à chaque 5 heures travaillées. Personne n'a à la calculer à la main." },
+          { "icono": "🌙", "titulo": "Les quarts de nuit, bien calculés", "texto": "Un quart qui commence à 22 h et finit à 6 h est calculé correctement, tout seul — une des erreurs de paie les plus courantes, réglée." },
+          { "icono": "🏖", "titulo": "Vacances et absences", "texto": "Réservez des dates pour les vacances, la maladie ou une absence justifiée — sans déranger la période de paie en cours." },
+          { "icono": "📍", "titulo": "Vérification du lieu, optionnelle", "texto": "Confirmez qu'un poinçon a été fait près du chantier — une épingle de couleur, jamais un blocage. Optionnel, et éteint par défaut." },
+          { "icono": "📧", "titulo": "Le rapport au comptable, en une touche", "texto": "Un fichier Excel soigné avec des formules vivantes — totaux par employé, par type de paie, et le détail jour par jour — envoyé aux courriels que vous autorisez." },
+          { "icono": "📥", "titulo": "Importer depuis Excel", "texto": "Vos heures sont déjà écrites quelque part? Téléchargez le modèle, remplissez-le, et importez-le d'un coup." },
+          { "icono": "🔐", "titulo": "Deux niveaux d'accès", "texto": "Un NIP pour tous les jours, et une protection de plus pour ce qui est délicat — pour que personne n'efface l'historique de paie par accident." },
+          { "icono": "💾", "titulo": "Votre copie, quand vous voulez", "texto": "Téléchargez tout dans un seul fichier quand ça vous chante : votre copie, à vous, à remettre sur n'importe quel appareil." }
+        ]
+      },
+      "como": {
+        "eyebrow": "Comment ça marche",
+        "h2": "On installe une fois, on s'en sert tous les jours.",
+        "p": "Aucun département informatique requis.",
+        "pasos": [
+          { "numero": "1", "titulo": "Entrez votre monde", "texto": "Le nom de chaque personne, son type de paie (permanent, contrat, agence), son taux et son numéro d'employé. Quelques secondes par personne." },
+          { "numero": "2", "titulo": "Entrée et sortie", "texto": "Les gérants ou les employés entrent l'heure sur un appareil partagé, ou sur leur propre téléphone. La pause, les quarts de nuit et les totaux se calculent tout seuls." },
+          { "numero": "3", "titulo": "Envoyez le rapport", "texto": "Le jour de la paie, touchez Envoyer : le rapport Excel s'en va directement dans la boîte de votre comptable. C'est fait." }
+        ]
+      },
+      "quienes": {
+        "eyebrow": "Pour les équipes mélangées",
+        "h2": "Un seul outil pour chaque sorte de travailleur.",
+        "lista": [
+          { "titulo": "Permanents", "texto": "Votre équipe de tous les jours. Heures et paie calculées, incluses dans chaque rapport." },
+          { "titulo": "À contrat", "texto": "Les travailleurs temporaires ou à contrat, suivis et payés de la même façon propre que vos permanents." },
+          { "titulo": "D'agence", "texto": "Le monde fourni par une agence — Quorum garde le registre des heures pour vous, sans toucher à la paie, parce que c'est l'agence qui s'en occupe." }
+        ]
+      },
+      "privacidad": {
+        "eyebrow": "La confidentialité d'abord",
+        "h2": "Vos données restent dans votre appareil.",
+        "p": "Quorum ne tourne pas sur un serveur de compagnie, et il n'y a aucun compte avec les données de vos employés qui dort dans un nuage. Tout — les noms, les taux, les heures — vit dans le navigateur de l'appareil que vous utilisez, sous votre contrôle.",
+        "puntos": [
+          "Aucun serveur qui garde vos données de paie",
+          "Aucun compte à créer, aucun mot de passe à réinitialiser",
+          "Votre fichier de sauvegarde est à vous : gardez-le où vous voulez"
+        ],
+        "caja": [
+          { "icono": "🔒", "titulo": "Un NIP pour tous les jours", "texto": "Les gérants débloquent les taux et les rapports avec un NIP que vous choisissez." },
+          { "icono": "🔐", "titulo": "Une protection de plus pour le délicat", "texto": "Effacer un employé qui a des heures, vider les données ou remettre une sauvegarde demandent une étape de sécurité de plus — seul le propriétaire peut le faire." },
+          { "icono": "💾", "titulo": "Les sauvegardes vous appartiennent", "texto": "Téléchargez une copie complète quand vous voulez — avant de changer de téléphone, ou juste pour dormir tranquille." }
+        ]
+      },
+      "idiomas": {
+        "eyebrow": "Quatre langues",
+        "h2": "Toute votre équipe, dans sa propre langue.",
+        "p": "La langue de l'application se change d'une touche — chaque gérant voit Quorum dans la langue où il est à l'aise.",
+        "lista": ["Français", "English", "Español", "Tagalog"]
+      },
+      "precio": {
+        "eyebrow": "Prix",
+        "h2": "Le prix va par téléphone. Aucun calcul par employé.",
+        "p": "Peu importe combien vous avez d'employés, le prix ne bouge pas : vous payez pour le nombre d'appareils qui poinçonnent, pas pour le nombre de personnes.",
+        "etiqueta": "Quorum · disponible aujourd'hui",
+        "cifra": "{p.mes}",
+        "porque": "par mois, premier téléphone",
+        "detalle": "{p.extra} par mois pour chaque téléphone de plus — jusqu'à cinq par entreprise. Un deuxième emplacement, un deuxième quart ou un appareil de secours, sans repayer le plein prix.",
+        "ofertas": [
+          { "titulo": "Votre premier mois à moitié prix", "texto": "{p.mitad} le premier téléphone, {p.mitadExtra} chaque téléphone de plus. Après, le prix normal." },
+          { "titulo": "Paiement annuel : un mois cadeau", "texto": "{p.anual} pour l'année du premier téléphone. Vous payez onze mois, vous en recevez douze." }
+        ],
+        "excluyentes": "Les deux offres ne se combinent pas : vous choisissez celle qui vous arrange.",
+        "nota": "Comprend un rapport gratuit par semaine (52 par année). Besoin d'un deuxième rapport la même semaine? Chaque rapport de plus est à {p.reporteExtra}. Le compte repart à zéro chaque semaine. Quorum s'ouvre dans votre navigateur — téléphone, tablette ou ordinateur — sans rien installer. Les fiches de l'App Store et de Google Play viendront plus tard : écrivez-nous et on vous installe cette semaine.",
+        "boton": "Écrivez-nous pour commencer"
+      },
+      "preguntas": {
+        "eyebrow": "Questions",
+        "h2": "Les questions qu'on nous pose",
+        "lista": [
+          { "p": "Est-ce que j'ai quelque chose à installer?", "r": "Non. Quorum fonctionne dans votre navigateur — téléphone, tablette ou ordinateur. Vous pouvez garder un raccourci sur l'écran d'accueil pour que ça ressemble à une application, mais il n'y a rien à télécharger d'un magasin." },
+          { "p": "Est-ce que ça marche sans Internet?", "r": "Il faut Internet pour ouvrir l'application la première fois. Ensuite, avec le raccourci sur l'écran d'accueil, tout continue de marcher hors ligne — entrer les heures, calculer les totaux, tout sauf envoyer le rapport par courriel, qui demande une connexion." },
+          { "p": "Est-ce que je peux l'utiliser sur mon téléphone et mon ordinateur en même temps?", "r": "Pas encore : dans cette version, chaque appareil garde ses données de son bord. La synchronisation entre appareils s'en vient dans une version future." },
+          { "p": "Et si je perds mon téléphone ou que j'efface mon navigateur?", "r": "Comme vos données vivent seulement dans cet appareil, il est important de télécharger une sauvegarde régulièrement (une touche, dans les réglages) et de la garder en lieu sûr, comme votre propre nuage." },
+          { "p": "Est-ce que la vérification du lieu est obligatoire?", "r": "Non — elle est complètement optionnelle et éteinte par défaut. Si vous l'allumez, elle indique seulement si le poinçon a été fait près de l'adresse de l'entreprise. Elle n'empêche jamais personne de poinçonner." },
+          { "p": "Quorum, c'est pour qui?", "r": "Les petites et moyennes entreprises qui gèrent un mélange de permanents, de contractuels et de monde d'agence — et qui veulent un rapport d'heures propre sans payer pour une plateforme de paie complète dont elles n'ont pas encore besoin." }
+        ]
+      },
+      "cierre": {
+        "h2": "Prêt à mettre Quorum dans votre entreprise?",
+        "p": "Écrivez-nous et on installe votre premier téléphone — {p.mes} par mois, sans contrat long. Votre premier mois est à moitié prix, ou prenez l'année et le douzième mois est cadeau.",
+        "boton": "Écrivez-nous par courriel"
+      },
+      "pie": {
+        "producto": "Quorum — une application d'Aymor Applis",
+        "privacidad": "Confidentialité",
+        "todas": "Voir toutes les applications"
+      },
+      "tarjeta": {
+        "etiqueta": "Disponible — depuis votre navigateur",
+        "queHace": "Contrôle des heures pour votre équipe — entrée en deux touches, pause repas calculée toute seule, rapport prêt pour le comptable.",
+        "precio": "{p.mes} par mois, premier téléphone · {p.extra} par téléphone de plus",
+        "boton": "Découvrir Quorum →"
+      }
+    },
+
+    "en": {
+      "title": "Quorum — Simple Time Tracking & Payroll Reports",
+      "metaDesc": "Quorum is a simple time-tracking app for small businesses with hourly, contract, and agency staff. No server, no setup, no per-employee accounts to manage — just clock in, clock out, and send the report.",
+      "og": {
+        "titulo": "Quorum — Simple Time Tracking & Payroll Reports",
+        "desc": "Track hours for your whole team — without the payroll-software headache. {p.mes}/month for your first phone, and your first month is half price."
+      },
+      "nav": {
+        "caracteristicas": "Features",
+        "como": "How it works",
+        "privacidad": "Privacy",
+        "precio": "Pricing",
+        "preguntas": "FAQ",
+        "boton": "Get Quorum"
+      },
+      "hero": {
+        "eyebrow": "Time tracking & payroll reports",
+        "h1": "Track hours for your whole team — without the payroll-software headache.",
+        "lead": "Quorum is a simple time clock built for small businesses with a mix of staff: full-time, contract, and agency workers. Clock in, clock out, and send a ready-to-use report to your accountant — no accounts to set up, no server to trust with your data.",
+        "cta1": "Get Quorum — {p.mes}/mo",
+        "cta2": "See how it works",
+        "fine": "Works on any phone, tablet, or computer — right from the browser."
+      },
+      "maqueta": {
+        "barra": "Quorum",
+        "tarjetas": [
+          {
+            "nombre": "Maria Lopez",
+            "etiqueta": "#014",
+            "campos": [
+              { "rotulo": "Time in", "valor": "07:58 AM" },
+              { "rotulo": "Time out", "valor": "04:02 PM" }
+            ],
+            "pie": "📍 Clocked in on-site"
+          },
+          {
+            "nombre": "James Okafor",
+            "etiqueta": "#021",
+            "campos": [
+              { "rotulo": "Time in", "valor": "10:00 PM" },
+              { "rotulo": "Time out", "valor": "06:00 AM" }
+            ],
+            "pie": "📍 Clocked in on-site"
+          }
+        ]
+      },
+      "confianza": [
+        "⏱ Automatic lunch-break deduction",
+        "🌙 Overnight shifts calculated correctly",
+        "📄 Ready-to-send Excel report",
+        "🔒 Secure, protected access",
+        "🌐 English · Français · Español · Tagalog"
+      ],
+      "caracteristicas": {
+        "eyebrow": "What's included",
+        "h2": "Everything a small team needs to track hours — nothing it doesn't.",
+        "p": "No modules to configure, no per-feature upsells. Quorum does one job — accurate time tracking and a clean report — and does it well.",
+        "lista": [
+          { "icono": "⏱", "titulo": "Simple clock in / clock out", "texto": "Each employee gets a card with a Time In and Time Out field. No app to download, no login to remember." },
+          { "icono": "🍽", "titulo": "Automatic lunch rule", "texto": "Half an hour unpaid is deducted automatically for every 5 hours worked — nobody has to calculate it by hand." },
+          { "icono": "🌙", "titulo": "Overnight shifts handled right", "texto": "A shift that starts at 10 PM and ends at 6 AM is calculated correctly, automatically — a common source of payroll errors, solved." },
+          { "icono": "🏖", "titulo": "Vacation & leave tracking", "texto": "Reserve any date range for vacation, sick leave, or a justified absence — without disturbing the pay period you're currently working in." },
+          { "icono": "📍", "titulo": "Optional location check", "texto": "Confirm a clock-in happened near the job site — a quiet color-coded pin, never a blocker. Fully optional, off by default." },
+          { "icono": "📧", "titulo": "One-click report to your accountant", "texto": "A polished Excel file with live formulas — totals per employee, per pay type, and a full daily breakdown — sent straight to your authorized emails." },
+          { "icono": "📥", "titulo": "Bulk import from Excel", "texto": "Already have hours written down somewhere? Download the template, fill it in, and import it in one step." },
+          { "icono": "🔐", "titulo": "Two levels of access", "texto": "A day-to-day PIN for managers, with an extra layer of protection for sensitive actions — so nobody accidentally deletes payroll history." },
+          { "icono": "💾", "titulo": "Full backup, anytime", "texto": "Download everything as a single file whenever you want — your own copy, your own control, restore it on any device." }
+        ]
+      },
+      "como": {
+        "eyebrow": "How it works",
+        "h2": "Set up once, use every day.",
+        "p": "No IT department required.",
+        "pasos": [
+          { "numero": "1", "titulo": "Add your team", "texto": "Enter each employee's name, pay type (staff, contract, or agency), rate, and employee number. Takes seconds per person." },
+          { "numero": "2", "titulo": "Clock in and out", "texto": "Managers or employees enter the time on a shared device, or on their own phone. Lunch, overnight shifts, and totals are calculated automatically." },
+          { "numero": "3", "titulo": "Send the report", "texto": "When it's payday, tap Send — a ready-made Excel report goes straight to your accountant's inbox. Done." }
+        ]
+      },
+      "quienes": {
+        "eyebrow": "Built for mixed teams",
+        "h2": "One tool for every kind of worker on your team.",
+        "lista": [
+          { "titulo": "Staff", "texto": "Your core, full-time team. Hours and pay are calculated and included in every report." },
+          { "titulo": "Contract", "texto": "Temporary or contract workers, tracked and paid the same clean way as your full-time staff." },
+          { "titulo": "Agency", "texto": "Staff supplied by an outside agency — Quorum keeps an hours record for you without touching payroll, since the agency handles that." }
+        ]
+      },
+      "privacidad": {
+        "eyebrow": "Privacy by design",
+        "h2": "Your data stays on your own device.",
+        "p": "Quorum doesn't run on a company server, and there's no account with your employees' data sitting in the cloud. Everything — names, pay rates, hours — lives in the browser on the device you use, under your control.",
+        "puntos": [
+          "No servers holding your payroll data",
+          "No accounts to create, no passwords to reset",
+          "Your backup file is yours — keep it, move it, store it wherever you choose"
+        ],
+        "caja": [
+          { "icono": "🔒", "titulo": "PIN for day-to-day use", "texto": "Managers unlock pay rates and reports with a shared PIN you set." },
+          { "icono": "🔐", "titulo": "Extra protection for the sensitive stuff", "texto": "Deleting an employee with hours on file, wiping data, or restoring a backup all require an extra security step — only the owner can do it." },
+          { "icono": "💾", "titulo": "You control your backups", "texto": "Download a full backup whenever you like — before switching phones, or just for peace of mind." }
+        ]
+      },
+      "idiomas": {
+        "eyebrow": "Four languages",
+        "h2": "Your whole team, in their own language.",
+        "p": "Switch the app's language with one tap — every manager sees Quorum in the language they're comfortable in.",
+        "lista": ["English", "Français", "Español", "Tagalog"]
+      },
+      "precio": {
+        "eyebrow": "Pricing",
+        "h2": "Priced per phone. No per-employee math.",
+        "p": "However many employees you have, the price doesn't change — you only pay for how many devices you use to clock in, not how many people are on the clock.",
+        "etiqueta": "Quorum · use it today",
+        "cifra": "{p.mes}",
+        "porque": "per month, first phone",
+        "detalle": "{p.extra} per month for each additional phone — up to five per business. Add a phone for a second location, a second shift, or a backup device, without paying full price again.",
+        "ofertas": [
+          { "titulo": "Your first month at half price", "texto": "{p.mitad} for the first phone, {p.mitadExtra} for each additional one. Regular price after that." },
+          { "titulo": "Pay yearly: one month on us", "texto": "{p.anual} for a year of the first phone. You pay eleven months and get twelve." }
+        ],
+        "excluyentes": "The two offers don't stack: pick the one that suits you.",
+        "nota": "Includes one free report per week (52 a year). Need a second report in the same week? Each extra report is {p.reporteExtra}. The count resets every week. Quorum runs in your browser — phone, tablet or computer — with nothing to install. The App Store and Google Play listings come later; write to us and we will set you up this week.",
+        "boton": "Write to us to start"
+      },
+      "preguntas": {
+        "eyebrow": "Questions",
+        "h2": "Frequently asked questions",
+        "lista": [
+          { "p": "Do I need to install anything?", "r": "No. Quorum runs entirely in your browser — on a phone, tablet, or computer. You can save a shortcut to your home screen so it feels like an app, but there's nothing to download from a store." },
+          { "p": "Does Quorum work without internet?", "r": "You need internet to open the app the first time. After that, you can install it to your home screen and it keeps working offline — entering hours, calculating totals, everything except sending the report by email, which needs a connection." },
+          { "p": "Can I use Quorum on my phone and my computer at the same time?", "r": "Not yet — each device keeps its own data separately in this version. Multi-device sync is coming in a future version of Quorum." },
+          { "p": "What if I lose my phone or clear my browser?", "r": "Since your data lives only on that device, it's important to download a backup regularly (one tap, from the Settings screen) and keep it somewhere safe, like your own cloud drive." },
+          { "p": "Is location tracking mandatory?", "r": "No — it's completely optional and off by default. If you turn it on, it simply flags whether a clock-in happened near your business address. It never blocks anyone from clocking in." },
+          { "p": "Who is Quorum for?", "r": "Small and mid-sized businesses that manage a mix of staff, contract, and agency workers — and want a clean hours report without paying for a full payroll platform they don't need yet." }
+        ]
+      },
+      "cierre": {
+        "h2": "Ready to get Quorum for your business?",
+        "p": "Write to us and we'll get your first phone set up — {p.mes}/month, no long contract. Your first month is half price, or take the year and the twelfth month is on us.",
+        "boton": "Write to us by email"
+      },
+      "pie": {
+        "producto": "Quorum — an app by Aymor Applis",
+        "privacidad": "Privacy",
+        "todas": "See all the apps"
+      },
+      "tarjeta": {
+        "etiqueta": "Available — right in your browser",
+        "queHace": "Time tracking for your team — two-tap entry, automatic lunch calculation, report ready for your accountant.",
+        "precio": "{p.mes} a month, first phone · {p.extra} per extra phone",
+        "boton": "See Quorum →"
+      }
+    },
+
+    "es": {
+      "title": "Quorum — Control de horas y reporte de nómina, en simple",
+      "metaDesc": "Quorum es un checador simple para negocios pequeños con gente por hora, por contrato y de agencia. Sin servidor, sin cuentas que administrar: entra, sale, y el reporte se va al contador.",
+      "og": {
+        "titulo": "Quorum — Control de horas y reporte de nómina",
+        "desc": "Las horas de todo tu equipo, sin el dolor de cabeza del software de nómina. {p.mes} al mes el primer teléfono, y el primer mes va a mitad de precio."
+      },
+      "nav": {
+        "caracteristicas": "Qué trae",
+        "como": "Cómo funciona",
+        "privacidad": "Privacidad",
+        "precio": "Precio",
+        "preguntas": "Preguntas",
+        "boton": "Quiero Quorum"
+      },
+      "hero": {
+        "eyebrow": "Horas y reportes de nómina",
+        "h1": "Las horas de todo tu equipo, sin el dolor de cabeza del software de nómina.",
+        "lead": "Quorum es un checador hecho para negocios pequeños con gente de todo tipo: de planta, por contrato y de agencia. Se entra, se sale, y el reporte se va al contador — sin cuentas que crear, sin un servidor al que confiarle tus datos.",
+        "cta1": "Quiero Quorum — {p.mes}/mes",
+        "cta2": "Ver cómo funciona",
+        "fine": "Funciona en cualquier teléfono, tableta o computadora — desde el navegador."
+      },
+      "maqueta": {
+        "barra": "Quorum",
+        "tarjetas": [
+          {
+            "nombre": "Maria Lopez",
+            "etiqueta": "#014",
+            "campos": [
+              { "rotulo": "Entrada", "valor": "07:58 AM" },
+              { "rotulo": "Salida", "valor": "04:02 PM" }
+            ],
+            "pie": "📍 Checó en el lugar"
+          },
+          {
+            "nombre": "James Okafor",
+            "etiqueta": "#021",
+            "campos": [
+              { "rotulo": "Entrada", "valor": "10:00 PM" },
+              { "rotulo": "Salida", "valor": "06:00 AM" }
+            ],
+            "pie": "📍 Checó en el lugar"
+          }
+        ]
+      },
+      "confianza": [
+        "⏱ El lunch se descuenta solo",
+        "🌙 Los turnos de noche bien calculados",
+        "📄 Reporte de Excel listo para mandar",
+        "🔒 Acceso protegido",
+        "🌐 Español · Français · English · Tagalog"
+      ],
+      "caracteristicas": {
+        "eyebrow": "Qué trae",
+        "h2": "Todo lo que un equipo chico necesita para sus horas — y nada más.",
+        "p": "Sin módulos que configurar, sin funciones que se venden aparte. Quorum hace una sola cosa — horas exactas y un reporte limpio — y la hace bien.",
+        "lista": [
+          { "icono": "⏱", "titulo": "Entrada y salida, nada más", "texto": "Cada empleado tiene su tarjeta, con hora de entrada y hora de salida. Nada que bajar, ninguna contraseña que recordar." },
+          { "icono": "🍽", "titulo": "La regla del lunch, automática", "texto": "Media hora sin pagar se descuenta sola por cada 5 horas trabajadas. Nadie tiene que sacarla a mano." },
+          { "icono": "🌙", "titulo": "Los turnos de noche, bien", "texto": "Un turno que empieza a las 10 de la noche y termina a las 6 de la mañana se calcula correcto, solo — uno de los errores de nómina más comunes, resuelto." },
+          { "icono": "🏖", "titulo": "Vacaciones y faltas", "texto": "Aparta fechas para vacaciones, enfermedad o una falta justificada — sin mover el periodo de pago en el que vas." },
+          { "icono": "📍", "titulo": "Revisión de lugar, opcional", "texto": "Confirma que alguien checó cerca del lugar de trabajo — un pin de color, nunca un bloqueo. Es opcional y viene apagado." },
+          { "icono": "📧", "titulo": "El reporte al contador, de un toque", "texto": "Un archivo de Excel cuidado, con fórmulas vivas — totales por empleado, por tipo de pago y el desglose día por día — directo a los correos que tú autorizas." },
+          { "icono": "📥", "titulo": "Importar desde Excel", "texto": "¿Ya tienes las horas escritas en otro lado? Baja la plantilla, llénala e impórtala de una vez." },
+          { "icono": "🔐", "titulo": "Dos niveles de acceso", "texto": "Un PIN para el día a día y una protección extra para lo delicado — para que nadie borre el historial de nómina por accidente." },
+          { "icono": "💾", "titulo": "Tu respaldo, cuando quieras", "texto": "Baja todo en un solo archivo cuando se te antoje: tu copia, tuya, para reponerla en cualquier aparato." }
+        ]
+      },
+      "como": {
+        "eyebrow": "Cómo funciona",
+        "h2": "Se acomoda una vez, se usa todos los días.",
+        "p": "No hace falta departamento de sistemas.",
+        "pasos": [
+          { "numero": "1", "titulo": "Mete a tu gente", "texto": "El nombre de cada quien, su tipo de pago (planta, contrato o agencia), su tarifa y su número de empleado. Segundos por persona." },
+          { "numero": "2", "titulo": "Entrada y salida", "texto": "Los encargados o los empleados ponen la hora en un aparato compartido, o en su propio teléfono. El lunch, los turnos de noche y los totales salen solos." },
+          { "numero": "3", "titulo": "Manda el reporte", "texto": "El día de pago, toca Enviar: el reporte de Excel se va derechito al correo de tu contador. Listo." }
+        ]
+      },
+      "quienes": {
+        "eyebrow": "Para equipos mezclados",
+        "h2": "Una sola herramienta para cada tipo de trabajador.",
+        "lista": [
+          { "titulo": "De planta", "texto": "Tu equipo de siempre. Horas y sueldo calculados, incluidos en cada reporte." },
+          { "titulo": "Por contrato", "texto": "Los temporales o por contrato, llevados y pagados igual de limpio que los de planta." },
+          { "titulo": "De agencia", "texto": "La gente que manda una agencia — Quorum te guarda el registro de horas sin tocar el sueldo, porque de eso se encarga la agencia." }
+        ]
+      },
+      "privacidad": {
+        "eyebrow": "Privacidad desde el diseño",
+        "h2": "Tus datos se quedan en tu aparato.",
+        "p": "Quorum no corre en un servidor de la empresa, y no hay ninguna cuenta con los datos de tus empleados durmiendo en la nube. Todo — nombres, tarifas, horas — vive en el navegador del aparato que usas, bajo tu control.",
+        "puntos": [
+          "Ningún servidor guardando tus datos de nómina",
+          "Ninguna cuenta que crear, ninguna contraseña que reponer",
+          "Tu archivo de respaldo es tuyo: guárdalo donde tú quieras"
+        ],
+        "caja": [
+          { "icono": "🔒", "titulo": "Un PIN para el día a día", "texto": "Los encargados abren tarifas y reportes con un PIN que tú pones." },
+          { "icono": "🔐", "titulo": "Protección extra para lo delicado", "texto": "Borrar a un empleado que tiene horas, vaciar los datos o reponer un respaldo piden un paso de seguridad más — solo el dueño puede." },
+          { "icono": "💾", "titulo": "Los respaldos son tuyos", "texto": "Baja una copia completa cuando gustes — antes de cambiar de teléfono, o nomás para dormir tranquilo." }
+        ]
+      },
+      "idiomas": {
+        "eyebrow": "Cuatro idiomas",
+        "h2": "Todo tu equipo, en su propio idioma.",
+        "p": "El idioma de la aplicación se cambia de un toque — cada encargado ve Quorum en el idioma en el que está cómodo.",
+        "lista": ["Español", "Français", "English", "Tagalog"]
+      },
+      "precio": {
+        "eyebrow": "Precio",
+        "h2": "El precio va por teléfono. Nada de cuentas por empleado.",
+        "p": "Tengas los empleados que tengas, el precio no se mueve: pagas por cuántos aparatos usas para checar, no por cuánta gente está trabajando.",
+        "etiqueta": "Quorum · se usa hoy mismo",
+        "cifra": "{p.mes}",
+        "porque": "al mes, primer teléfono",
+        "detalle": "{p.extra} al mes por cada teléfono adicional — hasta cinco por negocio. Un segundo local, un segundo turno o un aparato de respaldo, sin volver a pagar el precio completo.",
+        "ofertas": [
+          { "titulo": "Tu primer mes a mitad de precio", "texto": "{p.mitad} el primer teléfono y {p.mitadExtra} cada teléfono adicional. Después, precio normal." },
+          { "titulo": "Pago anual: un mes de regalo", "texto": "{p.anual} el año del primer teléfono. Pagas once meses y recibes doce." }
+        ],
+        "excluyentes": "Las dos ofertas no se juntan: escoges la que más te sirva.",
+        "nota": "Incluye un reporte gratis por semana (52 al año). ¿Necesitas un segundo reporte la misma semana? Cada reporte extra cuesta {p.reporteExtra}. La cuenta se reinicia cada semana. Quorum se abre en tu navegador — teléfono, tableta o computadora — sin instalar nada. Las fichas de App Store y Google Play vienen después: escríbenos y te dejamos andando esta semana.",
+        "boton": "Escríbenos para empezar"
+      },
+      "preguntas": {
+        "eyebrow": "Preguntas",
+        "h2": "Las preguntas que nos hacen",
+        "lista": [
+          { "p": "¿Tengo que instalar algo?", "r": "No. Quorum funciona dentro de tu navegador — teléfono, tableta o computadora. Puedes dejar un acceso directo en la pantalla de inicio para que se sienta como una app, pero no hay nada que bajar de una tienda." },
+          { "p": "¿Funciona sin internet?", "r": "Necesitas internet para abrirla la primera vez. Después, con el acceso directo en la pantalla de inicio, todo sigue funcionando sin conexión — capturar horas, sacar totales, todo menos mandar el reporte por correo, que sí necesita señal." },
+          { "p": "¿La puedo usar en el teléfono y en la computadora al mismo tiempo?", "r": "Todavía no: en esta versión cada aparato guarda sus datos por su lado. La sincronización entre aparatos viene en una versión futura." },
+          { "p": "¿Y si pierdo el teléfono o limpio el navegador?", "r": "Como tus datos viven solo en ese aparato, es importante bajar un respaldo seguido (un toque, en la pantalla de ajustes) y guardarlo en un lugar seguro, como tu propia nube." },
+          { "p": "¿La revisión de lugar es obligatoria?", "r": "No — es completamente opcional y viene apagada. Si la prendes, nada más señala si alguien checó cerca de la dirección del negocio. Nunca le impide checar a nadie." },
+          { "p": "¿Para quién es Quorum?", "r": "Para negocios chicos y medianos que llevan una mezcla de gente de planta, por contrato y de agencia — y quieren un reporte de horas limpio sin pagar por una plataforma de nómina completa que todavía no necesitan." }
+        ]
+      },
+      "cierre": {
+        "h2": "¿Listo para poner Quorum en tu negocio?",
+        "p": "Escríbenos y te dejamos andando el primer teléfono — {p.mes} al mes, sin contrato largo. Tu primer mes va a mitad de precio, o tomas el año y el mes doce va de nuestra cuenta.",
+        "boton": "Escríbenos por correo"
+      },
+      "pie": {
+        "producto": "Quorum — una aplicación de Aymor Applis",
+        "privacidad": "Privacidad",
+        "todas": "Ver todas las aplicaciones"
+      },
+      "tarjeta": {
+        "etiqueta": "Disponible — se usa desde el navegador",
+        "queHace": "Control de horas para tu equipo — captura en dos toques, cálculo automático del lunch, reporte listo para el contador.",
+        "precio": "{p.mes} al mes, primer teléfono · {p.extra} por teléfono adicional",
+        "boton": "Conocer Quorum →"
+      }
+    },
+
+    "tl": {
+      "tarjeta": {
+        "etiqueta": "Magagamit na — mula sa iyong browser",
+        "queHace": "Pagsubaybay ng oras para sa iyong koponan — dalawang tap na pagpasok, awtomatikong kalkulasyon ng pananghalian, ulat na handa na para sa accountant.",
+        "precio": "{p.mes} bawat buwan, unang telepono · {p.extra} bawat karagdagang telepono",
+        "boton": "Tingnan ang Quorum →"
+      }
+    }
+  }
+}

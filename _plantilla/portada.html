@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="{{principal}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="title">{{title}}</title>
+<meta name="description" data-i18n="metaDesc" content="{{metaDesc}}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{direccion}}">
+<meta property="og:title" data-i18n="title" content="{{title}}">
+<meta property="og:description" data-i18n="metaDesc" content="{{metaDesc}}">
+<style>
+{{{css}}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-row">
+    <div class="nav-brand">{{casa}}</div>
+    <nav class="nav-links">
+      <a href="#apps" data-i18n="nav.apps">{{nav.apps}}</a>
+      <a href="#contacto" data-i18n="nav.contacto">{{nav.contacto}}</a>
+    </nav>
+    <div class="langs" id="langs">
+      <!--repetir:botonesIdioma--><button data-lang="{{.codigo}}">{{.nombre}}</button><!--/repetir-->
+    </div>
+  </div>
+</header>
+
+<section class="hero solo">
+  <div class="wrap">
+    <div>
+      <h1 data-i18n="hero.h1">{{hero.h1}}</h1>
+      <p class="lead" data-i18n="hero.lead">{{hero.lead}}</p>
+    </div>
+  </div>
+</section>
+
+<section class="apps" id="apps">
+  <div class="wrap" style="padding-top:40px">
+    <div class="grid-apps">
+      <!--repetir:apps-->
+      <div class="card">
+        <span class="badge {{.clase}}" data-i18n="{{_clave}}.etiqueta">{{.etiqueta}}</span>
+        <h2>{{.nombre}}</h2>
+        <p data-i18n="{{_clave}}.que_hace">{{.que_hace}}</p>
+        <p class="precio" data-i18n="{{_clave}}.precio">{{.precio}}</p>
+        <!--si:.enlace-->
+        <a class="btn primary" href="{{.carpeta}}/" data-i18n="{{_clave}}.boton">{{.boton}}</a>
+        <!--/si-->
+      </div>
+      <!--/repetir-->
+    </div>
+  </div>
+</section>
+
+<section class="contacto" id="contacto">
+  <div class="wrap">
+    <h2 data-i18n="contacto.h2">{{contacto.h2}}</h2>
+    <p data-i18n="contacto.p">{{contacto.p}}</p>
+    <a class="btn dark" href="mailto:{{correo}}" data-i18n="contacto.boton">{{contacto.boton}}</a>
+    <p class="emailline" data-i18n="contacto.correo">{{contacto.correo}}</p>
+  </div>
+</section>
+
+<div class="legal">
+  <div class="wrap">
+    <p data-i18n="pie.operado">{{pie.operado}}</p>
+    <p>
+      <a href="terminos/" data-i18n="pie.terminos">{{pie.terminos}}</a> &middot;
+      <a href="privacidad/" data-i18n="pie.privacidad">{{pie.privacidad}}</a>
+    </p>
+    <p data-i18n="pie.derechos">{{pie.derechos}}</p>
+  </div>
+</div>
+
+<script>
+/* El cambia-idiomas. Es el mismo en toda la tienda: lo arma _plantilla/construir.py */
+const I18N = {{{diccionario}}};
+
+function setLang(lang){
+  const dict = I18N[lang] || I18N["{{principal}}"];
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    const key = el.getAttribute('data-i18n');
+    if (!(key in dict)) return;
+    if (el.tagName === 'TITLE') { document.title = dict[key]; return; }
+    if (el.tagName === 'META')  { el.setAttribute('content', dict[key]); return; }
+    el.textContent = dict[key];
+  });
+  document.querySelectorAll('.langs button').forEach(function(b){
+    b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+  });
+  try { localStorage.setItem('lang', lang); } catch(e) {}
+}
+
+document.getElementById('langs').addEventListener('click', function(e){
+  const btn = e.target.closest('button[data-lang]');
+  if (btn) setLang(btn.getAttribute('data-lang'));
+});
+
+var guardado = null;
+try { guardado = localStorage.getItem('lang'); } catch(e) {}
+setLang(guardado && I18N[guardado] ? guardado : '{{principal}}');
+</script>
+
+</body>
+</html>

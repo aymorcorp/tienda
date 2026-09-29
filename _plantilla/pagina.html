@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="{{principal}}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="title">{{title}}</title>
+<meta name="description" data-i18n="metaDesc" content="{{metaDesc}}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{tienda.direccion}}{{carpeta}}/">
+<meta property="og:title" data-i18n="og.titulo" content="{{og.titulo}}">
+<meta property="og:description" data-i18n="og.desc" content="{{og.desc}}">
+<!--si:imagen-->
+<meta property="og:image" content="{{tienda.direccion}}{{carpeta}}/{{imagen}}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{{tienda.direccion}}{{carpeta}}/{{imagen}}">
+<!--/si-->
+<meta name="twitter:title" data-i18n="og.titulo" content="{{og.titulo}}">
+<meta name="twitter:description" data-i18n="og.desc" content="{{og.desc}}">
+<style>
+{{{css}}}
+<!--si:colores-->
+:root{ {{{colores}}} }
+<!--/si-->
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-row">
+    <div class="nav-brand">{{nombre}}</div>
+    <nav class="nav-links">
+      <a href="#caracteristicas" data-i18n="nav.caracteristicas">{{nav.caracteristicas}}</a>
+      <a href="#como" data-i18n="nav.como">{{nav.como}}</a>
+      <a href="#privacidad" data-i18n="nav.privacidad">{{nav.privacidad}}</a>
+      <a href="#precio" data-i18n="nav.precio">{{nav.precio}}</a>
+      <a href="#preguntas" data-i18n="nav.preguntas">{{nav.preguntas}}</a>
+    </nav>
+    <div class="langs" id="langs">
+      <!--repetir:botonesIdioma--><button data-lang="{{.codigo}}">{{.nombre}}</button><!--/repetir-->
+    </div>
+    <a class="btn primary nav-cta" href="#precio" data-i18n="nav.boton">{{nav.boton}}</a>
+  </div>
+</header>
+
+<section class="hero<!--no:maqueta--> solo<!--/no-->">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow" data-i18n="hero.eyebrow">{{hero.eyebrow}}</span>
+      <h1 data-i18n="hero.h1">{{hero.h1}}</h1>
+      <p class="lead" data-i18n="hero.lead">{{hero.lead}}</p>
+      <div class="ctas">
+        <a class="btn primary" href="#precio" data-i18n="hero.cta1">{{hero.cta1}}</a>
+        <a class="btn ghost" href="#como" data-i18n="hero.cta2">{{hero.cta2}}</a>
+      </div>
+      <div class="fineprint" data-i18n="hero.fine">{{hero.fine}}</div>
+    </div>
+    <!--si:maqueta-->
+    <div class="hero-card">
+      <div class="hero-card-inner">
+        <div class="mini-app-bar" data-i18n="maqueta.barra">{{maqueta.barra}}</div>
+        <!--repetir:maqueta.tarjetas-->
+        <div class="mini-card">
+          <div class="mini-row">
+            <span class="mini-name" data-i18n="{{_clave}}.nombre">{{.nombre}}</span>
+            <span class="mini-badge" data-i18n="{{_clave}}.etiqueta">{{.etiqueta}}</span>
+          </div>
+          <div class="mini-times">
+            <!--repetir:.campos-->
+            <div class="mini-field"><span data-i18n="{{_clave}}.rotulo">{{.rotulo}}</span><b data-i18n="{{_clave}}.valor">{{.valor}}</b></div>
+            <!--/repetir-->
+          </div>
+          <!--si:.pie--><div class="mini-geo" data-i18n="{{_clave}}.pie">{{.pie}}</div><!--/si-->
+        </div>
+        <!--/repetir-->
+      </div>
+    </div>
+    <!--/si-->
+  </div>
+</section>
+
+<!--si:confianza-->
+<div class="trust">
+  <div class="wrap">
+    <!--repetir:confianza--><span data-i18n="{{_clave}}">{{.}}</span><!--/repetir-->
+  </div>
+</div>
+<!--/si-->
+
+<section id="caracteristicas">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="caracteristicas.eyebrow">{{caracteristicas.eyebrow}}</span>
+      <h2 data-i18n="caracteristicas.h2">{{caracteristicas.h2}}</h2>
+      <p data-i18n="caracteristicas.p">{{caracteristicas.p}}</p>
+    </div>
+    <div class="grid3">
+      <!--repetir:caracteristicas.lista-->
+      <div class="feat">
+        <div class="ic">{{.icono}}</div>
+        <h3 data-i18n="{{_clave}}.titulo">{{.titulo}}</h3>
+        <p data-i18n="{{_clave}}.texto">{{.texto}}</p>
+      </div>
+      <!--/repetir-->
+    </div>
+  </div>
+</section>
+
+<section class="how" id="como">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="como.eyebrow">{{como.eyebrow}}</span>
+      <h2 data-i18n="como.h2">{{como.h2}}</h2>
+      <p data-i18n="como.p">{{como.p}}</p>
+    </div>
+    <div class="steps">
+      <!--repetir:como.pasos-->
+      <div class="step">
+        <div class="num">{{.numero}}</div>
+        <h3 data-i18n="{{_clave}}.titulo">{{.titulo}}</h3>
+        <p data-i18n="{{_clave}}.texto">{{.texto}}</p>
+      </div>
+      <!--/repetir-->
+    </div>
+  </div>
+</section>
+
+<!--si:quienes-->
+<section class="who">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="quienes.eyebrow">{{quienes.eyebrow}}</span>
+      <h2 data-i18n="quienes.h2">{{quienes.h2}}</h2>
+    </div>
+    <div class="who-cards">
+      <!--repetir:quienes.lista-->
+      <div class="who-card">
+        <h3 data-i18n="{{_clave}}.titulo">{{.titulo}}</h3>
+        <p data-i18n="{{_clave}}.texto">{{.texto}}</p>
+      </div>
+      <!--/repetir-->
+    </div>
+  </div>
+</section>
+<!--/si-->
+
+<section id="privacidad" class="privacy">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow" data-i18n="privacidad.eyebrow">{{privacidad.eyebrow}}</span>
+      <h2 data-i18n="privacidad.h2">{{privacidad.h2}}</h2>
+      <p data-i18n="privacidad.p">{{privacidad.p}}</p>
+      <ul>
+        <!--repetir:privacidad.puntos--><li data-i18n="{{_clave}}">{{.}}</li><!--/repetir-->
+      </ul>
+    </div>
+    <div class="privacy-box">
+      <!--repetir:privacidad.caja-->
+      <div class="row">
+        <div class="ic">{{.icono}}</div>
+        <div>
+          <b data-i18n="{{_clave}}.titulo">{{.titulo}}</b>
+          <span data-i18n="{{_clave}}.texto">{{.texto}}</span>
+        </div>
+      </div>
+      <!--/repetir-->
+    </div>
+  </div>
+</section>
+
+<section class="idiomas">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:0;">
+      <span class="eyebrow" data-i18n="idiomas.eyebrow">{{idiomas.eyebrow}}</span>
+      <h2 data-i18n="idiomas.h2">{{idiomas.h2}}</h2>
+      <p data-i18n="idiomas.p">{{idiomas.p}}</p>
+    </div>
+    <div class="lang-pills">
+      <!--repetir:idiomas.lista--><span>{{.}}</span><!--/repetir-->
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="precio">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="precio.eyebrow">{{precio.eyebrow}}</span>
+      <h2 data-i18n="precio.h2">{{precio.h2}}</h2>
+      <p data-i18n="precio.p">{{precio.p}}</p>
+    </div>
+    <div class="price-card">
+      <span class="tag" data-i18n="precio.etiqueta">{{precio.etiqueta}}</span>
+      <span class="cifra" data-i18n="precio.cifra">{{precio.cifra}}</span>
+      <span class="porque" data-i18n="precio.porque">{{precio.porque}}</span>
+      <p data-i18n="precio.detalle">{{precio.detalle}}</p>
+      <!--repetir:precio.ofertas-->
+      <div class="oferta">
+        <b data-i18n="{{_clave}}.titulo">{{.titulo}}</b>
+        <span data-i18n="{{_clave}}.texto">{{.texto}}</span>
+      </div>
+      <!--/repetir-->
+      <p class="oferta-nota" data-i18n="precio.excluyentes">{{precio.excluyentes}}</p>
+      <p data-i18n="precio.nota">{{precio.nota}}</p>
+      <a class="btn dark" href="#contacto" data-i18n="precio.boton">{{precio.boton}}</a>
+    </div>
+  </div>
+</section>
+
+<section id="preguntas" class="faq">
+  <div class="wrap" style="max-width:760px;">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="preguntas.eyebrow">{{preguntas.eyebrow}}</span>
+      <h2 data-i18n="preguntas.h2">{{preguntas.h2}}</h2>
+    </div>
+    <!--repetir:preguntas.lista-->
+    <details class="faq-item">
+      <summary data-i18n="{{_clave}}.p">{{.p}}</summary>
+      <p data-i18n="{{_clave}}.r">{{.r}}</p>
+    </details>
+    <!--/repetir-->
+  </div>
+</section>
+
+<section class="cta-band" id="contacto">
+  <div class="wrap">
+    <h2 data-i18n="cierre.h2">{{cierre.h2}}</h2>
+    <p data-i18n="cierre.p">{{cierre.p}}</p>
+    <a class="btn primary" href="mailto:{{tienda.correo}}" data-i18n="cierre.boton">{{cierre.boton}}</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div data-i18n="pie.producto">{{pie.producto}}</div>
+    <div>
+      <a href="privacidad/" data-i18n="pie.privacidad">{{pie.privacidad}}</a>
+      &nbsp;&middot;&nbsp;
+      <a href="../" data-i18n="pie.todas">{{pie.todas}}</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* El cambia-idiomas. Es el mismo en toda la tienda: lo arma _plantilla/construir.py */
+const I18N = {{{diccionario}}};
+
+function setLang(lang){
+  const dict = I18N[lang] || I18N["{{principal}}"];
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    const key = el.getAttribute('data-i18n');
+    if (!(key in dict)) return;
+    if (el.tagName === 'TITLE') { document.title = dict[key]; return; }
+    if (el.tagName === 'META')  { el.setAttribute('content', dict[key]); return; }
+    el.textContent = dict[key];
+  });
+  document.querySelectorAll('.langs button').forEach(function(b){
+    b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+  });
+  try { localStorage.setItem('lang', lang); } catch(e) {}
+}
+
+document.getElementById('langs').addEventListener('click', function(e){
+  const btn = e.target.closest('button[data-lang]');
+  if (btn) setLang(btn.getAttribute('data-lang'));
+});
+
+var guardado = null;
+try { guardado = localStorage.getItem('lang'); } catch(e) {}
+setLang(guardado && I18N[guardado] ? guardado : '{{principal}}');
+</script>
+
+</body>
+</html>

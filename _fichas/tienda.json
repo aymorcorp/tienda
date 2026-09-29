@@ -1,0 +1,105 @@
+{
+  "_que_es_esto": "La ficha de la tienda: lo que es igual en todas las paginas. El nombre de la casa, el correo de contacto, la direccion publica y los textos de la portada. Las aplicaciones tienen cada una su propia ficha.",
+
+  "idiomaPrincipal": "fr",
+  "idiomas": {
+    "fr": "Français",
+    "en": "English",
+    "es": "Español",
+    "tl": "Tagalog"
+  },
+
+  "comun": {
+    "casa": "Aymor Applis",
+    "correo": "aymorcorp@gmail.com",
+    "direccion": "https://aymorcorp.github.io/tienda/",
+    "operadoPor": "Maria Leonor Ayluardo Troncoso"
+  },
+
+  "textos": {
+    "fr": {
+      "title": "Aymor Applis — Des outils simples pour les petites entreprises",
+      "metaDesc": "Logiciel simple pour petites entreprises : contrôle des heures, soumissions, clients, recettes. Sans contrats longs, sans complications.",
+      "nav": { "apps": "Applications", "contacto": "Contact" },
+      "hero": {
+        "h1": "Des outils simples pour les petites entreprises",
+        "lead": "Sans contrats à long terme, sans rien installer — chaque application règle un problème concret de votre opération quotidienne."
+      },
+      "contacto": {
+        "h2": "Des questions?",
+        "p": "Écrivez-nous directement, c'est avec plaisir qu'on vous aide à choisir.",
+        "boton": "Écrivez-nous par courriel",
+        "correo": "Contact : aymorcorp@gmail.com"
+      },
+      "pie": {
+        "operado": "Aymor Applis est exploitée par Maria Leonor Ayluardo Troncoso.",
+        "terminos": "Conditions",
+        "privacidad": "Confidentialité",
+        "derechos": "© 2026 Maria Leonor Ayluardo Troncoso. Tous droits réservés."
+      }
+    },
+    "en": {
+      "title": "Aymor Applis — Simple tools for small businesses",
+      "metaDesc": "Simple software for small businesses: time tracking, quotes, clients, recipes. No long contracts, no complications.",
+      "nav": { "apps": "Apps", "contacto": "Contact" },
+      "hero": {
+        "h1": "Simple tools for small businesses",
+        "lead": "No long contracts, nothing to install — each app solves a real problem in your day-to-day operation."
+      },
+      "contacto": {
+        "h2": "Have questions?",
+        "p": "Write to us directly, happy to help you choose.",
+        "boton": "Write to us by email",
+        "correo": "Contact: aymorcorp@gmail.com"
+      },
+      "pie": {
+        "operado": "Aymor Applis is operated by Maria Leonor Ayluardo Troncoso.",
+        "terminos": "Terms",
+        "privacidad": "Privacy",
+        "derechos": "© 2026 Maria Leonor Ayluardo Troncoso. All rights reserved."
+      }
+    },
+    "es": {
+      "title": "Aymor Applis — Herramientas simples para tu negocio",
+      "metaDesc": "Software simple para negocios pequeños: control de horas, cotizaciones, clientes, recetas. Sin contratos largos, sin complicaciones.",
+      "nav": { "apps": "Apps", "contacto": "Contacto" },
+      "hero": {
+        "h1": "Herramientas simples para negocios pequeños",
+        "lead": "Sin contratos largos, sin instalar nada — cada app resuelve un problema concreto de tu operación diaria."
+      },
+      "contacto": {
+        "h2": "¿Tienes preguntas?",
+        "p": "Escríbenos directo, con gusto te ayudamos a elegir.",
+        "boton": "Escríbenos por correo",
+        "correo": "Contacto: aymorcorp@gmail.com"
+      },
+      "pie": {
+        "operado": "Aymor Applis es operada por Maria Leonor Ayluardo Troncoso.",
+        "terminos": "Términos",
+        "privacidad": "Privacidad",
+        "derechos": "© 2026 Maria Leonor Ayluardo Troncoso. Todos los derechos reservados."
+      }
+    },
+    "tl": {
+      "title": "Aymor Applis — Simpleng mga tool para sa maliliit na negosyo",
+      "metaDesc": "Simpleng software para sa maliliit na negosyo: pagsubaybay ng oras, quote, kliyente, recipe. Walang mahabang kontrata.",
+      "nav": { "apps": "Mga App", "contacto": "Makipag-ugnayan" },
+      "hero": {
+        "h1": "Simpleng mga tool para sa maliliit na negosyo",
+        "lead": "Walang mahabang kontrata, walang kailangang i-install — nilulutas ng bawat app ang isang tunay na problema sa araw-araw mong operasyon."
+      },
+      "contacto": {
+        "h2": "May mga tanong?",
+        "p": "Sumulat sa amin nang direkta, masaya kaming tumulong sa iyong pagpili.",
+        "boton": "Sumulat sa amin sa email",
+        "correo": "Contact: aymorcorp@gmail.com"
+      },
+      "pie": {
+        "operado": "Ang Aymor Applis ay pinapatakbo ni Maria Leonor Ayluardo Troncoso.",
+        "terminos": "Mga Tuntunin",
+        "privacidad": "Privacy",
+        "derechos": "© 2026 Maria Leonor Ayluardo Troncoso. Nakalaan ang lahat ng karapatan."
+      }
+    }
+  }
+}
