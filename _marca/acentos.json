@@ -1,0 +1,22 @@
+{
+  "_que_es_esto": "Los colores de la familia Aymor Applis y el color de acento de cada aplicacion. Es la fuente unica: si un acento cambia, cambia aqui. La direccion de arte completa esta en _marca/direccion-de-arte.html",
+  "_decidido_el": "2026-09-29",
+
+  "familia": {
+    "azul": "#1C3A5E",
+    "azulProfundo": "#13283F",
+    "dorado": "#D9A84E",
+    "crema": "#F3EFE4",
+    "claro": "#F0F3F6"
+  },
+
+  "apps": {
+    "quorum":            { "acento": "#2EA8A0", "nombre": "Turquesa",   "simbolo": "La cuenta completa" },
+    "impeccable":        { "acento": "#4FB477", "nombre": "Verde menta", "simbolo": "La linea del antes y el despues" },
+    "crm-orbite":        { "acento": "#7A6BD6", "nombre": "Violeta",     "simbolo": "La orbita que regresa" },
+    "aymor-detailing":   { "acento": "#3B82F6", "nombre": "Azul electrico", "simbolo": "La luz que resbala" },
+    "aymor-studio":      { "acento": "#C9538F", "nombre": "Magenta",     "simbolo": "La luz que entra" },
+    "aymor-prospection": { "acento": "#D64545", "nombre": "Rojo",        "simbolo": "De muchos a uno" },
+    "aymor-cuisine":     { "acento": "#E8873A", "nombre": "Naranja",     "simbolo": "La proporcion del plato" }
+  }
+}

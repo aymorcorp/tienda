@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dirección de arte — Aymor Applis</title>
+<style>
+  :root{
+    --azul:#1C3A5E; --azul-hondo:#13283F; --dorado:#D9A84E;
+    --crema:#F3EFE4; --claro:#F0F3F6; --tinta:#1C2530; --gris:#5A6472;
+    --linea:#E4DFD1; --papel:#FFFFFF;
+  }
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--claro); color:var(--tinta); line-height:1.55;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  .wrap{max-width:1020px; margin:0 auto; padding:0 20px}
+  header{background:var(--azul); color:var(--crema); padding:44px 0 40px}
+  header h1{margin:0 0 10px; font-size:30px; letter-spacing:-.01em}
+  header p{margin:0; color:#C7D1DB; max-width:62ch; font-size:16px}
+  .eyebrow{display:inline-block; background:rgba(217,168,78,.16); color:var(--dorado);
+    font-weight:800; font-size:12px; letter-spacing:.08em; text-transform:uppercase;
+    padding:6px 12px; border-radius:999px; margin-bottom:16px}
+  section{padding:48px 0}
+  h2{font-size:23px; color:var(--azul); margin:0 0 6px}
+  h2 + .sub{color:var(--gris); margin:0 0 26px; max-width:64ch}
+  h3{font-size:16px; color:var(--azul); margin:0 0 6px}
+
+  .paleta{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:14px}
+  .tono{background:var(--papel); border:1px solid var(--linea); border-radius:14px; overflow:hidden}
+  .tono .muestra{height:72px}
+  .tono .pie{padding:12px 14px}
+  .tono b{display:block; font-size:14px}
+  .tono code{font-size:12.5px; color:var(--gris)}
+
+  .reglas{display:grid; gap:16px; grid-template-columns:1fr}
+  @media(min-width:760px){ .reglas{grid-template-columns:1fr 1fr} }
+  .regla{background:var(--papel); border:1px solid var(--linea); border-radius:14px; padding:20px}
+  .regla p{margin:0; color:var(--gris); font-size:14.5px}
+  .regla.no{border-left:4px solid #D64545}
+  .regla.si{border-left:4px solid #4FB477}
+
+  .marcas{display:grid; gap:22px; grid-template-columns:repeat(auto-fit,minmax(215px,1fr))}
+  .marca{background:var(--papel); border:1px solid var(--linea); border-radius:16px; padding:20px;
+    box-shadow:0 4px 14px rgba(28,37,48,.06)}
+  .marca svg{width:100%; height:auto; border-radius:14px; display:block; margin-bottom:14px}
+  .marca .idea{color:var(--gris); font-size:14px; margin:0 0 12px}
+  .chip{display:inline-flex; align-items:center; gap:7px; font-size:12.5px; font-weight:700;
+    color:var(--gris); background:var(--claro); border-radius:999px; padding:5px 11px}
+  .chip i{width:12px; height:12px; border-radius:50%; display:block}
+  .mini{display:flex; align-items:center; gap:10px; margin-top:14px; padding-top:12px;
+    border-top:1px solid var(--linea)}
+  .mini svg{width:32px; height:32px; margin:0; border-radius:7px}
+  .mini span{font-size:12px; color:var(--gris)}
+
+  pre{background:var(--azul-hondo); color:#DDE5EC; border-radius:14px; padding:20px;
+    overflow-x:auto; font-size:13px; line-height:1.65;
+    font-family:ui-monospace,Menlo,Consolas,monospace; white-space:pre-wrap}
+  pre b{color:var(--dorado); font-weight:700}
+  .nota{background:#FBF9F3; border:1px solid var(--linea); border-left:4px solid var(--dorado);
+    border-radius:12px; padding:18px 20px; font-size:14.5px; color:var(--gris)}
+  .nota b{color:var(--tinta)}
+  table{width:100%; border-collapse:collapse; background:var(--papel);
+    border:1px solid var(--linea); border-radius:14px; overflow:hidden; font-size:14px}
+  th,td{text-align:left; padding:11px 14px; border-bottom:1px solid var(--linea)}
+  th{background:var(--claro); color:var(--azul); font-size:12.5px; letter-spacing:.04em;
+    text-transform:uppercase}
+  tr:last-child td{border-bottom:none}
+  footer{background:var(--azul-hondo); color:#B9C4D1; padding:28px 0; font-size:13.5px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <span class="eyebrow">Dirección de arte</span>
+    <h1>Aymor Applis — una familia de siete</h1>
+    <p>Siete aplicaciones que se tienen que ver de la misma casa desde lejos, y distinguirse
+    una de otra desde cerca. Lo que sigue es el sistema, los siete símbolos dibujados de
+    verdad, y el texto exacto para pegarle a Recraft.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>1. Los colores de la casa</h2>
+    <p class="sub">No se inventan. Son los mismos que ya viven en la tienda publicada,
+    así que un icono nuevo nunca va a pelearse con su propia página de venta.</p>
+    <div class="paleta">
+      <div class="tono"><div class="muestra" style="background:#1C3A5E"></div>
+        <div class="pie"><b>Azul marino</b><code>#1C3A5E</code></div></div>
+      <div class="tono"><div class="muestra" style="background:#13283F"></div>
+        <div class="pie"><b>Azul profundo</b><code>#13283F</code></div></div>
+      <div class="tono"><div class="muestra" style="background:#D9A84E"></div>
+        <div class="pie"><b>Dorado</b><code>#D9A84E</code></div></div>
+      <div class="tono"><div class="muestra" style="background:#F3EFE4"></div>
+        <div class="pie"><b>Crema</b><code>#F3EFE4</code></div></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--papel); border-top:1px solid var(--linea); border-bottom:1px solid var(--linea)">
+  <div class="wrap">
+    <h2>2. El arco es la firma</h2>
+    <p class="sub">Lo que repite en las siete es un arco: medio círculo parado sobre dos
+    patas rectas, abierto por abajo. Es una puerta. Un negocio chico que abre. Va siempre
+    en dorado, siempre del mismo grueso, siempre centrado, y el símbolo de cada aplicación
+    va adentro. Nadie lo cambia: es lo único que hace que las siete se reconozcan juntas.</p>
+    <div class="reglas">
+      <div class="regla si"><h3>Siempre</h3>
+        <p>Fondo azul marino sólido. Arco dorado de grueso parejo. El símbolo en crema.
+        Un solo elemento en el color de acento de esa aplicación. Formas geométricas,
+        planas. Margen generoso. Que se lea a 32 píxeles.</p></div>
+      <div class="regla no"><h3>Nunca</h3>
+        <p>El objeto literal: nada de escobas, relojes, cámaras, ollas, coches, lupas.
+        Nada de degradados, sombras, brillos, 3D, texturas. Ni letras, ni números, ni el
+        nombre de la app adentro del icono. Más de un color de acento.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>3. Las siete marcas</h2>
+    <p class="sub">Cada una dice la <b>idea</b> del negocio, no su herramienta. Abajo de cada
+    una está la misma marca a 32 píxeles, que es el tamaño al que de verdad la va a ver un
+    cliente en su teléfono.</p>
+    <div class="marcas">
+
+      <!-- ══════════ QUORUM ══════════ -->
+      <div class="marca">
+        <svg viewBox="0 0 120 120" role="img" aria-label="Quorum">
+          <rect width="120" height="120" rx="26" fill="#1C3A5E"/>
+          <path d="M32,94 L32,46 A28,28 0 0 1 88,46 L88,94" fill="none" stroke="#D9A84E" stroke-width="6" stroke-linecap="round"/>
+          <rect x="39.5" y="64" width="5" height="22" rx="2.5" fill="#F3EFE4"/>
+          <rect x="48.5" y="64" width="5" height="22" rx="2.5" fill="#F3EFE4"/>
+          <rect x="57.5" y="54" width="5" height="32" rx="2.5" fill="#2EA8A0"/>
+          <rect x="66.5" y="64" width="5" height="22" rx="2.5" fill="#F3EFE4"/>
+          <rect x="75.5" y="64" width="5" height="22" rx="2.5" fill="#F3EFE4"/>
+        </svg>
+        <h3>Quorum</h3>
+        <p class="idea">La cuenta completa. Quórum es que esté la gente suficiente para que
+        la cosa cuente. No es un reloj: es la raya que se pone por cada quien que llegó.</p>
+        <span class="chip"><i style="background:#2EA8A0"></i> Turquesa · #2EA8A0</span>
+        <div class="mini">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <rect width="120" height="120" rx="26" fill="#1C3A5E"/>
+            <path d="M32,94 L32,46 A28,28 0 0 1 88,46 L88,94" fill="none" stroke="#D9A84E" stroke-width="6" stroke-linecap="round"/>
+            <rect x="39.5" y="64" width="5" height="22" rx="2.5" fill="#F3EFE4"/>
+            <rect x="48.5" y="64" width="5" height="22" rx="2.5" fill="#F3EFE4"/>
+            <rect x="57.5" y="54" width="5" height="32" rx="2.5" fill="#2EA8A0"/>
+            <rect x="66.5" y="64" width="5" height="22" rx="2.5" fill="#F3EFE4"/>
+            <rect x="75.5" y="64" width="5" height="22" rx="2.5" fill="#F3EFE4"/>
+          </svg>
+          <span>a 32 px, como se ve en el teléfono</span>
+        </div>
+      </div>
+
+      <!-- ══════════ IMPECCABLE ══════════ -->
+      <div class="marca">
+        <svg viewBox="0 0 120 120" role="img" aria-label="Impeccable">
+          <defs><clipPath id="arcoImp"><path d="M37,94 L37,46 A23,23 0 0 1 83,46 L83,94 Z"/></clipPath></defs>
+          <rect width="120" height="120" rx="26" fill="#1C3A5E"/>
+          <g clip-path="url(#arcoImp)">
+            <circle cx="47" cy="50" r="2.8" fill="#F3EFE4"/>
+            <circle cx="53" cy="60" r="2.8" fill="#F3EFE4"/>
+            <circle cx="41" cy="61" r="2.8" fill="#F3EFE4"/>
+            <circle cx="48" cy="71" r="2.8" fill="#F3EFE4"/>
+            <circle cx="40" cy="80" r="2.8" fill="#F3EFE4"/>
+            <circle cx="52" cy="82" r="2.8" fill="#F3EFE4"/>
+            <circle cx="45" cy="90" r="2.8" fill="#F3EFE4"/>
+            <rect x="58.2" y="42" width="3.6" height="52" rx="1.8" fill="#4FB477"/>
+          </g>
+          <path d="M32,94 L32,46 A28,28 0 0 1 88,46 L88,94" fill="none" stroke="#D9A84E" stroke-width="6" stroke-linecap="round"/>
+        </svg>
+        <h3>Impeccable</h3>
+        <p class="idea">La línea del antes y el después. De un lado quedan las motas; del
+        otro no queda nada. No es una escoba: es el momento exacto en que cambia.</p>
+        <span class="chip"><i style="background:#4FB477"></i> Verde menta · #4FB477</span>
+        <div class="mini">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <defs><clipPath id="arcoImp2"><path d="M37,94 L37,46 A23,23 0 0 1 83,46 L83,94 Z"/></clipPath></defs>
+            <rect width="120" height="120" rx="26" fill="#1C3A5E"/>
+            <g clip-path="url(#arcoImp2)">
+              <circle cx="47" cy="50" r="2.8" fill="#F3EFE4"/><circle cx="53" cy="60" r="2.8" fill="#F3EFE4"/>
+              <circle cx="41" cy="61" r="2.8" fill="#F3EFE4"/><circle cx="48" cy="71" r="2.8" fill="#F3EFE4"/>
+              <circle cx="40" cy="80" r="2.8" fill="#F3EFE4"/><circle cx="52" cy="82" r="2.8" fill="#F3EFE4"/>
+              <circle cx="45" cy="90" r="2.8" fill="#F3EFE4"/>
+              <rect x="58.2" y="42" width="3.6" height="52" rx="1.8" fill="#4FB477"/>
+            </g>
+            <path d="M32,94 L32,46 A28,28 0 0 1 88,46 L88,94" fill="none" stroke="#D9A84E" stroke-width="6" stroke-linecap="round"/>
+          </svg>
+          <span>a 32 px, como se ve en el teléfono</span>
+        </div>
+      </div>
+
+      <!-- ══════════ CRM ORBITE ══════════ -->
+      <div class="marca">
+        <svg viewBox="0 0 120 120" role="img" aria-label="CRM Orbite">
+          <rect width="120" height="120" rx="26" fill="#1C3A5E"/>
+          <path d="M32,94 L32,46 A28,28 0 0 1 88,46 L88,94" fill="none" stroke="#D9A84E" stroke-width="6" stroke-linecap="round"/>
+          <ellipse cx="60" cy="68" rx="22" ry="8.5" fill="none" stroke="#F3EFE4" stroke-width="3" transform="rotate(-28 60 68)"/>
+          <circle cx="60" cy="68" r="3.5" fill="#F3EFE4"/>
+          <circle cx="79.42" cy="57.67" r="5.5" fill="#7A6BD6"/>
+        </svg>
+        <h3>CRM Orbite</h3>
+        <p class="idea">La órbita que regresa. El cliente no se va: da la vuelta y vuelve.
+        Está en el nombre, y no es una agenda ni un teléfono.</p>
+        <span class="chip"><i style="background:#7A6BD6"></i> Violeta · #7A6BD6</span>
+        <div class="mini">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <rect width="120" height="120" rx="26" fill="#1C3A5E"/>
+            <path d="M32,94 L32,46 A28,28 0 0 1 88,46 L88,94" fill="none" stroke="#D9A84E" stroke-width="6" stroke-linecap="round"/>
+            <ellipse cx="60" cy="68" rx="22" ry="8.5" fill="none" stroke="#F3EFE4" stroke-width="3" transform="rotate(-28 60 68)"/>
+            <circle cx="60" cy="68" r="3.5" fill="#F3EFE4"/>
+            <circle cx="79.42" cy="57.67" r="5.5" fill="#7A6BD6"/>
+          </svg>
+          <span>a 32 px, como se ve en el teléfono</span>
+        </div>
+      </div>
+
+      <!-- ══════════ AYMOR DETAILING ══════════ -->
+      <div class="marca">
+        <svg viewBox="0 0 120 120" role="img" aria-label="Aymor Detailing">
+          <defs><clipPath id="arcoDet"><path d="M37,94 L37,46 A23,23 0 0 1 83,46 L83,94 Z"/></clipPath></defs>
+          <rect width="120" height="120" rx="26" fill="#1C3A5E"/>
+          <g clip-path="url(#arcoDet)">
+            <line x1="38" y1="92" x2="72" y2="48" stroke="#F3EFE4" stroke-width="9" stroke-linecap="round"/>
+            <line x1="56" y1="94" x2="82" y2="60" stroke="#3B82F6" stroke-width="5" stroke-linecap="round"/>
+          </g>
+          <path d="M32,94 L32,46 A28,28 0 0 1 88,46 L88,94" fill="none" stroke="#D9A84E" stroke-width="6" stroke-linecap="round"/>
+        </svg>
+        <h3>Aymor Detailing</h3>
+        <p class="idea">La luz que resbala. Lo que se compra al detallar un coche es el
+        reflejo que corre sobre la pintura. No es un coche ni una esponja.</p>
+        <span class="chip"><i style="background:#3B82F6"></i> Azul eléctrico · #3B82F6</span>
+        <div class="mini">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <defs><clipPath id="arcoDet2"><path d="M37,94 L37,46 A23,23 0 0 1 83,46 L83,94 Z"/></clipPath></defs>
+            <rect width="120" height="120" rx="26" fill="#1C3A5E"/>
+            <g clip-path="url(#arcoDet2)">
+              <line x1="38" y1="92" x2="72" y2="48" stroke="#F3EFE4" stroke-width="9" stroke-linecap="round"/>
+              <line x1="56" y1="94" x2="82" y2="60" stroke="#3B82F6" stroke-width="5" stroke-linecap="round"/>
+            </g>
+            <path d="M32,94 L32,46 A28,28 0 0 1 88,46 L88,94" fill="none" stroke="#D9A84E" stroke-width="6" stroke-linecap="round"/>
+          </svg>
+          <span>a 32 px, como se ve en el teléfono</span>
+        </div>
+      </div>
+
+      <!-- ══════════ AYMOR STUDIO ══════════ -->
+      <div class="marca">
+        <svg viewBox="0 0 120 120" role="img" aria-label="Aymor Studio">
+          <defs><clipPath id="arcoStu"><path d="M37,94 L37,46 A23,23 0 0 1 83,46 L83,94 Z"/></clipPath></defs>
+          <rect width="120" height="120" rx="26" fill="#1C3A5E"/>
+          <g clip-path="url(#arcoStu)">
+            <path d="M54,44 L66,44 L82,94 L38,94 Z" fill="#F3EFE4"/>
+          </g>
+          <path d="M32,94 L32,46 A28,28 0 0 1 88,46 L88,94" fill="none" stroke="#D9A84E" stroke-width="6" stroke-linecap="round"/>
+          <circle cx="60" cy="47" r="6" fill="#C9538F"/>
+        </svg>
+        <h3>Aymor Studio</h3>
+        <p class="idea">La luz que entra. Una foto no es la cámara: es la luz que dejaste
+        entrar por un hueco, y cómo se abre adentro del cuarto.</p>
+        <span class="chip"><i style="background:#C9538F"></i> Magenta · #C9538F</span>
+        <div class="mini">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <defs><clipPath id="arcoStu2"><path d="M37,94 L37,46 A23,23 0 0 1 83,46 L83,94 Z"/></clipPath></defs>
+            <rect width="120" height="120" rx="26" fill="#1C3A5E"/>
+            <g clip-path="url(#arcoStu2)"><path d="M54,44 L66,44 L82,94 L38,94 Z" fill="#F3EFE4"/></g>
+            <path d="M32,94 L32,46 A28,28 0 0 1 88,46 L88,94" fill="none" stroke="#D9A84E" stroke-width="6" stroke-linecap="round"/>
+            <circle cx="60" cy="47" r="6" fill="#C9538F"/>
+          </svg>
+          <span>a 32 px, como se ve en el teléfono</span>
+        </div>
+      </div>
+
+      <!-- ══════════ AYMOR PROSPECTION ══════════ -->
+      <div class="marca">
+        <svg viewBox="0 0 120 120" role="img" aria-label="Aymor Prospection">
+          <rect width="120" height="120" rx="26" fill="#1C3A5E"/>
+          <path d="M32,94 L32,46 A28,28 0 0 1 88,46 L88,94" fill="none" stroke="#D9A84E" stroke-width="6" stroke-linecap="round"/>
+          <circle cx="42" cy="56" r="3.2" fill="#F3EFE4"/><circle cx="51" cy="56" r="3.2" fill="#F3EFE4"/>
+          <circle cx="60" cy="56" r="3.2" fill="#F3EFE4"/><circle cx="69" cy="56" r="3.2" fill="#F3EFE4"/>
+          <circle cx="78" cy="56" r="3.2" fill="#F3EFE4"/>
+          <circle cx="51" cy="70" r="3.2" fill="#F3EFE4"/><circle cx="60" cy="70" r="3.2" fill="#F3EFE4"/>
+          <circle cx="69" cy="70" r="3.2" fill="#F3EFE4"/>
+          <circle cx="60" cy="85" r="6.5" fill="#D64545"/>
+        </svg>
+        <h3>Aymor Prospection</h3>
+        <p class="idea">De muchos a uno. Calificar interesados es tener cien y quedarte con
+        el que sí. No es una lupa ni un embudo: es el tamiz.</p>
+        <span class="chip"><i style="background:#D64545"></i> Rojo · #D64545</span>
+        <div class="mini">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <rect width="120" height="120" rx="26" fill="#1C3A5E"/>
+            <path d="M32,94 L32,46 A28,28 0 0 1 88,46 L88,94" fill="none" stroke="#D9A84E" stroke-width="6" stroke-linecap="round"/>
+            <circle cx="42" cy="56" r="3.2" fill="#F3EFE4"/><circle cx="51" cy="56" r="3.2" fill="#F3EFE4"/>
+            <circle cx="60" cy="56" r="3.2" fill="#F3EFE4"/><circle cx="69" cy="56" r="3.2" fill="#F3EFE4"/>
+            <circle cx="78" cy="56" r="3.2" fill="#F3EFE4"/>
+            <circle cx="51" cy="70" r="3.2" fill="#F3EFE4"/><circle cx="60" cy="70" r="3.2" fill="#F3EFE4"/>
+            <circle cx="69" cy="70" r="3.2" fill="#F3EFE4"/>
+            <circle cx="60" cy="85" r="6.5" fill="#D64545"/>
+          </svg>
+          <span>a 32 px, como se ve en el teléfono</span>
+        </div>
+      </div>
+
+      <!-- ══════════ AYMOR CUISINE ══════════ -->
+      <div class="marca">
+        <svg viewBox="0 0 120 120" role="img" aria-label="Aymor Cuisine">
+          <rect width="120" height="120" rx="26" fill="#1C3A5E"/>
+          <path d="M32,94 L32,46 A28,28 0 0 1 88,46 L88,94" fill="none" stroke="#D9A84E" stroke-width="6" stroke-linecap="round"/>
+          <circle cx="60" cy="68" r="20" fill="#F3EFE4"/>
+          <path d="M60,68 L60,48 A20,20 0 0 1 77.32,78 Z" fill="#E8873A"/>
+          <line x1="60" y1="68" x2="60" y2="48" stroke="#1C3A5E" stroke-width="3.5" stroke-linecap="round"/>
+          <line x1="60" y1="68" x2="77.32" y2="78" stroke="#1C3A5E" stroke-width="3.5" stroke-linecap="round"/>
+          <line x1="60" y1="68" x2="42.68" y2="78" stroke="#1C3A5E" stroke-width="3.5" stroke-linecap="round"/>
+        </svg>
+        <h3>Aymor Cuisine</h3>
+        <p class="idea">La proporción del plato. Una receta es cuánto de cada cosa. No es una
+        olla ni un tenedor: es cómo se reparte.</p>
+        <span class="chip"><i style="background:#E8873A"></i> Naranja · #E8873A</span>
+        <div class="mini">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <rect width="120" height="120" rx="26" fill="#1C3A5E"/>
+            <path d="M32,94 L32,46 A28,28 0 0 1 88,46 L88,94" fill="none" stroke="#D9A84E" stroke-width="6" stroke-linecap="round"/>
+            <circle cx="60" cy="68" r="20" fill="#F3EFE4"/>
+            <path d="M60,68 L60,48 A20,20 0 0 1 77.32,78 Z" fill="#E8873A"/>
+            <line x1="60" y1="68" x2="60" y2="48" stroke="#1C3A5E" stroke-width="3.5" stroke-linecap="round"/>
+            <line x1="60" y1="68" x2="77.32" y2="78" stroke="#1C3A5E" stroke-width="3.5" stroke-linecap="round"/>
+            <line x1="60" y1="68" x2="42.68" y2="78" stroke="#1C3A5E" stroke-width="3.5" stroke-linecap="round"/>
+          </svg>
+          <span>a 32 px, como se ve en el teléfono</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--papel); border-top:1px solid var(--linea)">
+  <div class="wrap">
+    <h2>4. Los colores de acento, juntos</h2>
+    <p class="sub">Puestos uno al lado del otro para comprobar que se distinguen de un vistazo.</p>
+    <table>
+      <tr><th>Aplicación</th><th>Acento</th><th>Código</th><th>La idea, en tres palabras</th></tr>
+      <tr><td>Quorum</td><td><span class="chip"><i style="background:#2EA8A0"></i> Turquesa</span></td><td><code>#2EA8A0</code></td><td>La cuenta completa</td></tr>
+      <tr><td>Impeccable</td><td><span class="chip"><i style="background:#4FB477"></i> Verde menta</span></td><td><code>#4FB477</code></td><td>Antes y después</td></tr>
+      <tr><td>CRM Orbite</td><td><span class="chip"><i style="background:#7A6BD6"></i> Violeta</span></td><td><code>#7A6BD6</code></td><td>La órbita que regresa</td></tr>
+      <tr><td>Aymor Detailing</td><td><span class="chip"><i style="background:#3B82F6"></i> Azul eléctrico</span></td><td><code>#3B82F6</code></td><td>La luz que resbala</td></tr>
+      <tr><td>Aymor Studio</td><td><span class="chip"><i style="background:#C9538F"></i> Magenta</span></td><td><code>#C9538F</code></td><td>La luz que entra</td></tr>
+      <tr><td>Aymor Prospection</td><td><span class="chip"><i style="background:#D64545"></i> Rojo</span></td><td><code>#D64545</code></td><td>De muchos a uno</td></tr>
+      <tr><td>Aymor Cuisine</td><td><span class="chip"><i style="background:#E8873A"></i> Naranja</span></td><td><code>#E8873A</code></td><td>La proporción del plato</td></tr>
+    </table>
+    <p class="nota" style="margin-top:22px"><b>Una advertencia honesta:</b> el rojo de
+    Prospection y el naranja de Cuisine son el único par que se parece. A 32 píxeles y en
+    una lista se distinguen porque el dibujo de adentro no tiene nada que ver — puntos que
+    se van cerrando contra un círculo partido — pero si algún día salen las dos juntas en
+    la misma pantalla, el que hay que mover es el de Cuisine, hacia un naranja más quemado.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>5. El texto para Recraft</h2>
+    <p class="sub">Pégalo tal cual. Va en inglés a propósito: estas herramientas obedecen
+    mucho mejor en inglés, y los códigos de color son los mismos en todos los idiomas.
+    Lo único que se cambia son las dos partes marcadas en dorado.</p>
+    <pre>Flat vector app icon, square with rounded corners, solid deep navy
+background #1C3A5E. A centred arch outline in gold #D9A84E: a
+semicircular top on two straight vertical legs, open at the bottom,
+even stroke width. Inside the arch: <b>[EL SÍMBOLO]</b>.
+Colours: cream #F3EFE4 for the symbol and one single accent
+<b>[EL ACENTO]</b> used for exactly one element. Geometric, flat,
+minimal, calm, professional. Centred composition, generous margin,
+legible at 32 pixels.
+
+Negative prompt: no text, no letters, no numbers, no gradients, no
+shadows, no glow, no bevel, no 3D, no photorealism, no texture, no
+outlines around shapes, no watermark.</pre>
+
+    <h3 style="margin-top:34px">Las siete, ya llenas</h3>
+    <pre><b>Quorum</b> — five short vertical bars in a row, evenly spaced, the
+middle one taller, in teal #2EA8A0.
+
+<b>Impeccable</b> — a straight vertical divider line in mint green
+#4FB477 down the middle; five small scattered dots on the left side
+only, the right side completely empty.
+
+<b>CRM Orbite</b> — a thin tilted elliptical ring with a small solid
+dot at its centre, and one larger dot travelling on the ring in
+violet #7A6BD6.
+
+<b>Aymor Detailing</b> — two parallel diagonal streaks of light inside
+the arch, one wide in cream and one thinner in electric blue #3B82F6,
+like light sliding across a polished dark surface.
+
+<b>Aymor Studio</b> — a solid cream trapezoid widening downwards from
+a narrow opening at the top, like a beam of light entering a room,
+with a small magenta #C9538F circle at the opening.
+
+<b>Aymor Prospection</b> — three rows of dots narrowing downwards:
+five dots, then three, then one large dot in red #D64545.
+
+<b>Aymor Cuisine</b> — a cream circle divided into three unequal
+segments by straight navy lines, one segment filled orange #E8873A.</pre>
+
+    <p class="nota" style="margin-top:26px"><b>Antes de pagar generaciones:</b> los siete
+    dibujos de arriba no son bocetos, son SVG de verdad, hechos con las mismas reglas. Si
+    alguno te gusta como está, se exporta a PNG en cualquier tamaño sin generar nada y sin
+    costar nada. Recraft sirve para probar variantes de un símbolo que todavía no convence,
+    no para volver a dibujar lo que ya está resuelto.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Dirección de arte de Aymor Applis · 29 de septiembre de 2026 · chat 018 ·
+    Los colores viven en <code>_marca/acentos.json</code>
+  </div>
+</footer>
+
+</body>
+</html>
