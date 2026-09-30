@@ -127,3 +127,21 @@ repositorio sin cuenta ni permiso. Lo que todavía no se estrena se queda en la
 computadora hasta el día que se publica.
 
 -- chat 018
+
+## Y una quinta regla: probar que las revisiones sigan sirviendo
+
+```bash
+python _plantilla/probar-las-revisiones.py
+```
+
+Rompe la tienda a propósito de cuatro maneras y comprueba que el programa **se
+detiene** cada vez. Se corre después de tocar el constructor.
+
+Existe porque una revisión puede dejar de medir sin que nadie lo note: le pasó
+a otro chat de la casa, cuya comprobación medía una constante de un diseño que
+ya no existía y llevaba días pasando en verde.
+
+> Una revisión que nunca se ha visto fallar no es una revisión, es una esperanza.
+
+Si alguna prueba dice **NO SE PUDO PROBAR**, no la ignores: significa que la
+ficha cambió y la prueba ya no encuentra qué romper. Actualiza la prueba.
