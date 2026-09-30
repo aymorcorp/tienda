@@ -231,8 +231,9 @@
           }
         ],
         "excluyentes": "Les deux offres ne se combinent pas : vous choisissez celle qui vous arrange.",
-        "nota": "Comprend un rapport gratuit par semaine (52 par année). Besoin d'un deuxième rapport la même semaine? Chaque rapport de plus est à {p.reporteExtra}. Le compte repart à zéro chaque semaine. Quorum s'ouvre dans votre navigateur — téléphone, tablette ou ordinateur — sans rien installer. Les fiches de l'App Store et de Google Play viendront plus tard : écrivez-nous et on vous installe cette semaine. Chaque mois, un code d'activation vous arrive par courriel.",
-        "boton": "Écrivez-nous pour commencer"
+        "nota": "Comprend un rapport gratuit par semaine (52 par année). Besoin d'un deuxième rapport la même semaine? Chaque rapport de plus est à {p.reporteExtra}. Le compte repart à zéro chaque semaine. Quorum s'ouvre dans votre navigateur — téléphone, tablette ou ordinateur — sans rien installer. Les fiches de l'App Store et de Google Play viendront plus tard : écrivez-nous et on vous installe cette semaine. Chaque mois, votre code d'activation vous attend sur votre page de code.",
+        "boton": "Écrivez-nous pour commencer",
+        "enlace": "Aller chercher mon code du mois →"
       },
       "preguntas": {
         "eyebrow": "Questions",
@@ -260,7 +261,7 @@
           },
           {
             "p": "Comment l'application s'active-t-elle chaque mois?",
-            "r": "Chaque mois, quand votre paiement est confirmé, un nouveau code arrive par courriel : vous l'entrez une fois dans l'application et c'est tout. C'est le prix de la confidentialité : comme aucun serveur à nous ne garde les données de votre équipe, c'est la seule façon de savoir que vous êtes à jour. Si un mois n'arrive pas, ou que vous n'avez pas le temps de l'entrer, l'application cesse d'afficher la paie, les rapports et les sauvegardes jusqu'à ce que vous l'entriez. Le poinçon n'est jamais bloqué, et rien n'est jamais effacé : tout votre travail vous attend intact."
+            "r": "Chaque mois, quand votre paiement est confirmé, votre code est prêt : vous allez le chercher sur la page de votre code, avec le numéro de votre entreprise et le courriel utilisé pour payer. Vous l'entrez une fois dans l'application et c'est tout. C'est le prix de la confidentialité : comme aucun serveur à nous ne garde les données de votre équipe, c'est la seule façon de savoir que vous êtes à jour. Si un mois vous ne l'entrez pas, l'application cesse d'afficher la paie, les rapports et les sauvegardes jusqu'à ce que vous l'entriez. Le poinçon n'est jamais bloqué, et rien n'est jamais effacé : tout votre travail vous attend intact."
           },
           {
             "p": "Quorum, c'est pour qui?",
@@ -499,8 +500,9 @@
           }
         ],
         "excluyentes": "The two offers don't stack: pick the one that suits you.",
-        "nota": "Includes one free report per week (52 a year). Need a second report in the same week? Each extra report is {p.reporteExtra}. The count resets every week. Quorum runs in your browser — phone, tablet or computer — with nothing to install. The App Store and Google Play listings come later; write to us and we will set you up this week. Every month, an activation code arrives by email.",
-        "boton": "Write to us to start"
+        "nota": "Includes one free report per week (52 a year). Need a second report in the same week? Each extra report is {p.reporteExtra}. The count resets every week. Quorum runs in your browser — phone, tablet or computer — with nothing to install. The App Store and Google Play listings come later; write to us and we will set you up this week. Every month, your activation code is waiting on your code page.",
+        "boton": "Write to us to start",
+        "enlace": "Go get my code for this month →"
       },
       "preguntas": {
         "eyebrow": "Questions",
@@ -528,7 +530,7 @@
           },
           {
             "p": "How does the app get activated each month?",
-            "r": "Every month, once your payment clears, a new code arrives by email: you type it into the app once and that is it. It is the price of privacy: since no server of ours holds your crew's data, this is the only way for us to know you are still paid up. If a month doesn't arrive, or you don't get to enter it, the app stops showing pay, reports and backups until you enter it. Clocking in and out is never blocked, and nothing is ever deleted: all your work is waiting for you, intact."
+            "r": "Every month, once your payment clears, your code is ready: you pick it up on your code page, using your business number and the email you paid with. You type it into the app once and that is it. It is the price of privacy: since no server of ours holds your crew's data, this is the only way for us to know you are still paid up. If one month you don't enter it, the app stops showing pay, reports and backups until you do. Clocking in and out is never blocked, and nothing is ever deleted: all your work is waiting for you, intact."
           },
           {
             "p": "Who is Quorum for?",
@@ -767,8 +769,9 @@
           }
         ],
         "excluyentes": "Las dos ofertas no se juntan: escoges la que más te sirva.",
-        "nota": "Incluye un reporte gratis por semana (52 al año). ¿Necesitas un segundo reporte la misma semana? Cada reporte extra cuesta {p.reporteExtra}. La cuenta se reinicia cada semana. Quorum se abre en tu navegador — teléfono, tableta o computadora — sin instalar nada. Las fichas de App Store y Google Play vienen después: escríbenos y te dejamos andando esta semana. Cada mes te llega por correo un código que activa la aplicación.",
-        "boton": "Escríbenos para empezar"
+        "nota": "Incluye un reporte gratis por semana (52 al año). ¿Necesitas un segundo reporte la misma semana? Cada reporte extra cuesta {p.reporteExtra}. La cuenta se reinicia cada semana. Quorum se abre en tu navegador — teléfono, tableta o computadora — sin instalar nada. Las fichas de App Store y Google Play vienen después: escríbenos y te dejamos andando esta semana. Cada mes, tu código de activación te espera en la página de tu código.",
+        "boton": "Escríbenos para empezar",
+        "enlace": "Ir por mi código del mes →"
       },
       "preguntas": {
         "eyebrow": "Preguntas",
@@ -796,7 +799,7 @@
           },
           {
             "p": "¿Cómo se activa la aplicación cada mes?",
-            "r": "Cada mes, cuando tu pago se confirma, te llega un código nuevo por correo: lo escribes una vez en la aplicación y listo. Es el precio de la privacidad: como ningún servidor nuestro guarda los datos de tu gente, ésta es la única forma de saber que sigues al corriente. Si un mes no llega, o no alcanzas a ponerlo, la aplicación deja de mostrar sueldos, reportes y respaldos hasta que lo pongas. Marcar entradas y salidas nunca se bloquea, y nunca se borra nada: todo tu trabajo te espera intacto."
+            "r": "Cada mes, cuando tu pago se confirma, tu código queda listo: lo recoges en la página de tu código, con el número de tu negocio y el correo con el que pagaste. Lo escribes una vez en la aplicación y listo. Es el precio de la privacidad: como ningún servidor nuestro guarda los datos de tu gente, ésta es la única forma de saber que sigues al corriente. Si un mes no lo pones, la aplicación deja de mostrar sueldos, reportes y respaldos hasta que lo pongas. Marcar entradas y salidas nunca se bloquea, y nunca se borra nada: todo tu trabajo te espera intacto."
           },
           {
             "p": "¿Para quién es Quorum?",
@@ -829,5 +832,6 @@
         "boton": "Tingnan ang Quorum →"
       }
     }
-  }
+  },
+  "paginaCodigo": "mi-codigo/"
 }
