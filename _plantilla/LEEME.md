@@ -110,3 +110,20 @@ que lo dice. Si alguien los edita a mano, el siguiente que arme la tienda le bor
 cambio sin querer. Lo que se cambia es la ficha.
 
 -- chat 018
+
+---
+
+## Dos decisiones del 30 de septiembre, para que nadie las reabra
+
+**El historial de git se queda como está.** Los mensajes de los commits viejos
+mencionan a la dueña por su nombre, y este repositorio es público. Se evaluó
+reescribir el historial y **Leonor decidió que no**. No se reescribe: cuesta
+trabajo a todos los chats y ella no lo considera necesario. Si alguien vuelve a
+proponerlo, esto ya está decidido.
+
+**Ninguna página sin estrenar vive en este repositorio.** El guion bajo la
+esconde del sitio, pero **no de GitHub**: cualquiera puede bajarla del
+repositorio sin cuenta ni permiso. Lo que todavía no se estrena se queda en la
+computadora hasta el día que se publica.
+
+-- chat 018
