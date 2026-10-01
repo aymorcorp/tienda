@@ -100,6 +100,24 @@ def main():
                 print("      " + porque)
                 print("      ESA REVISION DEJO DE SERVIR.")
                 fallaron.append(nombre)
+
+        # No todo es atajar errores: armar la tienda dos veces seguidas, sin
+        # tocar nada en medio, tiene que dar exactamente el mismo resultado.
+        # Hasta el 1 de octubre de 2026 no era asi -- el sitemap se ponia la
+        # fecha de hoy en todas las paginas cada vez -- y eso le decia a los
+        # buscadores que cinco paginas habian cambiado cuando no habia
+        # cambiado ninguna, ademas de esconder los cambios de verdad.
+        mapa = os.path.join(RAIZ, "sitemap.xml")
+        construye()
+        antes = io.open(mapa, encoding="utf-8").read()
+        construye()
+        igual = antes == io.open(mapa, encoding="utf-8").read()
+        print("  %-26s %s" % ("armar dos veces da igual",
+                              "si" if igual else "*** CAMBIA SOLO ***"))
+        if not igual:
+            print("      El sitemap cambia aunque no haya cambiado ninguna pagina.")
+            print("      Eso le miente a los buscadores y tapa los cambios de verdad.")
+            fallaron.append("armar dos veces da igual")
     finally:
         # Pase lo que pase, la ficha vuelve a estar como estaba.
         io.open(FICHA, "w", encoding="utf-8", newline="\n").write(bueno)
@@ -111,7 +129,8 @@ def main():
         print("  No publiques hasta arreglarlas.")
         print("")
         sys.exit(1)
-    print("  Las cuatro revisiones siguen sabiendo decir que no.")
+    print("  Las cuatro revisiones siguen sabiendo decir que no,")
+    print("  y armar la tienda dos veces seguidas da lo mismo.")
     print("  La ficha quedo como estaba.")
     print("")
 

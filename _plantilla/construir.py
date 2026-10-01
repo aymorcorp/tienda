@@ -24,7 +24,7 @@ Que hace, en orden:
 Nada de esto cuesta dinero: siguen siendo archivos sueltos en GitHub Pages.
 """
 
-import datetime, io, json, os, re, sys, shutil
+import datetime, io, json, os, re, subprocess, sys, shutil
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
@@ -289,6 +289,38 @@ def diccionario_js(textos):
     return json.dumps(plano, ensure_ascii=False, indent=2, sort_keys=True)
 
 
+def cuando_cambio(archivo, hoy):
+    """El dia que esa pagina cambio de verdad, para el sitemap.
+
+    Antes aqui iba la fecha de hoy en todas las paginas, cada vez que se
+    armaba la tienda. Eso hacia dos danos. Le decia a los buscadores que las
+    cinco paginas habian cambiado cuando no habia cambiado ninguna, que es
+    justo lo que un sitemap no debe decir. Y dejaba sitemap.xml marcado como
+    modificado en cada construccion, de modo que un cambio DE VERDAD quedaba
+    escondido entre el ruido: se descubrio el 1 de octubre de 2026 al armar
+    la tienda para comprobar otra cosa, y lo unico que salio en el diff fue
+    la fecha.
+
+    Ahora la fecha sale del historial: si la pagina no se ha tocado desde que
+    se guardo, se queda con la fecha de entonces. Si esta modificada y sin
+    guardar, es de hoy, porque esta a punto de publicarse.
+    """
+    def git(*orden):
+        return subprocess.run(("git",) + orden, cwd=RAIZ, capture_output=True,
+                              text=True, encoding="utf-8", errors="replace")
+    try:
+        sucio = git("status", "--porcelain", "--", archivo)
+        if sucio.returncode == 0 and sucio.stdout.strip():
+            return hoy
+        r = git("log", "-1", "--format=%cs", "--", archivo)
+        fecha = (r.stdout or "").strip()
+        if r.returncode == 0 and re.match(r"^\d{4}-\d{2}-\d{2}$", fecha):
+            return fecha
+    except Exception:
+        pass
+    return hoy      # sin historial a la mano, hoy es lo mas honesto que hay
+
+
 # ─────────────────────────────────────────────────────────────
 #  Armar
 # ─────────────────────────────────────────────────────────────
@@ -390,18 +422,24 @@ def main():
         f.write(portada)
 
     # ---- Robots y sitemap ----
+    # (la fecha de cada pagina sale de cuando_cambio, aqui abajo)
     # Se arman con las mismas fichas, para que el dia que suba el telon de otra
     # aplicacion su pagina entre sola. Aqui solo va lo que QUEREMOS que se
     # encuentre. Lo que no queremos ensenar no se nombra: un "no entres aqui"
     # escrito en un archivo publico es un mapa de lo que uno esconde.
     hoy = datetime.date.today().isoformat()
     base = tienda["comun"]["direccion"]
-    paginas = [base, base + "terminos/", base + "privacidad/"]
+    # cada pagina con el archivo que le corresponde, para poder preguntar
+    # cuando cambio de verdad
+    paginas = [(base, "index.html"),
+               (base + "terminos/", "terminos/index.html"),
+               (base + "privacidad/", "privacidad/index.html")]
     for f in fichas:
         if f.get("publicada") and f.get("pagina"):
-            paginas.append(base + f["carpeta"] + "/")
+            paginas.append((base + f["carpeta"] + "/", f["carpeta"] + "/index.html"))
             if os.path.isdir(os.path.join(RAIZ, f["carpeta"], "privacidad")):
-                paginas.append(base + f["carpeta"] + "/privacidad/")
+                paginas.append((base + f["carpeta"] + "/privacidad/",
+                                f["carpeta"] + "/privacidad/index.html"))
 
     with io.open(os.path.join(RAIZ, "robots.txt"), "w", encoding="utf-8", newline="\n") as f:
         f.write("# La tienda de Aymor Applis quiere que la encuentren.\n")
@@ -413,8 +451,9 @@ def main():
     with io.open(os.path.join(RAIZ, "sitemap.xml"), "w", encoding="utf-8", newline="\n") as f:
         f.write('<?xml version="1.0" encoding="UTF-8"?>\n')
         f.write('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
-        for u in paginas:
-            f.write("  <url><loc>%s</loc><lastmod>%s</lastmod></url>\n" % (u, hoy))
+        for u, archivo in paginas:
+            f.write("  <url><loc>%s</loc><lastmod>%s</lastmod></url>\n"
+                    % (u, cuando_cambio(archivo, hoy)))
         f.write("</urlset>\n")
 
     # ---- El parte ----
