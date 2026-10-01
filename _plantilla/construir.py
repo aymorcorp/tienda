@@ -289,6 +289,30 @@ def diccionario_js(textos):
     return json.dumps(plano, ensure_ascii=False, indent=2, sort_keys=True)
 
 
+def sitemap_ajeno(mias):
+    """Las direcciones que ya estaban en el sitemap y no salen de las fichas.
+
+    Esta tienda la trabajan varios chats. El sitemap se escribe entero cada
+    vez, asi que si alguien publica una pagina sin ficha -- porque todavia no
+    la tiene, o porque es un desvio para no romper un enlace viejo -- y
+    despues otro arma la tienda, esa direccion desaparecia sin que nadie se
+    enterara. Un programa no borra el trabajo de otro en silencio.
+
+    Devuelve [(direccion, fecha)] con la fecha que ya tenian, para no
+    inventarles una.
+    """
+    ruta = os.path.join(RAIZ, "sitemap.xml")
+    if not os.path.exists(ruta):
+        return []
+    viejo = io.open(ruta, encoding="utf-8").read()
+    fuera = []
+    for m in re.finditer(r"<url>\s*<loc>([^<]+)</loc>\s*(?:<lastmod>([^<]+)</lastmod>)?", viejo):
+        u = m.group(1).strip()
+        if u and u not in mias:
+            fuera.append((u, (m.group(2) or "").strip() or datetime.date.today().isoformat()))
+    return fuera
+
+
 def cuando_cambio(archivo, hoy):
     """El dia que esa pagina cambio de verdad, para el sitemap.
 
@@ -448,12 +472,24 @@ def main():
         f.write("\n")
         f.write("Sitemap: " + base + "sitemap.xml\n")
 
+    # Lo que ya estaba en el sitemap y yo no se generar NO SE BORRA.
+    # Esta tienda la trabajan varios. Si alguien publica una pagina sin ficha
+    # -- porque todavia no la tiene, o porque es un desvio de un enlace viejo --
+    # y luego otro arma la tienda, este archivo se escribiria entero con lo mio
+    # y su direccion desapareceria sin que nadie se enterara. Un programa no
+    # borra el trabajo de otro en silencio: lo conserva y lo dice en voz alta.
+    ajenas = sitemap_ajeno([u for u, _ in paginas])
+
     with io.open(os.path.join(RAIZ, "sitemap.xml"), "w", encoding="utf-8", newline="\n") as f:
         f.write('<?xml version="1.0" encoding="UTF-8"?>\n')
         f.write('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
         for u, archivo in paginas:
             f.write("  <url><loc>%s</loc><lastmod>%s</lastmod></url>\n"
                     % (u, cuando_cambio(archivo, hoy)))
+        if ajenas:
+            f.write("  <!-- Puestas a mano por alguien mas, no salen de las fichas. -->\n")
+            for u, fecha in ajenas:
+                f.write("  <url><loc>%s</loc><lastmod>%s</lastmod></url>\n" % (u, fecha))
         f.write("</urlset>\n")
 
     # ---- El parte ----
@@ -461,7 +497,15 @@ def main():
     print("  LA TIENDA QUEDO ARMADA")
     print("  " + "-" * 46)
     print("  portada ................ index.html  (%d tarjetas)" % len(tarjetas))
-    print("  robots y sitemap ....... %d direcciones" % len(paginas))
+    print("  robots y sitemap ....... %d direcciones" % (len(paginas) + len(ajenas)))
+    if ajenas:
+        print("")
+        print("  EN EL SITEMAP HAY %d DIRECCION(ES) QUE NO SALEN DE NINGUNA FICHA:" % len(ajenas))
+        for u, _ in ajenas:
+            print("    " + u)
+        print("  No las borre. Las puso alguien mas a mano. Si son de una aplicacion")
+        print("  de la casa, lo que toca es darle su ficha; si son un desvio de un")
+        print("  enlace viejo, quitalas del sitemap: un desvio no se indexa.")
     for nombre, donde, estado in hechas:
         print("  %-22s %s/  (%s)" % (nombre, donde, estado))
     if avisos:

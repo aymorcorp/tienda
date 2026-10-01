@@ -118,6 +118,28 @@ def main():
             print("      El sitemap cambia aunque no haya cambiado ninguna pagina.")
             print("      Eso le miente a los buscadores y tapa los cambios de verdad.")
             fallaron.append("armar dos veces da igual")
+
+        # Esta tienda la trabajan varios. Si otro publica una pagina que no
+        # tiene ficha y pone su direccion a mano, armar la tienda NO se la
+        # puede borrar: el sitemap se escribe entero cada vez, y ese borrado
+        # no haria ruido en ningun lado.
+        guardado = io.open(mapa, encoding="utf-8").read()
+        AJENA = "https://aymorcorp.github.io/tienda/prueba-de-otro/"
+        try:
+            io.open(mapa, "w", encoding="utf-8", newline="\n").write(
+                guardado.replace("</urlset>",
+                                 '  <url><loc>%s</loc><lastmod>2020-01-01</lastmod></url>\n</urlset>' % AJENA))
+            construye()
+            ahora = io.open(mapa, encoding="utf-8").read()
+            sobrevive = ahora.count(AJENA) == 1 and "2020-01-01" in ahora
+        finally:
+            io.open(mapa, "w", encoding="utf-8", newline="\n").write(guardado)
+        print("  %-26s %s" % ("respeta lo de otros",
+                              "si" if sobrevive else "*** LO BORRA ***"))
+        if not sobrevive:
+            print("      Armar la tienda le borra del sitemap una direccion que puso")
+            print("      otro a mano. Un programa no borra el trabajo ajeno en silencio.")
+            fallaron.append("respeta lo de otros")
     finally:
         # Pase lo que pase, la ficha vuelve a estar como estaba.
         io.open(FICHA, "w", encoding="utf-8", newline="\n").write(bueno)
@@ -130,7 +152,8 @@ def main():
         print("")
         sys.exit(1)
     print("  Las cuatro revisiones siguen sabiendo decir que no,")
-    print("  y armar la tienda dos veces seguidas da lo mismo.")
+    print("  armar la tienda dos veces seguidas da lo mismo,")
+    print("  y no le borra a nadie lo que puso a mano.")
     print("  La ficha quedo como estaba.")
     print("")
 
