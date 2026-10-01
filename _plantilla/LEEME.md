@@ -117,7 +117,7 @@ cambio sin querer. Lo que se cambia es la ficha.
 
 **El historial de git se queda como está.** Los mensajes de los commits viejos
 mencionan a la dueña por su nombre, y este repositorio es público. Se evaluó
-reescribir el historial y **Leonor decidió que no**. No se reescribe: cuesta
+reescribir el historial y **la dueña decidió que no**. No se reescribe: cuesta
 trabajo a todos los chats y ella no lo considera necesario. Si alguien vuelve a
 proponerlo, esto ya está decidido.
 

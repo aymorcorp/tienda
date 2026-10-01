@@ -289,6 +289,72 @@ def diccionario_js(textos):
     return json.dumps(plano, ensure_ascii=False, indent=2, sort_keys=True)
 
 
+LISTA_DE_NOMBRES = r"C:\Aymor Apps - Llaves\Casa\nombres-que-no-se-publican.txt"
+
+
+def revisar_los_nombres():
+    """Ningun archivo de este repositorio lleva el nombre de una persona.
+
+    Este repositorio es PUBLICO. Las carpetas que empiezan con guion bajo no
+    las publica el sitio web, pero si se pueden bajar de GitHub sin cuenta ni
+    permiso -- el guion bajo esconde del sitio, no de GitHub. El 1 de octubre
+    de 2026 el nombre de la dueña estaba en tres archivos de esas carpetas,
+    ocho veces en total, y llevaba dias ahi: lo escribi yo mismo sin caer en
+    que se podia bajar.
+
+    LA LISTA DE NOMBRES NO VIVE AQUI, vive en la carpeta de llaves. Un
+    buscador de nombres necesita saber que nombre busca, y si la lista
+    estuviera dentro de este repositorio el propio candado publicaria lo que
+    intenta esconder.
+    """
+    if not os.path.exists(LISTA_DE_NOMBRES):
+        return ["NO SE PUDO COMPROBAR SI ALGUN ARCHIVO LLEVA EL NOMBRE DE UNA PERSONA.\n"
+                "    Falta la lista: %s\n"
+                "    Esto NO es un detalle: este repositorio es publico y esa\n"
+                "    comprobacion es la que impide que un nombre se baje de GitHub."
+                % LISTA_DE_NOMBRES]
+
+    nombres = []
+    for linea in io.open(LISTA_DE_NOMBRES, encoding="utf-8"):
+        linea = linea.strip()
+        if linea and not linea.startswith("#"):
+            nombres.append(linea)
+    if not nombres:
+        return ["la lista de nombres que no se publican esta vacia."]
+
+    saltar = (".git", "node_modules", "__pycache__", ".idea", ".vscode")
+    deletreos = (".html", ".md", ".txt", ".json", ".css", ".js", ".py", ".xml",
+                 ".svg", ".yml", ".yaml", ".toml")
+    encontrados = []
+    for carpeta, dirs, archivos in os.walk(RAIZ):
+        dirs[:] = [d for d in dirs if d not in saltar]
+        for nombre_archivo in archivos:
+            if not nombre_archivo.lower().endswith(deletreos):
+                continue
+            ruta = os.path.join(carpeta, nombre_archivo)
+            try:
+                texto = io.open(ruta, encoding="utf-8", errors="ignore").read()
+            except Exception:
+                continue
+            for n in nombres:
+                if re.search(r"\b" + re.escape(n) + r"\b", texto, re.IGNORECASE):
+                    encontrados.append((os.path.relpath(ruta, RAIZ), n,
+                                        len(re.findall(r"\b" + re.escape(n) + r"\b",
+                                                       texto, re.IGNORECASE))))
+                    break
+    if encontrados:
+        detalle = "\n".join("      %-44s lleva '%s' %d vez(ces)" % (r, n, c)
+                            for r, n, c in encontrados)
+        exige(False,
+              "HAY UN NOMBRE DE PERSONA EN ESTE REPOSITORIO, Y ES PUBLICO:\n\n"
+              + detalle +
+              "\n\n    Las carpetas con guion bajo no las publica el sitio, pero SI se\n"
+              "    pueden bajar de GitHub sin cuenta ni permiso. Quitalo antes de\n"
+              "    publicar. Si el nombre hace falta para explicar algo, en esta\n"
+              "    casa se dice 'la dueña'.")
+    return []
+
+
 def sitemap_ajeno(mias):
     """Las direcciones que ya estaban en el sitemap y no salen de las fichas.
 
@@ -360,6 +426,10 @@ def main():
     fichas = cargar_fichas(precios)
     hechas = []
     avisos = []
+    # Antes de escribir nada: ningun archivo de este repositorio publico puede
+    # llevar el nombre de una persona. Se detiene si lo encuentra; si no pudo
+    # comprobarlo, lo dice en voz alta en vez de callarse.
+    avisos += revisar_los_nombres()
 
     # ---- La pagina de venta de cada aplicacion ----
     for ficha in fichas:

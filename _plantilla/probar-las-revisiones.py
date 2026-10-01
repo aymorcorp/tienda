@@ -39,6 +39,7 @@ sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FICHA = os.path.join(RAIZ, "_fichas", "quorum.json")
+LISTA_DE_NOMBRES = r"C:\Aymor Apps - Llaves\Casa\nombres-que-no-se-publican.txt"
 
 # Cada prueba: como se llama, que se cambia, y por que tiene que atajarlo.
 PRUEBAS = [
@@ -119,6 +120,54 @@ def main():
             print("      Eso le miente a los buscadores y tapa los cambios de verdad.")
             fallaron.append("armar dos veces da igual")
 
+        # Este repositorio es PUBLICO, y las carpetas con guion bajo se pueden
+        # bajar de GitHub aunque el sitio no las publique. El 1 de octubre de
+        # 2026 el nombre de la dueña llevaba dias en tres de esos archivos.
+        # Esta prueba existe sobre todo para el dia que alguien REVIERTA a una
+        # version vieja: el nombre volveria sin que nadie lo escribiera.
+        #
+        # EL NOMBRE NO SE ESCRIBE AQUI. Este archivo tambien es publico: si la
+        # prueba trajera el nombre escrito, publicaria justo lo que comprueba.
+        # Se saca de la lista que vive en la carpeta de llaves, igual que hace
+        # el constructor. (Esto no es teorico: la primera version de esta
+        # prueba si lo traia escrito, y el constructor la detuvo en el acto.)
+        legible = os.path.join(RAIZ, "_plantilla", "LEEME.md")
+        guardado_leeme = io.open(legible, encoding="utf-8").read()
+        ANCLA = "**la dueña decidió que no**"
+        nombre_de_prueba = None
+        if os.path.exists(LISTA_DE_NOMBRES):
+            for linea in io.open(LISTA_DE_NOMBRES, encoding="utf-8"):
+                linea = linea.strip()
+                if linea and not linea.startswith("#"):
+                    nombre_de_prueba = linea
+                    break
+        if not nombre_de_prueba:
+            print("  %-26s NO SE PUDO PROBAR" % "no se cuela un nombre")
+            print("      falta la lista de nombres que no se publican.")
+            print("      Sin ella no hay con que probar, y el constructor")
+            print("      tampoco puede comprobarlo. Eso es lo grave, no esto.")
+            fallaron.append("no se cuela un nombre")
+        elif ANCLA not in guardado_leeme:
+            print("  %-26s NO SE PUDO PROBAR" % "no se cuela un nombre")
+            print("      cambio el texto donde se iba a meter el nombre;")
+            print("      hay que actualizar esta prueba, no ignorarla.")
+            fallaron.append("no se cuela un nombre")
+        else:
+            try:
+                io.open(legible, "w", encoding="utf-8", newline="\n").write(
+                    guardado_leeme.replace(ANCLA, "**%s decidio que no**" % nombre_de_prueba))
+                paro, motivo = construye()
+            finally:
+                io.open(legible, "w", encoding="utf-8", newline="\n").write(guardado_leeme)
+            resultado = "se detuvo" if paro else "*** PASO EN VERDE ***"
+            print("  %-26s %s" % ("no se cuela un nombre", resultado))
+            if paro:
+                print("      dijo: " + motivo[:100])
+            else:
+                print("      Un nombre de persona se puede bajar de este repositorio.")
+                print("      ESA REVISION DEJO DE SERVIR.")
+                fallaron.append("no se cuela un nombre")
+
         # Esta tienda la trabajan varios. Si otro publica una pagina que no
         # tiene ficha y pone su direccion a mano, armar la tienda NO se la
         # puede borrar: el sitemap se escribe entero cada vez, y ese borrado
@@ -151,7 +200,7 @@ def main():
         print("  No publiques hasta arreglarlas.")
         print("")
         sys.exit(1)
-    print("  Las cuatro revisiones siguen sabiendo decir que no,")
+    print("  Las cinco revisiones siguen sabiendo decir que no,")
     print("  armar la tienda dos veces seguidas da lo mismo,")
     print("  y no le borra a nadie lo que puso a mano.")
     print("  La ficha quedo como estaba.")
