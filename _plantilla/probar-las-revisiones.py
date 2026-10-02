@@ -50,7 +50,7 @@ PRUEBAS = [
 
     ("se colo un telefono",
      '"boton": "Escríbenos por correo"',
-     '"boton": "Llámanos al 263-566-2243"',
+     '"boton": "Llámanos al 555-555-5555"',
      "Regla de la casa: ningun telefono va en material de venta."),
 
     ("aparece el nombre viejo",
