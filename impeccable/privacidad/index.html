@@ -88,7 +88,7 @@
       <li><b>Cuando abres el mapa.</b> Las imágenes del mapa se bajan de OpenStreetMap, un servicio de mapas abierto. Ese servicio ve la dirección IP de tu aparato y qué zona del mapa estás mirando. No ve tus clientes.</li>
       <li><b>Cuando tocas «Ubicar en el mapa» en una ficha.</b> Solo en ese momento, esa dirección se manda al servicio de búsqueda de OpenStreetMap (Nominatim) para obtener el punto. Se manda esa dirección y nada más. Una vez ubicada, no se vuelve a mandar nunca.</li>
       <li><b>Cuando tocas «Cómo llegar» o «Ruta del día».</b> Las direcciones de esa cita o de las citas del día se abren en Google Maps, con las reglas de Google Maps.</li>
-      <li><b>Cuando tocas «Usar mi ubicación».</b> El aparato te pide permiso y la aplicación usa esa ubicación solo para centrar el mapa. No se guarda historial ni se manda a ningún lado.</li>
+      <li><b>Cuando tocas «Usar mi ubicación».</b> El aparato te pide permiso y la aplicación usa esa ubicación solo para centrar el mapa. La coordenada se queda en tu teléfono: no se guarda historial ni se manda a ningún servidor nuestro. Pero al centrar el mapa ahí, las imágenes de esa zona se le piden a OpenStreetMap, así que ese servicio ve qué zona estás mirando.</li>
       <li><b>Cuando dictas con el micrófono.</b> El reconocimiento de voz no lo hace la aplicación: lo hace el sistema de tu aparato o de tu navegador, y ese sistema puede mandar el audio a los servidores de quien lo fabrica para convertirlo en texto — Google en Android y en Chrome, Apple en iPhone, iPad y Safari — con las reglas de esa empresa. Impeccable recibe solo el texto y no guarda el audio.</li>
     </ul>
     <p>Fuera de esos casos, la aplicación funciona sin internet y no se comunica con nadie.</p>
@@ -99,7 +99,7 @@
       <li><b>Teléfono:</b> al tocar «Llamar», se abre el marcador de tu propio teléfono con el número puesto. La aplicación no hace llamadas por su cuenta.</li>
       <li><b>Calendario:</b> al poner una cita en el calendario, se crea un archivo de cita que tu propio calendario abre. La aplicación no lee tu calendario.</li>
       <li><b>Micrófono:</b> solo cuando tocas «Dictar», y solo mientras hablas.</li>
-      <li><b>Ubicación:</b> solo si tocas «Usar mi ubicación», y solo en ese momento.</li>
+      <li><b>Ubicación aproximada:</b> solo si tocas «Usar mi ubicación», y solo en ese momento. La coordenada no sale del teléfono; la zona que miras sí la ve OpenStreetMap, porque es quien dibuja el mapa.</li>
     </ul>
 
     <h2>7. Cuánto tiempo se guarda</h2>
@@ -160,7 +160,7 @@
       <li><b>Quand vous ouvrez la carte.</b> Les images de la carte sont téléchargées depuis OpenStreetMap, un service de cartographie libre. Ce service voit l'adresse IP de votre appareil et la zone de la carte que vous regardez. Il ne voit pas vos clients.</li>
       <li><b>Quand vous touchez « Situer sur la carte » dans une fiche.</b> À ce moment seulement, cette adresse est envoyée au service de recherche d'OpenStreetMap (Nominatim) pour obtenir le point. Seule l'adresse est envoyée, rien d'autre. Une fois située, elle n'est plus jamais renvoyée.</li>
       <li><b>Quand vous touchez « Itinéraire » ou « Trajet du jour ».</b> Les adresses de ce rendez-vous ou des rendez-vous du jour s'ouvrent dans Google Maps, selon les règles de Google Maps.</li>
-      <li><b>Quand vous touchez « Utiliser ma position ».</b> L'appareil vous demande la permission et l'application utilise cette position uniquement pour centrer la carte. Aucun historique n'est conservé, rien n'est envoyé.</li>
+      <li><b>Quand vous touchez « Utiliser ma position ».</b> L'appareil vous demande la permission et l'application utilise cette position uniquement pour centrer la carte. La coordonnée reste dans votre téléphone : aucun historique n'est conservé et elle n'est envoyée à aucun serveur à nous. Mais en centrant la carte à cet endroit, les images de ce secteur sont demandées à OpenStreetMap, qui voit donc quel secteur vous regardez.</li>
       <li><b>Quand vous dictez avec le micro.</b> La reconnaissance vocale n'est pas faite par l'application : elle est faite par le système de votre appareil ou de votre navigateur, et ce système peut envoyer l'audio aux serveurs de son fabricant pour le convertir en texte — Google sur Android et dans Chrome, Apple sur iPhone, iPad et Safari — selon les règles de cette entreprise. Impeccable ne reçoit que le texte et ne conserve pas l'audio.</li>
     </ul>
     <p>En dehors de ces cas, l'application fonctionne sans Internet et ne communique avec personne.</p>
@@ -171,7 +171,7 @@
       <li><b>Téléphone :</b> en touchant « Appeler », le composeur de votre propre téléphone s'ouvre avec le numéro déjà inscrit. L'application ne fait aucun appel d'elle-même.</li>
       <li><b>Calendrier :</b> en mettant un rendez-vous dans le calendrier, un fichier de rendez-vous est créé, que votre propre calendrier ouvre. L'application ne lit pas votre calendrier.</li>
       <li><b>Micro :</b> seulement quand vous touchez « Dicter », et seulement pendant que vous parlez.</li>
-      <li><b>Position :</b> seulement si vous touchez « Utiliser ma position », et seulement à ce moment.</li>
+      <li><b>Position approximative :</b> seulement si vous touchez « Utiliser ma position », et seulement à ce moment. La coordonnée ne quitte pas le téléphone ; le secteur que vous regardez, lui, est vu par OpenStreetMap, qui dessine la carte.</li>
     </ul>
 
     <h2>7. Durée de conservation</h2>
@@ -232,7 +232,7 @@
       <li><b>When you open the map.</b> The map images are downloaded from OpenStreetMap, an open mapping service. That service sees your device's IP address and which area of the map you are looking at. It does not see your clients.</li>
       <li><b>When you tap "Locate on the map" in a record.</b> Only at that moment, that address is sent to OpenStreetMap's search service (Nominatim) to get the point. That address is sent and nothing else. Once located, it is never sent again.</li>
       <li><b>When you tap "Directions" or "Today's route".</b> The addresses of that appointment or of the day's appointments open in Google Maps, under Google Maps' rules.</li>
-      <li><b>When you tap "Use my location".</b> The device asks for your permission and the app uses that location only to centre the map. No history is kept and nothing is sent anywhere.</li>
+      <li><b>When you tap "Use my location".</b> The device asks for your permission and the app uses that location only to centre the map. The coordinate stays on your phone: no history is kept and it is not sent to any server of ours. But by centring the map there, the images for that area are requested from OpenStreetMap, so that service sees which area you are looking at.</li>
       <li><b>When you dictate with the microphone.</b> Speech recognition is not done by the app: it is done by your device's or your browser's own system, and that system may send the audio to its maker's servers to turn it into text — Google on Android and in Chrome, Apple on iPhone, iPad and Safari — under that company's rules. Impeccable receives only the text and does not keep the audio.</li>
     </ul>
     <p>Outside those cases, the app works without internet and communicates with no one.</p>
@@ -243,7 +243,7 @@
       <li><b>Phone:</b> when you tap "Call", your own phone's dialer opens with the number filled in. The app makes no calls on its own.</li>
       <li><b>Calendar:</b> when you put an appointment in the calendar, an appointment file is created, which your own calendar opens. The app does not read your calendar.</li>
       <li><b>Microphone:</b> only when you tap "Dictate", and only while you speak.</li>
-      <li><b>Location:</b> only if you tap "Use my location", and only at that moment.</li>
+      <li><b>Approximate location:</b> only if you tap "Use my location", and only at that moment. The coordinate does not leave the phone; the area you are looking at is seen by OpenStreetMap, which draws the map.</li>
     </ul>
 
     <h2>7. How long it is kept</h2>
