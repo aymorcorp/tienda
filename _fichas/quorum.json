@@ -152,7 +152,7 @@
           {
             "numero": "3",
             "titulo": "Envoyez le rapport",
-            "texto": "Le jour de la paie, touchez Envoyer : le rapport Excel s'en va directement dans la boîte de votre comptable. C'est fait."
+            "texto": "Le jour de la paie, touchez Envoyer : le rapport Excel arrive dans la boîte de votre comptable. C'est fait."
           }
         ]
       },
@@ -384,7 +384,7 @@
           {
             "icono": "📧",
             "titulo": "One-click report to your accountant",
-            "texto": "A polished Excel file with live formulas — totals per employee, per pay type, and a full daily breakdown — sent straight to your authorized emails."
+            "texto": "A polished Excel file with live formulas — totals per employee, per pay type, and a full daily breakdown — sent only to the addresses you authorize."
           },
           {
             "icono": "📥",
@@ -421,7 +421,7 @@
           {
             "numero": "3",
             "titulo": "Send the report",
-            "texto": "When it's payday, tap Send — a ready-made Excel report goes straight to your accountant's inbox. Done."
+            "texto": "When it's payday, tap Send. Your accountant gets a ready-made Excel report in their inbox. Done."
           }
         ]
       },
