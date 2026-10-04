@@ -298,7 +298,7 @@ def revisar_los_nombres():
     Este repositorio es PUBLICO. Las carpetas que empiezan con guion bajo no
     las publica el sitio web, pero si se pueden bajar de GitHub sin cuenta ni
     permiso -- el guion bajo esconde del sitio, no de GitHub. El 1 de octubre
-    de 2026 el nombre de la dueña estaba en tres archivos de esas carpetas,
+    de 2026 el nombre de la direccion estaba en tres archivos de esas carpetas,
     ocho veces en total, y llevaba dias ahi: lo escribi yo mismo sin caer en
     que se podia bajar.
 
