@@ -280,7 +280,7 @@
         "todas": "Voir toutes les applications"
       },
       "tarjeta": {
-        "etiqueta": "Disponible — depuis votre navigateur",
+        "etiqueta": "Bientôt",
         "queHace": "Contrôle des heures pour votre équipe — entrée en deux touches, pause repas calculée toute seule, rapport prêt pour le comptable.",
         "precio": "{p.mes} par mois, premier téléphone · {p.extra} par téléphone de plus",
         "boton": "Découvrir Quorum →"
@@ -549,7 +549,7 @@
         "todas": "See all the apps"
       },
       "tarjeta": {
-        "etiqueta": "Available — right in your browser",
+        "etiqueta": "Coming soon",
         "queHace": "Time tracking for your team — two-tap entry, automatic lunch calculation, report ready for your accountant.",
         "precio": "{p.mes} a month, first phone · {p.extra} per extra phone",
         "boton": "See Quorum →"
@@ -818,7 +818,7 @@
         "todas": "Ver todas las aplicaciones"
       },
       "tarjeta": {
-        "etiqueta": "Disponible — se usa desde el navegador",
+        "etiqueta": "Próximamente",
         "queHace": "Control de horas para tu equipo — captura en dos toques, cálculo automático del lunch, reporte listo para el contador.",
         "precio": "{p.mes} al mes, primer teléfono · {p.extra} por teléfono adicional",
         "boton": "Conocer Quorum →"
@@ -826,7 +826,7 @@
     },
     "tl": {
       "tarjeta": {
-        "etiqueta": "Magagamit na — mula sa iyong browser",
+        "etiqueta": "Coming soon",
         "queHace": "Pagsubaybay ng oras para sa iyong koponan — dalawang tap na pagpasok, awtomatikong kalkulasyon ng pananghalian, ulat na handa na para sa accountant.",
         "precio": "{p.mes} bawat buwan, unang telepono · {p.extra} bawat karagdagang telepono",
         "boton": "Tingnan ang Quorum →"
