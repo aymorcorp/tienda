@@ -653,7 +653,7 @@
           {
             "icono": "📧",
             "titulo": "El reporte al contador, de un toque",
-            "texto": "Un archivo de Excel cuidado, con fórmulas vivas — totales por empleado, por tipo de pago y el desglose día por día — directo a los correos que tú autorizas."
+            "texto": "Un archivo de Excel cuidado, con fórmulas vivas — totales por empleado, por tipo de pago y el desglose día por día — enviado a los correos que autorizas."
           },
           {
             "icono": "📥",
@@ -690,7 +690,7 @@
           {
             "numero": "3",
             "titulo": "Manda el reporte",
-            "texto": "El día de pago, toca Enviar: el reporte de Excel se va derechito al correo de tu contador. Listo."
+            "texto": "El día de pago, toca Enviar: el reporte de Excel llega al correo de tu contador. Listo."
           }
         ]
       },
