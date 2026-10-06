@@ -4,7 +4,7 @@
   "carpeta": "quorum",
   "precio": "quorum",
   "pagina": true,
-  "publicada": true,
+  "publicada": false,
   "imagen": "og-image.png",
   "idiomaPrincipal": "fr",
   "idiomasDePagina": [
@@ -13,7 +13,7 @@
     "es"
   ],
   "tarjeta": {
-    "estado": "disponible",
+    "estado": "pronto",
     "mostrar": true
   },
   "textos": {
@@ -282,7 +282,6 @@
       "tarjeta": {
         "etiqueta": "Bientôt",
         "queHace": "Contrôle des heures pour votre équipe — entrée en deux touches, pause repas calculée toute seule, rapport prêt pour le comptable.",
-        "precio": "{p.mes} par mois, premier téléphone · {p.extra} par téléphone de plus",
         "boton": "Découvrir Quorum →"
       }
     },
@@ -551,7 +550,6 @@
       "tarjeta": {
         "etiqueta": "Coming soon",
         "queHace": "Time tracking for your team — two-tap entry, automatic lunch calculation, report ready for your accountant.",
-        "precio": "{p.mes} a month, first phone · {p.extra} per extra phone",
         "boton": "See Quorum →"
       }
     },
@@ -820,7 +818,6 @@
       "tarjeta": {
         "etiqueta": "Próximamente",
         "queHace": "Control de horas para tu equipo — captura en dos toques, cálculo automático del lunch, reporte listo para el contador.",
-        "precio": "{p.mes} al mes, primer teléfono · {p.extra} por teléfono adicional",
         "boton": "Conocer Quorum →"
       }
     },
@@ -828,7 +825,6 @@
       "tarjeta": {
         "etiqueta": "Coming soon",
         "queHace": "Pagsubaybay ng oras para sa iyong koponan — dalawang tap na pagpasok, awtomatikong kalkulasyon ng pananghalian, ulat na handa na para sa accountant.",
-        "precio": "{p.mes} bawat buwan, unang telepono · {p.extra} bawat karagdagang telepono",
         "boton": "Tingnan ang Quorum →"
       }
     }
