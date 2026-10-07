@@ -3,43 +3,199 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Términos de Servicio — Quorum, Toc-Toc</title>
+<title>Términos de uso — Aymor Applis</title>
 <style>
   :root{ --bg:#F0F3F6; --surface:#FFFFFF; --ink:#1C2530; --muted:#5A6472; --navy:#1C3A5E; --gold:#D9A84E; --line-soft:#E9E4D6; }
   *{box-sizing:border-box;}
   body{margin:0; background:var(--bg); color:var(--ink);
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; line-height:1.6;}
   header{background:var(--navy); color:#fff; padding:18px 0;}
-  header .wrap{max-width:720px; margin:0 auto; padding:0 20px;}
+  header .wrap{max-width:720px; margin:0 auto; padding:0 20px; display:flex; align-items:center; gap:14px; flex-wrap:wrap;}
   header a{color:#E9EEF4; text-decoration:none; font-weight:800;}
+  .idiomas{margin-left:auto; display:flex; gap:6px;}
+  .idiomas button{
+    min-width:46px; min-height:38px; padding:0 10px; border-radius:9px; cursor:pointer;
+    font:inherit; font-size:13.5px; font-weight:800; letter-spacing:.04em;
+    background:transparent; color:#E9EEF4; border:1px solid rgba(233,238,244,.45);
+  }
+  .idiomas button[aria-pressed="true"]{ background:#fff; color:var(--navy); border-color:#fff; }
   .wrap{max-width:720px; margin:0 auto; padding:40px 20px 60px;}
-  h1{font-size:24px; margin:0 0 22px; color:var(--navy);}
+  h1{font-size:24px; margin:0 0 6px; color:var(--navy);}
   h2{font-size:16px; margin:28px 0 8px; color:var(--navy);}
+  h3{font-size:15px; margin:22px 0 6px; color:var(--navy);}
   p{font-size:15px; color:var(--ink);}
-  .card{background:var(--surface); border:1px solid var(--line-soft); border-radius:14px; padding:24px; box-shadow:0 4px 14px rgba(28,37,48,.08);}
-  .pending{background:#FBF3E6; border:1px dashed #D9A84E; border-radius:10px; padding:14px 16px; font-size:14px; color:#6B5730;}
+  ul{font-size:15px; padding-left:22px;}
+  li{margin-bottom:6px;}
+  a{color:var(--navy);}
+  .updated{color:var(--muted); font-size:13px; margin:0 0 22px;}
+  .card{background:var(--surface); border:1px solid var(--line-soft); border-radius:14px; padding:24px 28px; box-shadow:0 4px 14px rgba(28,37,48,.08);}
+  .card h2:first-child, .card h3:first-child{margin-top:0;}
+  .destacado{background:#F7F3E8; border-left:5px solid var(--gold); border-radius:0 10px 10px 0; padding:14px 18px; margin:18px 0;}
+  .destacado p{margin:0;}
+  table{width:100%; border-collapse:collapse; margin:14px 0 6px; font-size:14.5px;}
+  th,td{text-align:left; padding:9px 10px; border-bottom:1px solid var(--line-soft); vertical-align:top;}
+  th{color:var(--navy); font-size:13px; text-transform:uppercase; letter-spacing:.04em;}
+  td:last-child, th:last-child{text-align:right; white-space:nowrap;}
   footer{text-align:center; color:var(--muted); font-size:13px; padding:20px;}
+  [hidden]{display:none !important;}
 </style>
 </head>
 <body>
 
-<header><div class="wrap"><a href="../">← Quorum · Toc-Toc</a></div></header>
+<header>
+  <div class="wrap">
+    <a href="../">&larr; Aymor Applis</a>
+    <div class="idiomas">
+      <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      <button type="button" data-lang="es" aria-pressed="true">ES</button>
+    </div>
+  </div>
+</header>
 
 <div class="wrap">
-  <h1>Términos de Servicio</h1>
-  <div class="card">
-    <p>Al usar Quorum o Toc-Toc aceptas:</p>
-    <p>(1) el servicio se entrega tal cual, sin garantía de que sea perfecto para cada negocio;</p>
-    <p>(2) tú eres responsable de revisar que los cálculos de horas/nómina sean correctos antes de usarlos con tu contador;</p>
-    <p>(3) las condiciones de cancelación son las siguientes:</p>
+<section data-lang="es">
+<h1>Términos de uso</h1>
+<p class="updated">Última actualización: 7 de octubre de 2026</p>
+<div class="card">
+<h2>1. Quiénes somos</h2>
+<p>Nuestras aplicaciones son operadas por Aymor Applis, un negocio registrado en Quebec. Para contactarnos: <a href="mailto:aymorcorp@gmail.com">aymorcorp@gmail.com</a>.</p>
+<h2>2. Para quién son estos términos</h2>
+<p>La mayoría de nuestras aplicaciones se venden a negocios, para usarlas dentro de su propio negocio. Al comprarlas, confirmas que las usas para tu propio negocio y no como consumidor.</p>
+<p>Aymor Cuisine es una aplicación para personas. Si la compras para uso personal, eres consumidor, y las secciones 6, 7 y 11 lo dicen expresamente.</p>
+<h2>3. Qué hacen nuestras aplicaciones y qué no hacen</h2>
+<p>Cada aplicación describe lo que hace en su propia página. Ninguna de nuestras aplicaciones sustituye a un profesional: no hacen la nómina, no calculan ni retienen impuestos, y no sustituyen la revisión de un contador, de un profesional de nómina ni de un asesor. Revisar los cálculos antes de usarlos te toca a ti.</p>
+<h2>4. Precio y cobro</h2>
+<p>El precio de tu suscripción se te muestra antes de que pagues, y es el que aceptas. El precio vigente está siempre en la <a href="../precios/">página de precios</a> y en la pantalla de compra.</p>
+<p>Un periodo ya pagado no cambia de precio. Los precios pueden cambiar; si cambian, se te avisa con al menos 30 días de anticipación antes de que se te cobre el nuevo precio.</p>
+<h2>5. Cancelación y reembolso</h2>
+<p>Puedes cancelar en cualquier momento escribiendo a <a href="mailto:aymorcorp@gmail.com">aymorcorp@gmail.com</a>. Si lo cancelas antes de tu siguiente cobro, el periodo siguiente no se te cobra, y conservas el acceso completo hasta el último día del periodo que ya pagaste.</p>
+<p>No reembolsamos lo ya cobrado, salvo cuando la ley de tu lugar lo exige. Paddle, que procesa el pago y es el revendedor autorizado, aplica su propia política de reembolsos (<a href="https://www.paddle.com/legal/refund-policy">paddle.com/legal/refund-policy</a>). Para pedir un reembolso a Paddle, entra a paddle.net (el enlace viene en el correo de tu recibo). Si compraste en App Store, Apple decide y procesa el reembolso con sus propias reglas. Si tienes un problema con la aplicación, escríbenos a <a href="mailto:aymorcorp@gmail.com">aymorcorp@gmail.com</a>.</p>
+<h2>6. Garantías</h2>
+<p>Nuestras aplicaciones se entregan «tal cual» y «según disponibilidad». Hasta donde lo permita la ley, no garantizamos que funcionen sin interrupciones ni errores, ni que sirvan para un uso distinto del anunciado.</p>
+<div class="destacado"><p>Si compras como consumidor, la garantía legal que da la ley se aplica a pesar de lo anterior.</p></div>
+<h2>7. Límites de responsabilidad</h2>
+<p><strong>Si usas una aplicación para tu negocio:</strong> la responsabilidad total de Aymor Applis frente a ti, por cualquier reclamo relacionado con una aplicación, no supera el total que le pagaste a Aymor Applis por esa aplicación en los 12 meses anteriores al reclamo. Aymor Applis no responde por daños indirectos, incidentales, especiales ni punitivos, ni por lucro cesante o pérdida de ingresos.</p>
+<div class="destacado"><p><strong>Si compras como consumidor: este límite no se te aplica.</strong> No se te opone ningún tope de responsabilidad, y ninguna cláusula de estos términos te quita los derechos que te da la Ley de Protección del Consumidor de Quebec, ni la garantía legal.</p></div>
+<p>Nada en esta sección pretende excluir la responsabilidad de Aymor Applis por dolo o falta grave, ni romper el equilibrio esencial del contrato según el artículo 1437 del Código Civil de Quebec. Si alguna parte de esta sección resultara abusiva según ese artículo, se aplica solo hasta donde la ley lo permita, sin invalidar el resto del contrato.</p>
+<h2>8. Uso aceptable</h2>
+<p>Tu suscripción es para tu propio uso o el de tu negocio. No puedes revenderla, redistribuirla ni compartir tu acceso con otros negocios sin nuestro permiso por escrito.</p>
+<h2>9. Privacidad</h2>
+<p>Lo que cada aplicación guarda, y dónde, está descrito en su propia política de privacidad. La <a href="../privacidad/">política de privacidad general</a> de Aymor Applis explica qué recoge este sitio. Si hay diferencia, vale la política de la aplicación para esa aplicación.</p>
+<h2>10. Si hay un incidente de seguridad</h2>
+<p>Cómo avisamos de una fuga de información está descrito en la política de privacidad de cada aplicación.</p>
+<h2>11. Ley aplicable</h2>
+<p>Estos términos se rigen por las leyes de Quebec y cualquier desacuerdo se resuelve en los tribunales de Quebec. Ninguna cláusula puede ser abusiva al punto de romper el equilibrio fundamental del contrato (artículo 1437 del Código Civil de Quebec); esa protección aplica aunque no seas consumidor según la ley de protección del consumidor.</p>
+<div class="destacado"><p>Si compras como consumidor y vives en Quebec, puedes presentar cualquier reclamo ante los tribunales de Quebec; si vives fuera de Quebec, te siguen protegiendo las leyes imperativas del lugar donde vives. Nada de esto te obliga a un arbitraje ni te quita el derecho a una acción colectiva.</p></div>
+<h2>12. Cambios</h2>
+<p>Los términos que aceptaste al comprar son los que valen para esa compra. Si cambian, el cambio se aplica solo a compras futuras. Un cambio que aumente lo que pagas o reduzca lo que recibes en una suscripción en curso solo se aplica si te lo avisamos por escrito con al menos 30 días de anticipación y puedes rechazarlo y cancelar sin costo ni penalidad.</p>
+</div>
+<p class="updated" style="margin-top:20px">Aymor Applis, un negocio registrado en Quebec — <a href="mailto:aymorcorp@gmail.com">aymorcorp@gmail.com</a></p>
+</section>
 
-    <h2>Cancelación y reembolso</h2>
-    <div class="pending">Esta sección está en definición — depende de la decisión de Tienda y Pagos y Estratega Comercial sobre cómo se cobra (por adelantado o en atraso). Se actualiza en cuanto quede cerrada.</div>
-  </div>
-  <p style="margin-top:20px; color:var(--muted); font-size:13px;">Versión corta, mientras se prepara el documento completo. — Preparado por Legal.</p>
+<section data-lang="fr">
+<h1>Conditions d'utilisation</h1>
+<p class="updated">Dernière mise à jour : 7 octobre 2026</p>
+<div class="card">
+<h2>1. Qui nous sommes</h2>
+<p>Nos applications sont exploitées par Aymor Applis, une entreprise immatriculée au Québec. Pour nous joindre : <a href="mailto:aymorcorp@gmail.com">aymorcorp@gmail.com</a>.</p>
+<h2>2. À qui s'adressent ces conditions</h2>
+<p>La plupart de nos applications sont vendues à des entreprises, pour être utilisées dans leur propre commerce. En les achetant, vous confirmez que vous les utilisez pour votre propre commerce, et non à titre de consommateur.</p>
+<p>Aymor Cuisine est une application destinée aux personnes. Si vous l'achetez pour un usage personnel, vous êtes un consommateur, et les sections 6, 7 et 11 le disent expressément.</p>
+<h2>3. Ce que font nos applications, et ce qu'elles ne font pas</h2>
+<p>Chaque application décrit ce qu'elle fait sur sa propre page. Aucune de nos applications ne remplace un professionnel : elles ne produisent pas la paie, ne calculent ni ne retiennent l'impôt, et ne remplacent pas la vérification d'un comptable, d'un professionnel de la paie ni d'un conseiller. C'est à vous de vérifier les calculs avant de les utiliser.</p>
+<h2>4. Prix et facturation</h2>
+<p>Le prix de votre abonnement vous est montré avant que vous payiez, et c'est celui que vous acceptez. Le prix en vigueur se trouve toujours sur la <a href="../precios/">page de prix</a> et sur l'écran d'achat.</p>
+<p>Une période déjà payée ne change pas de prix. Les prix peuvent changer ; si c'est le cas, vous êtes avisé au moins 30 jours avant qu'on vous facture le nouveau prix.</p>
+<h2>5. Annulation et remboursement</h2>
+<p>Vous pouvez annuler en tout temps en écrivant à <a href="mailto:aymorcorp@gmail.com">aymorcorp@gmail.com</a>. Si vous l'annulez avant votre prochaine facturation, la période suivante ne vous est pas facturée, et vous gardez l'accès complet jusqu'au dernier jour de la période déjà payée.</p>
+<p>Les montants déjà facturés ne sont pas remboursés, sauf si la loi applicable l'exige. Paddle, qui traite le paiement et agit comme revendeur autorisé, applique sa propre politique de remboursement (<a href="https://www.paddle.com/legal/refund-policy">paddle.com/legal/refund-policy</a>). Pour demander un remboursement à Paddle, rendez-vous sur paddle.net (le lien figure dans le courriel de votre reçu). Si vous avez acheté sur l'App Store, c'est Apple qui décide et traite le remboursement selon ses propres règles. Si vous avez un problème avec l'application, écrivez-nous à <a href="mailto:aymorcorp@gmail.com">aymorcorp@gmail.com</a>.</p>
+<h2>6. Garanties</h2>
+<p>Nos applications sont fournies « telles quelles » et « selon la disponibilité ». Dans la mesure permise par la loi, nous ne garantissons pas qu'elles fonctionneront sans interruption ni erreur, ni qu'elles conviendront à un usage autre que celui annoncé.</p>
+<div class="destacado"><p>Si vous achetez à titre de consommateur, la garantie légale prévue par la loi s'applique malgré ce qui précède.</p></div>
+<h2>7. Limites de responsabilité</h2>
+<p><strong>Si vous utilisez une application pour votre commerce :</strong> la responsabilité totale d'Aymor Applis envers vous, pour toute réclamation liée à une application, ne dépasse pas le total que vous avez payé à Aymor Applis pour cette application dans les 12 mois précédant la réclamation. Aymor Applis ne répond pas des dommages indirects, accessoires, spéciaux ou punitifs, ni du manque à gagner ou de la perte de revenus.</p>
+<div class="destacado"><p><strong>Si vous achetez à titre de consommateur : cette limite ne s'applique pas à vous.</strong> Aucun plafond de responsabilité ne vous est opposé, et aucune clause des présentes conditions ne vous enlève les droits que la Loi sur la protection du consommateur du Québec vous accorde, ni la garantie légale.</p></div>
+<p>Rien dans cette section ne vise à écarter la responsabilité d'Aymor Applis pour une faute intentionnelle ou une faute lourde, ni à rompre l'équilibre essentiel du contrat au sens de l'article 1437 du Code civil du Québec. Si une partie de cette section s'avérait abusive au sens de cet article, elle ne s'applique que dans la mesure permise, sans invalider le reste du contrat.</p>
+<h2>8. Utilisation acceptable</h2>
+<p>Votre abonnement est pour votre propre usage ou celui de votre commerce. Vous ne pouvez pas le revendre, le redistribuer, ni partager votre accès avec d'autres commerces sans notre autorisation écrite.</p>
+<h2>9. Confidentialité</h2>
+<p>Ce que chaque application conserve, et où, est décrit dans sa propre politique de confidentialité. La <a href="../privacidad/">politique de confidentialité générale</a> d'Aymor Applis explique ce que ce site recueille. En cas de différence, la politique de l'application prime pour cette application.</p>
+<h2>10. S'il y a un incident de sécurité</h2>
+<p>La façon dont nous avisons d'une fuite de renseignements est décrite dans la politique de confidentialité de chaque application.</p>
+<h2>11. Loi applicable</h2>
+<p>Ces conditions sont régies par les lois du Québec et tout désaccord est tranché par les tribunaux du Québec. Aucune clause ne peut être abusive au point de rompre l'équilibre fondamental du contrat (article 1437 du Code civil du Québec) ; cette protection s'applique même si vous n'êtes pas un consommateur au sens de la loi sur la protection du consommateur.</p>
+<div class="destacado"><p>Si vous achetez à titre de consommateur et habitez au Québec, vous pouvez porter toute réclamation devant les tribunaux du Québec ; si vous habitez à l'extérieur du Québec, les lois impératives de votre lieu de résidence continuent de vous protéger. Rien ici ne vous oblige à recourir à l'arbitrage ni ne vous enlève le droit à une action collective.</p></div>
+<h2>12. Changements</h2>
+<p>Les conditions que vous avez acceptées à l'achat sont celles qui s'appliquent à cet achat. Si elles changent, le changement ne vaut que pour les achats futurs. Un changement qui augmente ce que vous payez ou réduit ce que vous recevez dans un abonnement en cours ne s'applique que si nous vous en avisons par écrit au moins 30 jours à l'avance et que vous pouvez le refuser et annuler sans frais ni pénalité.</p>
+</div>
+<p class="updated" style="margin-top:20px">Aymor Applis, une entreprise immatriculée au Québec — <a href="mailto:aymorcorp@gmail.com">aymorcorp@gmail.com</a></p>
+</section>
+
+<section data-lang="en">
+<h1>Terms of use</h1>
+<p class="updated">Last updated: 7 October 2026</p>
+<div class="card">
+<h2>1. Who we are</h2>
+<p>Our applications are operated by Aymor Applis, a business registered in Quebec. To reach us: <a href="mailto:aymorcorp@gmail.com">aymorcorp@gmail.com</a>.</p>
+<h2>2. Who these terms are for</h2>
+<p>Most of our applications are sold to businesses, to be used within their own business. By buying them, you confirm that you are using them for your own business, and not as a consumer.</p>
+<p>Aymor Cuisine is an application for individuals. If you buy it for personal use, you are a consumer, and sections 6, 7 and 11 say so expressly.</p>
+<h2>3. What our applications do, and what they do not do</h2>
+<p>Each application describes what it does on its own page. None of our applications replaces a professional: they do not run payroll, do not calculate or withhold tax, and do not replace the review of an accountant, a payroll professional or an adviser. Checking the calculations before you use them is yours to do.</p>
+<h2>4. Price and billing</h2>
+<p>The price of your subscription is shown to you before you pay, and that is the one you accept. The price in force is always on the <a href="../precios/">prices page</a> and on the purchase screen.</p>
+<p>A period already paid for does not change price. Prices can change; if they do, you are told at least 30 days before the new price is charged to you.</p>
+<h2>5. Cancellation and refunds</h2>
+<p>You can cancel at any time by writing to <a href="mailto:aymorcorp@gmail.com">aymorcorp@gmail.com</a>. If you cancel before your next billing, the following period is not charged to you, and you keep full access until the last day of the period you already paid for.</p>
+<p>Amounts already charged are not refunded, unless the law where you live requires it. Paddle, which processes the payment and acts as the authorized reseller, applies its own refund policy (<a href="https://www.paddle.com/legal/refund-policy">paddle.com/legal/refund-policy</a>). To request a refund from Paddle, go to paddle.net (the link is in your receipt email). If you bought on the App Store, Apple decides and processes the refund under its own rules. If you have a problem with the application, write to us at <a href="mailto:aymorcorp@gmail.com">aymorcorp@gmail.com</a>.</p>
+<h2>6. Warranties</h2>
+<p>Our applications are provided "as is" and "as available". To the extent permitted by law, we do not warrant that they will run without interruption or error, nor that they will suit a use other than the one announced.</p>
+<div class="destacado"><p>If you buy as a consumer, the legal warranty provided by law applies despite the above.</p></div>
+<h2>7. Limits of liability</h2>
+<p><strong>If you use an application for your business:</strong> Aymor Applis's total liability to you, for any claim related to an application, does not exceed the total you paid Aymor Applis for that application in the 12 months before the claim. Aymor Applis is not liable for indirect, incidental, special or punitive damages, nor for lost profits or lost revenue.</p>
+<div class="destacado"><p><strong>If you buy as a consumer: this limit does not apply to you.</strong> No liability cap is held against you, and no clause of these terms takes away the rights that Quebec's Consumer Protection Act gives you, or the legal warranty.</p></div>
+<p>Nothing in this section is intended to exclude Aymor Applis's liability for intentional fault or gross fault, or to break the essential balance of the contract under article 1437 of the Civil Code of Québec. If any part of this section were found abusive under that article, it applies only to the extent permitted, without invalidating the rest of the contract.</p>
+<h2>8. Acceptable use</h2>
+<p>Your subscription is for your own use or your business's use. You may not resell it, redistribute it, or share your access with other businesses without our written permission.</p>
+<h2>9. Privacy</h2>
+<p>What each application keeps, and where, is described in its own privacy policy. Aymor Applis's <a href="../privacidad/">general privacy policy</a> explains what this site collects. If they differ, the application's own policy applies to that application.</p>
+<h2>10. If there is a security incident</h2>
+<p>How we give notice of a data breach is described in each application's privacy policy.</p>
+<h2>11. Governing law</h2>
+<p>These terms are governed by the laws of Quebec, and any disagreement is settled by the courts of Quebec. No clause may be abusive to the point of breaking the fundamental balance of the contract (article 1437 of the Civil Code of Québec); that protection applies even if you are not a consumer under the consumer protection act.</p>
+<div class="destacado"><p>If you buy as a consumer and live in Quebec, you may bring any claim before the courts of Quebec; if you live outside Quebec, the mandatory laws of where you live continue to protect you. Nothing here requires you to go to arbitration or takes away your right to a class action.</p></div>
+<h2>12. Changes</h2>
+<p>The terms you accepted when you bought are the ones that apply to that purchase. If they change, the change applies only to future purchases. A change that increases what you pay or reduces what you receive in a subscription already running applies only if we tell you in writing at least 30 days ahead and you may refuse it and cancel at no cost or penalty.</p>
+</div>
+<p class="updated" style="margin-top:20px">Aymor Applis, a business registered in Quebec — <a href="mailto:aymorcorp@gmail.com">aymorcorp@gmail.com</a></p>
+</section>
 </div>
 
-<footer>© 2026 Aymor Applis. Todos los derechos reservados.</footer>
+<footer>&copy; 2026 Aymor Applis. Todos los derechos reservados.</footer>
+
+<script>
+  (function () {
+    var botones = document.querySelectorAll(".idiomas button");
+    var secciones = document.querySelectorAll("section[data-lang]");
+
+    function poner(lang) {
+      secciones.forEach(function (s) { s.hidden = s.dataset.lang !== lang; });
+      botones.forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.lang === lang)); });
+      document.documentElement.lang = lang;
+      try { localStorage.setItem("tienda-terminos:idioma", lang); } catch (e) {}
+    }
+
+    botones.forEach(function (b) {
+      b.addEventListener("click", function () { poner(b.dataset.lang); });
+    });
+
+    var guardado = null;
+    try { guardado = localStorage.getItem("tienda-terminos:idioma"); } catch (e) {}
+    var nav = (navigator.language || "es").slice(0, 2).toLowerCase();
+    poner(guardado || (["fr", "en", "es"].indexOf(nav) >= 0 ? nav : "es"));
+  })();
+</script>
 
 </body>
 </html>
