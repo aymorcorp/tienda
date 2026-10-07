@@ -1,0 +1,33 @@
+{
+  "_que_es_esto": "Solo la tarjeta de la portada: la app todavia no esta en las tiendas, asi que sale como Proximamente, sin precio ni fecha. Cuando exista su pagina, se completa esta ficha (ver EJEMPLO-app-nueva.json).",
+  "nombre": "Aymor Studio",
+  "carpeta": "aymor-studio",
+  "precio": "aymor-studio",
+  "pagina": false,
+  "publicada": false,
+  "idiomaPrincipal": "en",
+  "tarjeta": {
+    "estado": "pronto",
+    "mostrar": true
+  },
+  "textos": {
+    "fr": {
+      "tarjeta": {
+        "etiqueta": "Bientôt",
+        "queHace": "Pour les photographes et les petits studios."
+      }
+    },
+    "en": {
+      "tarjeta": {
+        "etiqueta": "Coming soon",
+        "queHace": "For photographers and small studios."
+      }
+    },
+    "es": {
+      "tarjeta": {
+        "etiqueta": "Próximamente",
+        "queHace": "Para fotógrafos y estudios chicos."
+      }
+    }
+  }
+}

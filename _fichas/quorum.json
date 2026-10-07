@@ -80,7 +80,7 @@
         "🌙 Les quarts de nuit calculés comme il faut",
         "📄 Rapport Excel prêt à envoyer",
         "🔒 Accès protégé",
-        "🌐 Français · English · Español · Tagalog"
+        "🌐 Français · English · Español"
       ],
       "caracteristicas": {
         "eyebrow": "Ce qui est inclus",
@@ -202,14 +202,13 @@
         ]
       },
       "idiomas": {
-        "eyebrow": "Quatre langues",
+        "eyebrow": "Langues",
         "h2": "Toute votre équipe, dans sa propre langue.",
         "p": "La langue de l'application se change d'une touche — chaque gérant voit Quorum dans la langue où il est à l'aise.",
         "lista": [
           "Français",
           "English",
-          "Español",
-          "Tagalog"
+          "Español"
         ]
       },
       "precio": {
@@ -233,7 +232,8 @@
         "excluyentes": "Les deux offres ne se combinent pas : vous choisissez celle qui vous arrange.",
         "nota": "Comprend un rapport gratuit par semaine (52 par année). Besoin d'un deuxième rapport la même semaine? Chaque rapport de plus est à {p.reporteExtra}. Le compte repart à zéro chaque semaine. Quorum s'ouvre dans votre navigateur — téléphone, tablette ou ordinateur — sans rien installer. Les fiches de l'App Store et de Google Play viendront plus tard : écrivez-nous et on vous installe cette semaine. Chaque mois, votre code d'activation vous attend sur votre page de code.",
         "boton": "Écrivez-nous pour commencer",
-        "enlace": "Aller chercher mon code du mois →"
+        "enlace": "Aller chercher mon code du mois →",
+        "moneda": "Tous les prix sont en dollars américains (USD)."
       },
       "preguntas": {
         "eyebrow": "Questions",
@@ -348,7 +348,7 @@
         "🌙 Overnight shifts calculated correctly",
         "📄 Ready-to-send Excel report",
         "🔒 Secure, protected access",
-        "🌐 English · Français · Español · Tagalog"
+        "🌐 English · Français · Español"
       ],
       "caracteristicas": {
         "eyebrow": "What's included",
@@ -470,14 +470,13 @@
         ]
       },
       "idiomas": {
-        "eyebrow": "Four languages",
+        "eyebrow": "Languages",
         "h2": "Your whole team, in their own language.",
         "p": "Switch the app's language with one tap — every manager sees Quorum in the language they're comfortable in.",
         "lista": [
           "English",
           "Français",
-          "Español",
-          "Tagalog"
+          "Español"
         ]
       },
       "precio": {
@@ -501,7 +500,8 @@
         "excluyentes": "The two offers don't stack: pick the one that suits you.",
         "nota": "Includes one free report per week (52 a year). Need a second report in the same week? Each extra report is {p.reporteExtra}. The count resets every week. Quorum runs in your browser — phone, tablet or computer — with nothing to install. The App Store and Google Play listings come later; write to us and we will set you up this week. Every month, your activation code is waiting on your code page.",
         "boton": "Write to us to start",
-        "enlace": "Go get my code for this month →"
+        "enlace": "Go get my code for this month →",
+        "moneda": "All prices are in US dollars (USD)."
       },
       "preguntas": {
         "eyebrow": "Questions",
@@ -616,7 +616,7 @@
         "🌙 Los turnos de noche bien calculados",
         "📄 Reporte de Excel listo para mandar",
         "🔒 Acceso protegido",
-        "🌐 Español · Français · English · Tagalog"
+        "🌐 Español · Français · English"
       ],
       "caracteristicas": {
         "eyebrow": "Qué trae",
@@ -738,14 +738,13 @@
         ]
       },
       "idiomas": {
-        "eyebrow": "Cuatro idiomas",
+        "eyebrow": "Idiomas",
         "h2": "Todo tu equipo, en su propio idioma.",
         "p": "El idioma de la aplicación se cambia de un toque — cada encargado ve Quorum en el idioma en el que está cómodo.",
         "lista": [
           "Español",
           "Français",
-          "English",
-          "Tagalog"
+          "English"
         ]
       },
       "precio": {
@@ -769,7 +768,8 @@
         "excluyentes": "Las dos ofertas no se juntan: escoges la que más te sirva.",
         "nota": "Incluye un reporte gratis por semana (52 al año). ¿Necesitas un segundo reporte la misma semana? Cada reporte extra cuesta {p.reporteExtra}. La cuenta se reinicia cada semana. Quorum se abre en tu navegador — teléfono, tableta o computadora — sin instalar nada. Las fichas de App Store y Google Play vienen después: escríbenos y te dejamos andando esta semana. Cada mes, tu código de activación te espera en la página de tu código.",
         "boton": "Escríbenos para empezar",
-        "enlace": "Ir por mi código del mes →"
+        "enlace": "Ir por mi código del mes →",
+        "moneda": "Todos los precios en dólares estadounidenses (USD)."
       },
       "preguntas": {
         "eyebrow": "Preguntas",

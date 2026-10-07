@@ -1,0 +1,33 @@
+{
+  "_que_es_esto": "Tarjeta preparada y NO visible: Leonie sale de la portada hasta que tenga politica de privacidad y terminos (decision del 6 de octubre). Para mostrarla: tarjeta.mostrar = true y volver a correr construir.py.",
+  "nombre": "Léonie",
+  "carpeta": "leonie",
+  "precio": "leonie",
+  "pagina": false,
+  "publicada": false,
+  "idiomaPrincipal": "en",
+  "tarjeta": {
+    "estado": "pronto",
+    "mostrar": false
+  },
+  "textos": {
+    "fr": {
+      "tarjeta": {
+        "etiqueta": "Bientôt",
+        "queHace": "L'assistante automatisée qui répond au téléphone de votre entreprise."
+      }
+    },
+    "en": {
+      "tarjeta": {
+        "etiqueta": "Coming soon",
+        "queHace": "The automated assistant that answers your business phone."
+      }
+    },
+    "es": {
+      "tarjeta": {
+        "etiqueta": "Próximamente",
+        "queHace": "La asistente automática que contesta el teléfono de tu negocio."
+      }
+    }
+  }
+}

@@ -177,3 +177,4 @@ footer a{text-decoration:none; color:#D9E0E8;}
 .legal{padding:26px 0 40px; text-align:center; color:var(--muted); font-size:13px; background:var(--cream);}
 .legal p{margin:0 0 8px;}
 .legal a{text-decoration:underline;}
+.nota-moneda{color:var(--muted); font-size:13px; margin:14px 0 0;}

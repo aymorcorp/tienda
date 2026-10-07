@@ -1,6 +1,5 @@
 {
   "_que_es_esto": "La ficha de la tienda: lo que es igual en todas las paginas. El nombre de la casa, el correo de contacto, la direccion publica y los textos de la portada. Las aplicaciones tienen cada una su propia ficha.",
-
   "idiomaPrincipal": "fr",
   "idiomas": {
     "fr": "Français",
@@ -8,19 +7,20 @@
     "es": "Español",
     "tl": "Tagalog"
   },
-
   "comun": {
     "casa": "Aymor Applis",
     "correo": "aymorcorp@gmail.com",
     "direccion": "https://aymorcorp.github.io/tienda/",
     "operadoPor": "Aymor Applis"
   },
-
   "textos": {
     "fr": {
       "title": "Aymor Applis — Des outils simples pour les petites entreprises",
       "metaDesc": "Logiciel simple pour petites entreprises : contrôle des heures, soumissions, clients, recettes. Sans contrats longs, sans complications.",
-      "nav": { "apps": "Applications", "contacto": "Contact" },
+      "nav": {
+        "apps": "Applications",
+        "contacto": "Contact"
+      },
       "hero": {
         "h1": "Des outils simples pour les petites entreprises",
         "lead": "Sans contrats à long terme, sans rien installer — chaque application règle un problème concret de votre opération quotidienne."
@@ -35,13 +35,21 @@
         "operado": "Aymor Applis, une entreprise immatriculée au Québec.",
         "terminos": "Conditions",
         "privacidad": "Confidentialité",
+        "precios": "Prix",
+        "reembolso": "Annulation et remboursement",
         "derechos": "© 2026 Aymor Applis. Tous droits réservés."
+      },
+      "precios": {
+        "nota": "Tous les prix sont en dollars américains (USD)."
       }
     },
     "en": {
       "title": "Aymor Applis — Simple tools for small businesses",
       "metaDesc": "Simple software for small businesses: time tracking, quotes, clients, recipes. No long contracts, no complications.",
-      "nav": { "apps": "Apps", "contacto": "Contact" },
+      "nav": {
+        "apps": "Apps",
+        "contacto": "Contact"
+      },
       "hero": {
         "h1": "Simple tools for small businesses",
         "lead": "No long contracts, nothing to install — each app solves a real problem in your day-to-day operation."
@@ -56,13 +64,21 @@
         "operado": "Aymor Applis, a business registered in Quebec.",
         "terminos": "Terms",
         "privacidad": "Privacy",
+        "precios": "Prices",
+        "reembolso": "Cancellation and refunds",
         "derechos": "© 2026 Aymor Applis. All rights reserved."
+      },
+      "precios": {
+        "nota": "All prices are in US dollars (USD)."
       }
     },
     "es": {
       "title": "Aymor Applis — Herramientas simples para tu negocio",
       "metaDesc": "Software simple para negocios pequeños: control de horas, cotizaciones, clientes, recetas. Sin contratos largos, sin complicaciones.",
-      "nav": { "apps": "Apps", "contacto": "Contacto" },
+      "nav": {
+        "apps": "Apps",
+        "contacto": "Contacto"
+      },
       "hero": {
         "h1": "Herramientas simples para negocios pequeños",
         "lead": "Sin contratos largos, sin instalar nada — cada app resuelve un problema concreto de tu operación diaria."
@@ -77,13 +93,21 @@
         "operado": "Aymor Applis, empresa registrada en Quebec.",
         "terminos": "Términos",
         "privacidad": "Privacidad",
+        "precios": "Precios",
+        "reembolso": "Cancelación y reembolso",
         "derechos": "© 2026 Aymor Applis. Todos los derechos reservados."
+      },
+      "precios": {
+        "nota": "Todos los precios en dólares estadounidenses (USD)."
       }
     },
     "tl": {
       "title": "Aymor Applis — Simpleng mga tool para sa maliliit na negosyo",
       "metaDesc": "Simpleng software para sa maliliit na negosyo: pagsubaybay ng oras, quote, kliyente, recipe. Walang mahabang kontrata.",
-      "nav": { "apps": "Mga App", "contacto": "Makipag-ugnayan" },
+      "nav": {
+        "apps": "Mga App",
+        "contacto": "Makipag-ugnayan"
+      },
       "hero": {
         "h1": "Simpleng mga tool para sa maliliit na negosyo",
         "lead": "Walang mahabang kontrata, walang kailangang i-install — nilulutas ng bawat app ang isang tunay na problema sa araw-araw mong operasyon."
@@ -98,7 +122,12 @@
         "operado": "Aymor Applis, negosyong nakarehistro sa Quebec.",
         "terminos": "Mga Tuntunin",
         "privacidad": "Privacy",
+        "precios": "Prices",
+        "reembolso": "Cancellation and refunds",
         "derechos": "© 2026 Aymor Applis. Nakalaan ang lahat ng karapatan."
+      },
+      "precios": {
+        "nota": "Lahat ng presyo ay nasa dolyar ng Estados Unidos (USD)."
       }
     }
   }

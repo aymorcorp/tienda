@@ -193,6 +193,7 @@ footer a{text-decoration:none; color:#D9E0E8;}
 .legal{padding:26px 0 40px; text-align:center; color:var(--muted); font-size:13px; background:var(--cream);}
 .legal p{margin:0 0 8px;}
 .legal a{text-decoration:underline;}
+.nota-moneda{color:var(--muted); font-size:13px; margin:14px 0 0;}
 
 </style>
 </head>
@@ -226,13 +227,62 @@ footer a{text-decoration:none; color:#D9E0E8;}
       
       <div class="card">
         <span class="badge soon" data-i18n="apps.0.etiqueta">Bientôt</span>
-        <h2>Quorum</h2>
-        <p data-i18n="apps.0.que_hace">Contrôle des heures pour votre équipe — entrée en deux touches, pause repas calculée toute seule, rapport prêt pour le comptable.</p>
+        <h2>Aymor Cuisine</h2>
+        <p data-i18n="apps.0.que_hace">Pour vos recettes.</p>
         <p class="precio" data-i18n="apps.0.precio"></p>
         
       </div>
       
+      <div class="card">
+        <span class="badge soon" data-i18n="apps.1.etiqueta">Bientôt</span>
+        <h2>Aymor Detailing</h2>
+        <p data-i18n="apps.1.que_hace">Pour le détaillage automobile.</p>
+        <p class="precio" data-i18n="apps.1.precio"></p>
+        
+      </div>
+      
+      <div class="card">
+        <span class="badge soon" data-i18n="apps.2.etiqueta">Bientôt</span>
+        <h2>Aymor Prospection</h2>
+        <p data-i18n="apps.2.que_hace">Pour qualifier vos clients potentiels.</p>
+        <p class="precio" data-i18n="apps.2.precio"></p>
+        
+      </div>
+      
+      <div class="card">
+        <span class="badge soon" data-i18n="apps.3.etiqueta">Bientôt</span>
+        <h2>Aymor Studio</h2>
+        <p data-i18n="apps.3.que_hace">Pour les photographes et les petits studios.</p>
+        <p class="precio" data-i18n="apps.3.precio"></p>
+        
+      </div>
+      
+      <div class="card">
+        <span class="badge soon" data-i18n="apps.4.etiqueta">Bientôt</span>
+        <h2>Impeccable</h2>
+        <p data-i18n="apps.4.que_hace">Pour les entreprises de nettoyage.</p>
+        <p class="precio" data-i18n="apps.4.precio"></p>
+        
+      </div>
+      
+      <div class="card">
+        <span class="badge soon" data-i18n="apps.5.etiqueta">Bientôt</span>
+        <h2>Orbite</h2>
+        <p data-i18n="apps.5.que_hace">Pour les entreprises de services.</p>
+        <p class="precio" data-i18n="apps.5.precio"></p>
+        
+      </div>
+      
+      <div class="card">
+        <span class="badge soon" data-i18n="apps.6.etiqueta">Bientôt</span>
+        <h2>Quorum</h2>
+        <p data-i18n="apps.6.que_hace">Contrôle des heures pour votre équipe — entrée en deux touches, pause repas calculée toute seule, rapport prêt pour le comptable.</p>
+        <p class="precio" data-i18n="apps.6.precio"></p>
+        
+      </div>
+      
     </div>
+    <p class="nota-moneda" data-i18n="precios.nota">Tous les prix sont en dollars américains (USD).</p>
   </div>
 </section>
 
@@ -250,7 +300,9 @@ footer a{text-decoration:none; color:#D9E0E8;}
     <p data-i18n="pie.operado">Aymor Applis, une entreprise immatriculée au Québec.</p>
     <p>
       <a href="terminos/" data-i18n="pie.terminos">Conditions</a> &middot;
-      <a href="privacidad/" data-i18n="pie.privacidad">Confidentialité</a>
+      <a href="privacidad/" data-i18n="pie.privacidad">Confidentialité</a> &middot;
+      <a href="precios/" data-i18n="pie.precios">Prix</a> &middot;
+      <a href="reembolso/" data-i18n="pie.reembolso">Annulation et remboursement</a>
     </p>
     <p data-i18n="pie.derechos">© 2026 Aymor Applis. Tous droits réservés.</p>
   </div>
@@ -260,10 +312,34 @@ footer a{text-decoration:none; color:#D9E0E8;}
 /* El cambia-idiomas. Es el mismo en toda la tienda: lo arma _plantilla/construir.py */
 const I18N = {
   "en": {
-    "apps.0.boton": "See Quorum →",
+    "apps.0.boton": "",
     "apps.0.etiqueta": "Coming soon",
     "apps.0.precio": "",
-    "apps.0.que_hace": "Time tracking for your team — two-tap entry, automatic lunch calculation, report ready for your accountant.",
+    "apps.0.que_hace": "For your recipes.",
+    "apps.1.boton": "",
+    "apps.1.etiqueta": "Coming soon",
+    "apps.1.precio": "",
+    "apps.1.que_hace": "For auto detailing.",
+    "apps.2.boton": "",
+    "apps.2.etiqueta": "Coming soon",
+    "apps.2.precio": "",
+    "apps.2.que_hace": "To qualify your leads.",
+    "apps.3.boton": "",
+    "apps.3.etiqueta": "Coming soon",
+    "apps.3.precio": "",
+    "apps.3.que_hace": "For photographers and small studios.",
+    "apps.4.boton": "",
+    "apps.4.etiqueta": "Coming soon",
+    "apps.4.precio": "",
+    "apps.4.que_hace": "For cleaning businesses.",
+    "apps.5.boton": "",
+    "apps.5.etiqueta": "Coming soon",
+    "apps.5.precio": "",
+    "apps.5.que_hace": "For service businesses.",
+    "apps.6.boton": "See Quorum →",
+    "apps.6.etiqueta": "Coming soon",
+    "apps.6.precio": "",
+    "apps.6.que_hace": "Time tracking for your team — two-tap entry, automatic lunch calculation, report ready for your accountant.",
     "contacto.boton": "Write to us by email",
     "contacto.correo": "Contact: aymorcorp@gmail.com",
     "contacto.h2": "Have questions?",
@@ -275,15 +351,42 @@ const I18N = {
     "nav.contacto": "Contact",
     "pie.derechos": "© 2026 Aymor Applis. All rights reserved.",
     "pie.operado": "Aymor Applis, a business registered in Quebec.",
+    "pie.precios": "Prices",
     "pie.privacidad": "Privacy",
+    "pie.reembolso": "Cancellation and refunds",
     "pie.terminos": "Terms",
+    "precios.nota": "All prices are in US dollars (USD).",
     "title": "Aymor Applis — Simple tools for small businesses"
   },
   "es": {
-    "apps.0.boton": "Conocer Quorum →",
+    "apps.0.boton": "",
     "apps.0.etiqueta": "Próximamente",
     "apps.0.precio": "",
-    "apps.0.que_hace": "Control de horas para tu equipo — captura en dos toques, cálculo automático del lunch, reporte listo para el contador.",
+    "apps.0.que_hace": "Para tus recetas.",
+    "apps.1.boton": "",
+    "apps.1.etiqueta": "Próximamente",
+    "apps.1.precio": "",
+    "apps.1.que_hace": "Para detallado de autos.",
+    "apps.2.boton": "",
+    "apps.2.etiqueta": "Próximamente",
+    "apps.2.precio": "",
+    "apps.2.que_hace": "Para calificar interesados.",
+    "apps.3.boton": "",
+    "apps.3.etiqueta": "Próximamente",
+    "apps.3.precio": "",
+    "apps.3.que_hace": "Para fotógrafos y estudios chicos.",
+    "apps.4.boton": "",
+    "apps.4.etiqueta": "Próximamente",
+    "apps.4.precio": "",
+    "apps.4.que_hace": "Para negocios de limpieza.",
+    "apps.5.boton": "",
+    "apps.5.etiqueta": "Próximamente",
+    "apps.5.precio": "",
+    "apps.5.que_hace": "Para negocios de servicio.",
+    "apps.6.boton": "Conocer Quorum →",
+    "apps.6.etiqueta": "Próximamente",
+    "apps.6.precio": "",
+    "apps.6.que_hace": "Control de horas para tu equipo — captura en dos toques, cálculo automático del lunch, reporte listo para el contador.",
     "contacto.boton": "Escríbenos por correo",
     "contacto.correo": "Contacto: aymorcorp@gmail.com",
     "contacto.h2": "¿Tienes preguntas?",
@@ -295,15 +398,42 @@ const I18N = {
     "nav.contacto": "Contacto",
     "pie.derechos": "© 2026 Aymor Applis. Todos los derechos reservados.",
     "pie.operado": "Aymor Applis, empresa registrada en Quebec.",
+    "pie.precios": "Precios",
     "pie.privacidad": "Privacidad",
+    "pie.reembolso": "Cancelación y reembolso",
     "pie.terminos": "Términos",
+    "precios.nota": "Todos los precios en dólares estadounidenses (USD).",
     "title": "Aymor Applis — Herramientas simples para tu negocio"
   },
   "fr": {
-    "apps.0.boton": "Découvrir Quorum →",
+    "apps.0.boton": "",
     "apps.0.etiqueta": "Bientôt",
     "apps.0.precio": "",
-    "apps.0.que_hace": "Contrôle des heures pour votre équipe — entrée en deux touches, pause repas calculée toute seule, rapport prêt pour le comptable.",
+    "apps.0.que_hace": "Pour vos recettes.",
+    "apps.1.boton": "",
+    "apps.1.etiqueta": "Bientôt",
+    "apps.1.precio": "",
+    "apps.1.que_hace": "Pour le détaillage automobile.",
+    "apps.2.boton": "",
+    "apps.2.etiqueta": "Bientôt",
+    "apps.2.precio": "",
+    "apps.2.que_hace": "Pour qualifier vos clients potentiels.",
+    "apps.3.boton": "",
+    "apps.3.etiqueta": "Bientôt",
+    "apps.3.precio": "",
+    "apps.3.que_hace": "Pour les photographes et les petits studios.",
+    "apps.4.boton": "",
+    "apps.4.etiqueta": "Bientôt",
+    "apps.4.precio": "",
+    "apps.4.que_hace": "Pour les entreprises de nettoyage.",
+    "apps.5.boton": "",
+    "apps.5.etiqueta": "Bientôt",
+    "apps.5.precio": "",
+    "apps.5.que_hace": "Pour les entreprises de services.",
+    "apps.6.boton": "Découvrir Quorum →",
+    "apps.6.etiqueta": "Bientôt",
+    "apps.6.precio": "",
+    "apps.6.que_hace": "Contrôle des heures pour votre équipe — entrée en deux touches, pause repas calculée toute seule, rapport prêt pour le comptable.",
     "contacto.boton": "Écrivez-nous par courriel",
     "contacto.correo": "Contact : aymorcorp@gmail.com",
     "contacto.h2": "Des questions?",
@@ -315,15 +445,42 @@ const I18N = {
     "nav.contacto": "Contact",
     "pie.derechos": "© 2026 Aymor Applis. Tous droits réservés.",
     "pie.operado": "Aymor Applis, une entreprise immatriculée au Québec.",
+    "pie.precios": "Prix",
     "pie.privacidad": "Confidentialité",
+    "pie.reembolso": "Annulation et remboursement",
     "pie.terminos": "Conditions",
+    "precios.nota": "Tous les prix sont en dollars américains (USD).",
     "title": "Aymor Applis — Des outils simples pour les petites entreprises"
   },
   "tl": {
-    "apps.0.boton": "Tingnan ang Quorum →",
+    "apps.0.boton": "",
     "apps.0.etiqueta": "Coming soon",
     "apps.0.precio": "",
-    "apps.0.que_hace": "Pagsubaybay ng oras para sa iyong koponan — dalawang tap na pagpasok, awtomatikong kalkulasyon ng pananghalian, ulat na handa na para sa accountant.",
+    "apps.0.que_hace": "For your recipes.",
+    "apps.1.boton": "",
+    "apps.1.etiqueta": "Coming soon",
+    "apps.1.precio": "",
+    "apps.1.que_hace": "For auto detailing.",
+    "apps.2.boton": "",
+    "apps.2.etiqueta": "Coming soon",
+    "apps.2.precio": "",
+    "apps.2.que_hace": "To qualify your leads.",
+    "apps.3.boton": "",
+    "apps.3.etiqueta": "Coming soon",
+    "apps.3.precio": "",
+    "apps.3.que_hace": "For photographers and small studios.",
+    "apps.4.boton": "",
+    "apps.4.etiqueta": "Coming soon",
+    "apps.4.precio": "",
+    "apps.4.que_hace": "For cleaning businesses.",
+    "apps.5.boton": "",
+    "apps.5.etiqueta": "Coming soon",
+    "apps.5.precio": "",
+    "apps.5.que_hace": "For service businesses.",
+    "apps.6.boton": "Tingnan ang Quorum →",
+    "apps.6.etiqueta": "Coming soon",
+    "apps.6.precio": "",
+    "apps.6.que_hace": "Pagsubaybay ng oras para sa iyong koponan — dalawang tap na pagpasok, awtomatikong kalkulasyon ng pananghalian, ulat na handa na para sa accountant.",
     "contacto.boton": "Sumulat sa amin sa email",
     "contacto.correo": "Contact: aymorcorp@gmail.com",
     "contacto.h2": "May mga tanong?",
@@ -335,8 +492,11 @@ const I18N = {
     "nav.contacto": "Makipag-ugnayan",
     "pie.derechos": "© 2026 Aymor Applis. Nakalaan ang lahat ng karapatan.",
     "pie.operado": "Aymor Applis, negosyong nakarehistro sa Quebec.",
+    "pie.precios": "Prices",
     "pie.privacidad": "Privacy",
+    "pie.reembolso": "Cancellation and refunds",
     "pie.terminos": "Mga Tuntunin",
+    "precios.nota": "Lahat ng presyo ay nasa dolyar ng Estados Unidos (USD).",
     "title": "Aymor Applis — Simpleng mga tool para sa maliliit na negosyo"
   }
 };

@@ -1,0 +1,33 @@
+{
+  "_que_es_esto": "Solo la tarjeta de la portada: la app todavia no esta en las tiendas, asi que sale como Proximamente, sin precio ni fecha. Cuando exista su pagina, se completa esta ficha (ver EJEMPLO-app-nueva.json).",
+  "nombre": "Aymor Cuisine",
+  "carpeta": "aymor-cuisine",
+  "precio": "aymor-cuisine",
+  "pagina": false,
+  "publicada": false,
+  "idiomaPrincipal": "en",
+  "tarjeta": {
+    "estado": "pronto",
+    "mostrar": true
+  },
+  "textos": {
+    "fr": {
+      "tarjeta": {
+        "etiqueta": "Bientôt",
+        "queHace": "Pour vos recettes."
+      }
+    },
+    "en": {
+      "tarjeta": {
+        "etiqueta": "Coming soon",
+        "queHace": "For your recipes."
+      }
+    },
+    "es": {
+      "tarjeta": {
+        "etiqueta": "Próximamente",
+        "queHace": "Para tus recetas."
+      }
+    }
+  }
+}

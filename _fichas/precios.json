@@ -1,59 +1,61 @@
 {
-  "_de_donde_salen": "Copiados del documento PRECIOS OFICIALES DE AYMOR APPLIS, el unico que manda (555), version del 28 de septiembre de 2026. Ningun chat escribe un precio de memoria: se cambia AQUI y se vuelve a construir la tienda.",
+  "_de_donde_salen": "Copiados del documento PRECIOS OFICIALES DE AYMOR APPLIS, el unico que manda (555), version del 4 de octubre de 2026 (noche). Ningun chat escribe un precio de memoria: se cambia AQUI y se vuelve a construir la tienda.",
   "_carpeta_oficial": "https://drive.google.com/drive/folders/1ukx6zcXlaPD4q4e9PHFEH9tJ82hbJ2iF",
-  "_copiado_el": "2026-09-29",
+  "_copiado_el": "2026-10-04",
+  "_no_se_anuncia": "Impeccable Pro (pro, mitadPro, anualPro): precio reservado, NO va en ninguna pagina ni ficha hasta que el Pro exista. Las ofertas (mitad del primer mes y anual) siguen en este archivo hasta que la direccion decida si salen de las paginas.",
 
   "_formato": {
     "fr": "{n} $ US",
-    "en": "US${n}",
-    "es": "US${n}",
-    "tl": "US${n}"
+    "en": "{n} USD",
+    "es": "{n} USD",
+    "tl": "{n} USD"
   },
   "_decimal": { "fr": ",", "en": ".", "es": ".", "tl": "." },
 
   "apps": {
     "quorum": {
-      "mes": 29.63,
+      "mes": 29.99,
       "extra": 9.00,
-      "mitad": 14.81,
+      "mitad": 14.99,
       "mitadExtra": 4.50,
-      "anual": 325.93,
+      "anual": 329.89,
+      "anualExtra": 99.00,
       "reporteExtra": 3.00
     },
     "impeccable": {
-      "mes": 39.63,
-      "pro": 69.63,
-      "mitad": 19.81,
-      "mitadPro": 34.81,
-      "anual": 435.93,
-      "anualPro": 765.93
+      "mes": 39.99,
+      "pro": 69.99,
+      "mitad": 19.99,
+      "mitadPro": 34.99,
+      "anual": 439.89,
+      "anualPro": 769.89
     },
     "crm-orbite": {
-      "mes": 19.63,
-      "mitad": 9.81,
-      "anual": 215.93
+      "mes": 19.99,
+      "mitad": 9.99,
+      "anual": 219.89
     },
     "aymor-detailing": {
-      "mes": 29.63,
-      "pro": 49.63,
-      "elite": 89.63,
-      "mitad": 14.81,
-      "mitadPro": 24.81,
-      "mitadElite": 44.81,
-      "anual": 325.93,
-      "anualPro": 545.93,
-      "anualElite": 985.93
+      "mes": 29.99,
+      "pro": 49.99,
+      "elite": 89.99,
+      "mitad": 14.99,
+      "mitadPro": 24.99,
+      "mitadElite": 44.99,
+      "anual": 329.89,
+      "anualPro": 549.89,
+      "anualElite": 989.89
     },
     "aymor-studio": {
-      "mes": 29.63,
-      "pro": 49.63,
-      "elite": 89.63,
-      "mitad": 14.81,
-      "mitadPro": 24.81,
-      "mitadElite": 44.81,
-      "anual": 325.93,
-      "anualPro": 545.93,
-      "anualElite": 985.93
+      "mes": 29.99,
+      "pro": 49.99,
+      "elite": 89.99,
+      "mitad": 14.99,
+      "mitadPro": 24.99,
+      "mitadElite": 44.99,
+      "anual": 329.89,
+      "anualPro": 549.89,
+      "anualElite": 989.89
     },
     "aymor-prospection": {
       "mes": 49.99,

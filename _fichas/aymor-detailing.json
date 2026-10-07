@@ -1,0 +1,33 @@
+{
+  "_que_es_esto": "Solo la tarjeta de la portada: la app todavia no esta en las tiendas, asi que sale como Proximamente, sin precio ni fecha. Cuando exista su pagina, se completa esta ficha (ver EJEMPLO-app-nueva.json).",
+  "nombre": "Aymor Detailing",
+  "carpeta": "aymor-detailing",
+  "precio": "aymor-detailing",
+  "pagina": false,
+  "publicada": false,
+  "idiomaPrincipal": "en",
+  "tarjeta": {
+    "estado": "pronto",
+    "mostrar": true
+  },
+  "textos": {
+    "fr": {
+      "tarjeta": {
+        "etiqueta": "Bientôt",
+        "queHace": "Pour le détaillage automobile."
+      }
+    },
+    "en": {
+      "tarjeta": {
+        "etiqueta": "Coming soon",
+        "queHace": "For auto detailing."
+      }
+    },
+    "es": {
+      "tarjeta": {
+        "etiqueta": "Próximamente",
+        "queHace": "Para detallado de autos."
+      }
+    }
+  }
+}

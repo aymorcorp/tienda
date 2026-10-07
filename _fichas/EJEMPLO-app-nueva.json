@@ -11,42 +11,47 @@
     "oficial del 555. Asi ningun precio se escribe de memoria, y con cambiar precios.json",
     "se corrige toda la tienda de una vez."
   ],
-
   "nombre": "Mi App",
   "_nombre": "Como se llama, tal cual lo ve el cliente. Revisa la tabla de nombres viejos del documento oficial antes de decidirlo.",
-
   "carpeta": "mi-app",
   "_carpeta": "La direccion: aymorcorp.github.io/tienda/mi-app/ . Minusculas y guiones.",
-
   "precio": "mi-app",
   "_precio": "Que renglon de _fichas/precios.json usa. Si se llama igual que la carpeta, se puede quitar.",
-
   "pagina": true,
   "_pagina": "true = el programa arma su pagina de venta. false = tiene una pagina escrita a mano y no se toca.",
-
   "publicada": false,
   "_publicada": "false = la pagina se guarda en _paginas-de-venta/ y nadie de fuera la puede abrir. Es el telon. true = se publica.",
-
   "imagen": "og-image.png",
   "_imagen": "La imagen que sale cuando alguien comparte el enlace. Va dentro de la carpeta de la app. Si no hay, quita este renglon.",
-
   "idiomaPrincipal": "fr",
-  "idiomasDePagina": ["fr", "en", "es"],
+  "idiomasDePagina": [
+    "fr",
+    "en",
+    "es"
+  ],
   "_idiomas": "La pagina va en estos idiomas. Un idioma que solo traiga 'tarjeta' sale nada mas en la portada.",
-
   "tarjeta": {
     "estado": "pronto",
     "_estado": "disponible = se puede usar hoy. pronto = todavia no.",
     "mostrar": false,
     "_mostrar": "false = no aparece en la portada. Ponlo en true el dia que se levante el telon."
   },
-
   "textos": {
     "fr": {
       "title": "Mi App — lo que hace, en una linea",
       "metaDesc": "Dos renglones que explican para quien es y que resuelve. Es lo que sale en Google.",
-      "og": { "titulo": "Mi App — lo que hace", "desc": "Una linea para cuando alguien comparte el enlace. Puede traer {p.mes}." },
-      "nav": { "caracteristicas": "Fonctions", "como": "Comment ça marche", "privacidad": "Confidentialité", "precio": "Prix", "preguntas": "Questions", "boton": "Obtenir Mi App" },
+      "og": {
+        "titulo": "Mi App — lo que hace",
+        "desc": "Una linea para cuando alguien comparte el enlace. Puede traer {p.mes}."
+      },
+      "nav": {
+        "caracteristicas": "Fonctions",
+        "como": "Comment ça marche",
+        "privacidad": "Confidentialité",
+        "precio": "Prix",
+        "preguntas": "Questions",
+        "boton": "Obtenir Mi App"
+      },
       "hero": {
         "eyebrow": "Para quien es",
         "h1": "La promesa, en una sola frase.",
@@ -63,8 +68,14 @@
             "nombre": "Un renglon de ejemplo",
             "etiqueta": "#01",
             "campos": [
-              { "rotulo": "Un dato", "valor": "Su valor" },
-              { "rotulo": "Otro dato", "valor": "Su valor" }
+              {
+                "rotulo": "Un dato",
+                "valor": "Su valor"
+              },
+              {
+                "rotulo": "Otro dato",
+                "valor": "Su valor"
+              }
             ],
             "pie": "📍 Un detalle de abajo"
           }
@@ -82,7 +93,11 @@
         "h2": "Un titulo que diga que trae y que no.",
         "p": "Un parrafo corto abajo del titulo.",
         "lista": [
-          { "icono": "⏱", "titulo": "Una funcion", "texto": "Que hace, en dos renglones, sin palabras de sistemas." }
+          {
+            "icono": "⏱",
+            "titulo": "Una funcion",
+            "texto": "Que hace, en dos renglones, sin palabras de sistemas."
+          }
         ]
       },
       "como": {
@@ -90,29 +105,60 @@
         "h2": "Se acomoda una vez, se usa todos los dias.",
         "p": "Una linea.",
         "pasos": [
-          { "numero": "1", "titulo": "Primer paso", "texto": "Que hace el cliente." },
-          { "numero": "2", "titulo": "Segundo paso", "texto": "Que hace el cliente." },
-          { "numero": "3", "titulo": "Tercer paso", "texto": "Y ya." }
+          {
+            "numero": "1",
+            "titulo": "Primer paso",
+            "texto": "Que hace el cliente."
+          },
+          {
+            "numero": "2",
+            "titulo": "Segundo paso",
+            "texto": "Que hace el cliente."
+          },
+          {
+            "numero": "3",
+            "titulo": "Tercer paso",
+            "texto": "Y ya."
+          }
         ]
       },
       "quienes": {
         "_que_es": "Para quien es. Si no aplica, quita todo el bloque.",
         "eyebrow": "Para quien",
         "h2": "Un titulo.",
-        "lista": [ { "titulo": "Un tipo de cliente", "texto": "Como le sirve." } ]
+        "lista": [
+          {
+            "titulo": "Un tipo de cliente",
+            "texto": "Como le sirve."
+          }
+        ]
       },
       "privacidad": {
         "eyebrow": "La confidentialité d'abord",
         "h2": "Que pasa con sus datos.",
         "p": "Di la verdad completa, aunque sea menos vendedora. Si los datos viven en el telefono, dilo. Si salen, di a donde.",
-        "puntos": [ "Un punto", "Otro punto", "Otro mas" ],
-        "caja": [ { "icono": "🔒", "titulo": "Una proteccion", "texto": "Como funciona." } ]
+        "puntos": [
+          "Un punto",
+          "Otro punto",
+          "Otro mas"
+        ],
+        "caja": [
+          {
+            "icono": "🔒",
+            "titulo": "Una proteccion",
+            "texto": "Como funciona."
+          }
+        ]
       },
       "idiomas": {
         "eyebrow": "Idiomas",
         "h2": "En el idioma de cada quien.",
         "p": "Una linea.",
-        "lista": ["Français", "English", "Español"]
+        "lista": [
+          "Français",
+          "English",
+          "Español"
+        ]
       },
       "precio": {
         "eyebrow": "Prix",
@@ -123,17 +169,29 @@
         "porque": "par mois",
         "detalle": "Que incluye ese precio.",
         "ofertas": [
-          { "titulo": "Votre premier mois à moitié prix", "texto": "{p.mitad} le premier mois. Après, le prix normal." },
-          { "titulo": "Paiement annuel : un mois cadeau", "texto": "{p.anual} pour l'année. Vous payez onze mois, vous en recevez douze." }
+          {
+            "titulo": "Votre premier mois à moitié prix",
+            "texto": "{p.mitad} le premier mois. Après, le prix normal."
+          },
+          {
+            "titulo": "Paiement annuel : un mois cadeau",
+            "texto": "{p.anual} pour l'année. Vous payez onze mois, vous en recevez douze."
+          }
         ],
         "excluyentes": "Les deux offres ne se combinent pas : vous choisissez celle qui vous arrange.",
         "nota": "Lo que haga falta aclarar antes de que pague.",
-        "boton": "Écrivez-nous pour commencer"
+        "boton": "Écrivez-nous pour commencer",
+        "moneda": "Tous les prix sont en dollars américains (USD)."
       },
       "preguntas": {
         "eyebrow": "Questions",
         "h2": "Las preguntas que nos hacen",
-        "lista": [ { "p": "Una pregunta de verdad, de las que hacen.", "r": "La respuesta, sin adornos. Si la respuesta es 'todavia no', se dice 'todavia no'." } ]
+        "lista": [
+          {
+            "p": "Una pregunta de verdad, de las que hacen.",
+            "r": "La respuesta, sin adornos. Si la respuesta es 'todavia no', se dice 'todavia no'."
+          }
+        ]
       },
       "cierre": {
         "h2": "El ultimo empujon.",
@@ -153,8 +211,11 @@
         "boton": "Découvrir Mi App →"
       }
     },
-
-    "en": { "_nota": "El mismo bloque completo, en ingles. Tiene que traer EXACTAMENTE los mismos renglones que el frances, ni uno mas ni uno menos: el programa lo revisa y te dice cual falta." },
-    "es": { "_nota": "El mismo bloque completo, en espanol." }
+    "en": {
+      "_nota": "El mismo bloque completo, en ingles. Tiene que traer EXACTAMENTE los mismos renglones que el frances, ni uno mas ni uno menos: el programa lo revisa y te dice cual falta."
+    },
+    "es": {
+      "_nota": "El mismo bloque completo, en espanol."
+    }
   }
 }

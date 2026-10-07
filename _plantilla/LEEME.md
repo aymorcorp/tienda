@@ -56,7 +56,7 @@ Si algo falta, el programa no arma nada y te dice qué es:
 **1. Ningún precio se escribe de memoria.** En los textos no se escriben cifras: se
 escribe `{p.mes}`, `{p.anual}`, `{p.mitad}`, y la cifra sale de `_fichas/precios.json`,
 que es copia del documento oficial del 555. La cifra además se escribe como se
-escribe en cada idioma: `29,63 $ US` en francés, `US$29.63` en inglés y en español.
+escribe en cada idioma: `29,99 $ US` en francés, `29.99 USD` en inglés y en español.
 Si un precio cambia, se cambia en un solo lugar y se vuelve a armar la tienda.
 
 **2. Ningún teléfono en material de venta.** Regla de la casa del 28 de septiembre.
