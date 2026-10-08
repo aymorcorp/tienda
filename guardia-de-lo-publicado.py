@@ -52,6 +52,36 @@ SALUD = re.compile(
 # profesional de la salud» esas palabras PROTEGEN al cliente. Lo que no se
 # permite es nombrar una enfermedad o un regimen como funcion del producto.
 PRECIO = re.compile(r"\b\d{1,4}[.,]\d\d\b")
+# TODOS LOS PRECIOS TERMINAN EN .99. Lo fijo la hoja «Lo que todo ingeniero debe
+# saber hoy» del 8 de octubre de 2026: Apple solo acepta los precios de su lista
+# y ahi .00, .50, .49, .63 y .89 son viejos. Antes este guardia dejaba pasar
+# .00 y .50 porque esa era la regla del 7 de octubre. Ya no.
+CENTAVOS_BUENOS = ("99",)
+# LAS FRASES PROHIBIDAS que la hoja nombra una por una. La lista viva la lleva
+# Legal en el anexo E del libro; estas son las que mas se repiten.
+PROHIBIDAS = [
+    (r"al instante|instantly|instantan", "«al instante»"),
+    # «rápido» a secas marcaba falso: «antes de escribir, por si es rápido» es
+    # un titulillo, no una promesa. Lo que no se vale es prometer velocidad del
+    # servicio, y eso tiene su propia forma.
+    # «tout de suite» y «right away» salieron del patron: marcaban el
+    # titulillo «L'essentiel, tout de suite», que habla del texto y no de la
+    # velocidad del servicio. Quedan las formas que si prometen rapidez.
+    (r"mucho antes|much sooner|bien avant|en minutos|within minutes|"
+     r"en quelques minutes|m[aá]s r[aá]pido que|faster than|enseguida",
+     "promete velocidad"),
+    (r"sin l[ií]mite|unlimited|illimit", "«sin límite»"),
+    (r"\bel mejor\b|\bla mejor\b|\bthe best\b|\ble meilleur\b|\bla meilleure\b", "«el mejor»"),
+    (r"la ley exige|the law requires|la loi exige", "«la ley exige»"),
+    (r"cumple la Ley 25|complies with Law 25|conforme à la loi 25", "«cumple la Ley 25»"),
+    (r"n[uú]mero propio|our own number|num[eé]ro propre", "«número propio»"),
+    (r"hecho en Montreal|made in Montreal|fait à Montréal", "«hecho en Montreal»"),
+    (r"mitad de precio|half price|moitié prix", "«mitad de precio»"),
+    (r"\bgratis\b|\bfree\b|\bgratuit", "«gratis»"),
+    (r"mes de regalo|free month|mois cadeau", "«un mes de regalo»"),
+    (r"respondemos en un m[aá]ximo de|reply within|r[eé]pondons dans un d[eé]lai",
+     "promete un plazo de respuesta"),
+]
 NOMBRE = re.compile(r"Leonor|Ayluardo|Troncoso|Morales|C[aá]rdenas")
 # El telefono se escribe de muchas formas: (514) 800-3924, 514-800-3924,
 # 514.800.3924, +1 514 800 3924. El patron tiene que aguantar los parentesis y
@@ -69,6 +99,9 @@ def solo_texto(h):
     falso tres veces el 8 de octubre antes de aprenderlo."""
     h = re.sub(r"<style[^>]*>.*?</style>", " ", h, flags=re.S | re.I)
     h = re.sub(r"<script[^>]*>.*?</script>", " ", h, flags=re.S | re.I)
+    # Y fuera las etiquetas: en los nombres de clase y en las direcciones hay
+    # palabras como «free» que no las lee nadie. Marcaron falso a la primera.
+    h = re.sub(r"<[^>]+>", " ", h)
     return h
 
 
@@ -100,8 +133,11 @@ def revisa(ruta, html):
     for m in set(SALUD.findall(t)):
         mal.append("palabra de salud o dieta: «%s»" % m)
     for p in set(PRECIO.findall(t)):
-        if p.split(",")[-1].split(".")[-1] not in ("00", "50", "99"):
-            mal.append("precio fuera de la regla: %s" % p)
+        if p.split(",")[-1].split(".")[-1] not in CENTAVOS_BUENOS:
+            mal.append("precio que no termina en .99: %s" % p)
+    for patron, comoSeLlama in PROHIBIDAS:
+        if re.search(patron, t, re.I):
+            mal.append("frase prohibida: %s" % comoSeLlama)
     if not es_terminos_de_consumo:
         if NOMBRE.search(t):
             mal.append("el nombre de la direccion")
@@ -135,7 +171,12 @@ ATAQUES = [
      "<p>la app no da consejo médico: solo cuenta</p>", False),
     ("un color de la hoja de estilo", "x/",
      "<style>a{color:#E9E4D6}</style><p>hola</p>", False),
-    ("un precio bueno", "x/", "<p>29,99 USD y 4,50 USD</p>", False),
+    ("un precio en .50, que ya es viejo", "x/", "<p>4,50 USD</p>", True),
+    ("una frase que promete rapidez", "x/", "<p>se manda al instante</p>", True),
+    ("que promete un plazo de respuesta", "x/",
+     "<p>te respondemos en un máximo de 30 días</p>", True),
+    ("«mitad de precio» en vez del porcentaje", "x/", "<p>primer mes a mitad de precio</p>", True),
+    ("un precio bueno", "x/", "<p>29,99 USD y 149,99 USD</p>", False),
 ]
 fallo_propio = 0
 for nombre, ruta, html, debe_cazar in ATAQUES:
