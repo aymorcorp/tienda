@@ -1,39 +1,42 @@
 {
-  "_de_donde_salen": "Copiados del documento PRECIOS OFICIALES DE AYMOR APPLIS, el unico que manda (555), version del 4 de octubre de 2026 (noche). Ningun chat escribe un precio de memoria: se cambia AQUI y se vuelve a construir la tienda.",
+  "_de_donde_salen": "Copiados del documento PRECIOS OFICIALES DE AYMOR APPLIS, el unico que manda (555), tercera version del 7 de octubre de 2026 (noche). Ningun chat escribe un precio de memoria: se cambia AQUI y se vuelve a construir la tienda.",
   "_carpeta_oficial": "https://drive.google.com/drive/folders/1ukx6zcXlaPD4q4e9PHFEH9tJ82hbJ2iF",
-  "_copiado_el": "2026-10-04",
-  "_no_se_anuncia": "Impeccable Pro (pro, mitadPro, anualPro): precio reservado, NO va en ninguna pagina ni ficha hasta que el Pro exista. Las ofertas (mitad del primer mes y anual) siguen en este archivo hasta que la direccion decida si salen de las paginas.",
-
+  "_copiado_el": "2026-10-08",
+  "_no_se_anuncia": "Impeccable Pro (pro, mitadPro, anualPro) y Aymor Prospection (pausada): precios guardados, NO van en ninguna pagina publica de precios. Cuisine NO lleva descuento de primer mes: lo decidio la direccion el 8 de octubre de 2026. Su mes es 6.99 y su año 76.99. Los descuentos del primer mes se escriben con su porcentaje exacto (ver _descuento), nunca 'mitad de precio'.",
   "_formato": {
     "fr": "{n} $ US",
     "en": "{n} USD",
     "es": "{n} USD",
     "tl": "{n} USD"
   },
-  "_decimal": { "fr": ",", "en": ".", "es": ".", "tl": "." },
-
+  "_decimal": {
+    "fr": ",",
+    "en": ".",
+    "es": ".",
+    "tl": "."
+  },
   "apps": {
     "quorum": {
       "mes": 29.99,
-      "extra": 9.00,
+      "extra": 8.99,
       "mitad": 14.99,
-      "mitadExtra": 4.50,
-      "anual": 329.89,
-      "anualExtra": 99.00,
-      "reporteExtra": 3.00
+      "mitadExtra": 4.99,
+      "anual": 329.99,
+      "anualExtra": 98.99,
+      "reporteExtra": 2.99
     },
     "impeccable": {
       "mes": 39.99,
       "pro": 69.99,
       "mitad": 19.99,
       "mitadPro": 34.99,
-      "anual": 439.89,
-      "anualPro": 769.89
+      "anual": 439.99,
+      "anualPro": 769.99
     },
     "crm-orbite": {
       "mes": 19.99,
       "mitad": 9.99,
-      "anual": 219.89
+      "anual": 219.99
     },
     "aymor-detailing": {
       "mes": 29.99,
@@ -42,9 +45,9 @@
       "mitad": 14.99,
       "mitadPro": 24.99,
       "mitadElite": 44.99,
-      "anual": 329.89,
-      "anualPro": 549.89,
-      "anualElite": 989.89
+      "anual": 329.99,
+      "anualPro": 549.99,
+      "anualElite": 989.99
     },
     "aymor-studio": {
       "mes": 29.99,
@@ -53,9 +56,9 @@
       "mitad": 14.99,
       "mitadPro": 24.99,
       "mitadElite": 44.99,
-      "anual": 329.89,
-      "anualPro": 549.89,
-      "anualElite": 989.89
+      "anual": 329.99,
+      "anualPro": 549.99,
+      "anualElite": 989.99
     },
     "aymor-prospection": {
       "mes": 49.99,
@@ -64,14 +67,17 @@
       "mitad": 24.99,
       "mitadPro": 44.99,
       "mitadElite": 74.99,
-      "anual": 549.89,
-      "anualPro": 989.89,
-      "anualElite": 1649.89
+      "anual": 549.99,
+      "anualPro": 989.99,
+      "anualElite": 1649.99
     },
     "aymor-cuisine": {
       "mes": 6.99,
-      "mitad": 3.49,
-      "anual": 76.89
+      "anual": 76.99
     }
+  },
+  "_descuento": {
+    "quorum": "50 % primer telefono; 44.4 % cada adicional",
+    "los demas": "50 %"
   }
 }

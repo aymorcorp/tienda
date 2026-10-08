@@ -170,11 +170,11 @@
         "detalle": "Que incluye ese precio.",
         "ofertas": [
           {
-            "titulo": "Votre premier mois à moitié prix",
-            "texto": "{p.mitad} le premier mois. Après, le prix normal."
+            "titulo": "Rabais sur votre premier mois",
+            "texto": "{p.mitad} le premier mois (50 % de rabais). Après, le prix normal."
           },
           {
-            "titulo": "Paiement annuel : un mois cadeau",
+            "titulo": "Paiement annuel : onze mois payés, douze utilisés",
             "texto": "{p.anual} pour l'année. Vous payez onze mois, vous en recevez douze."
           }
         ],

@@ -22,7 +22,7 @@
       "metaDesc": "Quorum est une horloge de poinçon simple pour les petites entreprises avec du personnel à l'heure, à contrat et d'agence. Aucun serveur, aucun compte à gérer : l'employé entre, sort, et le rapport part au comptable.",
       "og": {
         "titulo": "Quorum — Contrôle des heures et rapport de paie",
-        "desc": "Les heures de toute votre équipe, sans le casse-tête des logiciels de paie. {p.mes} par mois pour le premier téléphone, et le premier mois est à moitié prix."
+        "desc": "Les heures de toute votre équipe, sans le casse-tête des logiciels de paie. {p.mes} par mois pour le premier téléphone, et vous avez 50 % de rabais le premier mois."
       },
       "nav": {
         "caracteristicas": "Fonctions",
@@ -221,11 +221,11 @@
         "detalle": "{p.extra} par mois pour chaque téléphone de plus — jusqu'à cinq par entreprise. Un deuxième emplacement, un deuxième quart ou un appareil de secours, sans repayer le plein prix.",
         "ofertas": [
           {
-            "titulo": "Votre premier mois à moitié prix",
-            "texto": "{p.mitad} le premier téléphone, {p.mitadExtra} chaque téléphone de plus. Après, le prix normal."
+            "titulo": "Rabais sur votre premier mois",
+            "texto": "{p.mitad} le premier téléphone (50 % de rabais), {p.mitadExtra} chaque téléphone de plus (44,4 % de rabais). Après, le prix normal."
           },
           {
-            "titulo": "Paiement annuel : un mois cadeau",
+            "titulo": "Paiement annuel : onze mois payés, douze utilisés",
             "texto": "{p.anual} pour l'année du premier téléphone. Vous payez onze mois, vous en recevez douze."
           }
         ],
@@ -271,7 +271,7 @@
       },
       "cierre": {
         "h2": "Prêt à mettre Quorum dans votre entreprise?",
-        "p": "Écrivez-nous et on installe votre premier téléphone — {p.mes} par mois, sans contrat long. Votre premier mois est à moitié prix, ou prenez l'année et le douzième mois est cadeau.",
+        "p": "Écrivez-nous et on installe votre premier téléphone — {p.mes} par mois, sans contrat long. Vous avez 50 % de rabais le premier mois, ou prenez l'année : onze mois payés, douze utilisés.",
         "boton": "Écrivez-nous par courriel"
       },
       "pie": {
@@ -290,7 +290,7 @@
       "metaDesc": "Quorum is a simple time-tracking app for small businesses with hourly, contract, and agency staff. No server, no setup, no per-employee accounts to manage — just clock in, clock out, and send the report.",
       "og": {
         "titulo": "Quorum — Simple Time Tracking & Payroll Reports",
-        "desc": "Track hours for your whole team — without the payroll-software headache. {p.mes}/month for your first phone, and your first month is half price."
+        "desc": "Track hours for your whole team — without the payroll-software headache. {p.mes}/month for your first phone, and you get 50% off your first month."
       },
       "nav": {
         "caracteristicas": "Features",
@@ -489,11 +489,11 @@
         "detalle": "{p.extra} per month for each additional phone — up to five per business. Add a phone for a second location, a second shift, or a backup device, without paying full price again.",
         "ofertas": [
           {
-            "titulo": "Your first month at half price",
-            "texto": "{p.mitad} for the first phone, {p.mitadExtra} for each additional one. Regular price after that."
+            "titulo": "Discount on your first month",
+            "texto": "{p.mitad} for the first phone (50% off), {p.mitadExtra} for each additional one (44.4% off). Regular price after that."
           },
           {
-            "titulo": "Pay yearly: one month on us",
+            "titulo": "Pay yearly: eleven months paid, twelve used",
             "texto": "{p.anual} for a year of the first phone. You pay eleven months and get twelve."
           }
         ],
@@ -539,7 +539,7 @@
       },
       "cierre": {
         "h2": "Ready to get Quorum for your business?",
-        "p": "Write to us and we'll get your first phone set up — {p.mes}/month, no long contract. Your first month is half price, or take the year and the twelfth month is on us.",
+        "p": "Write to us and we'll get your first phone set up — {p.mes}/month, no long contract. You get 50% off your first month, or take the year: eleven months paid, twelve used.",
         "boton": "Write to us by email"
       },
       "pie": {
@@ -558,7 +558,7 @@
       "metaDesc": "Quorum es un checador simple para negocios pequeños con gente por hora, por contrato y de agencia. Sin servidor, sin cuentas que administrar: entra, sale, y el reporte se va al contador.",
       "og": {
         "titulo": "Quorum — Control de horas y reporte de nómina",
-        "desc": "Las horas de todo tu equipo, sin el dolor de cabeza del software de nómina. {p.mes} al mes el primer teléfono, y el primer mes va a mitad de precio."
+        "desc": "Las horas de todo tu equipo, sin el dolor de cabeza del software de nómina. {p.mes} al mes el primer teléfono, y tienes 50 % de descuento en tu primer mes."
       },
       "nav": {
         "caracteristicas": "Qué trae",
@@ -757,11 +757,11 @@
         "detalle": "{p.extra} al mes por cada teléfono adicional — hasta cinco por negocio. Un segundo local, un segundo turno o un aparato de respaldo, sin volver a pagar el precio completo.",
         "ofertas": [
           {
-            "titulo": "Tu primer mes a mitad de precio",
-            "texto": "{p.mitad} el primer teléfono y {p.mitadExtra} cada teléfono adicional. Después, precio normal."
+            "titulo": "Descuento en tu primer mes",
+            "texto": "{p.mitad} el primer teléfono (50 % de descuento) y {p.mitadExtra} cada teléfono adicional (44.4 % de descuento). Después, precio normal."
           },
           {
-            "titulo": "Pago anual: un mes de regalo",
+            "titulo": "Pago anual: once meses pagados, doce usados",
             "texto": "{p.anual} el año del primer teléfono. Pagas once meses y recibes doce."
           }
         ],
@@ -807,7 +807,7 @@
       },
       "cierre": {
         "h2": "¿Listo para poner Quorum en tu negocio?",
-        "p": "Escríbenos y te dejamos andando el primer teléfono — {p.mes} al mes, sin contrato largo. Tu primer mes va a mitad de precio, o tomas el año y el mes doce va de nuestra cuenta.",
+        "p": "Escríbenos y te dejamos andando el primer teléfono — {p.mes} al mes, sin contrato largo. Tienes 50 % de descuento en tu primer mes, o tomas el año: once meses pagados, doce usados.",
         "boton": "Escríbenos por correo"
       },
       "pie": {
