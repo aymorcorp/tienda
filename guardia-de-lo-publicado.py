@@ -93,6 +93,37 @@ CALLE = re.compile(r"Ashdale|\bavenue\b.{0,24}\d|\bavenida\b.{0,24}\d", re.I)
 PAGO = re.compile(r"<form|buy\.stripe|paddle\.js|data-product|checkout\.", re.I)
 
 
+# ─────────────────── LO QUE SE PERMITE, CON SU CITA ────────────────────────
+# Dos frases caen en la lista de prohibidas por su forma, pero son obligaciones
+# legales y se publican a proposito. Legal las confirmo el 8 de octubre de 2026
+# leyendo el texto de la ley, no de memoria. Se quitan del texto ANTES de
+# aplicar los patrones, asi que la regla sigue cazando cualquier otra forma.
+#
+#   1. El plazo de respuesta de 30 dias. La Ley 25 de Quebec, articulo 32,
+#      obliga a responder «con diligencia y a mas tardar en 30 dias», y si no
+#      se responde en 30 dias se considera negada la solicitud. Europa da un
+#      mes; Brasil exige 15 dias, pero ahi todavia no se vende, y antes de
+#      abrir cada pais se revisa su plazo.
+#      Se publica 30 y se contesta antes. Publicar 5 y fallar un dia seria
+#      quedar mal con lo prometido.
+#
+#   2. El aviso de una fuga de datos. La Ley 25 obliga a avisar a las personas
+#      afectadas y a la Comision de acceso a la informacion. Decir que la ley
+#      lo exige ahi no es un argumento de venta: es el dato que el cliente
+#      tiene derecho a conocer.
+PERMITIDAS = [
+    "Te respondemos en un máximo de 30 días",
+    "We reply within 30 days at most",
+    "Nous vous répondons dans un délai maximal de 30 jours",
+    "Te respondemos dentro de 30 días como máximo",
+    "We answer within 30 days at most",
+    "dans un délai maximal de 30 jours",
+    "as the law requires",
+    "como la ley exige",
+    "comme la loi l'exige",
+]
+
+
 def solo_texto(h):
     """Fuera la hoja de estilo y los guiones: ahi hay colores como #E9E4D6 que
     parecen un codigo postal, y numeros como 14px que parecen precios. Me marco
@@ -135,8 +166,13 @@ def revisa(ruta, html):
     for p in set(PRECIO.findall(t)):
         if p.split(",")[-1].split(".")[-1] not in CENTAVOS_BUENOS:
             mal.append("precio que no termina en .99: %s" % p)
+    # Fuera las frases que Legal aprobo con su cita, antes de buscar las
+    # prohibidas: asi la regla sigue cazando cualquier otra forma de decirlo.
+    sin_permitidas = t
+    for frase in PERMITIDAS:
+        sin_permitidas = sin_permitidas.replace(frase, " ")
     for patron, comoSeLlama in PROHIBIDAS:
-        if re.search(patron, t, re.I):
+        if re.search(patron, sin_permitidas, re.I):
             mal.append("frase prohibida: %s" % comoSeLlama)
     if not es_terminos_de_consumo:
         if NOMBRE.search(t):
@@ -176,6 +212,13 @@ ATAQUES = [
     ("que promete un plazo de respuesta", "x/",
      "<p>te respondemos en un máximo de 30 días</p>", True),
     ("«mitad de precio» en vez del porcentaje", "x/", "<p>primer mes a mitad de precio</p>", True),
+    # La excepcion de Legal tiene que dejar pasar SU frase y seguir cazando
+    # cualquier otra forma de prometer un plazo. Si no, no es excepcion: es
+    # un agujero.
+    ("la frase que Legal aprobo, con su cita", "x/",
+     "<p>Te respondemos en un máximo de 30 días.</p>", False),
+    ("otra forma de prometer un plazo, que no esta aprobada", "x/",
+     "<p>te respondemos en un máximo de 5 días</p>", True),
     ("un precio bueno", "x/", "<p>29,99 USD y 149,99 USD</p>", False),
 ]
 fallo_propio = 0
