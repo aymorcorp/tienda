@@ -222,7 +222,7 @@
         "ofertas": [
           {
             "titulo": "Rabais sur votre premier mois",
-            "texto": "{p.mitad} le premier téléphone (50 % de rabais), {p.mitadExtra} chaque téléphone de plus (44,4 % de rabais). Après, le prix normal."
+            "texto": "{p.mitad} le premier téléphone (50 % de rabais). Chaque téléphone de plus est au prix normal, {p.extra}. Après le premier mois, le prix normal."
           },
           {
             "titulo": "Paiement annuel : onze mois payés, douze utilisés",
@@ -490,7 +490,7 @@
         "ofertas": [
           {
             "titulo": "Discount on your first month",
-            "texto": "{p.mitad} for the first phone (50% off), {p.mitadExtra} for each additional one (44.4% off). Regular price after that."
+            "texto": "{p.mitad} for the first phone (50% off). Each additional phone is at the regular price, {p.extra}. Regular price after the first month."
           },
           {
             "titulo": "Pay yearly: eleven months paid, twelve used",
@@ -758,7 +758,7 @@
         "ofertas": [
           {
             "titulo": "Descuento en tu primer mes",
-            "texto": "{p.mitad} el primer teléfono (50 % de descuento) y {p.mitadExtra} cada teléfono adicional (44.4 % de descuento). Después, precio normal."
+            "texto": "{p.mitad} el primer teléfono (50 % de descuento). Cada teléfono adicional va a precio normal, {p.extra}. Después del primer mes, precio normal."
           },
           {
             "titulo": "Pago anual: once meses pagados, doce usados",
