@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Soporte — Orbite</title>
+<style>
+  :root{ --bg:#F0F3F6; --surface:#FFFFFF; --ink:#1C2530; --muted:#5A6472; --navy:#1C3A5E; --gold:#D9A84E; --line-soft:#E9E4D6; }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; line-height:1.6;}
+  header{background:var(--navy); color:#fff; padding:18px 0;}
+  header .wrap{max-width:720px; margin:0 auto; padding:0 20px; display:flex; align-items:center; gap:14px; flex-wrap:wrap;}
+  header a{color:#E9EEF4; text-decoration:none; font-weight:800;}
+  .idiomas{margin-left:auto; display:flex; gap:6px;}
+  .idiomas button{
+    min-width:46px; min-height:38px; padding:0 10px; border-radius:9px; cursor:pointer;
+    font:inherit; font-size:13.5px; font-weight:800; letter-spacing:.04em;
+    background:transparent; color:#E9EEF4; border:1px solid rgba(233,238,244,.45);
+  }
+  .idiomas button[aria-pressed="true"]{ background:#fff; color:var(--navy); border-color:#fff; }
+  .wrap{max-width:720px; margin:0 auto; padding:40px 20px 60px;}
+  h1{font-size:24px; margin:0 0 4px; color:var(--navy);}
+  .updated{color:var(--muted); font-size:13.5px; margin:0 0 22px;}
+  h2{font-size:15.5px; margin:26px 0 8px; color:var(--navy);}
+  p{font-size:15px; color:var(--ink);}
+  ul{font-size:15px; padding-left:22px;}
+  li{margin-bottom:6px;}
+  .card{background:var(--surface); border:1px solid var(--line-soft); border-radius:14px; padding:24px 28px; box-shadow:0 4px 14px rgba(28,37,48,.08);}
+  .card h2:first-child{margin-top:0;}
+  .destacado{background:#F7F3E8; border-left:5px solid var(--gold); border-radius:0 10px 10px 0; padding:14px 18px; margin:18px 0;}
+  .destacado p{margin:0;}
+  footer{text-align:center; color:var(--muted); font-size:13px; padding:20px;}
+  [hidden]{display:none !important;}
+</style>
+</head>
+<body>
+
+<!-- PAGINA DE SOPORTE DE ORBITE. Misma estructura y mismo estilo que la de
+     Impeccable, para que las dos parezcan de la misma casa, que es lo que son.
+
+     SIN TELEFONO Y SIN NOMBRES A PROPOSITO: la regla de la casa del 28 de
+     septiembre es que en paginas publicas no va ningun telefono, y 555 pidio
+     que el nombre de la responsable salga solo donde Legal lo exija. En una
+     pagina de soporte no lo exige, asi que se manda a la politica, que es
+     donde vive.                                  -- 016, 3 de octubre de 2026 -->
+<!-- AQUI TAMPOCO VA ENLACE, por lo mismo que en la politica: la direccion de
+     soporte se le entrega a las tiendas igual que la de privacidad, y desde
+     aqui se llegaba en dos saltos a la portada con los precios de la
+     suscripcion. "../" da 404. Lo pidio 555 y en Impeccable ya esta hecho en
+     las dos paginas; esto iguala Orbite.   -- 016, 3 de octubre de 2026 -->
+<header>
+  <div class="wrap">
+    <span>Aymor Applis</span>
+    <div class="idiomas">
+      <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      <button type="button" data-lang="es" aria-pressed="true">ES</button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<!-- ═══════════════════ ESPAÑOL ═══════════════════ -->
+<section data-lang="es">
+  <h1>Soporte — Orbite</h1>
+  <p class="updated">Actualizado el 3 de octubre de 2026</p>
+
+  <div class="card">
+    <h2>Escríbenos</h2>
+    <p>Para cualquier duda, problema o sugerencia sobre Orbite, escribe a
+    <a href="mailto:aymorcorp@gmail.com">aymorcorp@gmail.com</a>.</p>
+    <p>Dinos qué teléfono usas y qué estabas haciendo cuando pasó. Con eso se arregla casi todo
+    sin tener que preguntarte tres veces.</p>
+
+    <h2>Antes de escribir, por si es rápido</h2>
+    <ul>
+      <li><strong>La app se abre con contactos que no son míos.</strong> Son ejemplos, para que
+      puedas probarla sin escribir nada. Hay un botón para quitarlos, y una vez quitados no vuelven.</li>
+      <li><strong>Borré un contacto sin querer.</strong> Mira en la papelera: lo que se borra se
+      queda ahí 30 días y se puede recuperar. Pasados los 30 días, ya no.</li>
+      <li><strong>¿Se borran solos los contactos viejos?</strong> No. Orbite no borra nada por
+      antigüedad: tus contactos se quedan mientras tú los quieras. Está explicado en la
+      <a href="../privacidad/">política de privacidad</a>.</li>
+      <li><strong>El mapa no encuentra una dirección.</strong> Pruébala poniendo la ciudad al final.
+      Si sigue sin salir, puedes poner el punto a mano con el dedo.</li>
+      <li><strong>No quiero que use mi ubicación.</strong> No hace falta. Solo se usa si tocas
+      «Usar mi ubicación», y solo para centrar el mapa en ese momento.</li>
+    </ul>
+
+    <div class="destacado">
+      <p><strong>Importante:</strong> tus contactos viven únicamente en tu teléfono. Nosotros no
+      tenemos ninguna copia, porque nunca la tuvimos. Si pierdes el teléfono o borras la app, no
+      podemos recuperarte nada. Por eso la app te ofrece guardar una copia: guárdala tú donde tú
+      decidas, y hazlo de vez en cuando.</p>
+    </div>
+
+    <h2>Quiénes somos</h2>
+    <p>Orbite está hecha por Aymor Applis, en Quebec. Quién es la persona responsable de proteger
+    tu información personal, y cómo escribirle, está en la
+    <a href="../privacidad/">política de privacidad</a>.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════ FRANÇAIS ═══════════════════ -->
+<section data-lang="fr" hidden>
+  <h1>Soutien — Orbite</h1>
+  <p class="updated">Mis à jour le 3 octobre 2026</p>
+
+  <div class="card">
+    <h2>Écrivez-nous</h2>
+    <p>Pour toute question, tout problème ou toute suggestion au sujet d&rsquo;Orbite, écrivez à
+    <a href="mailto:aymorcorp@gmail.com">aymorcorp@gmail.com</a>.</p>
+    <p>Dites-nous quel téléphone vous utilisez et ce que vous faisiez quand c&rsquo;est arrivé.</p>
+
+    <h2>Avant d&rsquo;écrire, au cas où ce serait rapide</h2>
+    <ul>
+      <li><strong>L&rsquo;application s&rsquo;ouvre avec des contacts qui ne sont pas les miens.</strong>
+      Ce sont des exemples, pour que vous puissiez l&rsquo;essayer sans rien saisir. Un bouton les
+      efface, et une fois effacés ils ne reviennent pas.</li>
+      <li><strong>J&rsquo;ai supprimé un contact par erreur.</strong> Regardez dans la corbeille : ce
+      qui est supprimé y reste 30 jours et peut être récupéré. Après 30 jours, non.</li>
+      <li><strong>Les vieux contacts se suppriment-ils tout seuls ?</strong> Non. Orbite ne supprime
+      rien en raison de l&rsquo;ancienneté : vos contacts restent aussi longtemps que vous le voulez.
+      C&rsquo;est expliqué dans la <a href="../privacidad/">politique de confidentialité</a>.</li>
+      <li><strong>La carte ne trouve pas une adresse.</strong> Essayez en ajoutant la ville à la fin.
+      Si cela ne marche toujours pas, vous pouvez placer le point à la main.</li>
+      <li><strong>Je ne veux pas qu&rsquo;elle utilise ma position.</strong> Ce n&rsquo;est pas
+      nécessaire. Elle ne sert que si vous touchez « Utiliser ma position », et seulement pour
+      centrer la carte à ce moment-là.</li>
+    </ul>
+
+    <div class="destacado">
+      <p><strong>Important :</strong> vos contacts vivent uniquement dans votre téléphone. Nous
+      n&rsquo;en avons aucune copie, puisque nous ne l&rsquo;avons jamais eue. Si vous perdez le
+      téléphone ou supprimez l&rsquo;application, nous ne pouvons rien récupérer. C&rsquo;est pourquoi
+      l&rsquo;application vous propose une sauvegarde : gardez-la où vous le décidez.</p>
+    </div>
+
+    <h2>Qui nous sommes</h2>
+    <p>Orbite est faite par Aymor Applis, au Québec. La personne responsable de la protection des
+    renseignements personnels, et la façon de la joindre, sont indiquées dans la
+    <a href="../privacidad/">politique de confidentialité</a>.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════ ENGLISH ═══════════════════ -->
+<section data-lang="en" hidden>
+  <h1>Support — Orbite</h1>
+  <p class="updated">Updated 3 October 2026</p>
+
+  <div class="card">
+    <h2>Write to us</h2>
+    <p>For any question, problem or suggestion about Orbite, write to
+    <a href="mailto:aymorcorp@gmail.com">aymorcorp@gmail.com</a>.</p>
+    <p>Tell us which phone you use and what you were doing when it happened.</p>
+
+    <h2>Before writing, in case it is quick</h2>
+    <ul>
+      <li><strong>The app opens with contacts that are not mine.</strong> Those are samples, so you
+      can try it without typing anything. One button clears them, and once cleared they do not come
+      back.</li>
+      <li><strong>I deleted a contact by mistake.</strong> Check the trash: deleted items stay there
+      for 30 days and can be restored. After 30 days they cannot.</li>
+      <li><strong>Do old contacts delete themselves?</strong> No. Orbite deletes nothing because of
+      age: your contacts stay as long as you want them. It is explained in the
+      <a href="../privacidad/">privacy policy</a>.</li>
+      <li><strong>The map cannot find an address.</strong> Try adding the city at the end. If it
+      still does not show, you can place the pin by hand.</li>
+      <li><strong>I do not want it to use my location.</strong> It does not need to. It is only used
+      if you tap "Use my location", and only to centre the map at that moment.</li>
+    </ul>
+
+    <div class="destacado">
+      <p><strong>Important:</strong> your contacts live only on your phone. We hold no copy, because
+      we never had one. If you lose the phone or delete the app, we cannot recover anything for you.
+      That is why the app offers you a backup: keep it wherever you decide.</p>
+    </div>
+
+    <h2>Who we are</h2>
+    <p>Orbite is made by Aymor Applis, in Quebec. Who is responsible for protecting your personal
+    information, and how to reach them, is in the <a href="../privacidad/">privacy policy</a>.</p>
+  </div>
+</section>
+
+</div>
+
+<footer>Aymor Applis · aymorcorp@gmail.com</footer>
+
+<script>
+  (function () {
+    var botones = Array.prototype.slice.call(document.querySelectorAll(".idiomas button"));
+    var secciones = document.querySelectorAll("section[data-lang]");
+
+    function poner(lang) {
+      secciones.forEach(function (s) { s.hidden = s.dataset.lang !== lang; });
+      botones.forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.lang === lang)); });
+      document.documentElement.lang = lang;
+      try { localStorage.setItem("orbite-soporte:idioma", lang); } catch (e) {}
+    }
+
+    botones.forEach(function (b) {
+      b.addEventListener("click", function () { poner(b.dataset.lang); });
+    });
+
+    var guardado = null;
+    try { guardado = localStorage.getItem("orbite-soporte:idioma"); } catch (e) {}
+    var nav = (navigator.language || "es").slice(0, 2).toLowerCase();
+    poner(guardado || (["fr", "en", "es"].indexOf(nav) >= 0 ? nav : "es"));
+  })();
+</script>
+
+</body>
+</html>
