@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Soporte — Prose</title>
+<style>
+  :root{ --bg:#F0F3F6; --surface:#FFFFFF; --ink:#1C2530; --muted:#5A6472; --navy:#1C3A5E; --gold:#D9A84E; --line-soft:#E9E4D6; }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; line-height:1.6;}
+  header{background:var(--navy); color:#fff; padding:18px 0;}
+  header .wrap{max-width:720px; margin:0 auto; padding:0 20px; display:flex; align-items:center; gap:14px; flex-wrap:wrap;}
+  header a{color:#E9EEF4; text-decoration:none; font-weight:800;}
+  .idiomas{margin-left:auto; display:flex; gap:6px;}
+  .idiomas button{
+    min-width:46px; min-height:38px; padding:0 10px; border-radius:9px; cursor:pointer;
+    font:inherit; font-size:13.5px; font-weight:800; letter-spacing:.04em;
+    background:transparent; color:#E9EEF4; border:1px solid rgba(233,238,244,.45);
+  }
+  .idiomas button[aria-pressed="true"]{ background:#fff; color:var(--navy); border-color:#fff; }
+  .wrap{max-width:720px; margin:0 auto; padding:40px 20px 60px;}
+  h1{font-size:24px; margin:0 0 6px; color:var(--navy);}
+  h2{font-size:16px; margin:28px 0 8px; color:var(--navy);}
+  h3{font-size:15px; margin:20px 0 4px; color:var(--navy);}
+  p{font-size:15px; color:var(--ink);}
+  a{color:var(--navy);}
+  .updated{color:var(--muted); font-size:13px; margin:0 0 22px;}
+  .card{background:var(--surface); border:1px solid var(--line-soft); border-radius:14px; padding:24px 28px; box-shadow:0 4px 14px rgba(28,37,48,.08);}
+  .card h2:first-child{margin-top:0;}
+  .destacado{background:#F7F3E8; border-left:5px solid var(--gold); border-radius:0 10px 10px 0; padding:14px 18px; margin:18px 0;}
+  .destacado p{margin:0;}
+  .correo{font-size:19px; font-weight:800;}
+  footer{text-align:center; color:var(--muted); font-size:13px; padding:20px;}
+  [hidden]{display:none !important;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a href="../../">&larr; Aymor Applis</a>
+    <div class="idiomas">
+      <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      <button type="button" data-lang="es" aria-pressed="true">ES</button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+<section data-lang="es">
+<h1>Soporte — Prose</h1>
+<p class="updated">Última actualización: 8 de octubre de 2026</p>
+<div class="card">
+<h2>Escríbenos</h2>
+<p>Para cualquier duda o problema, escríbenos a:</p>
+<p class="correo"><a href="mailto:aymorcorp@gmail.com">aymorcorp@gmail.com</a></p>
+<p>Contestamos en español, inglés y francés, en un máximo de 30 días y normalmente mucho antes.</p>
+<p>Para ayudarte más rápido, cuéntanos qué versión de Windows tienes y qué estabas haciendo cuando pasó.</p>
+<h2>Antes de escribir, por si es rápido</h2>
+<h3>No lee en voz alta</h3>
+<p>Prose lee con voces que se instalan en la computadora. Si falta la voz de tu idioma, Prose no lee y lo dice en pantalla. No es una falla de la app: es que falta ese archivo.</p>
+<h3>Se traga el final de las frases, o salta palabras</h3>
+<p>Eso se arregló. Si te sigue pasando, dinos qué aparato de sonido usas: algunos tardan en arrancar y Prose espera a que terminen de sonar.</p>
+<h3>No puedo pegar texto con Control+V</h3>
+<p>Apaga la opción de leer el portapapeles. En Windows, el portapapeles lo agarra un programa a la vez, y si Prose está vigilándolo tu Control+V puede fallar.</p>
+<h3>Tarda en abrir</h3>
+<p>La primera vez que usas el micrófono, Prose descarga el modelo del dictado. Eso solo pasa una vez. Abrir la app no debería tardar más de unos segundos.</p>
+<h3>Se queda encima de todo</h3>
+<p>Hay una casilla para quitarlo. Prose ya no se pone encima por su cuenta.</p>
+<h3>El dictado escribe mal</h3>
+<p>El dictado funciona dentro de tu computadora, sin internet, y por eso no es perfecto. Habla cerca del micrófono y en frases cortas.</p>
+<h2>Quiénes somos</h2>
+<p>Prose es de <strong>Aymor Applis</strong>, un negocio registrado en Quebec. Lo que Prose guarda, y dónde, está en su <a href="../privacidad/">política de privacidad</a>: la respuesta corta es que nada sale de tu computadora.</p>
+</div>
+<p class="updated" style="margin-top:20px">Aymor Applis, un negocio registrado en Quebec — <a href="mailto:aymorcorp@gmail.com">aymorcorp@gmail.com</a></p>
+</section>
+
+<section data-lang="fr">
+<h1>Soutien — Prose</h1>
+<p class="updated">Dernière mise à jour : 8 octobre 2026</p>
+<div class="card">
+<h2>Écrivez-nous</h2>
+<p>Pour toute question ou tout problème, écrivez-nous à :</p>
+<p class="correo"><a href="mailto:aymorcorp@gmail.com">aymorcorp@gmail.com</a></p>
+<p>Nous répondons en français, en anglais et en espagnol, dans un délai maximal de 30 jours et normalement bien avant.</p>
+<p>Pour vous aider plus vite, dites-nous quelle version de Windows vous avez et ce que vous faisiez quand c'est arrivé.</p>
+<h2>Avant d'écrire, au cas où ce serait rapide</h2>
+<h3>Il ne lit pas à voix haute</h3>
+<p>Prose lit avec des voix installées dans l'ordinateur. S'il manque la voix de votre langue, Prose ne lit pas et l'affiche à l'écran. Ce n'est pas une panne : c'est ce fichier qui manque.</p>
+<h3>Il avale la fin des phrases, ou saute des mots</h3>
+<p>Cela a été corrigé. Si cela vous arrive encore, dites-nous quel appareil de son vous utilisez : certains démarrent lentement et Prose attend qu'ils finissent de sonner.</p>
+<h3>Je ne peux pas coller avec Contrôle+V</h3>
+<p>Éteignez l'option qui lit le presse-papiers. Sous Windows, le presse-papiers est pris par un seul programme à la fois, et si Prose le surveille votre Contrôle+V peut échouer.</p>
+<h3>Il met du temps à ouvrir</h3>
+<p>La première fois que vous utilisez le micro, Prose télécharge le modèle de la dictée. Cela n'arrive qu'une fois. Ouvrir l'application ne devrait pas prendre plus de quelques secondes.</p>
+<h3>Il reste par-dessus tout</h3>
+<p>Il y a une case pour l'enlever. Prose ne se met plus par-dessus de lui-même.</p>
+<h3>La dictée écrit mal</h3>
+<p>La dictée fonctionne dans votre ordinateur, sans internet, et c'est pour cela qu'elle n'est pas parfaite. Parlez près du micro et en phrases courtes.</p>
+<h2>Qui nous sommes</h2>
+<p>Prose appartient à <strong>Aymor Applis</strong>, une entreprise immatriculée au Québec. Ce que Prose conserve, et où, se trouve dans sa <a href="../privacidad/">politique de confidentialité</a> : la réponse courte est que rien ne sort de votre ordinateur.</p>
+</div>
+<p class="updated" style="margin-top:20px">Aymor Applis, une entreprise immatriculée au Québec — <a href="mailto:aymorcorp@gmail.com">aymorcorp@gmail.com</a></p>
+</section>
+
+<section data-lang="en">
+<h1>Support — Prose</h1>
+<p class="updated">Last updated: 8 October 2026</p>
+<div class="card">
+<h2>Write to us</h2>
+<p>For any question or problem, write to us at:</p>
+<p class="correo"><a href="mailto:aymorcorp@gmail.com">aymorcorp@gmail.com</a></p>
+<p>We answer in English, Spanish and French, within 30 days at most and usually much sooner.</p>
+<p>To help you faster, tell us which version of Windows you have and what you were doing when it happened.</p>
+<h2>Before you write, in case it is quick</h2>
+<h3>It does not read aloud</h3>
+<p>Prose reads with voices installed on the computer. If the voice for your language is missing, Prose does not read and says so on screen. That is not a fault in the app: that file is missing.</p>
+<h3>It swallows the end of sentences, or skips words</h3>
+<p>That was fixed. If it still happens, tell us which sound device you use: some are slow to start and Prose waits for them to finish sounding.</p>
+<h3>I cannot paste with Control+V</h3>
+<p>Turn off the option that reads the clipboard. On Windows, the clipboard is held by one program at a time, and if Prose is watching it your Control+V can fail.</p>
+<h3>It is slow to open</h3>
+<p>The first time you use the microphone, Prose downloads the dictation model. That happens only once. Opening the app should not take more than a few seconds.</p>
+<h3>It stays on top of everything</h3>
+<p>There is a checkbox to turn that off. Prose no longer puts itself on top on its own.</p>
+<h3>Dictation types the wrong words</h3>
+<p>Dictation runs inside your computer, with no internet, and that is why it is not perfect. Speak close to the microphone and in short sentences.</p>
+<h2>Who we are</h2>
+<p>Prose belongs to <strong>Aymor Applis</strong>, a business registered in Quebec. What Prose keeps, and where, is in its <a href="../privacidad/">privacy policy</a>: the short answer is that nothing leaves your computer.</p>
+</div>
+<p class="updated" style="margin-top:20px">Aymor Applis, a business registered in Quebec — <a href="mailto:aymorcorp@gmail.com">aymorcorp@gmail.com</a></p>
+</section>
+</div>
+
+<footer>&copy; 2026 Aymor Applis. Todos los derechos reservados.</footer>
+
+<script>
+  (function () {
+    var botones = document.querySelectorAll(".idiomas button");
+    var secciones = document.querySelectorAll("section[data-lang]");
+
+    function poner(lang) {
+      secciones.forEach(function (s) { s.hidden = s.dataset.lang !== lang; });
+      botones.forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.lang === lang)); });
+      document.documentElement.lang = lang;
+      try { localStorage.setItem("prose-soporte:idioma", lang); } catch (e) {}
+    }
+
+    botones.forEach(function (b) {
+      b.addEventListener("click", function () { poner(b.dataset.lang); });
+    });
+
+    var guardado = null;
+    try { guardado = localStorage.getItem("prose-soporte:idioma"); } catch (e) {}
+    var nav = (navigator.language || "es").slice(0, 2).toLowerCase();
+    poner(guardado || (["fr", "en", "es"].indexOf(nav) >= 0 ? nav : "es"));
+  })();
+</script>
+
+</body>
+</html>
