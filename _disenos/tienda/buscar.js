@@ -20,13 +20,27 @@
     });
     if(nada) nada.hidden = vistas > 0;
   }
+  function escoger(c){
+    var hay = chips.filter(function(o){ return o.dataset.cat === c; })[0];
+    if(!hay) return false;
+    chips.forEach(function(o){ o.classList.remove('on'); });
+    hay.classList.add('on');
+    cat = c;
+    pintar();
+    return true;
+  }
   q.addEventListener('input', pintar);
   chips.forEach(function(ch){
-    ch.addEventListener('click', function(){
-      chips.forEach(function(o){ o.classList.remove('on'); });
-      ch.classList.add('on');
-      cat = ch.dataset.cat;
-      pintar();
-    });
+    ch.addEventListener('click', function(){ escoger(ch.dataset.cat); });
   });
+  /* Las bandas de la portada llegan aqui con la categoria en la direccion,
+     por ejemplo «catalogo/#impuestos». Hay que abrir el catalogo con ese
+     filtro ya puesto: si no, la banda dice «ver lo de este oficio» y enseña
+     todo. Si la direccion trae algo que no existe, no se toca nada. */
+  function porLaDireccion(){
+    var c = (location.hash || '').replace('#', '');
+    if(c) escoger(c);
+  }
+  porLaDireccion();
+  window.addEventListener('hashchange', porLaDireccion);
 })();

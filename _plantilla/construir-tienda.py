@@ -149,7 +149,7 @@ def marco(idi, titulo, cuerpo, profundidad=1, clase=""):
     # Desde es/catalogo/, la raiz de la tienda es ../../ y la del idioma es ../
     arriba = "../" * profundidad
     dentro = "../" * (profundidad - 1)
-    idis = "".join("<a href='%s%s/'%s>%s</a>"
+    idis = "".join("<a href='%s%s/index.html'%s>%s</a>"
                    % (arriba, o, " class=on" if o == idi else "", o.upper())
                    for o in IDIOMAS)
     pie_cols = [
@@ -162,9 +162,12 @@ def marco(idi, titulo, cuerpo, profundidad=1, clase=""):
         (w["loLegal"], [(w["precios"], ""), (w["terminos"], ""),
                         (w["privacidad"], ""), (w["reembolsos"], "")]),
     ]
+    # Cada enlace NOMBRA la pagina. Si dice solo «catalogo/», al abrir la
+    # tienda desde una carpeta (sin servidor) el navegador enseña la lista de
+    # archivos en vez de la pagina. Nombrarla funciona en los dos sitios.
     cols = "".join(
         "<div><h5>%s</h5>%s</div>"
-        % (t, "".join("<a href='%s%s'>%s</a>" % (dentro, d, n) for n, d in ls))
+        % (t, "".join("<a href='%s%sindex.html'>%s</a>" % (dentro, d, n) for n, d in ls))
         for t, ls in pie_cols)
     return ("<!doctype html><html lang=%s><head><meta charset=utf-8>"
             "<meta name=viewport content='width=device-width,initial-scale=1,viewport-fit=cover'>"
@@ -172,12 +175,12 @@ def marco(idi, titulo, cuerpo, profundidad=1, clase=""):
             "<body class='%s'>"
             "<div class=barra><div class=centro>"
             "<a class=marca href='%s'>AYMOR APPLIS</a>"
-            "<a class=buscar href='%scatalogo/'>%s</a>"
+            "<a class=buscar href='%scatalogo/index.html'>%s</a>"
             "<span class=idiomas>%s</span></div></div>"
             "%s"
             "<footer><div class=centro><div class=cols>%s</div>"
             "<p class=cierre>%s · aymorcorp@gmail.com</p></div></footer></body></html>"
-            % (idi, titulo, arriba, clase, dentro or "./", dentro, w["buscar"], idis,
+            % (idi, titulo, arriba, clase, dentro + "index.html", dentro, w["buscar"], idis,
                cuerpo, cols, PALABRAS[idi]["pie"]))
 
 
@@ -186,7 +189,7 @@ def tarjeta(idi, p, a_enlace="", a_img="", precio_txt=""):
        catalogo, el producto esta al lado (../ley25/) pero las imagenes estan
        dos pisos arriba (../../img/). Los tenia juntos y las imagenes del
        catalogo no cargaban: lo cazo probar-la-tienda.py."""
-    return ("<a class=libro href='%s%s/'>"
+    return ("<a class=libro href='%s%s/index.html'>"
             "<div class=obj style=\"background-image:url('%simg/%s-mockup.jpg')\"></div>"
             "<h4>%s</h4><p>%s</p><b>%s</b></a>"
             % (a_enlace, p["id"], a_img, p["carpeta"], p[idi]["titulo"],
@@ -197,9 +200,16 @@ def construir():
     d = json.load(io.open(CATALOGO, encoding="utf-8"))
     cats, oficios = d["categorias"], d["oficios"]
     todos = d["productos"]
-    fuera = [p for p in todos if not p.get("publicar")]
-    vivos = [p for p in todos if p.get("publicar")]
-    if not vivos:
+    # EL PERMISO ES POR IDIOMA. Una guia puede estar lista en frances y no en
+    # español: a Detallado le falta en español el aviso de que no es asesoria,
+    # y en ingles y frances no. Quien lo dice es el 007, que lleva las guias y
+    # su revision de seguridad. Si esto fuera un solo si o no, la tienda
+    # española venderia un libro que no se puede vender.
+    def permiso(p, idi):
+        v = p.get("publicar")
+        return bool(v.get(idi)) if isinstance(v, dict) else bool(v)
+
+    if not any(permiso(p, i) for p in todos for i in IDIOMAS):
         parar("el catalogo no tiene ni un producto publicable")
 
     os.makedirs(SALIDA, exist_ok=True)
@@ -219,19 +229,41 @@ def construir():
     indice = []
     for idi in IDIOMAS:
         w = PALABRAS[idi]
+        vivos = [p for p in todos if permiso(p, idi)]
         for p in vivos:
             p["_catnombre"] = cats[p["cat"]][idi]
         base = os.path.join(SALIDA, idi)
         os.makedirs(base, exist_ok=True)
 
         # ---------- portada ----------
-        bandas = "".join(
-            "<a class=of href='catalogo/'>"
-            "<div class=fondo style=\"background-image:url('../img/%s-mockup.jpg')\"></div>"
-            "<div class=velo style=\"background:linear-gradient(170deg,%s66 0%%,%sE6 78%%)\"></div>"
-            "<h3>%s</h3><span>%s →</span></a>"
-            % (o["imagen"], o["color"], o["color"], o[idi], w["verOficio"])
-            for o in oficios)
+        # La banda dice «Ver lo de este oficio», así que tiene que cumplir dos
+        # cosas, y antes no cumplía ninguna:
+        #
+        #   1. LLEVAR A LO DE ESE OFICIO. Las cinco caían en el catálogo
+        #      entero. Ahora cada una lleva a «catalogo/#su-categoria» y el
+        #      catálogo se abre con ese filtro ya puesto.
+        #   2. NO LLEVAR A UN SITIO VACÍO. Si en este idioma no queda ni un
+        #      producto de ese oficio, la banda no se pinta. Hoy pasa con
+        #      «Buscar trabajo» en los tres idiomas (la única guía era el
+        #      Currículum, que el 007 tiene detenido) y con «Detallado de
+        #      autos» en español. Una banda que promete y no da es peor que
+        #      no tenerla.
+        #
+        # Y la FOTO sale de un producto que SÍ se vende aquí. Si no, la portada
+        # anunciaba la tapa de Fermentos, que es justo el libro que no se puede
+        # vender.
+        bandas = ""
+        for o in oficios:
+            suyos = [p for p in vivos if p["cat"] == o["cat"]]
+            if not suyos:
+                continue
+            cara = o["imagen"] if any(p["carpeta"] == o["imagen"] for p in suyos)                 else suyos[0]["carpeta"]
+            bandas += (
+                "<a class=of href='catalogo/index.html#%s'>"
+                "<div class=fondo style=\"background-image:url('../img/%s-mockup.jpg')\"></div>"
+                "<div class=velo style=\"background:linear-gradient(170deg,%s66 0%%,%sE6 78%%)\"></div>"
+                "<h3>%s</h3><span>%s →</span></a>"
+                % (o["cat"], cara, o["color"], o["color"], o[idi], w["verOficio"]))
         estante = "".join(tarjeta(idi, p, "", "../", w["porDefinir"]) for p in vivos[:8])
         io.open(os.path.join(base, "index.html"), "w", encoding="utf-8", newline="\n").write(
             marco(idi, "Aymor Applis",
@@ -280,7 +312,7 @@ def construir():
             trae = "".join("<li>%s</li>" % x for x in p[idi]["trae"])
             io.open(os.path.join(carpeta, "index.html"), "w", encoding="utf-8", newline="\n").write(
                 marco(idi, p[idi]["titulo"] + " — Aymor Applis",
-                      "<div class=centro><a class=volver href='../catalogo/'>← %s</a>"
+                      "<div class=centro><a class=volver href='../catalogo/index.html'>← %s</a>"
                       "<div class=ficha><div>"
                       "<div class=galeria>%s</div><div class=puntos>%s</div></div>"
                       "<div><div class=cat>%s · %s</div><h1>%s</h1>"
@@ -332,16 +364,40 @@ def construir():
 
     io.open(os.path.join(SALIDA, "buscar.js"), "w", encoding="utf-8", newline="\n").write(BUSCADOR)
 
+    # La raiz manda al idioma del navegador y, si no lo reconoce, al frances,
+    # que es el de Quebec. Sin esto, la marca de arriba y el pie llevaban a una
+    # pagina que no existia: lo cazo probar-la-tienda.py.
+    io.open(os.path.join(SALIDA, "index.html"), "w", encoding="utf-8", newline="\n").write(
+        "<!doctype html><html lang=fr><head><meta charset=utf-8>"
+        "<meta name=viewport content='width=device-width,initial-scale=1'>"
+        "<title>Aymor Applis</title><link rel=stylesheet href='tienda.css'>"
+        "<script>(function(){var l=(navigator.language||'fr').slice(0,2).toLowerCase();"
+        "location.replace((['es','fr','en'].indexOf(l)>=0?l:'fr')+'/');})();</script>"
+        "</head><body><div class=centro><div class=saludo>"
+        "<h1>Aymor Applis</h1><p><a href='fr/index.html'>Français</a> &middot; "
+        "<a href='es/index.html'>Español</a> &middot; <a href='en/index.html'>English</a></p>"
+        "</div></div></body></html>")
+
     print("")
     print("  TIENDA ARMADA en _disenos/tienda (no se publica)")
-    print("  %d productos × %d idiomas = %d paginas de producto"
-          % (len(vivos), len(IDIOMAS), len(vivos) * len(IDIOMAS)))
+    for idi in IDIOMAS:
+        n = sum(1 for p in todos if permiso(p, idi))
+        print("     en %s: %d productos" % (idi, n))
     print("  mas portada, catalogo, membresia, trabajo y probadores en cada idioma")
-    if fuera:
-        print("")
-        for p in fuera:
-            print("  FUERA DEL CATALOGO: %s" % p["es"]["titulo"])
-            print("     %s" % p.get("_por_que_no", "sin razon escrita"))
+
+    print("")
+    print("  LO QUE NO SE VENDE, Y POR QUE:")
+    alguno = False
+    for p in todos:
+        faltan = [i for i in IDIOMAS if not permiso(p, i)]
+        if not faltan:
+            continue
+        alguno = True
+        donde = "en ningun idioma" if len(faltan) == len(IDIOMAS) else "en " + ", ".join(faltan)
+        print("     %s — %s" % (p["es"]["titulo"][:46], donde))
+        print("        %s" % p.get("_por_que_no", "SIN RAZON ESCRITA"))
+    if not alguno:
+        print("     nada: todo se vende en los tres idiomas")
 
 
 BUSCADOR = """/* El buscador. Vive en el navegador: no hay servidor detras, asi que
@@ -366,15 +422,29 @@ BUSCADOR = """/* El buscador. Vive en el navegador: no hay servidor detras, asi 
     });
     if(nada) nada.hidden = vistas > 0;
   }
+  function escoger(c){
+    var hay = chips.filter(function(o){ return o.dataset.cat === c; })[0];
+    if(!hay) return false;
+    chips.forEach(function(o){ o.classList.remove('on'); });
+    hay.classList.add('on');
+    cat = c;
+    pintar();
+    return true;
+  }
   q.addEventListener('input', pintar);
   chips.forEach(function(ch){
-    ch.addEventListener('click', function(){
-      chips.forEach(function(o){ o.classList.remove('on'); });
-      ch.classList.add('on');
-      cat = ch.dataset.cat;
-      pintar();
-    });
+    ch.addEventListener('click', function(){ escoger(ch.dataset.cat); });
   });
+  /* Las bandas de la portada llegan aqui con la categoria en la direccion,
+     por ejemplo «catalogo/#impuestos». Hay que abrir el catalogo con ese
+     filtro ya puesto: si no, la banda dice «ver lo de este oficio» y enseña
+     todo. Si la direccion trae algo que no existe, no se toca nada. */
+  function porLaDireccion(){
+    var c = (location.hash || '').replace('#', '');
+    if(c) escoger(c);
+  }
+  porLaDireccion();
+  window.addEventListener('hashchange', porLaDireccion);
 })();
 """
 

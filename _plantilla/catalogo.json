@@ -2,85 +2,694 @@
   "_que_es": "El catalogo de la tienda. Cada producto es un renglon. Para meter el producto 5000 se añade un renglon, no se toca ninguna pagina. Lo lee construir-tienda.py.",
   "_precio_de_las_guias": "LA DIRECCION TODAVIA NO LO HA DICHO. Mientras no lo diga, las paginas muestran el precio tachado como «por definir» y el boton no se enciende. No se inventa un precio.",
   "categorias": {
-    "ley": {"es": "Ley y papeles", "fr": "Lois et paperasse", "en": "Law and paperwork"},
-    "impuestos": {"es": "Impuestos", "fr": "Impôts", "en": "Taxes"},
-    "negocio": {"es": "Tu negocio", "fr": "Votre entreprise", "en": "Your business"},
-    "oficios": {"es": "Oficios", "fr": "Métiers", "en": "Trades"},
-    "casa": {"es": "Casa y cocina", "fr": "Maison et cuisine", "en": "Home and kitchen"},
-    "trabajo": {"es": "Buscar trabajo", "fr": "Chercher un emploi", "en": "Finding work"},
-    "salud": {"es": "Salud", "fr": "Santé", "en": "Health"}
+    "ley": {
+      "es": "Ley y papeles",
+      "fr": "Lois et paperasse",
+      "en": "Law and paperwork"
+    },
+    "impuestos": {
+      "es": "Impuestos",
+      "fr": "Impôts",
+      "en": "Taxes"
+    },
+    "negocio": {
+      "es": "Tu negocio",
+      "fr": "Votre entreprise",
+      "en": "Your business"
+    },
+    "oficios": {
+      "es": "Oficios",
+      "fr": "Métiers",
+      "en": "Trades"
+    },
+    "casa": {
+      "es": "Casa y cocina",
+      "fr": "Maison et cuisine",
+      "en": "Home and kitchen"
+    },
+    "trabajo": {
+      "es": "Buscar trabajo",
+      "fr": "Chercher un emploi",
+      "en": "Finding work"
+    },
+    "salud": {
+      "es": "Salud",
+      "fr": "Santé",
+      "en": "Health"
+    }
   },
   "oficios": [
-    {"id": "talleres", "cat": "ley", "color": "#1E3348", "imagen": "01_Ley25",
-     "es": "Talleres y cuadrillas", "fr": "Ateliers et équipes", "en": "Shops and crews"},
-    {"id": "detallado", "cat": "oficios", "color": "#23305A", "imagen": "07_Detallado_Automotriz",
-     "es": "Detallado de autos", "fr": "Esthétique automobile", "en": "Car detailing"},
-    {"id": "impuestos", "cat": "impuestos", "color": "#1C5B4C", "imagen": "08_Cuanto_Apartar",
-     "es": "Impuestos y papeles", "fr": "Impôts et paperasse", "en": "Taxes and paperwork"},
-    {"id": "casa", "cat": "casa", "color": "#3F5C32", "imagen": "05_Fermentos",
-     "es": "Cocina y casa", "fr": "Cuisine et maison", "en": "Kitchen and home"},
-    {"id": "trabajo", "cat": "trabajo", "color": "#4A3160", "imagen": "11_Curriculum",
-     "es": "Buscar trabajo", "fr": "Chercher un emploi", "en": "Finding work"}
+    {
+      "id": "talleres",
+      "cat": "ley",
+      "color": "#1E3348",
+      "imagen": "01_Ley25",
+      "es": "Talleres y cuadrillas",
+      "fr": "Ateliers et équipes",
+      "en": "Shops and crews"
+    },
+    {
+      "id": "detallado",
+      "cat": "oficios",
+      "color": "#23305A",
+      "imagen": "07_Detallado_Automotriz",
+      "es": "Detallado de autos",
+      "fr": "Esthétique automobile",
+      "en": "Car detailing"
+    },
+    {
+      "id": "impuestos",
+      "cat": "impuestos",
+      "color": "#1C5B4C",
+      "imagen": "08_Cuanto_Apartar",
+      "es": "Impuestos y papeles",
+      "fr": "Impôts et paperasse",
+      "en": "Taxes and paperwork"
+    },
+    {
+      "id": "casa",
+      "cat": "casa",
+      "color": "#3F5C32",
+      "imagen": "05_Fermentos",
+      "es": "Cocina y casa",
+      "fr": "Cuisine et maison",
+      "en": "Kitchen and home"
+    },
+    {
+      "id": "trabajo",
+      "cat": "trabajo",
+      "color": "#4A3160",
+      "imagen": "11_Curriculum",
+      "es": "Buscar trabajo",
+      "fr": "Chercher un emploi",
+      "en": "Finding work"
+    }
   ],
   "productos": [
-    {"id": "ley25", "carpeta": "01_Ley25", "tipo": "guia", "cat": "ley", "publicar": true,
-     "es": {"titulo": "La Ley 25, explicada",
-            "lead": "Qué te obliga de verdad la ley de privacidad de Quebec si tienes un negocio chico, dicho sin palabras de abogado, y qué tienes que hacer esta semana.",
-            "trae": ["Las obligaciones, una por una, con lo que te toca hacer", "Qué pasa si te cae una queja, y qué contestar", "Los textos que puedes copiar: aviso, consentimiento y respuesta", "Qué guardar y por cuánto tiempo"]},
-     "fr": {"titulo": "La Loi 25, expliquée",
-            "lead": "Ce que la loi québécoise sur la vie privée vous oblige vraiment à faire si vous avez une petite entreprise, dit sans mots d'avocat.",
-            "trae": ["Les obligations, une par une", "Ce qui arrive si vous recevez une plainte", "Les textes à copier : avis, consentement, réponse", "Quoi conserver et combien de temps"]},
-     "en": {"titulo": "Quebec's Law 25, explained",
-            "lead": "What Quebec's privacy law actually requires of a small business, said without lawyer words, and what to do about it this week.",
-            "trae": ["The obligations, one by one", "What happens if a complaint lands", "The texts you can copy: notice, consent, reply", "What to keep and for how long"]}},
-    {"id": "pago-por-hora", "carpeta": "02_Pago_por_Hora", "tipo": "guia", "cat": "negocio", "publicar": true,
-     "es": {"titulo": "Pagar bien por hora", "lead": "Cómo se calcula de verdad el pago por hora en Quebec: la comida, las horas extra, los feriados y lo que no se puede descontar.", "trae": ["La media hora de comida y cuándo se descuenta", "Las horas extra, con su cuenta hecha", "Los feriados y las vacaciones", "Lo que no se le puede quitar a nadie del sueldo"]},
-     "fr": {"titulo": "Bien payer à l'heure", "lead": "Comment se calcule vraiment la paie à l'heure au Québec : les repas, le temps supplémentaire, les fériés.", "trae": ["La demi-heure de repas", "Le temps supplémentaire, calculé", "Les fériés et les vacances", "Ce qu'on ne peut pas retenir sur une paie"]},
-     "en": {"titulo": "Paying by the hour, properly", "lead": "How hourly pay really works in Quebec: lunch, overtime, holidays, and what you may never deduct.", "trae": ["The half-hour lunch rule", "Overtime, worked out", "Holidays and vacation", "What you may never deduct from pay"]}},
-    {"id": "cnesst", "carpeta": "03_CNESST", "tipo": "guia", "cat": "ley", "publicar": true,
-     "es": {"titulo": "La CNESST sin sustos", "lead": "Qué te pide la CNESST, qué papeles tienes que tener guardados y qué hacer el día que alguien se lastima.", "trae": ["Los papeles que te van a pedir", "Qué hacer el día del accidente, paso por paso", "Los plazos que no se pueden pasar", "Cómo se calcula lo que pagas"]},
-     "fr": {"titulo": "La CNESST sans stress", "lead": "Ce que la CNESST demande, les papiers à garder et quoi faire le jour où quelqu'un se blesse.", "trae": ["Les papiers qu'on va vous demander", "Quoi faire le jour de l'accident", "Les délais à ne pas manquer", "Comment se calcule ce que vous payez"]},
-     "en": {"titulo": "The CNESST without the fear", "lead": "What the CNESST asks for, which papers to keep, and what to do the day somebody gets hurt.", "trae": ["The papers they will ask for", "What to do on the day of the accident", "The deadlines you cannot miss", "How your premium is worked out"]}},
-    {"id": "7-errores", "carpeta": "04_7Errores", "tipo": "guia", "cat": "negocio", "publicar": true,
-     "es": {"titulo": "Los 7 errores", "lead": "Los siete errores que están matando negocios chicos en Quebec, y cómo se arregla cada uno esta semana.", "trae": ["Los siete, con ejemplos de verdad", "Cómo se ve cada uno desde dentro", "Lo que cuesta no arreglarlo", "Qué hacer el lunes"]},
-     "fr": {"titulo": "Les 7 erreurs", "lead": "Les sept erreurs qui tuent les petites entreprises au Québec, et comment corriger chacune cette semaine.", "trae": ["Les sept, avec de vrais exemples", "À quoi ressemble chacune de l'intérieur", "Ce que ça coûte de ne rien faire", "Quoi faire lundi"]},
-     "en": {"titulo": "The 7 mistakes", "lead": "The seven mistakes killing small businesses in Quebec, and how to fix each one this week.", "trae": ["The seven, with real examples", "What each looks like from inside", "What not fixing it costs", "What to do on Monday"]}},
-    {"id": "fermentos", "carpeta": "05_Fermentos", "tipo": "guia", "cat": "casa", "publicar": true,
-     "es": {"titulo": "Fermentos en casa", "lead": "Conservar tu propia comida en casa, sin equipo caro y sin miedo: lo que sí se puede, lo que no, y por qué.", "trae": ["Lo que necesitas y lo que no hace falta comprar", "Las recetas base, probadas", "Las señales de que algo salió mal", "Cuánto dura cada cosa"]},
-     "fr": {"titulo": "Ferments à la maison", "lead": "Conserver vos aliments à la maison, sans équipement cher et sans peur.", "trae": ["Ce qu'il faut et ce qu'il ne faut pas acheter", "Les recettes de base, testées", "Les signes que ça a mal tourné", "Combien de temps ça se garde"]},
-     "en": {"titulo": "Ferments at home", "lead": "Preserving your own food at home, without expensive gear and without fear.", "trae": ["What you need and what not to buy", "The base recipes, tested", "The signs something went wrong", "How long each one keeps"]}},
-    {"id": "registro-negocio", "carpeta": "06_Registro_Negocio", "tipo": "guia", "cat": "negocio", "publicar": true,
-     "es": {"titulo": "Registrar tu negocio", "lead": "Cómo se registra un negocio en Quebec, paso por paso, con lo que cuesta cada cosa y en qué orden va.", "trae": ["Qué forma de negocio te conviene", "Los pasos, en orden y con su costo", "Los números que vas a necesitar después", "Lo que se renueva cada año"]},
-     "fr": {"titulo": "Immatriculer votre entreprise", "lead": "Comment immatriculer une entreprise au Québec, étape par étape, avec les coûts.", "trae": ["Quelle forme juridique vous convient", "Les étapes, en ordre, avec leur coût", "Les numéros dont vous aurez besoin", "Ce qui se renouvelle chaque année"]},
-     "en": {"titulo": "Registering your business", "lead": "How to register a business in Quebec, step by step, with what each step costs.", "trae": ["Which legal form suits you", "The steps, in order, with costs", "The numbers you will need later", "What renews every year"]}},
-    {"id": "detallado", "carpeta": "07_Detallado_Automotriz", "tipo": "guia", "cat": "oficios", "publicar": true,
-     "es": {"titulo": "Detallado automotriz móvil", "lead": "Montar un detallado de autos a domicilio: qué cobrar, qué comprar primero y cómo no quedarte sin agua a media calle.", "trae": ["Lo que cuesta empezar, con números", "Qué cobrar por cada servicio", "El equipo que sí hace falta", "Cómo conseguir los primeros clientes"]},
-     "fr": {"titulo": "Esthétique automobile mobile", "lead": "Monter un service d'esthétique automobile à domicile : quoi facturer, quoi acheter en premier.", "trae": ["Ce que ça coûte de démarrer", "Quoi facturer par service", "L'équipement vraiment nécessaire", "Comment trouver les premiers clients"]},
-     "en": {"titulo": "Mobile car detailing", "lead": "Starting a mobile detailing business: what to charge, what to buy first, and how not to run out of water.", "trae": ["What it costs to start, with numbers", "What to charge per service", "The gear you actually need", "How to find the first customers"]}},
-    {"id": "cuanto-apartar", "carpeta": "08_Cuanto_Apartar", "tipo": "guia", "cat": "impuestos", "publicar": true,
-     "es": {"titulo": "Cuánto apartar para impuestos", "lead": "Si trabajas por tu cuenta en Quebec: cuánto guardar de cada peso que entra, para que en abril no te agarre el susto.", "trae": ["El porcentaje que te toca, según lo que ganas", "Cuándo se pagan los anticipos", "Qué sí puedes descontar", "La cuenta aparte y cómo se maneja"]},
-     "fr": {"titulo": "Combien mettre de côté pour les impôts", "lead": "Si vous êtes à votre compte au Québec : combien garder sur chaque dollar qui entre.", "trae": ["Le pourcentage qui vous revient", "Quand se paient les acomptes", "Ce que vous pouvez déduire", "Le compte à part et comment le gérer"]},
-     "en": {"titulo": "How much to set aside for taxes", "lead": "If you work for yourself in Quebec: how much of every dollar to keep, so April is not a shock.", "trae": ["The percentage that applies to you", "When instalments are due", "What you can actually deduct", "The separate account, and how to run it"]}},
-    {"id": "pagar-menos", "carpeta": "09_Pagar_Menos", "tipo": "guia", "cat": "impuestos", "publicar": true,
-     "es": {"titulo": "Pagar menos impuestos, legalmente", "lead": "Las deducciones que la gente que trabaja por su cuenta no usa porque no sabe que existen.", "trae": ["Las deducciones que casi nadie usa", "Lo que sí cuenta de tu casa y tu coche", "Los papeles que hay que guardar para poder usarlas", "Los errores que invitan a una revisión"]},
-     "fr": {"titulo": "Payer moins d'impôts, légalement", "lead": "Les déductions que les travailleurs autonomes n'utilisent pas parce qu'ils ignorent qu'elles existent.", "trae": ["Les déductions que presque personne n'utilise", "Ce qui compte de votre maison et de votre auto", "Les papiers à garder", "Les erreurs qui attirent une vérification"]},
-     "en": {"titulo": "Paying less tax, legally", "lead": "The deductions self-employed people never use because nobody told them they exist.", "trae": ["The deductions almost nobody uses", "What counts from your home and your car", "The papers you must keep", "The mistakes that invite an audit"]}},
-    {"id": "perimenopausia", "carpeta": "10_Perimenopausia", "tipo": "guia", "cat": "salud", "publicar": false,
-     "_por_que_no": "Es de salud. La regla de la casa dice que nada de salud sale sin que Legal lo mire. Preguntado el 8 de octubre de 2026; mientras no conteste, no aparece en la tienda.",
-     "es": {"titulo": "Perimenopausia", "lead": "—", "trae": []},
-     "fr": {"titulo": "Périménopause", "lead": "—", "trae": []},
-     "en": {"titulo": "Perimenopause", "lead": "—", "trae": []}},
-    {"id": "curriculum", "carpeta": "11_Curriculum", "tipo": "guia", "cat": "trabajo", "publicar": true,
-     "es": {"titulo": "Tu currículum, en Quebec", "lead": "Cómo se escribe un currículum que aquí sí lean, qué se pone y qué se quita, y qué esperan en la entrevista.", "trae": ["Lo que aquí se pone y lo que no", "El modelo, para copiar", "La carta que acompaña", "Las preguntas que van a hacerte"]},
-     "fr": {"titulo": "Votre CV, au Québec", "lead": "Comment écrire un CV qu'on lit vraiment ici, quoi mettre et quoi enlever.", "trae": ["Ce qu'on met ici et ce qu'on enlève", "Le modèle, à copier", "La lettre qui l'accompagne", "Les questions qu'on va vous poser"]},
-     "en": {"titulo": "Your résumé, in Quebec", "lead": "How to write a résumé people here actually read, what to put in and what to take out.", "trae": ["What goes in here, and what comes out", "The template, to copy", "The cover letter", "The questions you will be asked"]}},
-    {"id": "viager", "carpeta": "12_Viager", "tipo": "guia", "cat": "casa", "publicar": true,
-     "es": {"titulo": "El viager, explicado", "lead": "Vender tu casa en viager: cómo funciona de verdad, a quién le conviene y dónde está el riesgo.", "trae": ["Cómo se calcula, con ejemplos", "A quién le conviene y a quién no", "Dónde está el riesgo para cada lado", "Qué revisar antes de firmar"]},
-     "fr": {"titulo": "Le viager, expliqué", "lead": "Vendre votre maison en viager : comment ça marche vraiment, à qui ça convient, où est le risque.", "trae": ["Comment ça se calcule, avec exemples", "À qui ça convient et à qui non", "Où est le risque de chaque côté", "Quoi vérifier avant de signer"]},
-     "en": {"titulo": "The viager, explained", "lead": "Selling your home as a viager: how it really works, who it suits, and where the risk sits.", "trae": ["How it is calculated, with examples", "Who it suits and who it does not", "Where the risk sits on each side", "What to check before signing"]}},
-    {"id": "creditos-ayudas", "carpeta": "13_Creditos_Ayudas", "tipo": "guia", "cat": "negocio", "publicar": true,
-     "es": {"titulo": "Créditos y ayudas", "lead": "El dinero que hay para negocios chicos en Quebec y que casi nadie pide, con quién lo da y qué piden.", "trae": ["Los programas que existen hoy", "Quién puede pedir cada uno", "Los papeles que te van a pedir", "Los plazos y cuándo abren"]},
-     "fr": {"titulo": "Crédits et aides", "lead": "L'argent qui existe pour les petites entreprises au Québec et que presque personne ne demande.", "trae": ["Les programmes qui existent", "Qui peut demander quoi", "Les papiers qu'on va vous demander", "Les délais et les dates d'ouverture"]},
-     "en": {"titulo": "Credits and grants", "lead": "The money available to small businesses in Quebec that almost nobody claims.", "trae": ["The programs that exist today", "Who can apply for each", "The papers they will ask for", "Deadlines and when they open"]}}
-  ]
+    {
+      "id": "ley25",
+      "carpeta": "01_Ley25",
+      "tipo": "guia",
+      "cat": "ley",
+      "publicar": {
+        "es": true,
+        "fr": true,
+        "en": true
+      },
+      "es": {
+        "titulo": "La Ley 25, explicada de verdad",
+        "lead": "Si tienes un negocio en Quebec y guardas el nombre, el correo o el teléfono de una sola persona —un cliente, un empleado, hasta un proveedor— esta ley ya te aplica, lo sepas o no. Aquí te la explico completa, sin sustos ni relleno: qué dice, por qué está armada así, qué tienes que hacer y en qué orden, qué es gratis y nadie te lo dice, y qué le costó caro a otros negocios por no saberlo a tiempo.",
+        "trae": [
+          "Fundamentos",
+          "Cómo hacer cada cosa, paso a paso",
+          "Casos especiales, a fondo",
+          "Consecuencias y casos reales",
+          "Comparación y contexto",
+          "Aplicación práctica"
+        ]
+      },
+      "fr": {
+        "titulo": "La Loi 25, expliquée par quelqu'un qui l'a déjà traversée",
+        "lead": "Pas un résumé de dépliant, pas un cours de droit : le chemin complet pour comprendre la loi québécoise sur les renseignements personnels et t'y conformer, écran par écran, avec les outils gratuits que peu d'entreprises connaissent et les vrais chiffres derrière les amendes.",
+        "trae": [
+          "Ce que tu dois savoir avant de commencer",
+          "Le chemin complet, écran par écran",
+          "Les cas qui demandent plus d'attention",
+          "Ce qui arrive vraiment si ça dérape",
+          "Situer la Loi 25 dans le reste du décor légal",
+          "Passer à l'action"
+        ]
+      },
+      "en": {
+        "titulo": "Law 25, properly explained",
+        "lead": "Sit down with this the way you'd sit down with a friend who already did the paperwork and is willing to walk you through it, page by page — what the law actually asks of a small business, why it asks it that way, the free tools Quebec already built for you, and every document you need to write, in order.",
+        "trae": [
+          "What you're actually dealing with",
+          "The help nobody tells you exists",
+          "Doing the actual work",
+          "The situations that trip people up",
+          "What it looks like when it goes wrong",
+          "Where this law ends and the next one starts"
+        ]
+      }
+    },
+    {
+      "id": "pago-por-hora",
+      "carpeta": "02_Pago_por_Hora",
+      "tipo": "guia",
+      "cat": "negocio",
+      "publicar": {
+        "es": true,
+        "fr": true,
+        "en": true
+      },
+      "es": {
+        "titulo": "Cómo pagar bien a tus empleados por hora",
+        "lead": "Te sientas conmigo, con calma, y en un par de horas de lectura sales sabiendo pagar bien: el salario mínimo real, cuándo empiezan las horas extra, los descansos que son obligatorios aunque nadie te los pida, el recibo de pago completo, cómo cerrar una relación laboral sin líos, y el error de clasificación que más caro le sale a un negocio chico — todo con los números reales de Quebec, explicados como se explican a un amigo.",
+        "trae": [
+          "Los números que sostienen todo",
+          "El día a día",
+          "El recibo de pago y las deducciones",
+          "El error que más cuesta",
+          "Cuando la relación termina",
+          "Equidad salarial"
+        ]
+      },
+      "fr": {
+        "titulo": "Bien payer vos employés à l'heure",
+        "lead": "On s'assoit ensemble, calmement, et en quelques heures de lecture vous savez comment bien payer : le vrai salaire minimum, à partir de quand les heures deviennent supplémentaires, les pauses obligatoires même si personne ne les réclame, le bulletin de paie au complet, comment terminer une relation d'emploi sans dérapage, et l'erreur de classification qui coûte le plus cher à une petite entreprise — le tout avec les chiffres réels du Québec, expliqués comme on les expliquerait à un ami.",
+        "trae": [
+          "Les chiffres qui soutiennent tout",
+          "Le quotidien",
+          "Le bulletin de paie et les retenues",
+          "L'erreur la plus coûteuse",
+          "Quand la relation se termine",
+          "Équité salariale"
+        ]
+      },
+      "en": {
+        "titulo": "Your first payroll, done right",
+        "lead": "A plain-language walkthrough for paying hourly employees in Quebec — the real minimum wage, how overtime actually works, the breaks that are mandatory even when nobody asks for them, the pay stub line by line, how to end an employment relationship cleanly, and the one classification mistake that costs small businesses the most. All with Quebec's real numbers, explained the way you would explain them to a friend.",
+        "trae": [
+          "Before you pay anyone",
+          "The rhythm of a real week",
+          "The pay stub and what comes out of it",
+          "The mistake that costs the most",
+          "When someone leaves",
+          "Pay equity"
+        ]
+      }
+    },
+    {
+      "id": "cnesst",
+      "carpeta": "03_CNESST",
+      "tipo": "guia",
+      "cat": "ley",
+      "publicar": {
+        "es": true,
+        "fr": true,
+        "en": true
+      },
+      "es": {
+        "titulo": "Cuando la CNESST te toca la puerta",
+        "lead": "Seguridad en el trabajo en Quebec, explicada como te la explicaría alguien que ya pasó por esto: la reforma que se terminó de instalar el 1 de octubre de 2025, lo que te toca hacer antes del 1 de octubre de 2026, y qué hacer el día en que algo sale mal.",
+        "trae": [
+          "Lo básico",
+          "La reforma que ya llegó",
+          "El documento que lo sostiene todo",
+          "Los riesgos, uno por uno",
+          "Primeros auxilios",
+          "El derecho de negarse"
+        ]
+      },
+      "fr": {
+        "titulo": "Quand la CNESST cogne à votre porte",
+        "lead": "La santé et la sécurité du travail au Québec, expliquées comme le ferait quelqu'un qui est déjà passé par là : la réforme qui a fini de s'installer le 1er octobre 2025, ce qu'il vous reste à faire avant le 1er octobre 2026, et quoi faire le jour où quelque chose tourne mal.",
+        "trae": [
+          "Les bases",
+          "La réforme qui est déjà arrivée",
+          "Le document qui soutient tout le reste",
+          "Les risques, un par un",
+          "Les premiers secours",
+          "Le droit de refus"
+        ]
+      },
+      "en": {
+        "titulo": "When CNESST knocks on your door",
+        "lead": "Workplace safety in Quebec, explained the way someone who already lived through it would explain it to you: the reform that finished rolling out on October 1, 2025, what you need to have in place before October 1, 2026, and what to do the day something actually goes wrong.",
+        "trae": [
+          "The basics",
+          "The reform that already landed",
+          "The document everything else rests on",
+          "The risks, one by one",
+          "First aid",
+          "The right to refuse"
+        ]
+      }
+    },
+    {
+      "id": "7-errores",
+      "carpeta": "04_7Errores",
+      "tipo": "guia",
+      "cat": "negocio",
+      "publicar": {
+        "es": true,
+        "fr": true,
+        "en": true
+      },
+      "es": {
+        "titulo": "Los 7 errores que están matando tu negocio (y cómo arreglarlos esta semana)",
+        "lead": "Los errores universales que hunden a cualquier negocio pequeño — flujo de caja, precios, marketing, delegación — mezclados con los tres errores específicos de tener un negocio en Quebec que casi nadie te explica bien: la Ley 25, la CNESST, y la Ley 96. Con el costo real en dinero de cada uno, y un plan para arreglarlo esta misma semana.",
+        "trae": [
+          "Los errores que hunden a cualquier negocio",
+          "Los errores que solo existen en Quebec",
+          "Aplicación práctica"
+        ]
+      },
+      "fr": {
+        "titulo": "Les 7 erreurs qui tuent ton entreprise (et comment les réparer cette semaine)",
+        "lead": "Le mélange exact qui coûte le plus cher aux propriétaires de petite entreprise au Québec : quatre erreurs universelles de gestion — la trésorerie, les prix, le marketing qui n'en est pas un — et quatre pièges propres au fait de faire des affaires ici, dans cette province précise, avec ces lois précises. Chaque chapitre se termine par un plan pour cette semaine, pas pour « un jour ».",
+        "trae": [
+          "Les erreurs qui coûtent cher partout, pas juste ici",
+          "Les erreurs propres au fait d'être en affaires au Québec",
+          "Mettre tout ça en marche"
+        ]
+      },
+      "en": {
+        "titulo": "The 7 mistakes that are killing your business (and how to fix them this week)",
+        "lead": "Three mistakes that sink small businesses everywhere, and four mistakes only a business owner in Quebec can make — with real numbers, real cases, and a concrete plan for each one.",
+        "trae": [
+          "The three mistakes that sink businesses everywhere",
+          "The four mistakes only a Quebec business owner can make",
+          "Fixing it"
+        ]
+      }
+    },
+    {
+      "id": "fermentos",
+      "carpeta": "05_Fermentos",
+      "tipo": "guia",
+      "cat": "casa",
+      "publicar": {
+        "es": false,
+        "fr": false,
+        "en": false
+      },
+      "es": {
+        "titulo": "Fermenta tu Propia Comida",
+        "lead": "El secreto milenario para una digestión sana: la ciencia real detrás del chucrut, el kimchi, el kéfir y la kombucha — cómo funcionan, qué le hacen de verdad a tu cuerpo, cómo hacerlos seguros en casa, y las recetas paso a paso para empezar hoy mismo.",
+        "trae": [
+          "La ciencia real detrás de la fermentación",
+          "Los tipos de fermentación, uno por uno",
+          "Cómo comerlos bien, y cómo no hacerte daño",
+          "Recetas paso a paso",
+          "Aplicación práctica"
+        ]
+      },
+      "fr": {
+        "titulo": "Fermentez Vos Aliments Vous-même",
+        "lead": "Le secret millénaire d'une bonne digestion : la vraie science derrière la choucroute, le kimchi, le kéfir et le kombucha — comment ils agissent, ce qu'ils font réellement à votre corps, comment les préparer en toute sécurité à la maison, et les recettes étape par étape pour commencer dès aujourd'hui.",
+        "trae": [
+          "La science réelle derrière la fermentation",
+          "Les types de fermentation, un par un",
+          "Comment bien les consommer, et comment ne pas vous faire de mal",
+          "Recettes étape par étape",
+          "Application pratique"
+        ]
+      },
+      "en": {
+        "titulo": "Ferment Your Own Food",
+        "lead": "The centuries-old secret to healthy digestion: the real science behind sauerkraut, kimchi, kefir, and kombucha — how they work, what they actually do to your body, how to make them safely at home, and the step-by-step recipes to start today.",
+        "trae": [
+          "The real science behind fermentation",
+          "The types of fermentation, one by one",
+          "How to eat them well, and how not to hurt yourself",
+          "Step-by-step recipes",
+          "Practical application"
+        ]
+      },
+      "_por_que_no": "El 007, 8 oct 2026: la revisión de seguridad halló 42 puntos, 16 graves. Sale cuando se apruebe la versión nueva."
+    },
+    {
+      "id": "registro-negocio",
+      "carpeta": "06_Registro_Negocio",
+      "tipo": "guia",
+      "cat": "negocio",
+      "publicar": {
+        "es": true,
+        "fr": true,
+        "en": true
+      },
+      "es": {
+        "titulo": "Cómo Registrar tu Negocio en Quebec",
+        "lead": "Alguien que ya pasó por esto se sienta contigo frente a la pantalla y te acompaña: qué vas a ver, qué escribir en cada casilla, por qué se hace así, qué pasa si te equivocas, y el dinero que casi todo el mundo deja sobre la mesa por no saber que podía pedirlo.",
+        "trae": [
+          "Antes de tocar la computadora",
+          "Frente a la pantalla",
+          "Tu primer año, y el dinero que casi todos dejan en la mesa",
+          "Si no vas sola, o cuando creces",
+          "Para tenerlo a la mano"
+        ]
+      },
+      "fr": {
+        "titulo": "Comment enregistrer ton entreprise au Québec",
+        "lead": "Le guide étape par étape, en français, pour enregistrer ton entreprise au Québec pour de vrai : les trois formes juridiques expliquées sans jargon, les tarifs réels du Registraire des entreprises, le NEQ, la TPS et la TVQ, la CNESST, la loi du français, et tout ce que personne ne te dit avant qu'il soit trop tard.",
+        "trae": [
+          "Comprendre le terrain avant de signer quoi que ce soit",
+          "Les trois structures, à fond",
+          "La démarche réelle, écran par écran",
+          "Impôts et obligations continues",
+          "La loi du français et ton entreprise",
+          "Argent, risque et démarrage"
+        ]
+      },
+      "en": {
+        "titulo": "How to Register Your Business in Quebec",
+        "lead": "The real, step-by-step guide to registering a business in Quebec: the three legal forms explained without jargon, the actual fees charged by the Registraire des entreprises, the NEQ, GST and QST, the CNESST, the French-language law, and everything nobody tells you until it is already too late.",
+        "trae": [
+          "Understand the ground before you sign anything",
+          "The three structures, in depth",
+          "Before you spend a dollar",
+          "The real process, step by step",
+          "Taxes and ongoing duties",
+          "The French-language law and your business"
+        ]
+      }
+    },
+    {
+      "id": "detallado",
+      "carpeta": "07_Detallado_Automotriz",
+      "tipo": "guia",
+      "cat": "oficios",
+      "publicar": {
+        "es": false,
+        "fr": true,
+        "en": true
+      },
+      "es": {
+        "titulo": "Detallado Automotriz Móvil",
+        "lead": "Cómo armar, de cero, un negocio de detallado de autos a domicilio: la técnica completa, el equipo real y lo que cuesta, y cómo registrar y hacer crecer el negocio en Quebec y el resto de Norteamérica. Aquí no hay relleno ni enlaces a media frase — es la guía que yo hubiera querido tener antes de comprar mi primera pulidora.",
+        "trae": [
+          "Fundamentos del negocio",
+          "La técnica completa, de principio a fin",
+          "Equipo, precios reales y tu unidad móvil",
+          "Armar el negocio en Quebec, paso a paso",
+          "Precios, ventas y crecimiento",
+          "Referencia"
+        ]
+      },
+      "fr": {
+        "titulo": "Détaillage automobile mobile, expliqué par quelqu'un qui l'a bâti de zéro",
+        "lead": "Pas une liste de produits, pas un dépliant publicitaire : le chemin complet pour maîtriser la vraie technique du détaillage automobile, monter ton entreprise mobile en règle au Québec, et facturer ce que ton travail vaut réellement — avec les prix du marché, les erreurs qui coûtent cher, et les raccourcis que les débutants ignorent.",
+        "trae": [
+          "Comprendre le métier avant de te lancer",
+          "La technique complète, du premier rinçage à la céramique",
+          "Équipement et investissement réel",
+          "Monter l'entreprise au Québec, en règle",
+          "Facturer, vendre et faire croître",
+          "Passer à l'action"
+        ]
+      },
+      "en": {
+        "titulo": "Mobile car detailing, properly explained",
+        "lead": "Sit down with this the way you'd sit down with a detailer who's already built the van, priced the jobs, registered the business, and made the expensive mistakes — and is willing to walk you through all of it, in order, so you don't have to pay for the same lessons twice.",
+        "trae": [
+          "Starting with the right picture",
+          "The technique, start to finish",
+          "Equipment, chemicals, and the math",
+          "Making it a real business, in Quebec",
+          "Getting clients, and keeping them",
+          "Specialized situations and business habits worth building"
+        ]
+      },
+      "_por_que_no": "El 007, 8 oct 2026: el español y el italiano salieron sin el aviso de que no es asesoría. El inglés, el francés y el portugués sí se pueden vender."
+    },
+    {
+      "id": "cuanto-apartar",
+      "carpeta": "08_Cuanto_Apartar",
+      "tipo": "guia",
+      "cat": "impuestos",
+      "publicar": {
+        "es": true,
+        "fr": true,
+        "en": true
+      },
+      "es": {
+        "titulo": "Cuánto apartar para impuestos si trabajas por tu cuenta en Quebec",
+        "lead": "La cuenta completa que nadie te explica: impuesto federal, impuesto de Quebec, Régime de rentes, RQAP, Fonds des services de santé, TPS y TVQ. Con las cifras oficiales de 2026, la fórmula paso a paso, las tablas por nivel de ingreso, los acomptes provisionnels, los gastos que sí bajan la cuenta y cinco casos reales con números.",
+        "trae": [
+          "Entender el juego",
+          "Las cifras de 2026, una por una",
+          "La regla de cuánto apartar",
+          "Los gastos que sí bajan la cuenta",
+          "Los acomptes provisionnels",
+          "TPS y TVQ a fondo"
+        ]
+      },
+      "fr": {
+        "titulo": "Combien mettre de côté pour les impôts quand tu travailles à ton compte au Québec",
+        "lead": "Le calcul complet que personne ne t'explique : impôt fédéral, impôt du Québec, Régime de rentes du Québec, RQAP, Fonds des services de santé, TPS et TVQ. Avec les chiffres officiels de 2026, la formule étape par étape, les tableaux par niveau de revenu, les acomptes provisionnels, les dépenses qui font vraiment baisser la facture et cinq cas réels chiffrés.",
+        "trae": [
+          "Comprendre le jeu",
+          "Les chiffres de 2026, un par un",
+          "La règle du combien mettre de côté",
+          "Les dépenses qui font baisser la facture",
+          "Les acomptes provisionnels",
+          "TPS et TVQ à fond"
+        ]
+      },
+      "en": {
+        "titulo": "How much to set aside for taxes if you work for yourself in Quebec",
+        "lead": "The full bill nobody explains to you: federal income tax, Quebec income tax, Régime de rentes du Québec (QPP), RQAP, Fonds des services de santé, GST and QST. With the official 2026 figures, the formula step by step, the tables by income level, the instalment payments, the expenses that really do lower the bill, and five real cases with numbers.",
+        "trae": [
+          "Understanding the game",
+          "The 2026 figures, one by one",
+          "The rule for how much to set aside",
+          "The expenses that really do lower the bill",
+          "The instalment payments",
+          "GST and QST in depth"
+        ]
+      }
+    },
+    {
+      "id": "pagar-menos",
+      "carpeta": "09_Pagar_Menos",
+      "tipo": "guia",
+      "cat": "impuestos",
+      "publicar": {
+        "es": false,
+        "fr": false,
+        "en": false
+      },
+      "es": {
+        "titulo": "Cómo pagar menos impuestos, legalmente, si trabajas por tu cuenta en Quebec",
+        "lead": "Lo que se decide antes del 31 de diciembre y lo que todavía se puede decidir hasta el 1 de marzo. REER, CELI, CELIAPP, fondos de trabajadores, hijos, pareja, gastos del negocio, TPS y TVQ, incorporarse o no, y los créditos que la gente deja en la mesa. Con las cifras de 2026, cuánto ahorra cada movimiento según lo que ganas, y un plan por perfil.",
+        "trae": [
+          "La regla del juego",
+          "Las cuentas que devuelven impuesto",
+          "La familia",
+          "El negocio",
+          "Lo que la gente deja en la mesa",
+          "Casos especiales"
+        ]
+      },
+      "fr": {
+        "titulo": "Comment payer moins d'impôt, légalement, quand on est travailleur autonome au Québec",
+        "lead": "Ce qui se décide avant le 31 décembre et ce qu'on peut encore décider jusqu'au 1er mars. REER, CELI, CELIAPP, fonds de travailleurs, enfants, conjoint, dépenses d'exploitation, TPS et TVQ, s'incorporer ou non, et les crédits d'impôt que les gens laissent sur la table. Avec les chiffres de 2026, combien chaque mouvement fait économiser selon ce que vous gagnez, et un plan par profil.",
+        "trae": [
+          "La règle du jeu",
+          "Les comptes qui redonnent de l'impôt",
+          "La famille",
+          "L'entreprise",
+          "Ce que les gens laissent sur la table",
+          "Cas particuliers"
+        ]
+      },
+      "en": {
+        "titulo": "How to pay less tax, legally, if you work for yourself in Quebec",
+        "lead": "What gets decided before December 31 and what can still be decided up to March 1. RRSP, TFSA, FHSA, labour-sponsored funds, children, spouse, business expenses, GST and QST, incorporating or not, and the credits people leave on the table. With the 2026 figures, how much each move saves you depending on what you earn, and a plan by profile.",
+        "trae": [
+          "The rules of the game",
+          "The accounts that give tax back",
+          "The family",
+          "The business",
+          "What people leave on the table",
+          "Special cases"
+        ]
+      },
+      "_por_que_no": "El 007, 8 oct 2026: decía «retorno garantizado». Sale cuando se apruebe la versión nueva."
+    },
+    {
+      "id": "perimenopausia",
+      "carpeta": "10_Perimenopausia",
+      "tipo": "guia",
+      "cat": "salud",
+      "publicar": {
+        "es": false,
+        "fr": false,
+        "en": false
+      },
+      "_por_que_no": "Es de salud. El 007 dice que Legal no la ha visto y que una profesional de salud tiene que leer lo añadido antes de venderla.",
+      "es": {
+        "titulo": "Domina tu Perimenopausia Antes de que Ella te Domine a Ti",
+        "lead": "Si últimamente no te reconoces —el calor que sube de la nada, la noche que ya no descansa, el llanto que llega sin avisar, la regla que ya no sigue ningún calendario— no significa que estés enferma, aunque conviene que un profesional revise tus síntomas. Es tu cuerpo entrando a una transición biológica real, con nombre, con etapas, y con opciones respaldadas por organizaciones médicas, que no funcionan igual en todas las mujeres. Aquí te la explico completa: qué está pasando por dentro, por qué pasa exactamente eso y no otra cosa, y qué puedes hacer hoy mismo para recuperar el control.",
+        "trae": [
+          "Entendiendo tu cuerpo",
+          "Tus síntomas, uno por uno",
+          "Tu plan de acción",
+          "Casos especiales",
+          "Reconociendo tu propio camino",
+          "Tu conversación con el médico"
+        ]
+      },
+      "fr": {
+        "titulo": "La Méthode Périménopause",
+        "lead": "Le guide qui décode enfin ce que ton corps essaie de te dire — et qui t'aide à comprendre et à agir sur tes symptômes, avec la biologie exacte derrière eux et les sources médicales derrière chaque option. Pas de promesses vagues : des mécanismes, des chiffres, des sources.",
+        "trae": [
+          "Comprendre ce qui se passe dans ton corps",
+          "Symptôme par symptôme : le quoi, le pourquoi, le comment",
+          "Les solutions, fondées sur la preuve",
+          "Construire ton plan",
+          "Au-delà des symptômes",
+          "Situations particulières"
+        ]
+      },
+      "en": {
+        "titulo": "Take Control of Perimenopause Before It Takes Control of You",
+        "lead": "Sit down with this the way you'd sit down with a friend who already went through it and is willing to walk you through every symptom, every real treatment, and every question your doctor never has time to answer — in order, in plain language, with evidence from medical organizations, cited at the end.",
+        "trae": [
+          "What's actually happening inside you",
+          "Recognizing what your body is telling you",
+          "Getting a real diagnosis",
+          "The treatments nobody tells you exist",
+          "Protecting the years after this",
+          "The life around the symptoms"
+        ]
+      }
+    },
+    {
+      "id": "curriculum",
+      "carpeta": "11_Curriculum",
+      "tipo": "guia",
+      "cat": "trabajo",
+      "publicar": {
+        "es": false,
+        "fr": false,
+        "en": false
+      },
+      "es": {
+        "titulo": "El método para pasar los filtros de IA",
+        "lead": "Si llevas meses mandando currículums y el silencio te está volviendo loco, esta guía existe para ti. Vamos a tirar abajo el mito del \"robot que rechaza el 75%\" —viene de una empresa que cerró en 2013 y nunca mostró un solo dato— y en su lugar te voy a explicar cómo funciona de verdad un sistema de seguimiento de candidatos: Workday, Greenhouse, Taleo, iCIMS, con nombre y apellido. Y lo hago pensando en quien busca trabajo en Quebec: la Carta de derechos, la ley del francés, la protección de tus datos, los portales de empleo que de verdad se usan aquí y el reconocimiento de tus títulos. Vas a reescribir tu currículum real mientras avanzas, línea por línea, con ejemplos de antes y después.",
+        "trae": [
+          "Cómo funciona de verdad",
+          "Buscar trabajo en Quebec: derechos, idioma, datos y credenciales",
+          "Parsing y lo que rompe un currículum",
+          "Escribir tu currículum, paso a paso",
+          "Después de enviar",
+          "Apéndices y cierre"
+        ]
+      },
+      "fr": {
+        "titulo": "La Formule Anti-Filtre",
+        "lead": "Un mythe circule depuis quinze ans : « 75 % des CV sont rejetés par un robot avant qu'un humain les voie. » Ce chiffre ne s'appuie sur aucune étude que nous ayons pu retrouver. Ce guide démonte le mythe, puis t'explique, avec de vraies données, les vrais logiciels, de vrais avant-après et les règles qui s'appliquent au Québec, comment un système de suivi des candidatures (ATS) fonctionne réellement à l'intérieur, et comment lui parler sans mentir à personne.",
+        "trae": [
+          "Comment ça fonctionne vraiment",
+          "Chercher du travail au Québec",
+          "Ce qui casse un CV, et comment il est lu",
+          "Écrire ton CV",
+          "Après l'envoi",
+          "Passer à l'action : annexes et références"
+        ]
+      },
+      "en": {
+        "titulo": "Resume vs AI Filters — Quebec Edition",
+        "lead": "Sit down with this the way you'd sit down with someone who spent years on the other side of the hiring software, reading the same resumes it reads, and is willing to walk you through exactly what it sees, what it ignores, and how to write for it without writing a worse resume for the human who reads it next. It is written in English for readers who search for work in Quebec, and it works across the rest of Canada and the United States too.",
+        "trae": [
+          "What you're actually dealing with",
+          "Job-hunting in Quebec: rights, language, data, and credentials",
+          "How the machine really reads",
+          "Writing your resume, piece by piece",
+          "After you send it",
+          "Putting it together"
+        ]
+      },
+      "_por_que_no": "El 007, 8 oct 2026: tenía 377 y 414 páginas; se acortó y la versión nueva no está aprobada. Además el título en español cambió."
+    },
+    {
+      "id": "viager",
+      "carpeta": "12_Viager",
+      "tipo": "guia",
+      "cat": "casa",
+      "publicar": {
+        "es": true,
+        "fr": true,
+        "en": true
+      },
+      "es": {
+        "titulo": "El Viager en Quebec: Cómo Funciona de Verdad",
+        "lead": "Vender tu casa a cambio de un pago inicial más una renta de por vida —o comprar una casa así— es una de las decisiones más grandes que puede tomar una familia, y casi nadie te la explica completa. Aquí te llevo, con calma y sin sustos, por cómo funciona un viager en Quebec de verdad: qué protege a quien vende, qué necesita saber quien compra, cómo se calcula el precio sin que exista una tabla oficial, y qué dice exactamente el Código Civil.",
+        "trae": [
+          "Qué es un viager, de verdad",
+          "Las protecciones de quien vende",
+          "Lo que quien compra necesita saber",
+          "Cómo se calcula de verdad, sin tabla oficial",
+          "El camino completo, de principio a fin",
+          "Comparación y decisión"
+        ]
+      },
+      "fr": {
+        "titulo": "Le viager au Québec, expliqué avant de signer",
+        "lead": "Pas un dépliant publicitaire, pas un cours de droit notarial : le chemin complet pour comprendre la vente à rente viagère au Québec — ce qu'elle protège vraiment, ce qu'elle ne protège pas, et comment un vendeur comme un acheteur peuvent la traverser sans se faire avoir par ce qu'ils ignoraient.",
+        "trae": [
+          "Ce que tu dois savoir avant de commencer",
+          "Construire la vente, étape par étape",
+          "Les protections, pour les deux côtés",
+          "La fiscalité, démystifiée",
+          "Élargir la réflexion",
+          "Passer à l'action"
+        ]
+      },
+      "en": {
+        "titulo": "Viager in Quebec: The Complete Guide",
+        "lead": "Sit down with this the way you'd sit down with a notary who has done one of these before and is willing to walk you through it, page by page — what a life-annuity sale actually is, what Quebec's Civil Code really says about it (which is not what the French websites tell you), what protects the seller, what protects the buyer, how the numbers actually get built, and the full path from a first conversation to a signed notarial deed.",
+        "trae": [
+          "The idea, in plain language",
+          "Who sits on each side of this table",
+          "Real situations, named",
+          "The law Quebec actually has",
+          "When something goes wrong",
+          "Putting a number on it"
+        ]
+      }
+    },
+    {
+      "id": "creditos-ayudas",
+      "carpeta": "13_Creditos_Ayudas",
+      "tipo": "guia",
+      "cat": "negocio",
+      "publicar": {
+        "es": true,
+        "fr": true,
+        "en": true
+      },
+      "es": {
+        "titulo": "Créditos y Ayudas del Gobierno que No Estás Cobrando",
+        "lead": "El dinero que los gobiernos de Quebec y de Canadá ya tienen apartado para ti — el crédito de solidaridad, las ayudas por hijos, el crédito para quien cuida a un familiar, los créditos de estudiante, la prestación para trabajadores — y cómo reclamarlo, incluso el de los últimos diez años.",
+        "trae": [
+          "Lo que estás dejando en la mesa",
+          "Para todos los que trabajan",
+          "Para padres y familias",
+          "Para quien cuida a alguien",
+          "Estudiantes y primera declaración",
+          "Recuperar lo que ya perdiste"
+        ]
+      },
+      "fr": {
+        "titulo": "L'Argent que Vous Laissez sur la Table",
+        "lead": "Crédits d'impôt et aides gouvernementales que vous ne réclamez pas : solidarité, personne aidante, allocations pour enfants, frais de scolarité, travailleurs, handicap — qui y a droit, combien, comment les demander au fédéral et au Québec, et comment récupérer jusqu'à dix ans d'oublis.",
+        "trae": [
+          "Comprendre le terrain avant de réclamer",
+          "Les versements liés au revenu, pour presque tout le monde",
+          "Les familles : deux allocations, un crédit pour la garde, et les pièges de l'arrivée",
+          "Les proches aidants : le crédit le plus sous-utilisé du Québec",
+          "Handicap : un crédit qui ouvre beaucoup d'autres portes",
+          "Les étudiants : des crédits qui valent de l'argent maintenant, pas seulement plus tard"
+        ]
+      },
+      "en": {
+        "titulo": "The Money You're Not Claiming",
+        "lead": "Quebec and federal tax credits and benefits that employees, students, caregivers and parents qualify for but never receive — what each one pays, who qualifies, how to claim it, and how to go back up to ten years to recover what you missed.",
+        "trae": [
+          "Why the money goes unclaimed",
+          "The big programs, one by one",
+          "Students",
+          "Going back up to ten years",
+          "Situations that need extra attention",
+          "Tools you can use every year"
+        ]
+      }
+    }
+  ],
+  "_textos": "Los textos de cada guia salen de la portada y del indice del propio libro; los saco el 007 el 8 de octubre de 2026 en «TEXTOS_de_cada_guia_para_la_tienda.md». NO SE INVENTAN.",
+  "_permiso": "«publicar» es POR IDIOMA, porque una guia puede estar lista en un idioma y no en otro. Quien lo dice es el 007, que lleva las guias y su revision de seguridad."
 }

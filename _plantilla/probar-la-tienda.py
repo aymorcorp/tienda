@@ -67,10 +67,15 @@ with sync_playwright() as pw:
        "quedaron %d" % vistas)
     ok("y se le dice a la persona, no se deja un hueco",
        pag.evaluate("!document.getElementById('nada').hidden"))
+    # Cuantos productos hay de verdad en esta pagina. NO se escribe un numero a
+    # mano: el catalogo cambia (hoy el 007 quito cinco guias del español) y una
+    # prueba con el numero a mano falla sin que la tienda tenga nada malo.
+    HAY = pag.evaluate("document.querySelectorAll('.celda').length")
+    ok("la pagina trae productos", HAY > 0, "%d en el catálogo" % HAY)
     pag.fill("#q", "")
     pag.wait_for_timeout(240)
     todas = pag.evaluate("[...document.querySelectorAll('.celda')].filter(c=>!c.hidden).length")
-    ok("al borrar lo escrito, vuelven todas", todas >= 10, "%d productos" % todas)
+    ok("al borrar lo escrito, vuelven todas", todas == HAY, "%d de %d" % (todas, HAY))
     pag.close()
     print("")
 
@@ -119,8 +124,10 @@ with sync_playwright() as pw:
            "%d productos" % r["n"])
     pag.click(".chip[data-cat=todo]")
     pag.wait_for_timeout(220)
-    ok("y «Todo» las devuelve todas",
-       pag.evaluate("[...document.querySelectorAll('.celda')].filter(c=>!c.hidden).length") >= 10)
+    hay = pag.evaluate("document.querySelectorAll('.celda').length")
+    vuelven = pag.evaluate("[...document.querySelectorAll('.celda')].filter(c=>!c.hidden).length")
+    ok("y «Todo» las devuelve todas", vuelven == hay and hay > 0,
+       "%d de %d" % (vuelven, hay))
 
     # buscar y filtrar a la vez
     pag.click(".chip[data-cat=impuestos]")
@@ -129,6 +136,34 @@ with sync_playwright() as pw:
     r = pag.evaluate("[...document.querySelectorAll('.celda')].filter(c=>!c.hidden).length")
     ok("buscar y filtrar a la vez funciona", r == 1, "%d productos" % r)
     pag.close()
+    print("")
+
+    # ---------- 2b. las bandas de oficio cumplen lo que prometen ----------
+    # Cada banda dice «Ver lo de este oficio». Se le pica de verdad, y se exige
+    # llegar al catálogo CON EL FILTRO PUESTO y CON PRODUCTOS. Una banda que
+    # lleva a una pantalla vacía es una promesa rota.
+    for idi in ("es", "fr", "en"):
+        pag = nav.new_page(viewport={"width": 900, "height": 900})
+        pag.goto(url(idi, "index.html"))
+        pag.wait_for_timeout(350)
+        cuantas = pag.evaluate("document.querySelectorAll('.of').length")
+        ok("en %s hay bandas de oficio" % idi, cuantas > 0, "%d bandas" % cuantas)
+        for n in range(cuantas):
+            pag.goto(url(idi, "index.html"))
+            pag.wait_for_timeout(300)
+            nombre = pag.evaluate(
+                "document.querySelectorAll('.of')[%d].querySelector('h3').innerText" % n)
+            pag.evaluate("document.querySelectorAll('.of')[%d].click()" % n)
+            pag.wait_for_timeout(500)
+            r = pag.evaluate("""(()=>{
+                var v=[...document.querySelectorAll('.celda')].filter(c=>!c.hidden);
+                var ch=document.querySelector('.chip.on');
+                return {n:v.length, todas:document.querySelectorAll('.celda').length,
+                        filtro: ch ? ch.dataset.cat : '-'};})()""")
+            ok("  «%s» lleva a su oficio, y hay algo" % nombre[:26],
+               r["n"] > 0 and r["filtro"] != "todo" and r["n"] < r["todas"],
+               "%d de %d, filtro %s" % (r["n"], r["todas"], r["filtro"]))
+        pag.close()
     print("")
 
     # ---------- 3. los enlaces llevan a algo que existe ----------
@@ -144,6 +179,11 @@ with sync_playwright() as pw:
             base = os.path.dirname(os.path.join(TIENDA, *partes))
             for h in set(hrefs):
                 if not h or h.startswith(("mailto:", "http", "#")):
+                    continue
+                # «catalogo/index.html#casa» es el archivo «catalogo/index.html».
+                # Lo de despues de la almohadilla no es parte del nombre.
+                h = h.split("#")[0]
+                if not h:
                     continue
                 destino = os.path.normpath(os.path.join(base, h))
                 if os.path.isdir(destino):
@@ -168,8 +208,15 @@ with sync_playwright() as pw:
     pag.goto(url("es", "catalogo", "index.html"))
     pag.wait_for_timeout(350)
     txt = pag.evaluate("document.body.innerText").lower()
-    ok("la guía de salud NO aparece en la tienda",
-       "perimenopaus" not in txt)
+    # Las cinco que el 007 dijo que no se venden. Si una se cuela, la tienda
+    # estaria vendiendo un libro con hallazgos graves de seguridad.
+    for palabra, porque in (("perimenopaus", "es de salud y Legal no la ha visto"),
+                            ("fermenta", "42 puntos de seguridad, 16 graves"),
+                            ("pagar menos impuestos", "decía «retorno garantizado»"),
+                            ("filtros de ia", "se acortó y no está aprobada")):
+        ok("NO se vende «%s» (%s)" % (palabra, porque), palabra not in txt)
+    # Y la que solo se vende en dos idiomas.
+    ok("«Detallado» NO sale en el catálogo español", "detallado" not in txt)
     ok("ningún botón de compra está encendido",
        pag.evaluate("[...document.querySelectorAll('.comprar')].every(b=>b.classList.contains('apagado'))"))
     pag.close()

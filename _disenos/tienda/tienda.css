@@ -52,7 +52,12 @@ a{color:inherit;text-decoration:none;-webkit-tap-highlight-color:transparent}
 
 /* ---------- bandas por oficio ---------- */
 .oficios{display:grid;gap:3px;margin-top:clamp(16px,3vw,28px)}
-@media(min-width:880px){.oficios{grid-template-columns:1fr 1fr}}
+@media(min-width:880px){.oficios{grid-template-columns:1fr 1fr}
+  /* Si el numero de oficios es impar, el ultimo ocupa las dos columnas.
+     Si no, queda una banda coja con un hueco al lado. El numero cambia
+     solo: hoy el español tiene tres oficios y el frances cuatro. */
+  .oficios>.of:last-child:nth-child(odd){grid-column:1 / -1;
+                                         min-height:clamp(118px,15vw,180px)}}
 .of{position:relative;display:flex;flex-direction:column;justify-content:flex-end;
     min-height:clamp(130px,20vw,224px);padding:clamp(16px,2.4vw,26px);
     overflow:hidden;color:#fff}
