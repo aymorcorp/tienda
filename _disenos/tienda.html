@@ -1,0 +1,103 @@
+<!doctype html><html lang=es><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1,viewport-fit=cover'><title>Aymor Applis</title><style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --papel:#F7F3EC; --tinta:#1A1714; --suave:#7E7467; --tenue:#A79C8D;
+  --marca:#9C5533; --linea:#E6DED1; --blanco:#FFFDF9;
+  --ancho:1180px;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+  --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--papel);color:var(--tinta);font:16px/1.6 var(--sans);
+     -webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none;-webkit-tap-highlight-color:transparent}
+.centro{max-width:var(--ancho);margin:0 auto;padding:0 clamp(18px,4vw,40px)}
+
+/* ---------- barra de arriba ---------- */
+.barra{position:sticky;top:0;z-index:50;background:rgba(247,243,236,.86);
+       backdrop-filter:saturate(1.6) blur(12px);border-bottom:1px solid var(--linea)}
+.barra .centro{display:flex;align-items:center;gap:clamp(10px,2vw,20px);
+               min-height:58px;padding-top:9px;padding-bottom:9px}
+.marca{font-weight:800;font-size:12.5px;letter-spacing:.17em;white-space:nowrap}
+.buscar{flex:1;min-width:0;display:flex;align-items:center;gap:8px;background:var(--blanco);
+        border:1px solid var(--linea);border-radius:999px;padding:9px 15px;color:var(--tenue);font-size:14px}
+.idiomas{display:flex;gap:4px}
+.idiomas b{font-size:11.5px;letter-spacing:.08em;color:var(--tenue);padding:5px 7px;border-radius:7px;font-weight:700}
+.idiomas b.on{background:var(--tinta);color:var(--papel)}
+
+/* ---------- portada ---------- */
+.saludo{padding:clamp(34px,7vw,74px) 0 clamp(20px,4vw,34px)}
+.saludo h1{font:400 clamp(32px,7.4vw,62px)/1.04 var(--serif);letter-spacing:-.015em;max-width:17ch}
+.saludo h1 i{font-style:italic;color:var(--marca)}
+.saludo p{margin-top:clamp(14px,2.4vw,22px);color:var(--suave);
+          font-size:clamp(15px,1.7vw,19px);max-width:46ch}
+
+/* ---------- bandas por oficio (de la D) ---------- */
+.oficios{display:grid;gap:3px;margin-top:clamp(18px,3vw,30px)}
+@media(min-width:900px){.oficios{grid-template-columns:1fr 1fr}}
+.of{position:relative;display:flex;flex-direction:column;justify-content:flex-end;
+    min-height:clamp(132px,21vw,230px);padding:clamp(16px,2.4vw,26px);overflow:hidden;color:#fff}
+.of .fondo{position:absolute;inset:0;background-size:cover;background-position:center;
+           transform:scale(1.02);transition:transform .5s ease}
+.of:hover .fondo{transform:scale(1.07)}
+.of .velo{position:absolute;inset:0}
+.of h3{position:relative;font-size:clamp(18px,2.4vw,27px);font-weight:800;letter-spacing:-.02em;
+       line-height:1.12;max-width:13ch}
+.of span{position:relative;margin-top:7px;font-size:13.5px;color:rgba(255,255,255,.78);font-weight:600}
+
+/* ---------- estante que se arrastra con el dedo ---------- */
+.titulo{display:flex;align-items:baseline;gap:14px;padding:clamp(34px,5vw,56px) 0 clamp(14px,2vw,20px)}
+.titulo h2{font:400 clamp(23px,3.1vw,34px)/1.1 var(--serif);letter-spacing:-.01em}
+.titulo span{color:var(--tenue);font-size:13.5px}
+.estante{display:flex;gap:clamp(14px,2vw,26px);overflow-x:auto;padding-bottom:10px;
+         scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+         scrollbar-width:none;scroll-padding-left:clamp(18px,4vw,40px)}
+.estante::-webkit-scrollbar{display:none}
+.estante>*{scroll-snap-align:start;flex:0 0 clamp(146px,37vw,210px)}
+.libro .obj{aspect-ratio:4/3;background-size:cover;background-position:center;border-radius:4px;
+            box-shadow:0 22px 38px -18px rgba(26,23,20,.6);transition:transform .35s ease}
+.libro:hover .obj{transform:translateY(-5px)}
+.libro h4{font:400 clamp(15px,1.7vw,19px)/1.25 var(--serif);margin-top:14px}
+.libro p{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--tenue);margin-top:6px}
+.libro b{display:block;margin-top:7px;font-size:14px;font-weight:700}
+
+/* ---------- pie ---------- */
+footer{margin-top:clamp(40px,7vw,86px);border-top:1px solid var(--linea);
+       padding:clamp(28px,4vw,46px) 0 clamp(34px,5vw,56px);color:var(--suave);font-size:14px}
+.cols{display:grid;gap:clamp(22px,3vw,30px);grid-template-columns:1fr 1fr}
+@media(min-width:760px){.cols{grid-template-columns:repeat(4,1fr)}}
+.cols h5{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--tenue);
+         margin-bottom:11px;font-weight:700}
+.cols a{display:block;padding:4px 0;font-size:14.5px}
+.cierre{margin-top:clamp(26px,4vw,40px);padding-top:18px;border-top:1px solid var(--linea);
+        color:var(--tenue);font-size:13px}
+
+/* ---------- pagina de producto ---------- */
+.volver{padding-top:clamp(16px,3vw,26px);font-size:14px;color:var(--suave);font-weight:600}
+.ficha{display:grid;gap:clamp(22px,4vw,46px);padding-top:clamp(16px,3vw,26px)}
+@media(min-width:880px){.ficha{grid-template-columns:1.05fr .95fr;align-items:start}}
+.galeria{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;
+         -webkit-overflow-scrolling:touch;scrollbar-width:none;border-radius:6px}
+.galeria::-webkit-scrollbar{display:none}
+.galeria img{scroll-snap-align:center;flex:0 0 100%;border-radius:6px;
+             box-shadow:0 22px 44px -22px rgba(26,23,20,.55)}
+.puntos{display:flex;gap:6px;justify-content:center;margin-top:13px}
+.puntos i{width:6px;height:6px;border-radius:50%;background:var(--tenue);opacity:.4}
+.puntos i.on{opacity:1;background:var(--tinta)}
+.ficha h1{font:400 clamp(27px,4.2vw,44px)/1.07 var(--serif);letter-spacing:-.015em}
+.ficha .cat{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--tenue);margin-bottom:12px}
+.ficha .lead{margin-top:16px;color:var(--suave);font-size:clamp(15px,1.7vw,17.5px)}
+.precio{display:flex;align-items:baseline;gap:10px;margin-top:clamp(18px,3vw,28px)}
+.precio b{font-size:clamp(25px,3.4vw,33px);font-weight:800;letter-spacing:-.02em}
+.precio span{color:var(--tenue);font-size:13.5px}
+.comprar{display:block;margin-top:16px;background:var(--tinta);color:var(--papel);text-align:center;
+         font-weight:700;font-size:16px;padding:16px;border-radius:12px}
+.telon{margin-top:10px;font-size:13px;color:var(--tenue);text-align:center}
+.trae{margin-top:clamp(22px,3.4vw,32px);border-top:1px solid var(--linea);padding-top:18px}
+.trae h3{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--tenue)}
+.trae ul{margin-top:12px;display:grid;gap:9px}
+.trae li{list-style:none;padding-left:20px;position:relative;font-size:15px}
+.trae li::before{content:'';position:absolute;left:0;top:9px;width:7px;height:7px;
+                 border-radius:50%;background:var(--marca)}
+</style></head><body><div class=barra><div class=centro><span class=marca>AYMOR APPLIS</span><span class=buscar>Buscar en el catálogo</span><span class=idiomas><b>FR</b><b class=on>ES</b><b>EN</b></span></div></div><div class=centro><div class=saludo><h1>Lo que nadie te explicó de <i>tener un negocio</i>.</h1><p>Guías que se leen en una tarde y aplicaciones que se usan toda la semana. Hechas en Quebec, en el idioma en que trabajas.</p></div></div><div class=centro><div class=oficios><a class=of href='producto.html'><div class=fondo style="background-image:url('img/01_Ley25-mockup.jpg')"></div><div class=velo style="background:linear-gradient(170deg,#1E334866 0%,#1E3348E6 78%)"></div><h3>Talleres y cuadrillas</h3><span>Ver lo de este oficio →</span></a><a class=of href='producto.html'><div class=fondo style="background-image:url('img/07_Detallado_Automotriz-mockup.jpg')"></div><div class=velo style="background:linear-gradient(170deg,#23305A66 0%,#23305AE6 78%)"></div><h3>Detallado de autos</h3><span>Ver lo de este oficio →</span></a><a class=of href='producto.html'><div class=fondo style="background-image:url('img/08_Cuanto_Apartar-mockup.jpg')"></div><div class=velo style="background:linear-gradient(170deg,#1C5B4C66 0%,#1C5B4CE6 78%)"></div><h3>Impuestos y papeles</h3><span>Ver lo de este oficio →</span></a><a class=of href='producto.html'><div class=fondo style="background-image:url('img/05_Fermentos-mockup.jpg')"></div><div class=velo style="background:linear-gradient(170deg,#3F5C3266 0%,#3F5C32E6 78%)"></div><h3>Cocina y casa</h3><span>Ver lo de este oficio →</span></a><a class=of href='producto.html'><div class=fondo style="background-image:url('img/11_Curriculum-mockup.jpg')"></div><div class=velo style="background:linear-gradient(170deg,#4A316066 0%,#4A3160E6 78%)"></div><h3>Buscar trabajo</h3><span>Ver lo de este oficio →</span></a></div><div class=titulo><h2>Las más leídas</h2><span>Arrástralas con el dedo</span></div></div><div class=estante style='padding-left:clamp(18px,4vw,40px);padding-right:clamp(18px,4vw,40px)'><a class=libro href='producto.html'><div class=obj style="background-image:url('img/01_Ley25-mockup.jpg')"></div><h4>La Ley 25, explicada</h4><p>Ley y papeles</p><b>9.99 USD</b></a><a class=libro href='producto.html'><div class=obj style="background-image:url('img/08_Cuanto_Apartar-mockup.jpg')"></div><h4>Cuánto apartar para impuestos</h4><p>Impuestos</p><b>9.99 USD</b></a><a class=libro href='producto.html'><div class=obj style="background-image:url('img/03_CNESST-mockup.jpg')"></div><h4>La CNESST sin sustos</h4><p>Ley y papeles</p><b>9.99 USD</b></a><a class=libro href='producto.html'><div class=obj style="background-image:url('img/04_7Errores-mockup.jpg')"></div><h4>Los 7 errores</h4><p>Negocio</p><b>9.99 USD</b></a><a class=libro href='producto.html'><div class=obj style="background-image:url('img/07_Detallado_Automotriz-mockup.jpg')"></div><h4>Detallado automotriz</h4><p>Oficios</p><b>9.99 USD</b></a><a class=libro href='producto.html'><div class=obj style="background-image:url('img/05_Fermentos-mockup.jpg')"></div><h4>Fermentos en casa</h4><p>Casa</p><b>9.99 USD</b></a><a class=libro href='producto.html'><div class=obj style="background-image:url('img/11_Curriculum-mockup.jpg')"></div><h4>Tu currículum</h4><p>Trabajo</p><b>9.99 USD</b></a><a class=libro href='producto.html'><div class=obj style="background-image:url('img/13_Creditos_Ayudas-mockup.jpg')"></div><h4>Créditos y ayudas</h4><p>Negocio</p><b>9.99 USD</b></a></div><footer><div class=centro><div class=cols><div><h5>La tienda</h5><a>Todo el catálogo</a><a>Aplicaciones</a><a>Guías y libros</a><a>Por oficio</a></div><div><h5>Tu cuenta</h5><a>Mi membresía</a><a>Volver a bajar lo que compré</a><a>Mis facturas</a></div><div><h5>Aymor Applis</h5><a>Quiénes somos</a><a>Trabaja con nosotros</a><a>Sé probador de nuestras apps</a><a>Escríbenos</a></div><div><h5>Lo legal</h5><a>Precios</a><a>Términos</a><a>Privacidad</a><a>Reembolsos</a></div></div><p class=cierre>Aymor Applis — un negocio registrado en Quebec · aymorcorp@gmail.com</p></div></footer></body></html>
