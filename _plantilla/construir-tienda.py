@@ -196,6 +196,19 @@ def tarjeta(idi, p, a_enlace="", a_img="", precio_txt=""):
                p["_catnombre"], precio_txt))
 
 
+# El POR QUE una guia no se vende no vive en este repositorio: es publico, y
+# decir «42 puntos de seguridad, 16 graves» de un libro nuestro es informacion
+# de casa. Aqui solo esta la DECISION. Las razones se leen de la carpeta
+# privada de al lado, y si no estan, la tienda se arma igual.
+RAZONES_FUERA = os.path.join(
+    os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+    "tienda-herramientas-privadas (NO SUBIR)", "por-que-no-se-venden.json")
+try:
+    RAZONES = json.load(io.open(RAZONES_FUERA, encoding="utf-8"))["razones"]
+except Exception:
+    RAZONES = {}
+
+
 def construir():
     d = json.load(io.open(CATALOGO, encoding="utf-8"))
     cats, oficios = d["categorias"], d["oficios"]
@@ -211,6 +224,21 @@ def construir():
 
     if not any(permiso(p, i) for p in todos for i in IDIOMAS):
         parar("el catalogo no tiene ni un producto publicable")
+
+    # CERROJO. Este repositorio es PUBLICO. Si alguien vuelve a escribir en el
+    # catalogo por que una guia esta detenida, lo lee cualquiera en internet.
+    # Antes de construir nada, se para.
+    for p in todos:
+        if "_por_que_no" in p:
+            parar("«%s» trae escrito por que no se vende. Eso no va en este "
+                  "repositorio, que es publico: va en «tienda-herramientas-"
+                  "privadas (NO SUBIR)/por-que-no-se-venden.json»." % p["id"])
+    crudo = io.open(CATALOGO, encoding="utf-8").read().lower()
+    for frase in ("puntos, 16 graves", "legal no la ha visto", "revisión de seguridad",
+                  "revision de seguridad"):
+        if frase in crudo:
+            parar("el catalogo dice «%s». Este repositorio es publico: eso es "
+                  "informacion de casa y va en la carpeta privada." % frase)
 
     os.makedirs(SALIDA, exist_ok=True)
     img = os.path.join(SALIDA, "img")
@@ -395,7 +423,7 @@ def construir():
         alguno = True
         donde = "en ningun idioma" if len(faltan) == len(IDIOMAS) else "en " + ", ".join(faltan)
         print("     %s — %s" % (p["es"]["titulo"][:46], donde))
-        print("        %s" % p.get("_por_que_no", "SIN RAZON ESCRITA"))
+        print("        %s" % RAZONES.get(p["id"], "la razon esta en la carpeta privada"))
     if not alguno:
         print("     nada: todo se vende en los tres idiomas")
 

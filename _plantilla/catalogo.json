@@ -307,8 +307,7 @@
           "Step-by-step recipes",
           "Practical application"
         ]
-      },
-      "_por_que_no": "El 007, 8 oct 2026: la revisión de seguridad halló 42 puntos, 16 graves. Sale cuando se apruebe la versión nueva."
+      }
     },
     {
       "id": "registro-negocio",
@@ -401,8 +400,7 @@
           "Getting clients, and keeping them",
           "Specialized situations and business habits worth building"
         ]
-      },
-      "_por_que_no": "El 007, 8 oct 2026: el español y el italiano salieron sin el aviso de que no es asesoría. El inglés, el francés y el portugués sí se pueden vender."
+      }
     },
     {
       "id": "cuanto-apartar",
@@ -496,8 +494,7 @@
           "What people leave on the table",
           "Special cases"
         ]
-      },
-      "_por_que_no": "El 007, 8 oct 2026: decía «retorno garantizado». Sale cuando se apruebe la versión nueva."
+      }
     },
     {
       "id": "perimenopausia",
@@ -509,7 +506,6 @@
         "fr": false,
         "en": false
       },
-      "_por_que_no": "Es de salud. El 007 dice que Legal no la ha visto y que una profesional de salud tiene que leer lo añadido antes de venderla.",
       "es": {
         "titulo": "Domina tu Perimenopausia Antes de que Ella te Domine a Ti",
         "lead": "Si últimamente no te reconoces —el calor que sube de la nada, la noche que ya no descansa, el llanto que llega sin avisar, la regla que ya no sigue ningún calendario— no significa que estés enferma, aunque conviene que un profesional revise tus síntomas. Es tu cuerpo entrando a una transición biológica real, con nombre, con etapas, y con opciones respaldadas por organizaciones médicas, que no funcionan igual en todas las mujeres. Aquí te la explico completa: qué está pasando por dentro, por qué pasa exactamente eso y no otra cosa, y qué puedes hacer hoy mismo para recuperar el control.",
@@ -592,8 +588,7 @@
           "After you send it",
           "Putting it together"
         ]
-      },
-      "_por_que_no": "El 007, 8 oct 2026: tenía 377 y 414 páginas; se acortó y la versión nueva no está aprobada. Además el título en español cambió."
+      }
     },
     {
       "id": "viager",
@@ -691,5 +686,6 @@
     }
   ],
   "_textos": "Los textos de cada guia salen de la portada y del indice del propio libro; los saco el 007 el 8 de octubre de 2026 en «TEXTOS_de_cada_guia_para_la_tienda.md». NO SE INVENTAN.",
-  "_permiso": "«publicar» es POR IDIOMA, porque una guia puede estar lista en un idioma y no en otro. Quien lo dice es el 007, que lleva las guias y su revision de seguridad."
+  "_permiso": "«publicar» es POR IDIOMA, porque una guia puede estar lista en un idioma y no en otro. Quien decide es el 007, que lleva las guias.",
+  "_por_que_no_viven_aqui": "El POR QUE una guia esta detenida NO se guarda aqui. Este repositorio es publico: cualquiera en internet lee este archivo, y lo que halla una revision nuestra, o lo que falte por aprobar, es informacion de casa. Aqui queda solo la DECISION («publicar»), que es lo unico que la tienda necesita para no venderlo. Las razones viven en «tienda-herramientas-privadas (NO SUBIR)/por-que-no-se-venden.json». «construir-tienda.py» se para si alguna vuelve a colarse en este archivo."
 }
