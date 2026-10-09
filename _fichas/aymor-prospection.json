@@ -1,33 +1,35 @@
 {
-  "_que_es_esto": "Solo la tarjeta de la portada: la app todavia no esta en las tiendas, asi que sale como Proximamente, sin precio ni fecha. Cuando exista su pagina, se completa esta ficha (ver EJEMPLO-app-nueva.json).",
-  "nombre": "Aymor Prospection",
-  "carpeta": "aymor-prospection",
-  "precio": "aymor-prospection",
-  "pagina": false,
-  "publicada": false,
-  "idiomaPrincipal": "en",
-  "tarjeta": {
-    "estado": "pronto",
-    "mostrar": true
-  },
-  "textos": {
-    "fr": {
-      "tarjeta": {
-        "etiqueta": "Bientôt",
-        "queHace": "Pour qualifier vos clients potentiels."
-      }
+    "_que_es_esto": "Solo la tarjeta de la portada: la app todavia no esta en las tiendas, asi que sale como Proximamente, sin precio ni fecha. Cuando exista su pagina, se completa esta ficha (ver EJEMPLO-app-nueva.json).",
+    "nombre": "Aymor Prospection",
+    "carpeta": "aymor-prospection",
+    "precio": "aymor-prospection",
+    "pagina": false,
+    "publicada": false,
+    "idiomaPrincipal": "en",
+    "tarjeta": {
+        "estado": "pronto",
+        "mostrar": false
     },
-    "en": {
-      "tarjeta": {
-        "etiqueta": "Coming soon",
-        "queHace": "To qualify your leads."
-      }
+    "textos": {
+        "fr": {
+            "tarjeta": {
+                "etiqueta": "",
+                "queHace": "Pour qualifier vos clients potentiels."
+            }
+        },
+        "en": {
+            "tarjeta": {
+                "etiqueta": "",
+                "queHace": "To qualify your leads."
+            }
+        },
+        "es": {
+            "tarjeta": {
+                "etiqueta": "",
+                "queHace": "Para calificar interesados."
+            }
+        }
     },
-    "es": {
-      "tarjeta": {
-        "etiqueta": "Próximamente",
-        "queHace": "Para calificar interesados."
-      }
-    }
-  }
+    "_sin_proximamente": "La etiqueta «Próximamente» se vacio el 9 de octubre de 2026: regla de la casa, renglon 12, «no hay mensajes de Próximamente ni nada parecido». Y «sin contratos largos» salio porque «sin contrato» esta en la lista de Legal.",
+    "_fuera_de_la_tienda": "La direccion la bajo de la tienda el 8 de octubre de 2026: esta pausada y se queda solo en su carpeta. La ficha NO se borra, para que el dia que vuelva este entera."
 }

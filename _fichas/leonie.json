@@ -1,33 +1,34 @@
 {
-  "_que_es_esto": "Tarjeta preparada y NO visible: Leonie sale de la portada hasta que tenga politica de privacidad y terminos (decision del 6 de octubre). Para mostrarla: tarjeta.mostrar = true y volver a correr construir.py.",
-  "nombre": "Léonie",
-  "carpeta": "leonie",
-  "precio": "leonie",
-  "pagina": false,
-  "publicada": false,
-  "idiomaPrincipal": "en",
-  "tarjeta": {
-    "estado": "pronto",
-    "mostrar": false
-  },
-  "textos": {
-    "fr": {
-      "tarjeta": {
-        "etiqueta": "Bientôt",
-        "queHace": "L'assistante automatisée qui répond au téléphone de votre entreprise."
-      }
+    "_que_es_esto": "Tarjeta preparada y NO visible: Leonie sale de la portada hasta que tenga politica de privacidad y terminos (decision del 6 de octubre). Para mostrarla: tarjeta.mostrar = true y volver a correr construir.py.",
+    "nombre": "Léonie",
+    "carpeta": "leonie",
+    "precio": "leonie",
+    "pagina": false,
+    "publicada": false,
+    "idiomaPrincipal": "en",
+    "tarjeta": {
+        "estado": "pronto",
+        "mostrar": false
     },
-    "en": {
-      "tarjeta": {
-        "etiqueta": "Coming soon",
-        "queHace": "The automated assistant that answers your business phone."
-      }
+    "textos": {
+        "fr": {
+            "tarjeta": {
+                "etiqueta": "",
+                "queHace": "L'assistante automatisée qui répond au téléphone de votre entreprise."
+            }
+        },
+        "en": {
+            "tarjeta": {
+                "etiqueta": "",
+                "queHace": "The automated assistant that answers your business phone."
+            }
+        },
+        "es": {
+            "tarjeta": {
+                "etiqueta": "",
+                "queHace": "La asistente automática que contesta el teléfono de tu negocio."
+            }
+        }
     },
-    "es": {
-      "tarjeta": {
-        "etiqueta": "Próximamente",
-        "queHace": "La asistente automática que contesta el teléfono de tu negocio."
-      }
-    }
-  }
+    "_sin_proximamente": "La etiqueta «Próximamente» se vacio el 9 de octubre de 2026: regla de la casa, renglon 12, «no hay mensajes de Próximamente ni nada parecido». Y «sin contratos largos» salio porque «sin contrato» esta en la lista de Legal."
 }

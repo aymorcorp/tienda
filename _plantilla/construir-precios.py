@@ -273,6 +273,42 @@ def seccion(idioma, p):
     return "\n".join(f)
 
 
+# LOS NOMBRES SALEN DE LAS FICHAS, NO DE AQUI.
+# Estaban escritos a mano en veintitantos sitios de este archivo. El 9 de
+# octubre la direccion puso «Aymor» delante de tres apps, y esta pagina se
+# quedo con el nombre viejo mientras la portada ya decia el nuevo. Dos sitios
+# que dicen el nombre son dos sitios que un dia no coinciden.
+def nombres_de_las_fichas():
+    import glob
+    fuera = {}
+    for r in glob.glob(os.path.join(os.path.dirname(AQUI), "_fichas", "*.json")):
+        if os.path.basename(r).startswith("EJEMPLO"):
+            continue
+        try:
+            d = json.load(io.open(r, encoding="utf-8"))
+        except Exception:
+            continue
+        if d.get("nombre") and d.get("precio"):
+            fuera[d["precio"]] = d["nombre"]
+    return fuera
+
+
+def con_los_nombres_buenos(html):
+    """Cambia el nombre viejo por el de la ficha. Del mas largo al mas corto,
+       para no convertir «Aymor Quorum» en «Aymor Aymor Quorum»."""
+    for clave, nombre in sorted(nombres_de_las_fichas().items(),
+                                key=lambda x: -len(x[1])):
+        corto = nombre.replace("Aymor ", "")
+        if corto == nombre:
+            continue
+        # Solo el nombre suelto, no el que ya lleva «Aymor» delante.
+        # Sin barras invertidas a proposito: el limite de palabra se
+        # escribe mirando que no haya letra antes ni despues.
+        html = re.sub(r"(?<!Aymor )(?<![A-Za-z])" + re.escape(corto)
+                      + r"(?![A-Za-z])", nombre, html)
+    return html
+
+
 def main():
     p = json.load(io.open(FICHA, encoding="utf-8"))["apps"]
     for clave, porque in FUERA.items():
@@ -290,6 +326,10 @@ def main():
         parar("no reconozco la pagina de precios: no encuentro sus secciones")
     cuerpo = "\n\n".join(seccion(idi, p) for idi in ("es", "fr", "en"))
     nueva = pagina[:i] + cuerpo + pagina[j + len("</section>"):]
+    # Y los nombres salen de las fichas, no de este archivo. Ver
+    # «con_los_nombres_buenos»: dos sitios que escriben el nombre a mano son
+    # dos sitios que un dia dicen cosas distintas, y eso acaba de pasar.
+    nueva = con_los_nombres_buenos(nueva)
 
     # Nada prohibido, antes de escribir
     texto = re.sub(r"<[^>]+>", " ", nueva)

@@ -1,33 +1,34 @@
 {
-  "_que_es_esto": "Solo la tarjeta de la portada: la app todavia no esta en las tiendas, asi que sale como Proximamente, sin precio ni fecha. Cuando exista su pagina, se completa esta ficha (ver EJEMPLO-app-nueva.json).",
-  "nombre": "Aymor Cuisine",
-  "carpeta": "aymor-cuisine",
-  "precio": "aymor-cuisine",
-  "pagina": false,
-  "publicada": false,
-  "idiomaPrincipal": "en",
-  "tarjeta": {
-    "estado": "pronto",
-    "mostrar": true
-  },
-  "textos": {
-    "fr": {
-      "tarjeta": {
-        "etiqueta": "Bientôt",
-        "queHace": "Pour vos recettes."
-      }
+    "_que_es_esto": "Solo la tarjeta de la portada: la app todavia no esta en las tiendas, asi que sale como Proximamente, sin precio ni fecha. Cuando exista su pagina, se completa esta ficha (ver EJEMPLO-app-nueva.json).",
+    "nombre": "Aymor Cuisine",
+    "carpeta": "aymor-cuisine",
+    "precio": "aymor-cuisine",
+    "pagina": false,
+    "publicada": false,
+    "idiomaPrincipal": "en",
+    "tarjeta": {
+        "estado": "pronto",
+        "mostrar": true
     },
-    "en": {
-      "tarjeta": {
-        "etiqueta": "Coming soon",
-        "queHace": "For your recipes."
-      }
+    "textos": {
+        "fr": {
+            "tarjeta": {
+                "etiqueta": "",
+                "queHace": "Pour vos recettes."
+            }
+        },
+        "en": {
+            "tarjeta": {
+                "etiqueta": "",
+                "queHace": "For your recipes."
+            }
+        },
+        "es": {
+            "tarjeta": {
+                "etiqueta": "",
+                "queHace": "Para tus recetas."
+            }
+        }
     },
-    "es": {
-      "tarjeta": {
-        "etiqueta": "Próximamente",
-        "queHace": "Para tus recetas."
-      }
-    }
-  }
+    "_sin_proximamente": "La etiqueta «Próximamente» se vacio el 9 de octubre de 2026: regla de la casa, renglon 12, «no hay mensajes de Próximamente ni nada parecido». Y «sin contratos largos» salio porque «sin contrato» esta en la lista de Legal."
 }

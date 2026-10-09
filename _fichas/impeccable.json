@@ -1,33 +1,35 @@
 {
-  "_que_es_esto": "Solo la tarjeta de la portada: la app todavia no esta en las tiendas, asi que sale como Proximamente, sin precio ni fecha. Cuando exista su pagina, se completa esta ficha (ver EJEMPLO-app-nueva.json).",
-  "nombre": "Impeccable",
-  "carpeta": "impeccable",
-  "precio": "impeccable",
-  "pagina": false,
-  "publicada": false,
-  "idiomaPrincipal": "en",
-  "tarjeta": {
-    "estado": "pronto",
-    "mostrar": true
-  },
-  "textos": {
-    "fr": {
-      "tarjeta": {
-        "etiqueta": "Bientôt",
-        "queHace": "Pour les entreprises de nettoyage."
-      }
+    "_que_es_esto": "Solo la tarjeta de la portada: la app todavia no esta en las tiendas, asi que sale como Proximamente, sin precio ni fecha. Cuando exista su pagina, se completa esta ficha (ver EJEMPLO-app-nueva.json).",
+    "nombre": "Aymor Impeccable",
+    "carpeta": "impeccable",
+    "precio": "impeccable",
+    "pagina": false,
+    "publicada": false,
+    "idiomaPrincipal": "en",
+    "tarjeta": {
+        "estado": "pronto",
+        "mostrar": true
     },
-    "en": {
-      "tarjeta": {
-        "etiqueta": "Coming soon",
-        "queHace": "For cleaning businesses."
-      }
+    "textos": {
+        "fr": {
+            "tarjeta": {
+                "etiqueta": "",
+                "queHace": "Pour les entreprises de nettoyage."
+            }
+        },
+        "en": {
+            "tarjeta": {
+                "etiqueta": "",
+                "queHace": "For cleaning businesses."
+            }
+        },
+        "es": {
+            "tarjeta": {
+                "etiqueta": "",
+                "queHace": "Para negocios de limpieza."
+            }
+        }
     },
-    "es": {
-      "tarjeta": {
-        "etiqueta": "Próximamente",
-        "queHace": "Para negocios de limpieza."
-      }
-    }
-  }
+    "_sin_proximamente": "La etiqueta «Próximamente» se vacio el 9 de octubre de 2026: regla de la casa, renglon 12, «no hay mensajes de Próximamente ni nada parecido». Y «sin contratos largos» salio porque «sin contrato» esta en la lista de Legal.",
+    "_nombre": "Se llamaba «Impeccable». La direccion puso «Aymor Impeccable» el 9 de octubre de 2026. El identificador del paquete no cambia: seria otra app distinta para Apple y para Android."
 }
