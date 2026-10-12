@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+# La página de gracias es el recibo de un pago ajeno: no es una
+# página que a nadie le sirva encontrar en Google.
+Disallow: /*/gracias/
+Sitemap: https://aymorcorp.github.io/tienda/sitemap.xml
