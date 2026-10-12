@@ -1,0 +1,25 @@
+{
+  // QUE SIRVE ESTA TIENDA
+  // ====================
+  // Cloudflare la publica como un «worker», y un worker no sabe por si solo
+  // que tiene que servir archivos: hay que decirselo aqui. Sin este archivo
+  // se publica y no sirve nada.
+  //
+  // «directory: ./» es la raiz del repositorio, que es donde viven las
+  // paginas de la tienda. Lo que NO se sirve esta en «.assetsignore», al
+  // lado de este archivo.
+  //
+  // El dia que la tienda tenga que cobrar y entregar, el programa de la
+  // entrega se engancha aqui con un «main». Hoy no hay ninguno: son solo
+  // paginas.
+  "name": "tienda",
+  "compatibility_date": "2026-10-06",
+  "assets": {
+    "directory": "./",
+    // Una direccion que no existe devuelve el 404 del propio Cloudflare.
+    // No se inventa una pagina ni se manda a la portada: que una direccion
+    // mal escrita acabe en la portada esconde los enlaces rotos en lugar de
+    // ensenarlos.
+    "not_found_handling": "none"
+  }
+}

@@ -1,0 +1,28 @@
+# LO QUE NO SE SIRVE AL PUBLICO
+# =============================
+# Esto no es la tienda: son las herramientas con las que se hace, y una
+# carpeta con lo que estaba publicado antes. Servirlas no rompe nada, pero
+# ensenar el taller al lado de la tienda no tiene ningun sentido, y cuanto
+# menos haya colgado, menos hay que vigilar.
+#
+# La tienda de verdad son las paginas de la raiz: index.html, es/, fr/, en/,
+# pt/, it/, img/, y los tres archivos de programa y estilo.
+
+_plantilla/
+_fichas/
+_marca/
+_paginas-de-venta/
+
+# «_disenos/tienda» es la MISMA tienda otra vez: de ahi se copia a la raiz.
+# Servirla seria tener dos tiendas en dos direcciones, que es justo lo que no
+# se quiere.
+_disenos/
+
+# Lo que estaba publicado antes del 11 de octubre. Se guarda, no se sirve.
+_CERRADO*/
+
+# Y las herramientas sueltas.
+*.sh
+wrangler.jsonc
+.assetsignore
+.gitignore
