@@ -238,3 +238,39 @@ footer{margin-top:clamp(44px,7vw,90px);border-top:1px solid var(--linea);
         border:1px solid var(--linea);border-radius:999px;padding:13px 28px;
         font:600 15px var(--sans);color:var(--tinta);cursor:pointer}
 .vermas:hover{border-color:var(--marca);color:var(--marca)}
+
+/* ANTES DE PAGAR. Todo lo material, pegado al boton: lo que se cobra, cada
+   cuanto se vuelve a cobrar, como se sale, y los dos textos legales a un
+   clic. Va en una caja con borde para que se lea como una sola cosa junto al
+   boton, y no como letra chica repartida por la pagina. */
+.antesdepagar{margin-top:clamp(20px,3vw,30px);padding:clamp(16px,2.4vw,22px);
+  border:1px solid var(--linea);border-radius:10px;background:var(--papel)}
+.antesdepagar h3{font-size:13px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--tenue);margin-bottom:10px}
+.antesdepagar .cobro{font-size:16px;line-height:1.5}
+.antesdepagar .cobro b{font-size:20px;margin-right:6px}
+.antesdepagar .salir{margin-top:8px;font-size:14px;color:var(--suave);max-width:60ch}
+.antesdepagar .legal{margin-top:10px;font-size:14px}
+.antesdepagar .legal a{color:var(--suave);text-decoration:underline}
+
+/* Las casillas. Grandes y faciles de picar: una casilla que cuesta acertar en
+   un telefono es una casilla que la gente marca sin querer. */
+.antesdepagar label{display:flex;gap:10px;align-items:flex-start;
+  margin-top:14px;font-size:15px;line-height:1.45;cursor:pointer}
+.antesdepagar label input{width:20px;height:20px;margin-top:2px;flex:none;
+  accent-color:var(--tinta);cursor:pointer}
+.antesdepagar .notanegocio{margin:6px 0 0 30px;font-size:13px;
+  color:var(--tenue);max-width:58ch}
+.antesdepagar .faltaaceptar{margin-top:10px;font-size:14px;color:var(--suave)}
+.antesdepagar .comprar{margin-top:18px}
+
+/* CANCELAR, de un clic y a la vista. No es un enlace escondido: es un boton
+   con borde. Virginia prohibe exigirle al cliente hablar con alguien, y
+   California solo deja ofrecer algo para retenerlo si al lado se ensena el
+   boton de cancelar. Mas sencillo es no ofrecer nada. */
+.cancelar .cancelarya{display:inline-block;font-size:16px;text-decoration:none;
+  color:var(--tinta);border:1.5px solid var(--tinta);border-radius:8px;
+  padding:11px 20px;margin-bottom:12px}
+.cancelar .apple{margin-top:14px}
+.cancelar .apple a{font-size:14px;color:var(--suave);text-decoration:underline}
+.cancelar .nota{margin-top:14px;font-size:13px;color:var(--tenue)}
