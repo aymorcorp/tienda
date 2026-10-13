@@ -308,3 +308,39 @@ footer{margin-top:clamp(44px,7vw,90px);border-top:1px solid var(--linea);
 /* Y el buscador, discreto: un renglon subrayado, no un boton. */
 .barra .buscar{font-size:13px;letter-spacing:.04em;color:var(--suave);
   text-decoration:underline;text-underline-offset:3px}
+
+/* LA LETRA, CON FORMA. La dirección lo dijo así el 13 de octubre de 2026:
+   «está muy cuadrada, ponle algo más lindo, más curva, más forma».
+
+   Se usa la serif que la tienda YA tenía para los títulos grandes —Iowan Old
+   Style, Palatino, Georgia— y se lleva al nombre de la tienda, a los títulos
+   de las tarjetas y a los primeros párrafos. Tiene curva y tiene forma.
+
+   Y no se trae ninguna letra de fuera a propósito. Una letra de Google obliga
+   al navegador de cada persona a pedírsela a Google, o sea que su visita pasa
+   por ahí sin que nos hayamos enterado. Estas tres ya están en la computadora
+   de quien entra: no se baja nada y no viaja nadie. */
+
+.marca{font-family:var(--serif);font-weight:600;letter-spacing:.015em}
+
+/* La cabecera, en tres renglones y centrada: el nombre, el buscador debajo, y
+   los idiomas al final. Los tres crecen con la pantalla. */
+.barra .centro{flex-direction:column;align-items:center;gap:12px;
+  padding-top:clamp(20px,3.4vw,34px);padding-bottom:clamp(16px,2.6vw,24px)}
+
+.barra .buscar{font-family:var(--serif);font-size:clamp(15px,2vw,19px);
+  letter-spacing:.01em;color:var(--suave);text-decoration:underline;
+  text-underline-offset:4px;border:0;padding:0;background:none}
+
+/* Los idiomas, más grandes: eran de once puntos y medio y no se leían. */
+.barra .idiomas{gap:6px}
+.barra .idiomas a{font-size:14px;letter-spacing:.07em;padding:7px 11px;
+  font-weight:600}
+
+/* Y la forma llega a donde se lee de verdad: el título de cada tarjeta y el
+   primer párrafo de cada página. */
+.celda h4{font-family:var(--serif);font-weight:600;letter-spacing:.005em}
+.lead{font-family:var(--serif)}
+.saludo p{font-family:var(--serif)}
+.antesdepagar h3,.planes h3{font-family:var(--serif);text-transform:none;
+  letter-spacing:.02em;font-size:15px}
