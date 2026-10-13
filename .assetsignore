@@ -26,3 +26,12 @@ _CERRADO*/
 wrangler.jsonc
 .assetsignore
 .gitignore
+
+# Y lo que el propio sistema deja por ahi. Esto salio del registro de
+# la publicacion: se estaba sirviendo la carpeta con toda la historia
+# del repositorio, y se podia bajar. Hoy no filtra nada porque el
+# repositorio es publico, pero el dia que no lo sea seria un agujero —
+# y de todas formas nadie tiene por que bajarse la historia de la
+# tienda desde la tienda.
+.git/
+.wrangler/
