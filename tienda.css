@@ -289,3 +289,22 @@ footer{margin-top:clamp(44px,7vw,90px);border-top:1px solid var(--linea);
 .planes li:last-child{border-bottom:0}
 .planes li span{color:var(--suave)}
 .planes li b{font-variant-numeric:tabular-nums;white-space:nowrap}
+
+/* LA CABECERA, COMO LA PIDIO LA DIRECCION EL 13 DE OCTUBRE DE 2026.
+   En columna y centrada: el nombre grande primero, los idiomas debajo, y
+   «buscar en el catalogo» al final, chico. Antes iban los tres en una fila y
+   el buscador pesaba mas que el nombre de la tienda — al reves de lo que toca.
+   Sus palabras: «Aymor Applis grande, como titulo», y el buscador «abajito de
+   los idiomas, y mas chiquito». */
+.barra .centro{flex-direction:column;align-items:center;gap:10px;
+  padding-top:clamp(18px,3vw,30px);padding-bottom:clamp(14px,2.4vw,22px)}
+
+/* El nombre. Grande de verdad, y crece con la pantalla. */
+.marca{font-size:clamp(26px,5.2vw,46px);font-weight:800;letter-spacing:.07em;
+  white-space:nowrap;line-height:1.05;color:var(--tinta)}
+
+.barra .idiomas{gap:4px}
+
+/* Y el buscador, discreto: un renglon subrayado, no un boton. */
+.barra .buscar{font-size:13px;letter-spacing:.04em;color:var(--suave);
+  text-decoration:underline;text-underline-offset:3px}
