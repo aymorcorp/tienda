@@ -1,34 +1,40 @@
 {
-    "_que_es_esto": "Tarjeta preparada y NO visible: Leonie sale de la portada hasta que tenga politica de privacidad y terminos (decision del 6 de octubre). Para mostrarla: tarjeta.mostrar = true y volver a correr construir.py.",
-    "nombre": "Léonie",
-    "carpeta": "leonie",
-    "precio": "leonie",
-    "pagina": false,
-    "publicada": false,
-    "idiomaPrincipal": "en",
-    "tarjeta": {
-        "estado": "pronto",
-        "mostrar": false
+  "_que_es_esto": "Tarjeta preparada y NO visible: Leonie sale de la portada hasta que tenga politica de privacidad y terminos (decision del 6 de octubre). Para mostrarla: tarjeta.mostrar = true y volver a correr construir.py.",
+  "nombre": "Léonie",
+  "carpeta": "leonie",
+  "precio": "leonie",
+  "pagina": false,
+  "publicada": false,
+  "idiomaPrincipal": "en",
+  "tarjeta": {
+    "estado": "no va en esta tienda",
+    "mostrar": false
+  },
+  "textos": {
+    "fr": {
+      "tarjeta": {
+        "etiqueta": "",
+        "queHace": "L assistante automatisee qui repond aux messages texte de vos clients.",
+        "_antes": "L'assistante automatisée qui répond au téléphone de votre entreprise."
+      }
     },
-    "textos": {
-        "fr": {
-            "tarjeta": {
-                "etiqueta": "",
-                "queHace": "L'assistante automatisée qui répond au téléphone de votre entreprise."
-            }
-        },
-        "en": {
-            "tarjeta": {
-                "etiqueta": "",
-                "queHace": "The automated assistant that answers your business phone."
-            }
-        },
-        "es": {
-            "tarjeta": {
-                "etiqueta": "",
-                "queHace": "La asistente automática que contesta el teléfono de tu negocio."
-            }
-        }
+    "en": {
+      "tarjeta": {
+        "etiqueta": "",
+        "queHace": "The automated assistant that answers your clients text messages.",
+        "_antes": "The automated assistant that answers your business phone."
+      }
     },
-    "_sin_proximamente": "La etiqueta «Próximamente» se vacio el 9 de octubre de 2026: regla de la casa, renglon 12, «no hay mensajes de Próximamente ni nada parecido». Y «sin contratos largos» salio porque «sin contrato» esta en la lista de Legal."
+    "es": {
+      "tarjeta": {
+        "etiqueta": "",
+        "queHace": "La contestadora automatica que responde los mensajes de tus clientes.",
+        "_antes": "La asistente automática que contesta el teléfono de tu negocio."
+      }
+    }
+  },
+  "_sin_proximamente": "La etiqueta «Próximamente» se vacio el 9 de octubre de 2026: regla de la casa, renglon 12, «no hay mensajes de Próximamente ni nada parecido». Y «sin contratos largos» salio porque «sin contrato» esta en la lista de Legal.",
+  "_LEONIE_YA_NO_VA_EN_ESTA_TIENDA": "Decision de Leonor del 13 de octubre de 2026: Leonie y Prospection NO se venden en esta tienda, porque Paddle no permite lo que hacen. Se venden en la suya, aymorprospection.com, cobradas con Stripe. ESTA TARJETA NO SE ENCIENDE. No se borra nada por si sirve de punto de partida para la tienda nueva. Dudas: 017.",
+  "_sobre_el_precio": "El \"precio\": \"leonie\" apunta a una entrada que NO existe en precios.json, y ya no hace falta que exista: sus precios viven en Leonie/precios-que-mandan.json, sacados del documento de Clara (510) del 13 de octubre aprobado por Leonor. Son dos niveles: Texto 19.99 al mes o 219.99 al ano, y Voz 39.99 o 439.99.",
+  "_corregido_el_13_oct": "Esta tarjeta decia que Leonie «contesta el telefono». Leonie contesta MENSAJES DE TEXTO; la voz todavia no existe. Lo corrigio 017, que es quien responde de lo que se dice de su app."
 }
