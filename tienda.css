@@ -27,20 +27,67 @@ a{color:inherit;text-decoration:none;-webkit-tap-highlight-color:transparent}
 [hidden]{display:none !important}
 .centro{max-width:var(--ancho);margin:0 auto;padding:0 clamp(18px,4vw,40px)}
 
-/* ---------- barra de arriba ---------- */
-.barra{position:sticky;top:0;z-index:50;background:rgba(247,243,236,.88);
-       -webkit-backdrop-filter:saturate(1.6) blur(12px);
-       backdrop-filter:saturate(1.6) blur(12px);border-bottom:1px solid var(--linea)}
-.barra .centro{display:flex;align-items:center;gap:clamp(10px,2vw,20px);
-               min-height:58px;padding-top:9px;padding-bottom:9px}
-.marca{font-weight:800;font-size:12.5px;letter-spacing:.17em;white-space:nowrap}
-.buscar{flex:1;min-width:0;background:var(--blanco);border:1px solid var(--linea);
-        border-radius:999px;padding:9px 15px;color:var(--tenue);font-size:14px;
-        overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.idiomas{display:flex;gap:3px}
-.idiomas a{font-size:11.5px;letter-spacing:.08em;color:var(--tenue);
-           padding:5px 7px;border-radius:7px;font-weight:700}
+/* ---------- barra de arriba ----------
+   18 DE OCTUBRE DE 2026. La direccion: la ventana de arriba «se queda fija
+   ahi y ocupa un tercio de la pantalla». Medida: 222 puntos en la
+   computadora y 175 en el telefono. Ahora es UN renglon: 56 puntos en el
+   telefono y 64 en la computadora, que es lo que miden las barras de Apple,
+   Readdle y Linear. probar-la-tienda.py se pone en rojo si algo pegado
+   arriba pasa de 64.
+
+   Lo que pidio el 13 de octubre se queda, en fila: el nombre primero y en
+   serif, el renglon blanco de buscar con su curva y su lupa, y los idiomas.
+   En el telefono el buscador se queda en la lupa sola, redonda y blanca, y
+   los idiomas en un menu que se abre al picar el de ahora. */
+.barra{position:sticky;top:0;z-index:50;background:rgba(247,243,236,.82);
+       -webkit-backdrop-filter:saturate(1.8) blur(16px);
+       backdrop-filter:saturate(1.8) blur(16px);
+       border-bottom:1px solid rgba(230,222,209,.9)}
+/* La altura cuenta la linea de abajo: 55 + 1 = 56, y 63 + 1 = 64. */
+.barra .centro{display:flex;align-items:center;gap:12px;height:55px}
+@media(min-width:880px){.barra .centro{height:63px;gap:20px}}
+.barra .marca{font:600 21px/1 var(--serif);letter-spacing:.005em;white-space:nowrap;
+              color:var(--tinta);margin-right:auto}
+@media(min-width:880px){.barra .marca{font-size:24px}}
+
+/* El renglon blanco de buscar. En el telefono, solo la lupa. */
+.barra .buscar{display:flex;align-items:center;justify-content:center;gap:9px;
+  flex:none;width:40px;height:40px;padding:0;border-radius:999px;
+  background:#fff;border:1px solid var(--linea);color:var(--tenue);
+  box-shadow:0 1px 2px rgba(26,23,20,.05);transition:border-color .2s,color .2s}
+.barra .buscar span{display:none}
+.barra .buscar:hover{border-color:var(--suave);color:var(--tinta)}
+.barra .buscar::before{content:"";flex:none;width:17px;height:17px;
+  background:currentColor;opacity:.7;
+  -webkit-mask:var(--lupa) center/contain no-repeat;mask:var(--lupa) center/contain no-repeat}
+@media(min-width:880px){
+  .barra .buscar{width:300px;height:40px;justify-content:flex-start;padding:0 16px;
+    font:15px var(--serif);margin-right:6px}
+  .barra .buscar span{display:inline;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+}
+
+/* Los idiomas: en fila en la computadora, en menu en el telefono. */
+.idiomas{display:none;gap:2px}
+@media(min-width:880px){.idiomas{display:flex}}
+.idiomas a{font-size:12.5px;letter-spacing:.06em;color:var(--suave);
+           padding:6px 8px;border-radius:8px;font-weight:600;transition:background .2s}
+.idiomas a:hover{background:rgba(26,23,20,.06)}
 .idiomas a.on{background:var(--tinta);color:var(--papel)}
+
+.idioma-menu{position:relative;flex:none}
+@media(min-width:880px){.idioma-menu{display:none}}
+.idioma-menu summary{list-style:none;cursor:pointer;display:flex;align-items:center;
+  gap:6px;height:40px;padding:0 13px;border-radius:999px;border:1px solid var(--linea);
+  background:#fff;font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--tinta)}
+.idioma-menu summary::-webkit-details-marker{display:none}
+.idioma-menu summary::after{content:"";width:7px;height:7px;margin-top:-3px;
+  border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;
+  transform:rotate(45deg);opacity:.6}
+.idioma-lista{position:absolute;right:0;top:48px;min-width:170px;padding:6px;
+  background:#fff;border:1px solid var(--linea);border-radius:14px;
+  box-shadow:0 18px 40px -16px rgba(26,23,20,.35)}
+.idioma-lista a{display:block;padding:10px 12px;border-radius:9px;font-size:15px}
+.idioma-lista a.on{background:var(--papel);font-weight:700}
 
 /* ---------- encabezado de pagina ---------- */
 .saludo{padding:clamp(34px,7vw,74px) 0 clamp(20px,4vw,34px)}
@@ -290,26 +337,11 @@ footer{margin-top:clamp(44px,7vw,90px);border-top:1px solid var(--linea);
 .planes li span{color:var(--suave)}
 .planes li b{font-variant-numeric:tabular-nums;white-space:nowrap}
 
-/* LA CABECERA, COMO LA PIDIO LA DIRECCION EL 13 DE OCTUBRE DE 2026.
-   En columna y centrada: el nombre grande primero, los idiomas debajo, y
-   «buscar en el catalogo» al final, chico. Antes iban los tres en una fila y
-   el buscador pesaba mas que el nombre de la tienda — al reves de lo que toca.
-   Sus palabras: «Aymor Applis grande, como titulo», y el buscador «abajito de
-   los idiomas, y mas chiquito». */
-.barra .centro{flex-direction:column;align-items:center;gap:10px;
-  padding-top:clamp(18px,3vw,30px);padding-bottom:clamp(14px,2.4vw,22px)}
+/* LA CABECERA DEL 13 DE OCTUBRE (el nombre grande, el buscador y los
+   idiomas en tres renglones, centrados) se quito el 18 de octubre: de ella se
+   quedan las tres ideas, ahora en un renglon, arriba en «barra de arriba».
 
-/* El nombre. Grande de verdad, y crece con la pantalla. */
-.marca{font-size:clamp(26px,5.2vw,46px);font-weight:800;letter-spacing:.07em;
-  white-space:nowrap;line-height:1.05;color:var(--tinta)}
-
-.barra .idiomas{gap:4px}
-
-/* Y el buscador, discreto: un renglon subrayado, no un boton. */
-.barra .buscar{font-size:13px;letter-spacing:.04em;color:var(--suave);
-  text-decoration:underline;text-underline-offset:3px}
-
-/* LA LETRA, CON FORMA. La dirección lo dijo así el 13 de octubre de 2026:
+   LA LETRA, CON FORMA. La dirección lo dijo así el 13 de octubre de 2026:
    «está muy cuadrada, ponle algo más lindo, más curva, más forma».
 
    Se usa la serif que la tienda YA tenía para los títulos grandes —Iowan Old
@@ -321,22 +353,6 @@ footer{margin-top:clamp(44px,7vw,90px);border-top:1px solid var(--linea);
    por ahí sin que nos hayamos enterado. Estas tres ya están en la computadora
    de quien entra: no se baja nada y no viaja nadie. */
 
-.marca{font-family:var(--serif);font-weight:600;letter-spacing:.015em}
-
-/* La cabecera, en tres renglones y centrada: el nombre, el buscador debajo, y
-   los idiomas al final. Los tres crecen con la pantalla. */
-.barra .centro{flex-direction:column;align-items:center;gap:12px;
-  padding-top:clamp(20px,3.4vw,34px);padding-bottom:clamp(16px,2.6vw,24px)}
-
-.barra .buscar{font-family:var(--serif);font-size:clamp(15px,2vw,19px);
-  letter-spacing:.01em;color:var(--suave);text-decoration:underline;
-  text-underline-offset:4px;border:0;padding:0;background:none}
-
-/* Los idiomas, más grandes: eran de once puntos y medio y no se leían. */
-.barra .idiomas{gap:6px}
-.barra .idiomas a{font-size:14px;letter-spacing:.07em;padding:7px 11px;
-  font-weight:600}
-
 /* Y la forma llega a donde se lee de verdad: el título de cada tarjeta y el
    primer párrafo de cada página. */
 .celda h4{font-family:var(--serif);font-weight:600;letter-spacing:.005em}
@@ -345,28 +361,10 @@ footer{margin-top:clamp(44px,7vw,90px);border-top:1px solid var(--linea);
 .antesdepagar h3,.planes h3{font-family:var(--serif);text-transform:none;
   letter-spacing:.02em;font-size:15px}
 
-/* EL BUSCADOR, COMO UNA CAJA DE BUSCAR. La dirección lo dijo así el 13 de
-   octubre de 2026: «la gente estamos acostumbrados a buscar el renglón blanco,
-   no a leer lo que dicen las cosas; si le pones el renglón blanco, así con
-   curvita de los lados, todos sabemos que ahí es un lugar de búsqueda».
-
-   Y tiene razón, y no es un gusto: una caja blanca con esquinas redondas y una
-   lupa se reconoce sin leerla. Un enlace subrayado hay que leerlo primero, y
-   nadie entra a una tienda a leer. */
-.barra .buscar{display:flex;align-items:center;gap:10px;
-  width:min(440px,86vw);box-sizing:border-box;
-  background:#fff;border:1px solid var(--linea);
-  border-radius:999px;padding:12px 20px;
-  font-family:var(--serif);font-size:clamp(15px,1.9vw,18px);
-  color:var(--tenue);text-decoration:none;
-  box-shadow:0 1px 2px rgba(0,0,0,.04)}
-.barra .buscar:hover{border-color:var(--suave);color:var(--tinta)}
-
-/* La lupa va dibujada aquí dentro: por un icono no se baja una imagen. */
-.barra .buscar::before{content:"";flex:none;width:17px;height:17px;
-  background:currentColor;opacity:.55;
-  -webkit-mask:var(--lupa) center/contain no-repeat;
-  mask:var(--lupa) center/contain no-repeat}
+/* La lupa va dibujada aquí dentro: por un icono no se baja una imagen. El
+   renglón blanco con curva y lupa es de la dirección, 13 de octubre: «si le
+   pones el renglón blanco, así con curvita de los lados, todos sabemos que
+   ahí es un lugar de búsqueda». */
 :root{--lupa:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round'><circle cx='11' cy='11' r='7'/><path d='M20 20l-3.6-3.6'/></svg>")}
 
 /* ---------- las paginas que hablan, y los formularios ----------
@@ -407,3 +405,166 @@ footer{margin-top:clamp(44px,7vw,90px);border-top:1px solid var(--linea);
        padding:0;border-radius:5px;accent-color:var(--marca);cursor:pointer}
 .carta .comprar{margin-top:21px}
 .carta .nota{margin-top:13px;font-size:13.5px;line-height:1.55;color:var(--tenue)}
+
+/* ===========================================================================
+   LA TIENDA, COMO UNA TIENDA DE VERDAD — 18 de octubre de 2026
+   ===========================================================================
+   La direccion: «la tienda esta muy fea; ve a internet, mira tiendas en
+   linea y copia lo mas bonito de todas». Lo que se tomo, y de donde:
+
+   - APPLE STORE: la barra fina; el titulo de seccion en dos tonos («Lo
+     nuevo. Echa un vistazo»); las tarjetas blancas grandes con esquinas
+     redondas, el tema arriba en chico, el nombre, la frase y el precio.
+   - THINGS (Cultured Code): mucho aire alrededor; el producto en el centro
+     de su pagina, sobre un fondo suave, y una linea fina bajo la barra.
+   - READDLE: la foto grande con esquinas redondas que lleva al producto, y
+     el boton «ver» en cada tarjeta.
+   - ROGUE AMOEBA: cada aplicacion con su nombre y lo que hace en una linea,
+     en rejilla, no escondidas en una fila que hay que arrastrar.
+   - LINEAR y STRIPE: el pie con la marca a la izquierda y las columnas a la
+     derecha; movimiento chico y lento al pasar por encima, nunca brincos.
+
+   No se trajo nada de ellas: ni letras, ni imagenes, ni textos. Solo las
+   formas. Las fotos son las de la casa, las que ya estaban en la tienda.
+   =========================================================================== */
+:root{--radio:22px;--sombra:0 1px 2px rgba(26,23,20,.04),0 12px 32px -18px rgba(26,23,20,.28);
+      --sombra-alta:0 2px 4px rgba(26,23,20,.05),0 28px 56px -24px rgba(26,23,20,.38)}
+.centro{padding-left:max(16px,env(safe-area-inset-left));
+        padding-right:max(16px,env(safe-area-inset-right))}
+@media(min-width:620px){.centro{padding-left:clamp(24px,4vw,40px);padding-right:clamp(24px,4vw,40px)}}
+main{display:block}
+
+/* ---------- la entrada de la portada ---------- */
+.hero{padding:clamp(28px,6vw,72px) 0 clamp(8px,2vw,20px)}
+.hero-in{display:grid;gap:clamp(26px,4vw,56px);align-items:center}
+@media(min-width:900px){.hero-in{grid-template-columns:1fr 1.05fr}}
+.hero .antetitulo{font:600 12px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--marca);margin:0 0 clamp(14px,2vw,22px)}
+.hero h1{font:400 clamp(36px,6.4vw,68px)/1.02 var(--serif);letter-spacing:-.022em;max-width:14ch}
+.hero .hero-txt>p:not(.antetitulo){font-size:clamp(16.5px,1.8vw,20px);line-height:1.55;max-width:40ch}
+.buscar-grande{display:flex;align-items:center;gap:12px;margin-top:clamp(22px,3vw,32px);
+  width:100%;max-width:440px;height:54px;padding:0 22px;border-radius:999px;
+  background:#fff;border:1px solid var(--linea);box-shadow:var(--sombra);
+  font:clamp(16px,1.7vw,18px) var(--serif);color:var(--tenue);transition:box-shadow .3s,border-color .3s}
+.buscar-grande::before{content:"";flex:none;width:19px;height:19px;background:currentColor;opacity:.75;
+  -webkit-mask:var(--lupa) center/contain no-repeat;mask:var(--lupa) center/contain no-repeat}
+.buscar-grande:hover{border-color:var(--suave);box-shadow:var(--sombra-alta);color:var(--suave)}
+
+/* Tres aplicaciones al lado de la frase: una grande y dos chicas. */
+.hero-fotos{display:grid;grid-template-columns:1.35fr 1fr;grid-template-rows:1fr 1fr;
+  gap:clamp(8px,1.2vw,14px);aspect-ratio:16/11}
+.hero-fotos a{position:relative;display:block;overflow:hidden;border-radius:clamp(14px,1.8vw,24px);
+  background:var(--tono);box-shadow:var(--sombra)}
+.hero-fotos a:first-child{grid-row:1 / 3}
+.hero-fotos img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.hero-fotos a:hover img{transform:scale(1.04)}
+.hero-fotos a:only-child{grid-column:1 / -1}
+.hero-fotos a:first-child img{object-position:22% 50%}
+
+/* ---------- titulos de seccion, en dos tonos ---------- */
+.titulo{padding:clamp(44px,7vw,88px) 0 clamp(16px,2.4vw,26px);align-items:flex-end}
+.titulo h2{font:400 clamp(26px,3.6vw,40px)/1.12 var(--serif);letter-spacing:-.018em}
+.titulo.dos h2{max-width:30ch}
+.titulo.dos h2 span{color:var(--tenue);font:inherit;letter-spacing:inherit}
+.titulo .vertodo{font-size:14.5px;padding-bottom:6px}
+
+/* ---------- la vitrina de las aplicaciones ---------- */
+.vitrina-rejilla{display:grid;gap:clamp(14px,2vw,24px);grid-template-columns:1fr}
+@media(min-width:640px){.vitrina-rejilla{grid-template-columns:1fr 1fr}
+  .app.destacada{grid-column:1 / -1}}
+@media(min-width:1000px){.vitrina-rejilla{grid-template-columns:repeat(3,1fr)}
+  .app.destacada{grid-column:span 2}}
+.app{display:flex;flex-direction:column;background:var(--blanco);border-radius:var(--radio);
+  overflow:hidden;box-shadow:var(--sombra);border:1px solid rgba(230,222,209,.7);
+  transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s}
+.app:hover{transform:translateY(-4px);box-shadow:var(--sombra-alta)}
+.app-foto{position:relative;aspect-ratio:16/10;overflow:hidden;
+  background:linear-gradient(160deg,var(--tono),#0c0b0a)}
+.app-foto img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.app:hover .app-foto img{transform:scale(1.035)}
+.app-txt{display:flex;flex-direction:column;flex:1;padding:clamp(18px,2.2vw,26px)}
+.app-cat{font-size:11px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;color:var(--tono)}
+.app h3{font:500 clamp(22px,2.4vw,27px)/1.15 var(--serif);letter-spacing:-.01em;margin-top:8px}
+.app-lead{margin-top:8px;font:clamp(15px,1.4vw,16.5px)/1.5 var(--serif);color:var(--suave)}
+.app-pie{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  margin-top:auto;padding-top:18px}
+.app-precio{font-size:13.5px;color:var(--tenue)}
+.app-precio b{font-size:16px;font-weight:700;color:var(--tinta);letter-spacing:-.01em;margin-right:3px}
+.app-ir{font-size:13.5px;font-weight:700;color:var(--tinta);padding:9px 15px;border-radius:999px;
+  background:var(--papel);transition:background .3s,color .3s;white-space:nowrap}
+.app:hover .app-ir{background:var(--tinta);color:var(--papel)}
+@media(min-width:640px){.app-foto{aspect-ratio:4/3}}
+@media(min-width:1000px){
+  .app.destacada{flex-direction:row}
+  .app.destacada .app-foto{flex:1.25}
+  .app.destacada .app-foto img{object-position:18% 50%}
+  .app.destacada .app-txt{flex:1;justify-content:center;padding:clamp(28px,3vw,44px)}
+  .app.destacada h3{font-size:clamp(30px,3vw,38px)}
+  .app.destacada .app-lead{font-size:18px}
+  .app.destacada .app-pie{margin-top:28px}
+}
+
+/* ---------- por oficio ---------- */
+.oficios{gap:clamp(10px,1.4vw,16px);margin-top:0}
+.of{border-radius:var(--radio);min-height:clamp(150px,19vw,230px)}
+.of h3{font:500 clamp(21px,2.4vw,28px)/1.1 var(--serif);letter-spacing:-.01em;max-width:16ch}
+.of span{font-size:13.5px}
+@media(min-width:880px){.oficios>.of:last-child:nth-child(odd){min-height:clamp(130px,14vw,180px)}}
+
+/* ---------- la repisa de las guias ---------- */
+.estante{gap:clamp(14px,1.8vw,22px);padding-bottom:20px}
+/* La repisa empieza donde empieza todo lo demas, no pegada a la orilla. */
+.estante[sangrado]{--gut:16px;padding-left:max(var(--gut),calc((100% - var(--ancho))/2 + var(--gut)));
+  padding-right:var(--gut);scroll-padding-left:max(var(--gut),calc((100% - var(--ancho))/2 + var(--gut)))}
+@media(min-width:620px){.estante[sangrado]{--gut:clamp(24px,4vw,40px)}}
+.estante>*{flex:0 0 clamp(170px,44vw,236px)}
+.libro .obj{border-radius:14px;box-shadow:var(--sombra)}
+.libro:hover .obj{box-shadow:var(--sombra-alta)}
+.libro h4{font-weight:500}
+.libro b{color:var(--tinta)}
+
+/* ---------- la pagina de producto ---------- */
+.ficha{gap:clamp(22px,4vw,64px);padding-top:clamp(14px,2.4vw,24px)}
+@media(min-width:880px){.ficha{grid-template-columns:1.12fr .88fr;align-items:center}}
+.ficha-foto{background:linear-gradient(160deg,var(--tono),#0c0b0a);
+  border-radius:calc(var(--radio) + 4px);padding:clamp(10px,1.6vw,18px);box-shadow:var(--sombra-alta)}
+.ficha-foto .galeria{border-radius:16px}
+.ficha-foto .galeria img{border-radius:16px;box-shadow:none}
+.ficha-foto .puntos i,.ficha-foto .puntos i.on{background:#fff}
+.ficha h1{font-size:clamp(34px,4.6vw,54px);font-weight:400;letter-spacing:-.022em}
+.ficha .lead{font-size:clamp(17px,1.8vw,20px);line-height:1.5}
+.ficha .precio b{color:var(--tinta);font-size:clamp(26px,3vw,32px)}
+.ir-planes{display:inline-flex;align-items:center;margin-top:22px;height:48px;padding:0 24px;
+  border-radius:999px;background:var(--tinta);color:var(--papel);font-weight:700;font-size:15px;
+  transition:transform .3s,box-shadow .3s}
+.ir-planes:hover{transform:translateY(-2px);box-shadow:var(--sombra-alta)}
+.ficha2{display:grid;gap:clamp(26px,4vw,64px);margin-top:clamp(36px,6vw,80px);
+  padding-top:clamp(28px,4vw,48px);border-top:1px solid var(--linea)}
+@media(min-width:880px){.ficha2{grid-template-columns:1fr 1fr;align-items:start}}
+.ficha-texto .trae{margin-top:0;border-top:0;padding-top:0}
+.ficha-texto .trae li{font-size:16px;line-height:1.55}
+.ficha-texto .paraquien p{font-size:16px}
+.ficha-compra{background:var(--blanco);border:1px solid rgba(230,222,209,.8);
+  border-radius:var(--radio);padding:clamp(20px,2.6vw,32px);box-shadow:var(--sombra);
+  scroll-margin-top:80px}
+.ficha-compra .planes{margin-top:0}
+.ficha-compra .antesdepagar{background:var(--papel);border-radius:16px}
+/* «p.legal» de la caja de antes de pagar heredaba el relleno de las paginas
+   legales (.legal) y dejaba un hueco grande antes de los dos enlaces. */
+.antesdepagar p.legal{padding:0;max-width:none}
+
+/* ---------- el pie ---------- */
+footer{margin-top:clamp(56px,9vw,120px);background:#EFE9DF;border-top:0}
+.pie-arriba{display:grid;gap:clamp(28px,4vw,48px)}
+@media(min-width:900px){.pie-arriba{grid-template-columns:1.1fr 2.4fr}}
+.pie-marca .marca{font:600 24px/1 var(--serif);color:var(--tinta)}
+.pie-marca p{margin-top:12px;font:15.5px/1.55 var(--serif);color:var(--suave);max-width:34ch}
+
+/* ---------- las demas paginas ---------- */
+.saludo h1{letter-spacing:-.02em}
+.volver{font-size:13.5px}
+
+/* ---------- entrada suave al cargar ---------- */
+@keyframes subir{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.hero-txt,.hero-fotos{animation:subir .8s cubic-bezier(.2,.7,.2,1) both}
+.hero-fotos{animation-delay:.12s}
