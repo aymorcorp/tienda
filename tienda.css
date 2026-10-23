@@ -568,3 +568,21 @@ footer{margin-top:clamp(56px,9vw,120px);background:#EFE9DF;border-top:0}
 @keyframes subir{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 .hero-txt,.hero-fotos{animation:subir .8s cubic-bezier(.2,.7,.2,1) both}
 .hero-fotos{animation-delay:.12s}
+
+/* ---------- darme de baja (hoja 018-008) ----------
+   Sin formulario y sin contraseña: dos cajas, una para cancelar lo que se
+   paga y otra para dejar de recibir correos. Los pasos van numerados. */
+.caja.baja{max-width:720px;margin-top:18px}
+.caja.baja:last-child{margin-bottom:clamp(40px,7vw,80px)}
+.caja.baja h2{font:400 clamp(23px,4vw,30px)/1.15 var(--serif);margin-bottom:10px}
+.caja.baja p{margin-top:12px;max-width:62ch}
+.caja.baja h2+p,.caja.baja>p:first-child{margin-top:0}
+.caja.baja a{color:var(--marca);text-decoration:underline;text-underline-offset:3px}
+.baja-lead{font-weight:600}
+.baja-pasos{list-style:none;counter-reset:paso;margin:18px 0 6px;display:grid;gap:12px}
+.baja-pasos li{counter-increment:paso;position:relative;padding-left:44px;min-height:30px}
+.baja-pasos li::before{content:counter(paso);position:absolute;left:0;top:-2px;width:30px;height:30px;
+  border-radius:50%;background:var(--marca);color:var(--blanco);font-weight:700;font-size:15px;
+  display:grid;place-items:center}
+.caja.baja .apple a{color:var(--suave)}
+.caja.baja .nota{font-size:13.5px;color:var(--suave)}
